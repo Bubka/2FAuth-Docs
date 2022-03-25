@@ -19,8 +19,8 @@ Here are the main features available in 2FAuth:
 - Generate TOTP and HOTP security codes
 - Scan and decode any QR code to add a 2FA account in no time
 - Manage your 2FA accounts and organize them using Groups
+- Manually add custom 2FA accounts for which no QR is available
 - Edit accounts, even the ones imported from a QR code
-- Manually add customized 2FA accounts for which no QR is available
 
 ## Demo website
 
