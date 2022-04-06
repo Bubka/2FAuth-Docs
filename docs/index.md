@@ -22,6 +22,10 @@ Here are the main features available in 2FAuth:
 - Manually add custom 2FA accounts for which no QR is available
 - Edit accounts, even the ones imported from a QR code
 
+### REST API
+
+2FAuth provides a REST API which lets you perform most of the those features from any external client. Have a look to the [API documentation](/api/) to find out how to use it.
+
 ## Demo website
 
 Want to try 2FAuth? A demo is available at <https://demo.2fauth.app>
