@@ -7,9 +7,18 @@ You can deploy 2FAuth on your own web server, virtual or not, whether on your lo
 
 ## Requirements
 
+### HTTP server
+
+__Apache__ and __NGINX__ are the most popular web servers. If you rent a server or a web hosting you probably already have one of them installed. If you plan to use your own machine and need help to install and configure it please consider searching the Web, there is many tutorials to guide your through.
+
+- <a href="https://www.google.com/search?q=install+apache2" target="_blank">Google search for `install apache2`</a>
+- <a href="https://www.google.com/search?q=install+nginx" target="_blank">Google search for `install nginx`</a>
+
+For simplicity along the following sections
+
 ### PHP
 
-As 2FAuth is develop on top of the Laravel framework, the requirements are <a href="https://laravel.com/docs/deployment#server-requirements" target="_blank">those of Laravel</a>:
+As 2FAuth is develop on top of the Laravel framework, the requirements are <a href="https://laravel.com/docs/8.x/deployment#server-requirements" target="_blank">those of Laravel</a>:
 
 - PHP >= [!badge 7.3]
 - BCMath PHP Extension
@@ -22,11 +31,11 @@ As 2FAuth is develop on top of the Laravel framework, the requirements are <a hr
 - Tokenizer PHP Extension
 - XML PHP Extension
 
-Depending on the choosen database (see below), don't forget to install the correspondent PHP extension (i.e `php7.3-sqlite3` or `php7.3-mysql` )
+Depending on the choosen database (see below), don't forget to install the corresponding PHP extension (i.e `php7.3-sqlite3` or `php7.3-mysql` )
 
 ### Database
 
-Like PHP extensions, supported databases are those of Laravel:
+You need a database to run 2FAuth. Like PHP extensions, supported databases are the ones supported by Laravel. The choice is yours:
 
 - MariaDB [!badge 10.2+]
 - MySQL [!badge 5.7+]
@@ -35,82 +44,8 @@ Like PHP extensions, supported databases are those of Laravel:
 - SQL Server [!badge 2017+]
 
 !!! Recommendation
-2FAuth is a very light application with minimal needs and no concurrent connexion so __SQLite__ is probably the best choice.
+2FAuth is a very light application with minimal needs and no concurrent connection so __SQLite__ is probably the best choice.
 !!!
-
-### Web server
-
-__Apache__ and __NGINX__ are the most popular web servers. The purpose of this documentation is not to teach you how to configure a web server, but as a starting point you may use one of these configuration files and customize it to fit your running environment.
-
-==- NGINX configuration file
-
-```nginx
-server {
-    listen 80;
-    listen [::]:80;
-    server_name 2fauth;
-    root /srv/public;
- 
-    add_header X-Frame-Options "SAMEORIGIN";
-    add_header X-Content-Type-Options "nosniff";
- 
-    index index.php;
- 
-    charset utf-8;
- 
-    location / {
-        try_files $uri $uri/ /index.php?$query_string;
-    }
- 
-    location = /favicon.ico { access_log off; log_not_found off; }
-    location = /robots.txt  { access_log off; log_not_found off; }
- 
-    error_page 404 /index.php;
- 
-    location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
-        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
-        include fastcgi_params;
-    }
- 
-    location ~ /\.(?!well-known).* {
-        deny all;
-    }
-}
-```
-
-==- APACHE configuration file
-
-```apache
-NameVirtualHost *:80
-Listen 80
- 
-<VirtualHost *:80>
-    ServerAdmin admin@example.com
-    ServerName example.com
-    ServerAlias www.example.com
-    DocumentRoot /var/www/html/2fauth/public
-     
-    <Directory /var/www/html/2fauth/public/>
-            Options Indexes FollowSymLinks MultiViews
-            AllowOverride All
-            Order allow,deny
-            allow from all
-            Require all granted
-    </Directory>
-     
-    LogLevel debug
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
-```
-
-==-
-
-In addition please consider using the following resources to complete your web server configuration:
-
-- <a href="https://www.google.com/search?q=setup+laravel+apache2" target="_blank">Google search for `setup laravel apache2`</a>
-- <a href="https://www.google.com/search?q=setup+laravel+nginx" target="_blank">Google search for `setup laravel nginx`</a>
 
 ### Composer
 
@@ -118,61 +53,53 @@ You need __Composer__ to install all PHP dependencies of 2FAuth. As the installa
 
 [!ref icon="package-dependents" target="blank" text="Install Composer"](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos)
 
-You can test your installation by running `php composer.phar -v` in a terminal (or just `composer -v` if composer has been install in a directory that is part of your PATH)
+You can test your installation by running `php composer.phar -v` in a terminal (or just `composer -v` if composer has been install in a directory that is part of your system PATH)
 
 ## Install 2FAuth
 
+The following sections describe how to install 2FAuth
+
 ### Get the source code
 
-First identify the latest version of __2FAuth__ from the <a href="https://github.com/Bubka/2FAuth/releases" target="_blank">GitHub release page</a>. The current version is `2.1.0`.
+Using the method of your choice, download the source code of the <a href="https://github.com/Bubka/2FAuth/releases" target="_blank">latest 2FAuth release</a> to the directory watched by your web server.
 
-Then, using the method of your choice, download the corresponding source code to the directory declared in your web server configuration. Probably `/var/www/2fauth` for Apache and `/srv` for NGINX.
++++ Using cli
 
-+++ Using wget
-
-```bash For NGINX
-cd /srv
-VERSION=v2.1.0
-wget -qO- "https://github.com/Bubka/2FAuth/archive/refs/tags/${VERSION}.tar.gz" | \
-    tar -xz --strip-components=1 -C /srv
+```bash Get the latest release
+mkdir -p /var/www/2fauth
+curl https://api.github.com/repos/Bubka/2FAuth/tags | grep "tarball_url" | \
+    grep -Eo 'https://[^\"]*' | sed -n '1p' | xargs wget -O - | tar -xz --strip-components=1 -C /var/www/2fauth
 ```
 
-or
-
-```bash For Apache
-cd /var/www/2fauth
-VERSION=v2.1.0
+```bash Get a specific release
+mkdir -p /var/www/2fauth
+VERSION=v2.1.0 # Replace with the version of your choice
 wget -qO- "https://github.com/Bubka/2FAuth/archive/refs/tags/${VERSION}.tar.gz" | \
     tar -xz --strip-components=1 -C /var/www/2fauth
 ```
 
-+++ Using git
++++ Using Git cli
 
-```bash For NGINX
-git clone https://github.com/bubka/2fauth.git /srv
-cd /srv
-git checkout v2.1.0 # replace 2.1.0 with the last version number
-```
-
-or
-
-```bash For Apache
+```bash Get the latest release
 git clone https://github.com/bubka/2fauth.git /var/www/2fauth
 cd /var/www/2fauth
-git checkout v2.1.0 # replace 2.1.0 with the last version number
+curl https://api.github.com/repos/Bubka/2FAuth/releases/latest | grep "\"name\"" | grep -Eo 'v[^\"]*' | git checkout
+```
+
+```bash Get a specific release
+git clone https://github.com/bubka/2fauth.git /var/www/2fauth
+cd /var/www/2fauth
+git checkout v2.1.0 # Replace 2.1.0 with the version of your choice
 ```
 
 +++ Download from GitHub
 
-1. Download the source code of the <a href="https://github.com/Bubka/2FAuth/releases" target="_blank">latest 2FAuth release</a>
+1. Download the source code of the <a href="https://github.com/Bubka/2FAuth/releases/latest" target="_blank">latest 2FAuth release</a>
 2. Extract the archive to a `temp` folder
-3. Open the first subfolder named `temp/2fauth-2.1.0` (replace `2.1.0` with the last version number)
-4. Open the web server directory (`/var/www/2fauth` for Apache and `/srv` for NGINX)
-5. Move the content of the `temp/2fauth-2.1.0` folder to the web server directory
+3. Open the top folder named `temp/2fauth-x.y.z`
+4. Move its content to `/var/www/2fauth`
 
 +++
-
-
 
 ### Create your database
 
@@ -185,5 +112,3 @@ Each database system has its own command to create a new database so please refe
 If you are not comfortable with the command line you may use a db management tool like _Adminer_ to ease this step.
 
 [!ref icon="package-dependents" target="blank" text="Get Adminer"](https://www.adminer.org/)
-
-
