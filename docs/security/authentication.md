@@ -4,23 +4,34 @@ order: 100
 
 # Authentication
 
-2FAuth has been conceived for personal use only, it is single user designed. This means that you have to create a user account to use the app and you cannot create more than one user account. None of the app's features can be used unless you are authenticated against one of the following methods.
+2FAuth has been imagined for personal use only, it is single user designed.  
+You have to create a user account to use the app and you cannot create more than one user account. None of the app's features can be used unless you have been authenticated with one of the following methods.
 
-## Web login form
+## Login & Password
 
-Authentication in done by submitting a login form with your credentials, an email and a password. Nothing special here, it is a well-known method.
+Authentication in done by submitting your credentials, an email and a password, to the 2FAuth login form. Nothing special here, it is a very common and well-known method.
 
 This is the default authentication method.
 
 ## WebAuthn
 
-2FAuth supports the W3C Web Authentication API aka WebAuthn (<a href="https://webauthn.guide/" target="_blank">learn more</a>). This means you can register a security device like a Yubikey, a Titan Security Key or a facial recognition system like Apple FaceId and use it to log into 2FAuth.
+2FAuth supports the W3C _Web Authentication_ API aka WebAuthn (<a href="https://webauthn.guide/" target="_blank">learn more</a>). This means you can register a security device like a Yubikey, a Titan Security Key or a facial recognition system like Apple FaceId and use it to log into 2FAuth.
 
 This method is considered more secured as it proves you are in fact you because you have to physically own the security device.
 
 !!!
-The WebAuthn authentication comes in addition to the Web login method or can replace it, but the creation of the user account with an email and a password remains mandatory.
+The WebAuthn authentication does not use login & password to sign in but the creation of a user account with an email and a password remains mandatory.
 !!!
+
+!!!
+WebAuthn is available as an alternative or a replacement to the login/password method. Consider using WebAuthn only to provide the best protection to your 2FAuth instance.
+!!!
+
+### Configuration
+
+You can choose
+
+WEBAUTHN_USER_VERIFICATION', 'preferred
 
 ### Registering a security device
 
