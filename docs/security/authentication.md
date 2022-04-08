@@ -29,11 +29,11 @@ The WebAuthn flow does not use login & password but the creation of a user accou
 
 ### Registering a security device
 
-2FAuth offers to register a WebAuthn device right after submitting the user registration form or through its `Settings > Webauthn` section. Whatever you choose, the registration process will be the same and depends on the hardware you use (desktop, laptop or smartphone) and how your browser implements the WebAuthn flow.
+2FAuth offers to register a WebAuthn device right after submitting the user registration form or through its _Settings > Webauthn_ section. Whatever you choose, the registration process will be the same and depends on the hardware you use (desktop, laptop or smartphone) and how your browser implements the WebAuthn flow.
 
 A typical workflow would be:
 
-1. You click the _Register a new device_ button in 2FAuth
+1. You click the [!badge size="l" icon="plus-circle" text="Register a new device"] link in 2FAuth
 2. Your browser prompts you to grant the operation
 3. You put your finger on the key's touch button
 4. 2FAuth registers the key and offers you to rename it
@@ -42,7 +42,7 @@ You can register several security devices, there is no limitation in the number 
 
 ### Revoking a security device
 
-You can revoke any registered security device through the `Settings > Webauthn` section.  
+You can revoke any registered security device through the _Settings > Webauthn_ section.  
 Simply click the relevant [!badge variant="dark" text="Revoke"] button.
 
 !!!danger
@@ -64,7 +64,7 @@ If you have registered another device and still own it just use this device to l
 Assuming you haven't lost your password too, switch the 2FAuth login form using the link __Sign in using login & password__ and log in using your email address and password, it's that simple!
 
 !!!warning
-Don't forget to revoke the lost device in the `Settings > Webauthn` section.
+Don't forget to revoke the lost device in the _Settings > Webauthn_ section.
 !!!
 
 +++
@@ -88,9 +88,9 @@ _discouraged_ | Will NOT ask for user verification (for example, to minimize dis
 
 ## Personal Access Token
 
-Use Personal Access Tokens (PAT) to authenticate requests send to the 2FAuth REST API.
+Use Personal Access Tokens (PAT) to authenticate requests sent to the 2FAuth REST API.
 
-More informations [here](/api/#authentication).
+[!ref How to authenticate API requests](/api/#authentication)
 
 ## Authentication proxy
 
