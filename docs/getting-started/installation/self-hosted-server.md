@@ -101,7 +101,7 @@ git checkout v2.1.0 # Replace 2.1.0 with the version of your choice
 
 +++
 
-### Create your database
+### Create the database
 
 Each database system has its own command to create a new database so please refer to your database documentation to proceed.
 
