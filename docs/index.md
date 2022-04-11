@@ -4,6 +4,8 @@ Welcome to the 2FAuth documentation.
 
 2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.
 
+![Screenshots of 2FAuth on mobile](/static/2fauth_screenshots.png)
+
 ## Why 2FAuth
 
 Two-Factor Authentication is become very popular over the past years resulting in more and more situations where we face a security code request and an increase of the number of accounts protected by this technology. In other words it is now inevitable and critical.
@@ -22,9 +24,9 @@ Here are the main features available in 2FAuth:
 - Manually add custom 2FA accounts for which no QR is available
 - Edit accounts, even the ones imported from a QR code
 
-### REST API
+## REST API
 
-2FAuth provides a REST API which lets you perform most of the those features from any external client. Have a look to the [API documentation](/api/) to find out how to use it.
+2FAuth provides a REST API which lets you perform most of the these features from any external application. Have a look to the [API documentation](/api/) to find out how to use it.
 
 ## Demo website
 
