@@ -3,23 +3,29 @@ order: -1000
 ---
 # Credits
 
-2FAuth is actively developed by [Bubka](https://github.com/Bubka) and contributors.
+## Contributions
 
-## Frameworks
+2FAuth is actively developed by [Bubka](https://github.com/Bubka).
 
-[!ref target="blank" text="The Laravel framework"](https://laravel.com/)
+The [Docker installation guide](/getting-started/installation/docker) as well as the Docker stuff are a contribution of [Quentin McGow](https://github.com/qdm12).
 
-[!ref target="blank" text="The Vue.js framework"](https://vuejs.org/)
+## Tools
 
-[!ref target="blank" text="The Bulma CSS framework"](https://bulma.io/)
+### Frameworks
 
-## Graphics
+[!ref target="blank" text="Laravel"](https://laravel.com/)
 
-[!ref target="blank" text="The Font Awesome icon library"](https://fontawesome.com/)
+[!ref target="blank" text="Vue.js"](https://vuejs.org/)
 
-## Main dependencies
+[!ref target="blank" text="Bulma CSS"](https://bulma.io/)
 
-### Composer
+### Graphics
+
+[!ref target="blank" text="Font Awesome icon library"](https://fontawesome.com/)
+
+### Main dependencies
+
+#### Composer
 
 [!ref icon="package" target="blank" text="Spomky-Labs/otphp"](https://github.com/Spomky-Labs/otphp)
 
@@ -27,7 +33,7 @@ order: -1000
 
 [!ref icon="package" target="blank" text="khanamiryan/php-qrcode-detector-decoder"](https://github.com/khanamiryan/php-qrcode-detector-decoder)
 
-### npm
+#### npm
 
 [!ref icon="package" target="blank" text="gruhn/vue-qrcode-reader"](https://github.com/gruhn/vue-qrcode-reader)
 
@@ -39,6 +45,6 @@ order: -1000
 
 [!ref icon="package" target="blank" text="Vue.Draggable"](https://sortablejs.github.io/Vue.Draggable/)
 
-### css
+#### css
 
 [!ref icon="package" target="blank" text="Wikiki/bulma-checkradio"](https://github.com/Wikiki/bulma-checkradio)
