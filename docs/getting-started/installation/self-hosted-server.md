@@ -4,9 +4,7 @@ order: 100
 # Self-hosted server
 
 You can deploy 2FAuth on your own web server, virtual or not, whether on your local computer or a web host.
-
-The following guide describe how to install 2FAuth and give basic configurations for both NGINX and Apache2 web server.  
-The installation path will be `/var/www/2fauth`.
+The following guide describes how to proceed and give basic configurations for both NGINX and Apache2 web servers.  
 
 ## Requirements
 
@@ -55,6 +53,10 @@ You need __Composer__ to install all PHP dependencies of 2FAuth. As the installa
 You can test your installation by running `php composer.phar -v` in a terminal (or just `composer -v` if composer has been install in a directory that is part of your system PATH)
 
 ## Server configuration
+
+!!! Installation path
+We will use `/var/www/2fauth` which is a common path in the *nix world. Of course, you are free to use another path, just remember to adapt the following configurations and commands with yours.
+!!!
 
 +++ NGINX
 
@@ -173,6 +175,8 @@ curl https://api.github.com/repos/Bubka/2FAuth/tags | grep "tarball_url" | \
 
 ```bash
 mkdir -p /var/www/2fauth
+# list existing 2FAuth versions
+curl https://api.github.com/repos/Bubka/2FAuth/releases | grep "\"name\"" | grep -Eo 'v[^\"]*'
 # Replace 3.0.0 with the version of your choice
 VERSION=v3.0.0
 wget -qO- "https://github.com/Bubka/2FAuth/archive/refs/tags/${VERSION}.tar.gz" | \
@@ -196,6 +200,8 @@ curl https://api.github.com/repos/Bubka/2FAuth/releases/latest | grep "\"name\""
 ```bash
 git clone https://github.com/bubka/2fauth.git /var/www/2fauth
 cd /var/www/2fauth
+# list existing 2FAuth versions
+git tag
 # Replace 3.0.0 with the version of your choice
 git checkout v3.0.0
 ```
@@ -334,7 +340,7 @@ MAIL_FROM_ADDRESS=john.doe@example.com
 
 ### Run Artisan commands
 
-Run the following `Artisan` commands from the `/var/www/2fauth/` directory:
+Run the following `Artisan` commands from the `/var/www/2fauth/` directory to set up the Laravel part:
 
 ```bash
 php artisan migrate:refresh
