@@ -15,7 +15,7 @@ poweredByRetype: true # Set to false to remove the Powered by Retype branding.
 # -----------------------------------------------------------------------------
 
 branding:
-  title: 2FAuth                 # Your custom website title; keep it short.
+  title: 2FAuth Docs                 # Your custom website title; keep it short.
   logo: #docs/static/logo.png          # Path to a logo file.
   logoDark: #docs/static/logo-dark.png # Path to a logo file to use in dark mode.
   logoAlign: #right               # Align the logo to the right or the left.
