@@ -49,4 +49,4 @@ The revocation of a token is permanent and cannot be undone.
 
 All resources, paths and API parameters are detailed in this dedicated documentation:
 
-[!ref icon="book" text="2FAuth API documentation"](/api/doc/)
+[!ref icon="book" text="2FAuth API documentation"](https://docs.2fauth.app/api/doc/)
