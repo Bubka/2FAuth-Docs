@@ -65,17 +65,6 @@ chmod 700 /yourpath/2fauth/database.sqlite
 
 The container will automagically pick it up.
 
-## Update
-
-!!!warning
-At the very least, backup your `database.sqlite` file to avoid bad surprises!
-!!!
-
-The Docker image [!badge 2fauth/2fauth] is built on every commit pushed to the `master` branch.  
-You can therefore pull the image with `docker pull 2fauth/2fauth` and restart the container to update it.
-
-You can also use tagged images, see [Docker Hub tags](https://hub.docker.com/r/2fauth/2fauth/tags?page=1&ordering=last_updated) which are produced on Github releases.
-
 ## Build the image
 
 You can build the image from the `master` branch with `docker` and `git` using:
