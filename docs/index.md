@@ -1,6 +1,7 @@
-# Introduction
-
-Welcome to the 2FAuth documentation.
+---
+label: Welcome
+---
+# Welcome to 2FAuth Docs
 
 2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.
 
@@ -16,17 +17,25 @@ Moreover, as an open source and self-hosted application, it lets you regain cont
 
 ## Features
 
-Here are the main features available in 2FAuth:
+#### :icon-ellipsis: Generate password
 
-- Generate TOTP and HOTP security codes
-- Scan and decode any QR code to add a 2FA account in no time
-- Manage your 2FA accounts and organize them using Groups
-- Manually add custom 2FA accounts for which no QR is available
-- Edit accounts, even the ones imported from a QR code
+The main purpose of 2FAuth: Serve you some fresh TOTP/HOTP security codes aka One-Time Passwords.
+
+#### :icon-device-desktop: Work anywhere
+
+It's a Web App, it just works, whatever is your device. You only need one (not even yours) and an Internet connection.
+
+#### :icon-apps: QR codes scan
+
+Scan and decode QR codes to add a 2FA account in no time. Actually it decodes any QR code, even non 2FA.
+
+#### :icon-database: 2FA management
+
+Manage your 2FA accounts, reorganize them and classify them using Groups, edit & delete them. You can even manually add an account without scanning a QR code.
 
 ## REST API
 
-2FAuth provides a REST API which lets you perform most of the these features from any external application. Have a look to the [API documentation](/api/) to find out how to use it.
+2FAuth provides a REST API which lets you perform most of its functionalities from any external application. Have a look to the [API documentation](/api/) to find out how to use it.
 
 ## Demo website
 

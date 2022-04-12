@@ -36,7 +36,7 @@ links: # A list of custom links to add to the top bar of the generated website.
     link: https://demo.2fauth.app/
     icon: beaker
     target: blank
-  - text: API Docs
+  - text: API Doc
     link: /api/   # Link to an internal file or external URL.
     icon: code-square      # A custom icon name, :emoji:, <svg>, or path to a file.
     iconAlign: left # Icon alignment, to the left or right. Default is left.
