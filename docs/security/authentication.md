@@ -85,7 +85,6 @@ _required_ | Will ALWAYS ask for user verification
 _preferred_ (default) | Will ask for user verification IF POSSIBLE
 _discouraged_ | Will NOT ask for user verification (for example, to minimize disruption to the user interaction flow)
 
-
 ## Personal Access Token
 
 Use Personal Access Tokens (PAT) to authenticate requests sent to the 2FAuth REST API.

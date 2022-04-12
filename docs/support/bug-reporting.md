@@ -20,5 +20,6 @@ Check the existing issues before creating a new one, maybe your issue has alread
 ## Contact
 
 You can also report your issue:
+
 - By email - contact:icon-mention:2fauth.app
 - On Twitter - [@TwoFAuth](https://twitter.com/TwoFAuth)

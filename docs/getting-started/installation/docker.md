@@ -33,7 +33,7 @@ We assume your current directory is `/yourpath`.
     chown 1000:1000 2fauth
     chmod 700 2fauth
     ```
-    
+
     If you feel like using another ID, you can [build the image with build arguments](#build-the-image-with-build-arguments).
     !!!
 
