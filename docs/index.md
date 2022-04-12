@@ -3,7 +3,7 @@ label: Welcome
 ---
 # Welcome to 2FAuth Docs
 
-2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.
+> 2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.
 
 ![Screenshots of 2FAuth on mobile](/static/2fauth_screenshots.png)
 
