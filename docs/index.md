@@ -17,7 +17,7 @@ Moreover, as an open source and self-hosted application, it lets you regain cont
 
 ## Features
 
-#### :icon-ellipsis: Generate password
+#### :icon-ellipsis: Generate passwords
 
 The main purpose of 2FAuth: Serve you some fresh TOTP/HOTP security codes aka One-Time Passwords.
 
@@ -31,7 +31,11 @@ Scan and decode QR codes to add a 2FA account in no time. Actually it decodes an
 
 #### :icon-database: 2FA management
 
-Manage your 2FA accounts, reorganize them and classify them using Groups, edit & delete them. You can even manually add an account without scanning a QR code.
+Manage your 2FA accounts, organize and classify them using Groups, edit & delete them. You can even manually add an account without scanning a QR code.
+
+#### :icon-shield-check: Protect your data
+
+Privacy, self-hosting, WebAuthn authentication, OTP obfuscation, auto lock, 2FAuth do its best to protect your data.
 
 ## REST API
 
