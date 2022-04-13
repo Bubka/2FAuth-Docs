@@ -5,7 +5,7 @@ icon: package
 
 2FAuth is built on top of its own REST API (following OpenAPI 3.1 specification) which can be used to make any other app communicate with 2FAuth.
 
-The API provides endpoints to manage most of the 2FA resources:
+The API provides endpoints to manage most of the 2FAuth resources:
 
 Resource   | Description { class="compact" }
 ---    | ---
@@ -47,6 +47,9 @@ The revocation of a token is permanent and cannot be undone.
 
 ## API documentation
 
-All resources, paths and API parameters are detailed in this dedicated documentation:
+The API has its own dedicated documentation you can browse in a lightweight format below.  
+You may also use the fullscreen format which provides a more confortable layout and advanced features like advanced search, mocking and more:
 
-[!ref icon="book" text="2FAuth API documentation"](https://docs.2fauth.app/api/doc/)
+[!ref target="blank" icon="code-square" text="Fullscreen documentation"](/resources/rapidoc.html)
+
+[!embed](/resources/rapidoc-embeded.html)
