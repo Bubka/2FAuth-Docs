@@ -53,11 +53,11 @@ links: # A list of custom links to add to the top bar of the generated website.
 # -----------------------------------------------------------------------------
 
 footer:
-  copyright: "© All rights reserved." # A custom copyright statement.
+  copyright: "© Bubka – licensed under a [Creative Commons BY-SA 4.0 License](https://github.com/Bubka/2FAuth-Docs/blob/main/LICENSE)" # A custom copyright statement.
   links:               # A list of links to include in the footer.
                        # See also: links
-    - text: License    # The text to use for the link
-      link: https://github.com/Bubka/2FAuth-Docs/blob/main/LICENSE # Point to an internal file or external URL.
+    #- text: License    # The text to use for the link
+    #  link: https://github.com/Bubka/2FAuth-Docs/blob/main/LICENSE # Point to an internal file or external URL.
 
 # -----------------------------------------------------------------------------
 
