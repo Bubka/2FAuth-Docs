@@ -48,3 +48,9 @@ The [Docker installation guide](/getting-started/installation/docker) as well as
 #### css
 
 [!ref icon="package" target="blank" text="Wikiki/bulma-checkradio"](https://github.com/Wikiki/bulma-checkradio)
+
+### Docs generators
+
+[!ref icon="book" target="blank" text="Retype"](https://retype.com/)
+
+[!ref icon="book" target="blank" text="RapiDoc"](https://mrin9.github.io/RapiDoc/)
