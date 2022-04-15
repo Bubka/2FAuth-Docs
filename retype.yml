@@ -16,8 +16,8 @@ poweredByRetype: true # Set to false to remove the Powered by Retype branding.
 
 branding:
   title: 2FAuth                 # Your custom website title; keep it short.
-  logo: static/2fauth_light.svg          # Path to a logo file.
-  logoDark: static/2fauth_dark.svg # Path to a logo file to use in dark mode.
+  logo: static/2fauth_dark.svg          # Path to a logo file.
+  logoDark: static/2fauth_light.svg # Path to a logo file to use in dark mode.
   logoAlign: #right               # Align the logo to the right or the left.
   label: v3.0 # Optional label. To remove the label, remove this config.
   # colors:
@@ -92,7 +92,7 @@ exclude: # A list of files or folders to exclude from the build process.
 
 # -----------------------------------------------------------------------------
 
-favicon: #docs/static/favicon.png # Path to a custom favicon, or.
+favicon: static/2fauth_favicon.png # Path to a custom favicon, or.
                             # just put a favicon.ico in your project root.
 
 # -----------------------------------------------------------------------------
