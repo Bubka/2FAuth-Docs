@@ -9,7 +9,7 @@ label: Welcome
 
 ## Why 2FAuth
 
-Two-Factor Authentication is become very popular over the past years resulting in more and more situations where we face a security code request and an increase of the number of accounts protected by this technology. In other words it is now inevitable and critical.
+Two-Factor Authentication has become very popular in recent years resulting in more and more situations where we face a security code request and an increase in the number of accounts protected by this technology. In other words it is now inevitable and critical.
 
 The purpose of 2FAuth is to ease you perform your 2FA authentication steps whatever the device you are using, with a clean and always suitable interface. In front of your computer without your smartphone and dealing with a code request? No problemo, just open your 2FAuth instance in a browser tab et voila!
 
