@@ -16,8 +16,8 @@ poweredByRetype: true # Set to false to remove the Powered by Retype branding.
 
 branding:
   title: 2FAuth                 # Your custom website title; keep it short.
-  logo: static/2fauth_dark.svg          # Path to a logo file.
-  logoDark: static/2fauth_light.svg # Path to a logo file to use in dark mode.
+  logo: static/2fauth_dark.png          # Path to a logo file.
+  logoDark: static/2fauth_light.png # Path to a logo file to use in dark mode.
   logoAlign: #right               # Align the logo to the right or the left.
   label: v3.0 # Optional label. To remove the label, remove this config.
   # colors:
