@@ -93,7 +93,7 @@ Use Personal Access Tokens (PAT) to authenticate requests sent to the 2FAuth RES
 
 ## Authentication proxy
 
-You can configure 2FAuth to let a HTTP proxy handle authentication. In this case 2FAuth will consider you logged in as long as you are authenticated at proxy level. This is particulary usefull if you want to deploy 2FAuth behind a service like <a href="https://sandstorm.io/" target="_blank">Sanstorm</a> or behind an Auth server like <a href="https://www.authelia.com/docs/" target="_blank">Authelia</a>.
+You can configure 2FAuth to let a HTTP proxy handle authentication. In this case 2FAuth will consider you logged in as long as you are authenticated at proxy level. This is particulary useful if you want to deploy 2FAuth behind a service like <a href="https://sandstorm.io/" target="_blank">Sandstorm</a> or behind an Auth server like <a href="https://www.authelia.com/docs/" target="_blank">Authelia</a>.
 
 2FAuth will check for a HTTP header, named `REMOTE_USER` by default, in every requests from the proxy. (see <a href="https://datatracker.ietf.org/doc/html/rfc3875#section-4.1.10" target="_blank">RFC3875</a>)
 
