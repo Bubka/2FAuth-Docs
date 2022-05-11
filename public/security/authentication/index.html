@@ -30,12 +30,12 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/2fauth_favicon.png" rel="icon" />
-    <link href="/resources/css/retype.css?v=2.1.705533532943" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=2.1.705566944029" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=2.1.705533532943" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=2.1.705566944029" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=2.1" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.1.705533532943" defer></script>
-    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=2.1.705533532943" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.1.705566944029" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=2.1.705566944029" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -416,7 +416,7 @@ Simply click the relevant <span class="no-link inline-flex items-center justify-
         <span>Authentication proxy</span>
     </h2>
 </doc-anchor-target>
-<p>You can configure 2FAuth to let a HTTP proxy handle authentication. In this case 2FAuth will consider you logged in as long as you are authenticated at proxy level. This is particulary usefull if you want to deploy 2FAuth behind a service like <a href="https://sandstorm.io/" target="_blank">Sanstorm</a> or behind an Auth server like <a href="https://www.authelia.com/docs/" target="_blank">Authelia</a>.</p>
+<p>You can configure 2FAuth to let a HTTP proxy handle authentication. In this case 2FAuth will consider you logged in as long as you are authenticated at proxy level. This is particulary useful if you want to deploy 2FAuth behind a service like <a href="https://sandstorm.io/" target="_blank">Sandstorm</a> or behind an Auth server like <a href="https://www.authelia.com/docs/" target="_blank">Authelia</a>.</p>
 <p>2FAuth will check for a HTTP header, named <code v-pre>REMOTE_USER</code> by default, in every requests from the proxy. (see <a href="https://datatracker.ietf.org/doc/html/rfc3875#section-4.1.10" target="_blank">RFC3875</a>)</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
