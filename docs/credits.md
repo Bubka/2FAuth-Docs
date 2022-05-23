@@ -7,6 +7,10 @@ order: -1000
 
 2FAuth is actively developed by [Bubka](https://github.com/Bubka).
 
+[--![](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/bubka)
+
+<div style="clear: both;"></div>
+
 The [Docker installation guide](/getting-started/installation/docker) as well as the Docker stuff are a contribution of [Quentin McGow](https://github.com/qdm12).
 
 ## Tools
