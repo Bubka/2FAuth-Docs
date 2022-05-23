@@ -30,12 +30,12 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/2fauth_favicon.png" rel="icon" />
-    <link href="/resources/css/retype.css?v=2.1.705566944029" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=2.1.706613864712" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=2.1.705566944029" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=2.1.706613864712" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=2.1" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.1.705566944029" defer></script>
-    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=2.1.705566944029" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.1.706613864712" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=2.1.706613864712" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -56,7 +56,7 @@
                                 <img class="max-h-10 hidden dark:inline-block" src="/static/2fauth_light.png">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">2FAuth</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v3.0</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v3.1</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -262,9 +262,42 @@
 </span> and <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
     <span>arm/v7</span>
 </span></li>
-<li>Stores data in an Sqlite database file</li>
+<li>Stores data in a Sqlite database file</li>
 <li>Runs without root as user with id <code v-pre>1000</code> and group id <code v-pre>1000</code></li>
 </ul>
+<doc-anchor-target id="tags">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tags">#</doc-anchor-trigger>
+        <span>Tags</span>
+    </h2>
+</doc-anchor-target>
+<p>Several Docker tags are available to let you choose the version you want to run:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th>Tags</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>latest</code></td>
+<td>The current state of the master branch.<br />Considered as stable. May include some fixes/changes not yet officially released.</td>
+</tr>
+<tr>
+<td>Release tags: <code v-pre>3.0.2</code> <code v-pre>3.1.0</code> ... <code v-pre>x.y.z</code></td>
+<td>The version at a corresponding <a href="https://github.com/Bubka/2FAuth/releases">GitHub release</a>.<br />Considered as stable, and frozen.</td>
+</tr>
+<tr>
+<td><code v-pre>dev</code></td>
+<td>The current state of the dev branch<br />May be unstable or even broken.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Simply append the tag name to the docker image name in your command or script, separated by a semicolumn, to specify witch tag to use. e.g <code v-pre>2fauth/2fauth:3.0.2</code>, or <code v-pre>2fauth/2fauth:dev</code>.</p>
+<p>If no tag is specified Docker will default to <code v-pre>latest</code>.</p>
 <doc-anchor-target id="setup">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#setup">#</doc-anchor-trigger>
@@ -303,7 +336,8 @@ chmod 700 2fauth</code></pre>
 <li><p>Run the container interactively</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker run -it --rm -p 8000:8000/tcp \
--v /yourpath/2fauth:/2fauth 2fauth/2fauth</code></pre>
+-v /yourpath/2fauth:/2fauth 2fauth/2fauth
+-e AUTHENTICATION_GUARD=web-guard</code></pre>
 </doc-codeblock></div>
 </li>
 <li><p>Access it in your browser</p>
@@ -379,7 +413,7 @@ chmod 700 /yourpath/2fauth/database.sqlite</code></pre>
 </doc-anchor-target>
 <p>There are the following build arguments you can use to customize the image using <code v-pre>--build-arg key=value</code>:</p>
 <div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
+<table class="compact">
 <thead>
 <tr>
 <th>Build argument</th>
@@ -436,6 +470,59 @@ chmod 700 /yourpath/2fauth/database.sqlite</code></pre>
 </tbody>
 </table>
 </div>
+<doc-anchor-target id="mail-settings">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mail-settings">#</doc-anchor-trigger>
+        <span>Mail settings</span>
+    </h4>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th>Build argument</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>MAIL_HOST</code></td>
+<td><code v-pre>smtp.mailtrap.io</code></td>
+<td>The SMTP hostname</td>
+</tr>
+<tr>
+<td><code v-pre>MAIL_PORT</code></td>
+<td>2525</td>
+<td>The coresponding SMTP port</td>
+</tr>
+<tr>
+<td><code v-pre>MAIL_FROM</code></td>
+<td><code v-pre>changeme@example.com</code></td>
+<td>The sender adress</td>
+</tr>
+<tr>
+<td><code v-pre>MAIL_USERNAME</code></td>
+<td>null</td>
+<td>The SMTP username</td>
+</tr>
+<tr>
+<td><code v-pre>MAIL_PASSWORD</code></td>
+<td>null</td>
+<td>The SMTP password</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">...
+-e MAIL_HOST=smtp.example.com
+-e MAIL_PORT=587
+-e MAIL_FROM=2fauth@example.com
+-e MAIL_USERNAME=2fauth@example.com
+-e MAIL_PASSWORD=password1234</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="implementation-details">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#implementation-details">#</doc-anchor-trigger>
@@ -443,9 +530,9 @@ chmod 700 /yourpath/2fauth/database.sqlite</code></pre>
     </h2>
 </doc-anchor-target>
 <ul>
-<li>The final Docker image is based on <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+<li>The final Docker image is based on <a href="https://hub.docker.com/_/alpine" class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 border border-blue-100 hover:border-blue-300 dark:hover:bg-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
     <span>alpine:3.14</span>
-</span> with minimal packages installed</li>
+</a> with minimal packages installed</li>
 <li>The container runs <a href="https://github.com/ochinchina/supervisord"><code v-pre>supervisord</code></a> to handle both an Nginx server and a PHP-FPM server together</li>
 <li>The <code v-pre>/srv</code> directory holds the repository data and PHP code.</li>
 <li>The <code v-pre>/2fauth</code> directory is targeted for the container end users.</li>
@@ -500,6 +587,12 @@ chmod 700 /yourpath/2fauth/database.sqlite</code></pre>
                                                     </g>
                                                 </svg>
                                                 <span>TwoFAuth</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="inline-flex items-center mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://ko-fi.com/bubka">
+                                                <img class="mb-px mr-1" width="18" src="/static/icon_kofi.png" />
+                                                <span>Like 2FAuth? Leave a tip</span>
                                             </a>
                                         </li>
                                     </ul>
