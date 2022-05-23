@@ -13,8 +13,22 @@ An official Docker image is available to run 2FAuth in a single Docker container
 
 - [![](https://img.shields.io/docker/image-size/2fauth/2fauth/latest)](https://hub.docker.com/r/2fauth/2fauth/tags)
 - Compatible with: [!badge amd64], [!badge 386], [!badge arm64], [!badge arm/v6] and [!badge arm/v7]
-- Stores data in an Sqlite database file
+- Stores data in a Sqlite database file
 - Runs without root as user with id `1000` and group id `1000`
+
+## Tags
+
+Several Docker tags are available to let you choose the version you want to run:
+
+| Tags | Description | { class="compact" }
+| --- | --- | --- |
+| `latest` | The current state of the master branch.<br />Considered as stable. May include some fixes/changes not yet officially released. |
+| Release tags: `3.0.2` `3.1.0` ... `x.y.z` | The version at a corresponding [GitHub release](https://github.com/Bubka/2FAuth/releases).<br />Considered as stable, and frozen. |
+| `dev` | The current state of the dev branch<br />May be unstable or even broken.
+
+Simply append the tag name to the docker image name in your command or script, separated by a semicolumn, to specify witch tag to use. e.g `2fauth/2fauth:3.0.2`, or `2fauth/2fauth:dev`.
+
+If no tag is specified Docker will default to `latest`.
 
 ## Setup
 
@@ -94,7 +108,7 @@ docker build -t 2fauth/2fauth https://github.com/Bubka/2FAuth.git#fba9e29bd4e3bb
 
 There are the following build arguments you can use to customize the image using `--build-arg key=value`:
 
-| Build argument | Default | Description |
+| Build argument | Default | Description | { class="compact" }
 | --- | --- | --- |
 | `UID` | 1000 | The UID of the user to run the container as |
 | `GID` | 1000 | The GID of the user to run the container as |
@@ -106,10 +120,9 @@ There are the following build arguments you can use to customize the image using
 | `CREATED` | `an unknown date` | The date of the image build time |
 | `COMMIT` | `unknown` | The commit hash of the Git commit used |
 
+#### Mail settings
 
-#### Mail settings ####
-
-| Build argument | Default | Description |
+| Build argument | Default | Description |  { class="compact" }
 | --- | --- | --- |
 | `MAIL_HOST` | `smtp.mailtrap.io` | The SMTP hostname |
 | `MAIL_PORT` | 2525 | The coresponding SMTP port |
@@ -119,7 +132,7 @@ There are the following build arguments you can use to customize the image using
 
 Example:
 
-```
+```sh
 ...
 -e MAIL_HOST=smtp.example.com
 -e MAIL_PORT=587
@@ -130,7 +143,7 @@ Example:
 
 ## Implementation details
 
-- The final Docker image is based on [!badge alpine:3.14] with minimal packages installed
+- The final Docker image is based on [!badge alpine:3.14](https://hub.docker.com/_/alpine) with minimal packages installed
 - The container runs [`supervisord`](https://github.com/ochinchina/supervisord) to handle both an Nginx server and a PHP-FPM server together
 - The `/srv` directory holds the repository data and PHP code.
 - The `/2fauth` directory is targeted for the container end users.
