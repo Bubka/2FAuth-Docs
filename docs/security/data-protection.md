@@ -3,7 +3,7 @@ order: 90
 ---
 # Data protection
 
-2FAuth provides several security mechanisms to protect your 2FA data as best as possible.
+2FAuth provides several security mechanisms to protect your sensitive 2FA data.
 
 ## DB encryption
 
@@ -12,7 +12,7 @@ Sensitive data stored in the database (2FA secret & otpauth URI) can be encrypte
 :icon-arrow-right: Check the [!badge size="l" icon="tasklist" text="Protect sensible data"] option in the 2FAuth's _Settings > Options_ section to enable encryption.
 
 !!!warning Warning
-It is strongly recommanded to backup the `APP_KEY` value defined in your .env file (or the whole file) when encryption is enabled.
+It is strongly recommended to backup the `APP_KEY` value defined in your .env file (or the whole file) when encryption is enabled.
 
 __There is no way to generate One-Time Password if you lose this key.__  
 __There is no workaround in case of key loss.__
@@ -20,7 +20,7 @@ __There is no workaround in case of key loss.__
 
 ## Auto lock
 
-2FAuth can automatically log you out to keep your data always protected. The goal is to avoid long life session that someone could reuse, for example from a public computer you forgot to clean or from your own stolen smartphone.
+2FAuth can automatically log you out to keep your data always protected. The goal is to avoid a long life session that someone could reuse, for example from a public computer you forgot to clean or from your own stolen smartphone.
 
 Supported trigger | Behavior { class="compact" }
 --- | ---
@@ -38,7 +38,7 @@ Without obfuscation | With obfuscation
 --- | ---
 377 609 | ●●● ●●●
 
-This protects against attacks like the _man-in-the-middle_ attack where a third party intercepts your password by watching over your shoulder as you generate a fresh password.
+This protects against attacks like a _shoulder-surfing_ attack, where a third party intercepts your password by watching over your shoulder as you generate a fresh password.
 
 Of course, this is only suitable if you are able to use the copy/paste feature to provide the password to the destination service.
 
