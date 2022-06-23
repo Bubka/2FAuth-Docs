@@ -1,7 +1,7 @@
 ---
 order: 100
 ---
-# Bare-metal
+# Self-hosted server
 
 You can deploy 2FAuth on your own web server, whether on your local computer or a web host.
 The following guide describes how to proceed and gives basic configurations for both NGINX and Apache2 web servers.  
