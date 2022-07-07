@@ -3,14 +3,14 @@ order: 100
 ---
 # Self-hosted server
 
-You can deploy 2FAuth on your own web server, virtual or not, whether on your local computer or a web host.
-The following guide describes how to proceed and give basic configurations for both NGINX and Apache2 web servers.  
+You can deploy 2FAuth on your own web server, whether on your local computer or a web host.
+The following guide describes how to proceed and gives basic configurations for both NGINX and Apache2 web servers.  
 
 ## Requirements
 
 ### HTTP server
 
-__Apache__ and __NGINX__ are the most popular web servers. If you rent a server or a web hosting you probably already have one of them installed. If you plan to use your own machine and need help to install and configure it please consider searching the Web, there is many tutorials to guide you through.
+__Apache__ and __NGINX__ are the most popular web servers. If you rent a server or web hosting, you probably already have one of them installed. If you plan to use your own machine and need help installing and configuring a web server, please consider searching the Web, as there are many tutorials to guide you through.
 
 - <a href="https://www.google.com/search?q=install+apache2" target="_blank">Google search for `install apache2`</a>
 - <a href="https://www.google.com/search?q=install+nginx" target="_blank">Google search for `install nginx`</a>
@@ -28,7 +28,7 @@ __Apache__ and __NGINX__ are the most popular web servers. If you rent a server 
 - Tokenizer PHP Extension
 - XML PHP Extension
 
-Depending on the choosen database (see below), don't forget to install the corresponding PHP extension (i.e `php7.3-sqlite3` or `php7.3-mysql` )
+Depending on the chosen database (see below), don't forget to install the corresponding PHP extension (i.e `php7.3-sqlite3` or `php7.3-mysql`)
 
 ### Database
 
@@ -41,16 +41,16 @@ You need a database to run 2FAuth. Supported databases are the ones supported by
 - SQL Server [!badge 2017+]
 
 !!! Recommendation
-2FAuth is a very light application with minimal needs and no concurrent connection so __SQLite__ is probably the best choice.
+2FAuth is a very light application with minimal needs and no concurrent connections, so __SQLite__ is probably the best choice.
 !!!
 
 ### Composer
 
-You need __Composer__ to install all PHP dependencies of 2FAuth. As the installation process of Composer may change depending on your operating system, please follow the instructions provided on the offical website:
+You need __Composer__ to install all PHP dependencies of 2FAuth. As the installation process of Composer may change depending on your operating system, please follow the instructions provided on the official website:
 
 [!ref icon="package-dependents" target="blank" text="Install Composer"](https://getcomposer.org/doc/00-intro.md)
 
-You can test your installation by running `php composer.phar -v` in a terminal (or just `composer -v` if composer has been install in a directory that is part of your system PATH)
+You can test your installation by running `php composer.phar -v` in a terminal (or just `composer -v` if composer has been installed in a directory that is part of your system PATH)
 
 ## Server configuration
 
@@ -159,7 +159,7 @@ sudo systemctl restart apache2
 
 ### Get the source code
 
-As a reminder, the installation path for this guide is `/var/www/2fauth`. The given commands should be modified if you have to use another path.
+As a reminder, the installation path for this guide is `/var/www/2fauth`. The given commands should be modified if you are using another path.
 
 +++ Using cli
 
@@ -269,7 +269,7 @@ Reference
 
 +++
 
-If you are not comfortable with the command line you may use a db management tool like _Adminer_ to ease this step.
+If you are not comfortable with the command line, you may use a db management tool like _Adminer_ to ease this step.
 
 [!ref icon="package-dependents" target="blank" text="Get Adminer"](https://www.adminer.org/)
 
@@ -288,13 +288,13 @@ You won't have to set/change all, most of them have a default value that will pr
 
 +++ When using SQLite
 
-Set the path to your sqlite database file:
+Set the path to your SQLite database file:
 
 ```env
 DB_DATABASE="/var/www/2fauth/database/database.sqlite"
 ```
 
-+++ When using MysQL / MariaDB
++++ When using MySQL / MariaDB
 
 Uncomment the dedicated lines (and comment the SQLite ones) and replace values with yours:
 
@@ -325,7 +325,7 @@ DB_PASSWORD=sqlUserPassword
 #### Email
 
 Email configuration depends on your email provider. You should refer to its documentation to find the relevant values.  
-As an example here is the configuration for an OVH hosting:
+As an example, here is the configuration for an OVH hosting:
 
 ```env
 MAIL_DRIVER=smtp

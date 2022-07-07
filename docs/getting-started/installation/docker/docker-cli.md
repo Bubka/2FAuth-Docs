@@ -1,9 +1,10 @@
 ---
 order: 90
 ---
-# Docker
+# Docker CLI
 
 An official Docker image is available to run 2FAuth in a single Docker container.
+These are the __Docker CLI__ Setup instructions, a <a href="https://github.com/Bubka/2FAuth/blob/master/docker/docker-compose.yml" target="_blank">docker-compose.yml</a> file is also available.
 
 [--![](https://dockeri.co/image/2fauth/2fauth)](https://hub.docker.com/r/2fauth/2fauth)
 
@@ -18,19 +19,19 @@ An official Docker image is available to run 2FAuth in a single Docker container
 
 ## Tags
 
-Several Docker tags are available to let you choose the version you want to run:
+Several Docker tags are available to let you choose which version you want to run:
 
 | Tags | Description | { class="compact" }
 | --- | --- | --- |
-| `latest` | The current state of the master branch.<br />Considered as stable. May include some fixes/changes not yet officially released. |
-| Release tags: `3.0.2` `3.1.0` ... `x.y.z` | The version at a corresponding [GitHub release](https://github.com/Bubka/2FAuth/releases).<br />Considered as stable, and frozen. |
+| `latest` | The current state of the master branch.<br />Considered stable. May include some fixes/changes not yet officially released. |
+| Release tags: `3.0.2` `3.1.0` ... `x.y.z` | The version at a corresponding [GitHub release](https://github.com/Bubka/2FAuth/releases).<br />Considered stable, and frozen. |
 | `dev` | The current state of the dev branch<br />May be unstable or even broken.
 
-Simply append the tag name to the docker image name in your command or script, separated by a semicolumn, to specify witch tag to use. e.g `2fauth/2fauth:3.0.2`, or `2fauth/2fauth:dev`.
+Simply append the tag name to the docker image name in your command or script, separated by a colon, to specify which tag to use. e.g `2fauth/2fauth:3.0.2`, or `2fauth/2fauth:dev`.
 
-If no tag is specified Docker will default to `latest`.
+If no tag is specified, Docker will default to `latest`.
 
-## Setup
+## Docker CLI Setup 
 
 We assume your current directory is `/yourpath`.
 
@@ -66,8 +67,7 @@ We assume your current directory is `/yourpath`.
 You can stop it with `CTRL+C`.
 
 - You can also run it in the background by replacing `-it --rm` with `-d`.
-- You can set environment variables available (see the <a href="https://github.com/Bubka/2FAuth/blob/master/.env.example" target="_blank">.env.example</a>) with `-e`, for example `-e APP_NAME=2FAuth`.
-- You can also use the <a href="https://github.com/Bubka/2FAuth/blob/master/docker/docker-compose.yml" target="_blank">docker-compose.yml</a> with `docker-compose` and modify it as you wish.
+- You can set available environment variables (see the <a href="https://github.com/Bubka/2FAuth/blob/master/.env.example" target="_blank">.env.example</a>) with `-e`, for example `-e APP_NAME=2FAuth`.
 
 ### Use an existing SQLite file
 
@@ -78,7 +78,7 @@ chown 1000:1000 /yourpath/2fauth/database.sqlite
 chmod 700 /yourpath/2fauth/database.sqlite
 ```
 
-The container will automagically pick it up.
+The container will automatically pick it up.
 
 ## Build the image
 
@@ -106,7 +106,7 @@ docker build -t 2fauth/2fauth https://github.com/Bubka/2FAuth.git#fba9e29bd4e3bb
 
 ### Build the image with build arguments
 
-There are the following build arguments you can use to customize the image using `--build-arg key=value`:
+Use the following build arguments to customize the image with `--build-arg key=value`:
 
 | Build argument | Default | Description | { class="compact" }
 | --- | --- | --- |
@@ -125,8 +125,8 @@ There are the following build arguments you can use to customize the image using
 | Build argument | Default | Description |  { class="compact" }
 | --- | --- | --- |
 | `MAIL_HOST` | `smtp.mailtrap.io` | The SMTP hostname |
-| `MAIL_PORT` | 2525 | The coresponding SMTP port |
-| `MAIL_FROM` | `changeme@example.com` | The sender adress |
+| `MAIL_PORT` | 2525 | The corresponding SMTP port |
+| `MAIL_FROM` | `changeme@example.com` | The sender address |
 | `MAIL_USERNAME` | null | The SMTP username |
 | `MAIL_PASSWORD` | null | The SMTP password |
 
@@ -147,4 +147,4 @@ Example:
 - The container runs [`supervisord`](https://github.com/ochinchina/supervisord) to handle both an Nginx server and a PHP-FPM server together
 - The `/srv` directory holds the repository data and PHP code.
 - The `/2fauth` directory is targeted for the container end users.
-- By default the container logs the Nginx logs and the PHP-FPM logs. The application logs (if any) can be found in `/2fauth/storage/logs`.
+- By default, the container logs the Nginx logs and the PHP-FPM logs. The application logs (if any) can be found in `/2fauth/storage/logs`.

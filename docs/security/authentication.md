@@ -4,27 +4,27 @@ order: 100
 
 # Authentication
 
-2FAuth has been imagined for personal use only, it is single user designed.  
-You have to create a user account to use the app and you cannot create more than one user account. None of the app's features can be used unless you have been authenticated with one of the following methods.
+2FAuth has been designed for personal use only, it is single user oriented.  
+You have to create a user account to use the app, and more than one user account cannot be created. None of the app's features can be used unless you have been authenticated with one of the following methods.
 
 ## Built-in
 
-Authentication in done by submitting your credentials, an email and a password, to the 2FAuth login form. Nothing special here, it is a very common and well-known method.
+Authentication is done by submitting your credentials, an email and a password, to the 2FAuth login form. Nothing special here, it is a very common and well-known method.
 
 This is the default authentication method.
 
 ## WebAuthn
 
-2FAuth supports the W3C _Web Authentication_ API aka WebAuthn (<a href="https://webauthn.guide/" target="_blank">learn more</a>). This means you can register a security device like a Yubikey, a Titan Security Key or a facial recognition system like Apple FaceId and use it to log into 2FAuth.
+2FAuth supports the W3C _Web Authentication_ API aka WebAuthn (<a href="https://webauthn.guide/" target="_blank">learn more</a>). This means you can register a security device like a Yubikey, a Titan Security Key, or a facial recognition system like Apple FaceId and use it to log into 2FAuth.
 
 ![image by Arun (dribbble.com/nullpointone)](/static/webauthn_login.gif)
 
-This method is considered more secured as it proves you are in fact you because you have to physically own the security device.
+This method is considered more secure, as it proves you are in fact you because you have to physically own the security device.
 
 WebAuthn is available in 2FAuth as a complement or a replacement to the built-in login/password method. Consider using only WebAuthn to provide the highest protection to your 2FAuth instance.
 
 !!!
-The WebAuthn flow does not use login & password but the creation of a user account with an email and a password remains mandatory.
+The WebAuthn flow does not use login & password, but the creation of a user account with an email and a password remains mandatory.
 !!!
 
 ### Registering a security device
@@ -51,17 +51,17 @@ The revocation of a device is permanent and cannot be undone.
 
 ### I lost my device
 
-Don't worry, there is always a solution, depending on how you have configured the 2FAuth's WebAuthn options.  
+Don't worry, there is always a solution, depending on how you have configured 2FAuth's WebAuthn options.  
 
 +++ WebAuthn is the unique login method
 
-If you have registered another device and still own it just use this device to log in. Otherwise you can recover your account by registering a new security device.
+If you have registered another device and still own it, just use this device to log in. Otherwise, you can recover your account by registering a new security device.
 
 :icon-arrow-right: Click the __Recover your account__ link of the 2FAuth's login form, this will send a link to your registered email address. Follow this link, you will be able to register a new device and revoke all existing ones.
 
 +++ WebAuthn is NOT the unique login method
 
-Assuming you haven't lost your password too, switch the 2FAuth login form using the link __Sign in using login & password__ and log in using your email address and password, it's that simple!
+Assuming you haven't lost your password too, switch the 2FAuth login form using the link __Sign in using login & password__ and log in using your email address and password. It's that simple!
 
 !!!warning
 Don't forget to revoke the lost device in the _Settings > Webauthn_ section.
@@ -71,7 +71,7 @@ Don't forget to revoke the lost device in the _Settings > Webauthn_ section.
 
 ### User verification
 
-Most authenticators and smartphones will ask the user to actively verify themselves for log in. For example, through a touch plus pin code, password entry, or biometric recognition (e.g., presenting a fingerprint). The intent is to distinguish one user from any other.
+Most authenticators and smartphones will ask the user to actively verify themselves to log in. For example, through a touch plus pin code, password entry, or biometric recognition (e.g., presenting a fingerprint). The intent is to distinguish one user from any other.
 
 You can configure how the user verification step behave during the WebAuthn login flow with the `WEBAUTHN_USER_VERIFICATION` env var:
 
@@ -93,9 +93,9 @@ Use Personal Access Tokens (PAT) to authenticate requests sent to the 2FAuth RES
 
 ## Authentication proxy
 
-You can configure 2FAuth to let a HTTP proxy handle authentication. In this case 2FAuth will consider you logged in as long as you are authenticated at proxy level. This is particulary useful if you want to deploy 2FAuth behind a service like <a href="https://sandstorm.io/" target="_blank">Sandstorm</a> or behind an Auth server like <a href="https://www.authelia.com/docs/" target="_blank">Authelia</a>.
+You can configure 2FAuth to let an HTTP proxy handle authentication. In this case, 2FAuth will consider you logged in as long as you are authenticated at proxy level. This is particularly useful if you want to deploy 2FAuth behind a service like <a href="https://sandstorm.io/" target="_blank">Sandstorm</a> or behind an Auth server like <a href="https://www.authelia.com/docs/" target="_blank">Authelia</a>.
 
-2FAuth will check for a HTTP header, named `REMOTE_USER` by default, in every requests from the proxy. (see <a href="https://datatracker.ietf.org/doc/html/rfc3875#section-4.1.10" target="_blank">RFC3875</a>)
+2FAuth will check for an HTTP header, named `REMOTE_USER` by default, in every request from the proxy. (see <a href="https://datatracker.ietf.org/doc/html/rfc3875#section-4.1.10" target="_blank">RFC3875</a>)
 
 !!!warning
 2FAuth only check for the header presence, nor its validity nor its content, so be sure your instance cannot be reached otherwise than through your auth proxy.
@@ -110,7 +110,7 @@ AUTHENTICATION_GUARD=reverse-proxy-guard
 ```
 
 !!!
-WebAuthn and Personnal Access Token are not supported when using the `reverse-proxy-guard`
+WebAuthn and Personal Access Token are not supported when using the `reverse-proxy-guard`
 !!!
 
 ### Customize the header name
@@ -119,8 +119,8 @@ You can customize the header name by setting the `AUTH_PROXY_HEADER_FOR_USER` en
 
 ### Additional header
 
-You can configure 2FAuth to check for an additional header that contain the authenticated user email address. This header may or may not exists depending on the auth proxy configuration. The environment variable to set for that is `AUTH_PROXY_HEADER_FOR_EMAIL`.
+You can configure 2FAuth to check for an additional header that contain the authenticated user email address. This header may or may not exist depending on the auth proxy configuration. The environment variable to set for that is `AUTH_PROXY_HEADER_FOR_EMAIL`.
 
 !!!
-For now 2FAuth does not use this information but a future feature could use it to send you emails.
+For now, 2FAuth does not use this information, but a future feature could use it to send you emails.
 !!!

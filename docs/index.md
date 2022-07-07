@@ -9,11 +9,11 @@ label: Welcome
 
 ## Why 2FAuth
 
-Two-Factor Authentication has become very popular in recent years resulting in more and more situations where we face a security code request and an increase in the number of accounts protected by this technology. In other words it is now inevitable and critical.
+Two-Factor Authentication has become very popular in recent years, resulting in more and more situations where we face a security code request and an increase in the number of accounts protected by this technology. In other words, 2FA is now inevitable and critical.
 
-The purpose of 2FAuth is to ease you perform your 2FA authentication steps whatever the device you are using, with a clean and always suitable interface. In front of your computer without your smartphone and dealing with a code request? No problemo, just open your 2FAuth instance in a browser tab et voila!
+2FAuth's purpose is to simplify how you use and manage your 2FA with a clean and suitable interface, no matter what device you use. In front of your computer without your smartphone and dealing with a code request? No problemo, just open your 2FAuth instance in a browser tab and voilà!
 
-Moreover, as an open source and self-hosted application, it lets you regain control over your personal security data, whether about their privacy or the ability to backup them (did you already loose a smartphone with all your 2FA accounts in and only in Google Auth? I did... it really sucks)
+Moreover, as an open source and self-hosted application, it lets you regain control over your personal security data, giving you privacy and the ability to back it up (Have you lost a smartphone with all your 2FA accounts inside Google Auth? I did... it really sucked)
 
 ## Features
 
@@ -23,11 +23,11 @@ The main purpose of 2FAuth: Serve you some fresh TOTP/HOTP security codes aka On
 
 #### :icon-device-desktop: Work anywhere
 
-It's a Web App, it just works, whatever is your device. You only need one (not even yours) and an Internet connection.
+It's a Web App, it just works, whatever device you're on. You only need one device (not even yours) and an Internet connection.
 
 #### :icon-apps: QR codes scan
 
-Scan and decode QR codes to add a 2FA account in no time. Actually it decodes any QR code, even non 2FA.
+Scan and decode QR codes to add a 2FA account in no time. Actually, it decodes any QR code, even non 2FA.
 
 #### :icon-database: 2FA management
 
@@ -35,11 +35,11 @@ Manage your 2FA accounts, organize and classify them using Groups, edit & delete
 
 #### :icon-shield-check: Protect your data
 
-Privacy, self-hosting, WebAuthn authentication, OTP obfuscation, auto lock, 2FAuth do its best to protect your data.
+2FAuth protects your data with Privacy, Self-hosting, WebAuthn authentication, OTP obfuscation, and Auto lock.
 
 ## REST API
 
-2FAuth provides a REST API which lets you perform most of its functionalities from any external application. Have a look to the [API documentation](/api/) to find out how to use it.
+2FAuth provides a REST API which lets you perform most of its functionalities from any external application. Have a look at the [API documentation](/api/) to find out how to use it.
 
 ## Demo website
 
