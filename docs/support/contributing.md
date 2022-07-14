@@ -14,7 +14,7 @@ Feel free to request some enhancements or new features. Not every request will b
 
 Also please have a look to the 2FAuth development project, maybe your idea is already there.
 
-[!ref icon="project" target="blank" text="2FAuth dev project on GitHub"](https://github.com/Bubka/2FAuth/projects/2)
+[!ref icon="project" target="blank" text="2FAuth Backlog project on GitHub"](https://github.com/users/Bubka/projects/1)
 
 [!ref icon="comment-discussion" target="blank" text="2FAuth discussion on GitHub"](https://github.com/Bubka/2FAuth/discussions)
 
