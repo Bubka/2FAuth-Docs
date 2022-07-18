@@ -31,7 +31,7 @@ Simply append the tag name to the docker image name in your command or script, s
 
 If no tag is specified, Docker will default to `latest`.
 
-## Docker CLI Setup 
+## Docker CLI Setup
 
 We assume your current directory is `/yourpath`.
 
