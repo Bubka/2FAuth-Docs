@@ -93,7 +93,7 @@ Now that you got your steam secret, simply create a new account in 2FAuth using 
 - Click the [!button corners="pill" size="xs" text="Use the advanced form"] button
 - Fill the form:
   - Fill in the __Account__ field
-  - Click the [!button corners="rounded" size="xs" variant="dark" text="STEAM"] button
+  - Click the [!button corners="round" size="xs" variant="dark" text="STEAM"] button
   - Fill in the __Secret__ field with your Steam secret
 - Click the [!button corners="pill" size="xs" text="Create"] button to save the account
 
