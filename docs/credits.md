@@ -11,7 +11,7 @@ order: -1000
 
 <div style="clear: both;"></div>
 
-The [Docker installation guide](/getting-started/installation/docker) as well as the Docker stuff are a contribution of [Quentin McGow](https://github.com/qdm12).
+The [Docker installation guide](/getting-started/installation/docker/docker-cli/) as well as the Docker stuff are a contribution of [Quentin McGow](https://github.com/qdm12).
 
 ## Tools
 
