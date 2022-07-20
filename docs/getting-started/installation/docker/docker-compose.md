@@ -1,9 +1,9 @@
-# Docker Compose
+# Docker-Compose
 
-You can run 2FAuth with [Docker Compose](https://docs.docker.com/compose/) using the following command and `docker-compose.yml` file:
+You can run 2FAuth with [Docker-Compose](https://docs.docker.com/compose/) using the following command and `docker-compose.yml` file:
 
 ```bash
-docker compose up
+docker-compose up
 ```
 
 :::code source="./../../../static/docker-compose.yml" title="`docker-compose.yml` (Environment variables are optional)" language="yaml":::
