@@ -1,18 +1,24 @@
-.not-to-big img {
+.mobile-screen img {
     height: auto;
     max-width: 40%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.desktop-screen img {
+    height: auto;
+    max-width: 75%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 @media only screen and (max-width: 1024px) {
-    .not-to-big img {
+    .mobile-screen img {
         max-width: 75%;
 
     }
 }
 
 /* @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    .not-to-big img {
+    .mobile-screen img {
         max-width:75%;
     }
 } */
