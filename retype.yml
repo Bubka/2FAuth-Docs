@@ -19,7 +19,7 @@ branding:
   logo: static/2fauth_dark.png          # Path to a logo file.
   logoDark: static/2fauth_light.png # Path to a logo file to use in dark mode.
   logoAlign: #right               # Align the logo to the right or the left.
-  label: v3.2 # Optional label. To remove the label, remove this config.
+  label: v3.3 # Optional label. To remove the label, remove this config.
   # colors:
   #   label:                  # Label colors
   #     text: "#ffffff"       # Custom color for the label text.
