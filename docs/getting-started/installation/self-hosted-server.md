@@ -17,7 +17,7 @@ __Apache__ and __NGINX__ are the most popular web servers. If you rent a server 
 
 ### PHP
 
-- PHP >= [!badge 7.4]
+- PHP >= [!badge 8.0]
 - BCMath PHP Extension
 - Ctype PHP Extension
 - Fileinfo PHP Extension
@@ -28,7 +28,7 @@ __Apache__ and __NGINX__ are the most popular web servers. If you rent a server 
 - Tokenizer PHP Extension
 - XML PHP Extension
 
-Depending on the chosen database (see below), don't forget to install the corresponding PHP extension (i.e `php7.3-sqlite3` or `php7.3-mysql`)
+Depending on the chosen database (see below), don't forget to install the corresponding PHP extension (i.e `php8.0-sqlite3` or `php8.0-mysql`)
 
 ### Database
 
@@ -89,7 +89,7 @@ http {
       error_page 404 /index.php;
 
       location ~ \.php$ {
-          fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+          fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;
           fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
           include fastcgi_params;
       }
