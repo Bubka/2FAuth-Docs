@@ -22,3 +22,12 @@
         max-width:75%;
     }
 } */
+
+.has-vertical-button button {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    vertical-align: bottom;
+}
+.has-vertical-button button span {
+    padding-top: .5rem;
+}
