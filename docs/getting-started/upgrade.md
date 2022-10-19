@@ -14,7 +14,7 @@ Do not change the `/var/www/2fauth/storage` directory nor your `/var/www/2fauth/
 Then run the following commands:
 
 ```sh
-php composer.phar update
+php composer.phar install
 php artisan cache:clear
 php artisan config:clear
 php artisan migrate
