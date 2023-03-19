@@ -14,7 +14,8 @@ one-time password | The One-Time Passwords (TOTP or HOTP) generated on demand
 groups | The groups used to organize 2FA accounts in 2FAuth
 qrcode | Two-dimensional barcode used to encode/share 2FA accounts
 icons | Images used to illustrate 2FA accounts in 2FAuth
-settings | The 2FAuth user settings, which can be extended with custom settings
+preferences | The user preferences
+settings | The 2FAuth administrator settings, which can be extended with custom settings
 
 ## Authentication
 
