@@ -103,7 +103,7 @@ You can configure 2FAuth to let an HTTP proxy handle authentication. In this cas
 
 ### Enable the proxy guard
 
-Set the `AUTHENTICATION_GUARD` environment variable to `reverse-proxy-guard`.  
+Set the `AUTHENTICATION_GUARD` environment variable to `reverse-proxy-guard` to enable the auth proxy authentication.  
 
 ```env In your .env file:
 AUTHENTICATION_GUARD=reverse-proxy-guard
@@ -113,14 +113,36 @@ AUTHENTICATION_GUARD=reverse-proxy-guard
 WebAuthn and Personal Access Token are not supported when using the `reverse-proxy-guard`
 !!!
 
+### Define the header value
+
+The `REMOTE_USER` header can take any value. For 2FAuth, its value is the username of the user account to consider authenticated.
+
+If you already have a user account in 2FAuth, set the `REMOTE_USER` header value (at proxy level) like the _name_ field of your account.
+
+If you do not have a user account yet, or if you want to be authenticated as a brand new user, set the header to a fresh value, 2FAuth will take care of creating the account for you.
+
 ### Customize the header name
 
 You can customize the header name by setting the `AUTH_PROXY_HEADER_FOR_USER` environment variable to match a specific proxy configuration. For example, if the proxy header is `2FAUTH-User`, then set `AUTH_PROXY_HEADER_FOR_USER` to `HTTP_2FAUTH_USER`.
 
+```env In your .env file:
+# if the proxy header is '2FAUTH-User'
+AUTH_PROXY_HEADER_FOR_USER=HTTP_2FAUTH_USER
+```
+
 ### Additional header
 
-You can configure 2FAuth to check for an additional header that contain the authenticated user email address. This header may or may not exist depending on the auth proxy configuration. The environment variable to set for that is `AUTH_PROXY_HEADER_FOR_EMAIL`.
+You can configure 2FAuth to check for an additional header that contain the authenticated user email address. This header may or may not exist depending on the auth proxy configuration. Its name should be declare using the environment variable `AUTH_PROXY_HEADER_FOR_EMAIL`.
 
+```env In your .env file:
+# if the proxy pushes a header named REMOTE_USER_EMAIL
+AUTH_PROXY_HEADER_FOR_EMAIL=REMOTE_USER_EMAIL
+```
+
+As long as the header is sent by the proxy, its value will be used by 2FAuth as the user email address.
+
+!!!warning
+The email passed through the header must be a valid and unused email. If a 2FAuth user already uses this email, 2FAuth will ignore it.
 !!!
-For now, 2FAuth does not use this information, but a future feature could use it to send you emails.
-!!!
+
+If the header is no longer sent (or is ignored), the user's email will be fallbacked to a fake `@remote` email adress by 2FAuth.
