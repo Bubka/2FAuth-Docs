@@ -4,8 +4,7 @@ order: 100
 
 # Authentication
 
-2FAuth has been designed for personal use only, it is single user oriented.  
-You have to create a user account to use the app, and more than one user account cannot be created. None of the app's features can be used unless you have been authenticated with one of the following methods.
+You have to create a user account to use the app, none of the app's features can be used unless you have been authenticated with one of the methods described below.
 
 ## Built-in
 

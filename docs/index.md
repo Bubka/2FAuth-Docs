@@ -52,6 +52,14 @@ Manage your 2FA accounts, organize and classify them using Groups, edit & delete
 
 2FAuth protects your data with Privacy, Self-hosting, WebAuthn authentication, OTP obfuscation, and Auto lock.
 
+#### :icon-people: Multi-user [!badge corners="pill" text="New" variant="info"]
+
+Share your instance with your family, your friends. Everyone can have an account.
+
+#### :icon-arrow-switch: Import / Export [!badge corners="pill" text="New" variant="info"]
+
+Migrate from another 2FA app to 2FAuth or export your 2FA data in a breeze.
+
 ## REST API
 
 2FAuth provides a REST API which lets you perform most of its functionalities from any external application. Have a look at the [API documentation](/api/) to find out how to use it.
