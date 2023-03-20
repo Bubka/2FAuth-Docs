@@ -21,6 +21,9 @@ php artisan migrate
 php artisan passport:install
 php artisan config:cache
 php artisan route:cache
+
+chown -R www-data:www-data /var/www/2fauth
+chmod -R 775 /var/www/2fauth
 ```
 
 ## Docker
