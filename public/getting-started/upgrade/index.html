@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.732580068880">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.732613332396">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -31,12 +31,12 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/2fauth_favicon.png" rel="icon" />
-    <link href="../../resources/css/retype.css?v=2.4.0.732580068880" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.732613332396" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.732580068880" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.732613332396" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.732580068880" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.732580068880" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.732613332396" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.732613332396" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -305,7 +305,10 @@ php artisan config:clear
 php artisan migrate
 php artisan passport:install
 php artisan config:cache
-php artisan route:cache</code></pre>
+php artisan route:cache
+
+chown -R www-data:www-data /var/www/2fauth
+chmod -R 775 /var/www/2fauth</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="docker">
     <h2>
