@@ -11,6 +11,13 @@ Update the source code in `/var/www/2fauth` (see [Get the source code](/getting-
 Do not change the `/var/www/2fauth/storage` directory nor your `/var/www/2fauth/database/database.sqlite` file (when using SQLite)
 !!!
 
+Depending on how you update your files, you could have to set the permissions again:
+
+```sh
+chown -R www-data:www-data /var/www/2fauth
+chmod -R 775 /var/www/2fauth
+```
+
 Then run the following commands:
 
 ```sh
@@ -21,9 +28,6 @@ php artisan migrate
 php artisan passport:install
 php artisan config:cache
 php artisan route:cache
-
-chown -R www-data:www-data /var/www/2fauth
-chmod -R 775 /var/www/2fauth
 ```
 
 ## Docker
