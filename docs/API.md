@@ -26,7 +26,7 @@ That means the PAT has to be passed via the HTTP `Authorization` header in every
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzZjOTc5NmFlZGI2OGQyYmE2YTIyMTE0NTN
 ```
 
-As 2FAuth is designed to be used by a single user, the PAT grants access to all resources without restriction; there is no scope defined. A PAT is valid until you decide to revoke it.
+A PAT is valid until you decide to revoke it.
 
 ### Creating an access token
 
@@ -49,7 +49,7 @@ The revocation of a token is permanent and cannot be undone.
 ## API documentation
 
 The API has its own dedicated documentation that you can browse in a lightweight format below.  
-You may also use the fullscreen format which provides a more comfortable layout and modern features like advanced search, mocking and more:
+You may also use the fullscreen format which provides previous versions, a more comfortable layout and modern features like advanced search, mocking and more:
 
 [!ref target="blank" icon="code-square" text="Fullscreen documentation"](/resources/rapidoc.html)
 

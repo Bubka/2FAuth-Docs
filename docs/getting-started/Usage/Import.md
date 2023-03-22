@@ -5,7 +5,7 @@ Note that not all 2FA apps enable data export so 2FAuth will never covers all po
 
 ## Exporting the data
 
-First step is to export data from the 2FA source app in order to get a migration resource, like a file or a QR code. Follow one of the dedicated section below then move to the [Importing into 2FAuth](#importing-into-2fauth) step.
+First step is to export data from the 2FA source app in order to get a migration resource, like a file or a QR code. Follow one of the dedicated section below then jump to the [Importing into 2FAuth](#importing-into-2fauth) step.
 
 ### Google Authenticator
 

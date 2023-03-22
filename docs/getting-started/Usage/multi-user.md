@@ -23,6 +23,6 @@ The administrator account is identified as such by a banner in the _Settings > A
 
 ## Users
 
-Not much to say, it is quite standard and basic.
+You can create as many accounts as you want, the only limitation is that every user must register with a unique __Name__ and __Email address__.
 
-You can create as many accounts as you want, the only limitation is that every user must register with a unique __Name__ and __Email address__. A user has access to their 2FAs only, there is no way to access another account's 2FAs or to share 2FAs between users.
+A user has access to their 2FAs only, there is no way to access another account's 2FAs or to share 2FAs between user, even for an administrator.
