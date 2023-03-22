@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.732613332396">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.732816698858">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -31,12 +31,12 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../static/2fauth_favicon.png" rel="icon" />
-    <link href="../../../resources/css/retype.css?v=2.4.0.732613332396" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.732816698858" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.732613332396" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.732816698858" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.732613332396" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.732613332396" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.732816698858" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.732816698858" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -503,6 +503,32 @@ sudo systemctl restart apache2</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
+<doc-anchor-target id="custom-base-url">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-base-url">#</doc-anchor-trigger>
+        <span>Custom base url</span>
+    </h3>
+</doc-anchor-target>
+<p>You may access 2FAuth from a custom base url, like <code v-pre>mydomain.org/2fauth/</code>. This is helpful if you do not want to define a dedicated (sub-)domain for 2FAuth.</p>
+<p>For such a setup, you only need to add an alias to your existing server configuration:</p>
+<doc-tabs>
+<doc-tab id="nginx">
+<template #title>NGINX</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-nginx"><code v-pre class="language-nginx">location /2fauth/ {
+    alias /var/www/2fauth/public/;
+}</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab id="apache2">
+<template #title>Apache2</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-apacheconf"><code v-pre class="language-apacheconf">&lt;IfModule alias_module&gt;
+    Alias /2fauth &quot;/var/www/2fauth/public/&quot;
+&lt;/IfModule&gt;</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
 <doc-anchor-target id="set-up-2fauth">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#set-up-2fauth">#</doc-anchor-trigger>
@@ -701,7 +727,7 @@ sqlite&gt; .quit</code></pre>
 <pre class="language-bash"><code v-pre class="language-bash">mv .env.example .env</code></pre>
 </doc-codeblock></div>
 <p>Open the <code v-pre>.env</code> file with a text editor, you will find all environment variables that could be customized.<br />
-You won&#x27;t have to set/change all, most of them have a default value that will probably fit your needs. But the database and email parts have to be reviewed.</p>
+You won&#x27;t have to set/change all, most of them have a default value that will probably fit your needs. But some parts must be reviewed.</p>
 <doc-anchor-target id="database-1">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#database-1">#</doc-anchor-trigger>
@@ -758,6 +784,28 @@ MAIL_PASSWORD=MyP4Ssw0rd
 MAIL_ENCRYPTION=ssl
 MAIL_FROM_NAME=&quot;John&quot;
 MAIL_FROM_ADDRESS=john.doe@example.com</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="subdirectory">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#subdirectory">#</doc-anchor-trigger>
+        <span>Subdirectory</span>
+    </h4>
+</doc-anchor-target>
+<p>In case you <doc-anchor-trigger to="#custom-base-url">previously</doc-anchor-trigger> configured your server to serve 2FAuth from a custom-base url like <code v-pre>mydomain.org/2fauth/</code> you must edit the <code v-pre>APP_SUBDIRECTORY</code> .env var to match the server configuration.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">/var/www/2fauth/.env</div>
+<pre class="language-bash"><code v-pre class="language-bash"># no leading or trailing slash
+APP_SUBDIRECTORY=2fauth</code></pre>
+</doc-codeblock></div>
+<p>To complete the custom base url configuration, open the file <code v-pre>/var/www/2fauth/public/.htaccess</code>, uncomment the <code v-pre>RewriteBase</code> directive and edit the <code v-pre>subdir</code> value to match the <code v-pre>APP_SUBDIRECTORY</code> value:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">/var/www/2fauth/public/.htaccess</div>
+<pre class="language-apacheconf"><code v-pre class="language-apacheconf">    # Uncomment and set the RewriteBase path to the desired subdirectory if you want to
+    # serve 2FAuth from a domain subdirectory like https://mydomain/2fauth/
+    #
+    # WARNING: the subdirectory value must match the one set in your .env file
+    # Do not forget leading and trailing slashes.
+    RewriteBase /2fauth/</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="run-artisan-commands">
     <h3>
