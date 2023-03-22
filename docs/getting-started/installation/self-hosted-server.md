@@ -155,6 +155,30 @@ sudo systemctl restart apache2
 
 +++
 
+### Custom base url
+
+You may access 2FAuth from a custom base url, like `mydomain.org/2fauth/`. This is helpful if you do not want to define a dedicated (sub-)domain for 2FAuth.
+
+For such a setup, you only need to add an alias to your existing server configuration:
+
++++ NGINX
+
+```nginx
+location /2fauth/ {
+    alias /var/www/2fauth/public/;
+}
+```
+
++++ Apache2
+
+```apache
+<IfModule alias_module>
+    Alias /2fauth "/var/www/2fauth/public/"
+</IfModule>
+```
+
++++
+
 ## Set up 2FAuth
 
 ### Get the source code
@@ -282,7 +306,7 @@ mv .env.example .env
 ```
 
 Open the `.env` file with a text editor, you will find all environment variables that could be customized.  
-You won't have to set/change all, most of them have a default value that will probably fit your needs. But the database and email parts have to be reviewed.
+You won't have to set/change all, most of them have a default value that will probably fit your needs. But some parts must be reviewed.
 
 #### Database
 
@@ -336,6 +360,26 @@ MAIL_PASSWORD=MyP4Ssw0rd
 MAIL_ENCRYPTION=ssl
 MAIL_FROM_NAME="John"
 MAIL_FROM_ADDRESS=john.doe@example.com
+```
+
+#### Subdirectory
+
+In case you [previously](/getting-started/installation/self-hosted-server/#custom-base-url) configured your server to serve 2FAuth from a custom-base url like `mydomain.org/2fauth/` you must edit the `APP_SUBDIRECTORY` .env var to match the server configuration.
+
+```env /var/www/2fauth/.env
+# no leading or trailing slash
+APP_SUBDIRECTORY=2fauth
+```
+
+To complete the custom base url configuration, open the file `/var/www/2fauth/public/.htaccess`, uncomment the `RewriteBase` directive and edit the `subdir` value to match the `APP_SUBDIRECTORY` value:
+
+```apache /var/www/2fauth/public/.htaccess
+    # Uncomment and set the RewriteBase path to the desired subdirectory if you want to
+    # serve 2FAuth from a domain subdirectory like https://mydomain/2fauth/
+    #
+    # WARNING: the subdirectory value must match the one set in your .env file
+    # Do not forget leading and trailing slashes.
+    RewriteBase /2fauth/
 ```
 
 ### Run Artisan commands
