@@ -32,7 +32,11 @@
 	      transition: border 0.2s ease 0s;
 	      outline: currentcolor none medium;
       }
-
+      .clickable {
+        cursor: pointer;
+        text-decoration: underline;
+        
+      }
     </style>
   </head>
   <body>
@@ -44,6 +48,7 @@
       show-method-in-nav-bar = "as-colored-text"
       heading-text="2FAuth API"
       show-header="false"
+      use-path-in-nav-bar="true"
     >
       <div style="padding: 0.7rem 1rem;">
         <select class="selector" onchange="switchVersion(this)"">
@@ -51,6 +56,13 @@
           <option value="https://raw.githubusercontent.com/Bubka/2FAuth-API/main/2fauth-api-v1.0.0.yaml">v1.0.0</option>
         </select>
         <a style="float: right; font-size: 12px; color: #bbb;" href="https://docs.2fauth.app/" style="color: white;" target="_blank">Back to 2Fauth Docs</a>
+      </div>
+      <div slot="nav-logo">
+        <div style="font-size: 0.8em; width:100%; display: flex;justify-content: center;">
+          Navigate through:&nbsp;
+          <a class="clickable" onclick="document.getElementById('thedoc').setAttribute('use-path-in-nav-bar', 'true')" >paths</a>&nbsp;-&nbsp;
+          <a class="clickable" onclick="document.getElementById('thedoc').setAttribute('use-path-in-nav-bar', 'false')" >summaries</a>
+        </div>
       </div>
     </rapi-doc>
   </body>
