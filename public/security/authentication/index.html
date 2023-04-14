@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.734801013343">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.734803564270">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Authentication - 2FAuth Docs</title>
     <meta name="title" content="Authentication - 2FAuth Docs">
-    <meta name="description" content="2FAuth has been designed for personal use only, it is single user oriented. You have to create a user account to use the app, and more than one user..." />
+    <meta name="description" content="You have to create a user account to use the app, none of the app's features can be used unless you have been authenticated with one of the methods..." />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.2fauth.app/security/authentication/" />
@@ -20,25 +20,25 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.2fauth.app/security/authentication/">
     <meta property="og:title" content="Authentication - 2FAuth Docs">
-    <meta property="og:description" content="2FAuth has been designed for personal use only, it is single user oriented. You have to create a user account to use the app, and more than one user...">
+    <meta property="og:description" content="You have to create a user account to use the app, none of the app's features can be used unless you have been authenticated with one of the methods...">
     <meta property="og:image" content="https://docs.2fauth.app/static/webauthn_login.gif">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.2fauth.app/security/authentication/">
     <meta property="twitter:title" content="Authentication - 2FAuth Docs">
-    <meta property="twitter:description" content="2FAuth has been designed for personal use only, it is single user oriented. You have to create a user account to use the app, and more than one user...">
+    <meta property="twitter:description" content="You have to create a user account to use the app, none of the app's features can be used unless you have been authenticated with one of the methods...">
     <meta property="twitter:image" content="https://docs.2fauth.app/static/webauthn_login.gif">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/2fauth_favicon.png" rel="icon" />
-    <link href="../../resources/css/retype.css?v=2.4.0.734801013343" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.734803564270" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.734801013343" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.734803564270" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.734801013343" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.734801013343" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.734803564270" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.734803564270" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -61,7 +61,7 @@
                                 <img class="max-h-10 hidden dark:inline-block" src="../../static/2fauth_light.png">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">2FAuth</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v3.4</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v4.0</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -276,8 +276,7 @@
         <span>Authentication</span>
     </h1>
 </doc-anchor-target>
-<p>2FAuth has been designed for personal use only, it is single user oriented.<br />
-You have to create a user account to use the app, and more than one user account cannot be created. None of the app&#x27;s features can be used unless you have been authenticated with one of the following methods.</p>
+<p>You have to create a user account to use the app, none of the app&#x27;s features can be used unless you have been authenticated with one of the methods described below.</p>
 <doc-anchor-target id="built-in">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#built-in">#</doc-anchor-trigger>
@@ -482,7 +481,7 @@ Simply click the relevant <span class="no-link inline-flex items-center justify-
         <span>Enable the proxy guard</span>
     </h3>
 </doc-anchor-target>
-<p>Set the <code v-pre>AUTHENTICATION_GUARD</code> environment variable to <code v-pre>reverse-proxy-guard</code>.</p>
+<p>Set the <code v-pre>AUTHENTICATION_GUARD</code> environment variable to <code v-pre>reverse-proxy-guard</code> to enable the auth proxy authentication.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">In your .env file:</div>
 <pre class="language-bash"><code v-pre class="language-bash">AUTHENTICATION_GUARD=reverse-proxy-guard</code></pre>
@@ -504,6 +503,15 @@ Simply click the relevant <span class="no-link inline-flex items-center justify-
         </div>
     </div>
 </div>
+<doc-anchor-target id="define-the-header-value">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#define-the-header-value">#</doc-anchor-trigger>
+        <span>Define the header value</span>
+    </h3>
+</doc-anchor-target>
+<p>The <code v-pre>REMOTE_USER</code> header can take any value. For 2FAuth, its value is the username of the user account to consider authenticated.</p>
+<p>If you already have a user account in 2FAuth, set the <code v-pre>REMOTE_USER</code> header value (at proxy level) like the <em>name</em> field of your account.</p>
+<p>If you do not have a user account yet, or if you want to be authenticated as a brand new user, set the header to a fresh value, 2FAuth will take care of creating the account for you.</p>
 <doc-anchor-target id="customize-the-header-name">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#customize-the-header-name">#</doc-anchor-trigger>
@@ -511,30 +519,41 @@ Simply click the relevant <span class="no-link inline-flex items-center justify-
     </h3>
 </doc-anchor-target>
 <p>You can customize the header name by setting the <code v-pre>AUTH_PROXY_HEADER_FOR_USER</code> environment variable to match a specific proxy configuration. For example, if the proxy header is <code v-pre>2FAUTH-User</code>, then set <code v-pre>AUTH_PROXY_HEADER_FOR_USER</code> to <code v-pre>HTTP_2FAUTH_USER</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">In your .env file:</div>
+<pre class="language-bash"><code v-pre class="language-bash"># if the proxy header is '2FAUTH-User'
+AUTH_PROXY_HEADER_FOR_USER=HTTP_2FAUTH_USER</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="additional-header">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#additional-header">#</doc-anchor-trigger>
         <span>Additional header</span>
     </h3>
 </doc-anchor-target>
-<p>You can configure 2FAuth to check for an additional header that contain the authenticated user email address. This header may or may not exist depending on the auth proxy configuration. The environment variable to set for that is <code v-pre>AUTH_PROXY_HEADER_FOR_EMAIL</code>.</p>
+<p>You can configure 2FAuth to check for an additional header that contain the authenticated user email address. This header may or may not exist depending on the auth proxy configuration. Its name should be declare using the environment variable <code v-pre>AUTH_PROXY_HEADER_FOR_EMAIL</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">In your .env file:</div>
+<pre class="language-bash"><code v-pre class="language-bash"># if the proxy pushes a header named REMOTE_USER_EMAIL
+AUTH_PROXY_HEADER_FOR_EMAIL=REMOTE_USER_EMAIL</code></pre>
+</doc-codeblock></div>
+<p>As long as the header is sent by the proxy, its value will be used by 2FAuth as the user email address.</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>For now, 2FAuth does not use this information, but a future feature could use it to send you emails.</p>
+<p>The email passed through the header must be a valid and unused email. If a 2FAuth user already uses this email, 2FAuth will ignore it.</p>
         </div>
     </div>
 </div>
+<p>If the header is no longer sent (or is ignored), the user&#x27;s email will be fallbacked to a fake <code v-pre>@remote</code> email adress by 2FAuth.</p>
 
                                 
                                 <!-- Required only on API pages -->

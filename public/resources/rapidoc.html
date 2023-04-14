@@ -3,18 +3,66 @@
   <head>
     <meta charset="utf-8"> <!-- Important: rapi-doc uses utf8 characters -->
     <script type="module" src="https://unpkg.com/rapidoc/dist/rapidoc-min.js"></script>
+    <script>
+      function getRapiDoc(){
+        return document.getElementById("thedoc");
+      }
+
+      function switchVersion(el){
+        console.log(el.value)
+        getRapiDoc().setAttribute('spec-url', el.value)
+      }
+    </script>
+    <style>
+      .selector {
+	      color: #bbb;
+        font-family: "Open Sans", Avenir, "Segoe UI", Arial, sans-serif;
+	      font-weight: 400;
+        font-size: 14px;
+        padding: 5px 30px 5px 5px;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%3E%3Cpath%20d%3D%22M10.3%203.3L6%207.6%201.7%203.3A1%201%200%2000.3%204.7l5%205a1%201%200%20001.4%200l5-5a1%201%200%2010-1.4-1.4z%22%20fill%3D%22%23777777%22%2F%3E%3C%2Fsvg%3E");
+        background-position: calc(100% - 5px) center;
+        background-repeat: no-repeat;
+        background-size: 10px;
+        background-color: #252627;
+        border: 1px solid #3e3f40;
+        border-radius: 2px;
+        appearance: none;
+        cursor: pointer;
+	      transition: border 0.2s ease 0s;
+	      outline: currentcolor none medium;
+      }
+      .clickable {
+        cursor: pointer;
+        text-decoration: underline;
+        
+      }
+    </style>
   </head>
   <body>
-    <rapi-doc 
-      spec-url = "https://raw.githubusercontent.com/Bubka/2FAuth-API/main/2fauth-api-latest.yaml"
+    <rapi-doc
+      id="thedoc" 
+      spec-url="https://raw.githubusercontent.com/Bubka/2FAuth-API/main/2fauth-api-latest.yaml"
       primary-color="#5fa0ff"
       allow-spec-file-load="false"
       show-method-in-nav-bar = "as-colored-text"
       heading-text="2FAuth API"
       show-header="false"
+      use-path-in-nav-bar="true"
     >
-      <div style="padding: 0.7rem 1rem; text-align: right;">
-        <a href="https://docs.2fauth.app/" style="color: white;" target="_blank">2Fauth Docs</a>
+      <div style="padding: 0.7rem 1rem;">
+        <select class="selector" onchange="switchVersion(this)"">
+          <option value="https://raw.githubusercontent.com/Bubka/2FAuth-API/main/2fauth-api-latest.yaml" selected>v1.1.0 (latest)</option>
+          <option value="https://raw.githubusercontent.com/Bubka/2FAuth-API/main/2fauth-api-v1.0.0.yaml">v1.0.0</option>
+        </select>
+        <a style="float: right; font-size: 12px; color: #bbb;" href="https://docs.2fauth.app/" style="color: white;" target="_blank">Back to 2Fauth Docs</a>
+      </div>
+      <div slot="nav-logo">
+        <div style="font-size: 0.8em; width:100%; display: flex;justify-content: center;">
+          Navigate through:&nbsp;
+          <a class="clickable" onclick="document.getElementById('thedoc').setAttribute('use-path-in-nav-bar', 'true')" >paths</a>&nbsp;-&nbsp;
+          <a class="clickable" onclick="document.getElementById('thedoc').setAttribute('use-path-in-nav-bar', 'false')" >summaries</a>
+        </div>
       </div>
     </rapi-doc>
   </body>
