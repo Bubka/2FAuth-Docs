@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.734803564270">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.734804463769">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -31,12 +31,12 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../static/2fauth_favicon.png" rel="icon" />
-    <link href="../../../resources/css/retype.css?v=2.4.0.734803564270" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.734804463769" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.734803564270" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.734804463769" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.734803564270" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.734803564270" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.734804463769" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.734804463769" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -301,7 +301,7 @@ The following guide describes how to proceed and gives basic configurations for 
 </doc-anchor-target>
 <ul>
 <li>PHP &gt;= <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>8.0</span>
+    <span>8.1</span>
 </span></li>
 <li>BCMath PHP Extension</li>
 <li>Ctype PHP Extension</li>
@@ -313,7 +313,7 @@ The following guide describes how to proceed and gives basic configurations for 
 <li>Tokenizer PHP Extension</li>
 <li>XML PHP Extension</li>
 </ul>
-<p>Depending on the chosen database (see below), don&#x27;t forget to install the corresponding PHP extension (i.e <code v-pre>php8.0-sqlite3</code> or <code v-pre>php8.0-mysql</code>)</p>
+<p>Depending on the chosen database (see below), don&#x27;t forget to install the corresponding PHP extension (i.e <code v-pre>php8.1-sqlite3</code> or <code v-pre>php8.1-mysql</code>)</p>
 <doc-anchor-target id="database">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#database">#</doc-anchor-trigger>
@@ -433,7 +433,7 @@ http {
       error_page 404 /index.php;
 
       location ~ \.php$ {
-          fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;
+          fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
           fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
           include fastcgi_params;
       }
