@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.734804463769">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.736934947913">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -33,12 +33,12 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/2fauth_favicon.png" rel="icon" />
-    <link href="../../resources/css/retype.css?v=2.4.0.734804463769" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.736934947913" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.734804463769" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.736934947913" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.734804463769" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.734804463769" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.736934947913" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.736934947913" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -518,11 +518,17 @@ Simply click the relevant <span class="no-link inline-flex items-center justify-
         <span>Customize the header name</span>
     </h3>
 </doc-anchor-target>
-<p>You can customize the header name by setting the <code v-pre>AUTH_PROXY_HEADER_FOR_USER</code> environment variable to match a specific proxy configuration. For example, if the proxy header is <code v-pre>2FAUTH-User</code>, then set <code v-pre>AUTH_PROXY_HEADER_FOR_USER</code> to <code v-pre>HTTP_2FAUTH_USER</code>.</p>
+<p>You can customize the header name by setting the <code v-pre>AUTH_PROXY_HEADER_FOR_USER</code> environment variable to match a specific proxy configuration. For example, if the proxy header is <code v-pre>2FAUTH-User</code>, then set <code v-pre>AUTH_PROXY_HEADER_FOR_USER</code> as such:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">In your .env file:</div>
 <pre class="language-bash"><code v-pre class="language-bash"># if the proxy header is '2FAUTH-User'
-AUTH_PROXY_HEADER_FOR_USER=HTTP_2FAUTH_USER</code></pre>
+AUTH_PROXY_HEADER_FOR_USER=2FAUTH-User</code></pre>
+</doc-codeblock></div>
+<p>Some proxies may add a prefix to headers, like <code v-pre>HTTP_</code>. You have to add it to your headers name as well.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">In your .env file:</div>
+<pre class="language-bash"><code v-pre class="language-bash"># if the proxy prefix is 'HTTP_'
+AUTH_PROXY_HEADER_FOR_USER=HTTP_2FAUTH-User</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="additional-header">
     <h3>
