@@ -122,11 +122,18 @@ If you do not have a user account yet, or if you want to be authenticated as a b
 
 ### Customize the header name
 
-You can customize the header name by setting the `AUTH_PROXY_HEADER_FOR_USER` environment variable to match a specific proxy configuration. For example, if the proxy header is `2FAUTH-User`, then set `AUTH_PROXY_HEADER_FOR_USER` to `HTTP_2FAUTH_USER`.
+You can customize the header name by setting the `AUTH_PROXY_HEADER_FOR_USER` environment variable to match a specific proxy configuration. For example, if the proxy header is `2FAUTH-User`, then set `AUTH_PROXY_HEADER_FOR_USER` as such:
 
 ```env In your .env file:
 # if the proxy header is '2FAUTH-User'
-AUTH_PROXY_HEADER_FOR_USER=HTTP_2FAUTH_USER
+AUTH_PROXY_HEADER_FOR_USER=2FAUTH-User
+```
+
+Some proxies may add a prefix to headers, like `HTTP_`. You have to add it to your headers name as well.
+
+```env In your .env file:
+# if the proxy prefix is 'HTTP_'
+AUTH_PROXY_HEADER_FOR_USER=HTTP_2FAUTH-User
 ```
 
 ### Additional header
