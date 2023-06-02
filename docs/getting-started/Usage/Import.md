@@ -61,6 +61,15 @@ Save (and secure) the .2fas migration file, you are ready to import your account
 
 ### Aegis Authenticator
 
+!!!warning 
+Before proceeding, please ensure that all exported entries contain a valid `Name` value. Importing entries without a valid `Name` value is not supported and will result in an error prompt. To add a `Name` value to an entry, follow these steps:
+
+1. Long press the entry.
+2. Click the Edit button located on the top left corner.
+3. Type in the `Name` field.
+4. Click the save button on the top left corner.
+!!!
+
 :::has-vertical-button
 Open Aegis Authenticator and use the [!button variant="primary" size="s" corners="round" text="•••"] icon to enter the _Settings_ section.
 :::
