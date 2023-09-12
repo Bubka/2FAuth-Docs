@@ -307,7 +307,7 @@ Open a command prompt on `/var/www/2fauth/`, run the following command and answe
 php artisan 2fauth:install
 ```
 
-At the end of the wizard, 2FAuth should be ready to start. Please see the [troubleshooting section](#troubleshooting) if something is wrong.
+At the end of the wizard, 2FAuth should be ready to start. Please see the [troubleshooting section](#troubleshooting) if something goes wrong.
 
 !!!warning
 You should review the [email](#email) configuration section of the .env file to allow 2FAuth to send emails during the reset password process.
@@ -344,7 +344,11 @@ You won't have to set/change all, most of them have a default value that will pr
 Set the path to your SQLite database file:
 
 ```env
+# Unix style
 DB_DATABASE="/var/www/2fauth/database/database.sqlite"
+
+# Windows style
+DB_DATABASE="C:\\path\\to\\your\\database.sqlite"
 ```
 
 +++ When using MySQL / MariaDB
