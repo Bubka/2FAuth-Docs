@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.742203823109">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.747833715963">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.0.3">
+    <meta name="generator" content="Retype 3.4.1">
 
     <!-- Primary Meta Tags -->
     <title>Import - 2FAuth Docs</title>
     <meta name="title" content="Import - 2FAuth Docs">
-    <meta name="description" content="2FAuth can import data in various formats to ease you migrate from another 2FA app or to restore a backup." />
+    <meta name="description" content="2FAuth can import data in various formats to ease you migrate from another 2FA app or to restore a backup.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.2fauth.app/getting-started/usage/import/" />
+    <link rel="canonical" href="https://docs.2fauth.app/getting-started/usage/import/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -30,14 +30,14 @@
     <meta property="twitter:description" content="2FAuth can import data in various formats to ease you migrate from another 2FA app or to restore a backup.">
     <meta property="twitter:image" content="https://docs.2fauth.app/static/import/2fas_settings.png">
 
-    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../static/2fauth_favicon.png" rel="icon" />
-    <link href="../../../resources/css/retype.css?v=3.0.3.742203823109" rel="stylesheet" />
+    <link href="../../../static/2fauth_favicon.png" rel="icon">
+    <link href="../../../resources/css/retype.css?v=3.4.1.747833715963" rel="stylesheet">
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.742203823109" data-turbo-eval="false" defer></script>
-    <script type="text/javascript" src="../../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.742203823109" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.4.1.747833715963" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.4.1" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.4.1.747833715963" data-turbo-eval="false" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -46,7 +46,7 @@
         <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
     
         <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
-            <div class="container relative flex items-center justify-between grow pr-6 md:justify-start">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
                 <!-- Mobile menu button skeleton -->
                 <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
                 <div v-cloak id="docs-sidebar-toggle"></div>
@@ -60,7 +60,7 @@
                                 <img class="max-h-10 hidden dark:inline-block" src="../../../static/2fauth_light.png">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">2FAuth</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v4.0</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v4.1</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -130,24 +130,22 @@
                         <!-- Search input mock -->
                         <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
                             <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
                             </div>
-        
-                            <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
-                            style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search" />
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
                         </div>
         
-                        <!-- Mobile search button mock -->
+                        <!-- Mobile search button -->
                         <div class="flex items-center justify-center w-10 h-10 lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
                         </div>
         
-                        <!-- Dark mode switch placehokder -->
+                        <!-- Dark mode switch placeholder -->
                         <div class="w-10 h-10 lg:ml-2"></div>
         
-                        <!-- History button mock -->
+                        <!-- History button -->
                         <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
                         </div>
                     </div>
         
@@ -168,10 +166,10 @@
             
                 <!-- Render this div, if config.showSidebarFilter is `true` -->
                 <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
                 </div>
             
-                <div class="pl-6 mb-4 mt-1">
+                <div class="pl-6 mt-1 mb-4">
                     <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
                     <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
                     <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
@@ -267,7 +265,6 @@
                             <div class="docs-markdown" id="docs-content">
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
-                
                                 <!-- Page content  -->
 <doc-anchor-target id="import" class="break-words">
     <h1>
@@ -290,21 +287,21 @@ Note that not all 2FA apps enable data export so 2FAuth will never covers all po
         <span>Google Authenticator</span>
     </h3>
 </doc-anchor-target>
-<p>Open Google Authenticator and use the <button class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-gray-200 hover:bg-gray-300 text-gray-900 dark:bg-dark-550 dark:hover:bg-dark-450 dark:text-dark-350 px-3 h-8 text-sm rounded">
+<p>Open Google Authenticator and use the <button class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-gray-200 hover:bg-gray-300 text-gray-900 dark:bg-dark-550 dark:hover:bg-dark-450 dark:text-dark-350 px-3 h-8 text-sm rounded">
     <span>•••</span>
 </button> icon to enter the <em>Export</em> feature.</p>
 <div class="mobile-screen"><p><figure class="content-center">
-    <img src="../../../static/import/gauth_export_accounts.png" alt="Start the export feature" />
+    <img src="../../../static/import/gauth_export_accounts.png" alt="Start the export feature">
     <figcaption class="caption">Start the export feature</figcaption>
 </figure>
 </p>
 </div>
-<p>Next choose one or more accounts to export then click the <button class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-gray-700 hover:bg-gray-600 dark:bg-dark-550 dark:hover:bg-dark-450 text-white dark:text-dark-350 px-4 h-10 text-sm rounded-full">
+<p>Next choose one or more accounts to export then click the <button class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-gray-700 hover:bg-gray-600 dark:bg-dark-550 dark:hover:bg-dark-450 text-white dark:text-dark-350 px-4 h-10 text-sm rounded-full">
     <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="18" height="18" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M4 20.25V18a.75.75 0 0 1 1.5 0v2.25c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V18a.75.75 0 0 1 1.5 0v2.25A1.75 1.75 0 0 1 18.25 22H5.75A1.75 1.75 0 0 1 4 20.25Z"/><path d="M5.22 9.53a.749.749 0 0 1 0-1.06l6.25-6.25a.749.749 0 0 1 1.06 0l6.25 6.25a.749.749 0 1 1-1.06 1.06l-4.97-4.969V16.75a.75.75 0 0 1-1.5 0V4.561L6.28 9.53a.749.749 0 0 1-1.06 0Z"/></g></svg></span>
     <span>Export</span>
 </button> button.</p>
 <div class="mobile-screen"><p><figure class="content-center">
-    <img src="../../../static/import/gauth_export.png" alt="Export selected accounts" />
+    <img src="../../../static/import/gauth_export.png" alt="Export selected accounts">
     <figcaption class="caption">Export selected accounts</figcaption>
 </figure>
 </p>
@@ -326,7 +323,7 @@ Note that not all 2FA apps enable data export so 2FAuth will never covers all po
     </div>
 </div>
 <div class="mobile-screen"><p><figure class="content-center">
-    <img src="../../../static/import/gauth_qrcode.png" alt="Exported QR code" />
+    <img src="../../../static/import/gauth_qrcode.png" alt="Exported QR code">
     <figcaption class="caption">Exported QR code</figcaption>
 </figure>
 </p>
@@ -358,23 +355,23 @@ Note that not all 2FA apps enable data export so 2FAuth will never covers all po
 </doc-anchor-target>
 <p>Open 2FAS Authenticator and enter the <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Zm-1.5 0a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/><path d="M12 1c.266 0 .532.009.797.028.763.055 1.345.617 1.512 1.304l.352 1.45c.019.078.09.171.225.221.247.089.49.19.728.302.13.061.246.044.315.002l1.275-.776c.603-.368 1.411-.353 1.99.147.402.349.78.726 1.128 1.129.501.578.515 1.386.147 1.99l-.776 1.274c-.042.069-.058.185.002.315.112.238.213.481.303.728.048.135.142.205.22.225l1.45.352c.687.167 1.249.749 1.303 1.512.038.531.038 1.063 0 1.594-.054.763-.616 1.345-1.303 1.512l-1.45.352c-.078.019-.171.09-.221.225-.089.248-.19.491-.302.728-.061.13-.044.246-.002.315l.776 1.275c.368.603.353 1.411-.147 1.99-.349.402-.726.78-1.129 1.128-.578.501-1.386.515-1.99.147l-1.274-.776c-.069-.042-.185-.058-.314.002a8.606 8.606 0 0 1-.729.303c-.135.048-.205.142-.225.22l-.352 1.45c-.167.687-.749 1.249-1.512 1.303-.531.038-1.063.038-1.594 0-.763-.054-1.345-.616-1.512-1.303l-.352-1.45c-.019-.078-.09-.171-.225-.221a8.138 8.138 0 0 1-.728-.302c-.13-.061-.246-.044-.315-.002l-1.275.776c-.603.368-1.411.353-1.99-.147-.402-.349-.78-.726-1.128-1.129-.501-.578-.515-1.386-.147-1.99l.776-1.274c.042-.069.058-.185-.002-.314a8.606 8.606 0 0 1-.303-.729c-.048-.135-.142-.205-.22-.225l-1.45-.352c-.687-.167-1.249-.749-1.304-1.512a11.158 11.158 0 0 1 0-1.594c.055-.763.617-1.345 1.304-1.512l1.45-.352c.078-.019.171-.09.221-.225.089-.248.19-.491.302-.728.061-.13.044-.246.002-.315l-.776-1.275c-.368-.603-.353-1.411.147-1.99.349-.402.726-.78 1.129-1.128.578-.501 1.386-.515 1.99-.147l1.274.776c.069.042.185.058.315-.002.238-.112.481-.213.728-.303.135-.048.205-.142.225-.22l.352-1.45c.167-.687.749-1.249 1.512-1.304C11.466 1.01 11.732 1 12 1Zm-.69 1.525c-.055.004-.135.05-.161.161l-.353 1.45a1.832 1.832 0 0 1-1.172 1.277 7.147 7.147 0 0 0-.6.249 1.833 1.833 0 0 1-1.734-.074l-1.274-.776c-.098-.06-.186-.036-.228 0a9.774 9.774 0 0 0-.976.976c-.036.042-.06.131 0 .228l.776 1.274c.314.529.342 1.18.074 1.734a7.147 7.147 0 0 0-.249.6 1.831 1.831 0 0 1-1.278 1.173l-1.45.351c-.11.027-.156.107-.16.162a9.63 9.63 0 0 0 0 1.38c.004.055.05.135.161.161l1.45.353a1.832 1.832 0 0 1 1.277 1.172c.074.204.157.404.249.6.268.553.24 1.204-.074 1.733l-.776 1.275c-.06.098-.036.186 0 .228.301.348.628.675.976.976.042.036.131.06.228 0l1.274-.776a1.83 1.83 0 0 1 1.734-.075c.196.093.396.176.6.25a1.831 1.831 0 0 1 1.173 1.278l.351 1.45c.027.11.107.156.162.16a9.63 9.63 0 0 0 1.38 0c.055-.004.135-.05.161-.161l.353-1.45a1.834 1.834 0 0 1 1.172-1.278 6.82 6.82 0 0 0 .6-.248 1.831 1.831 0 0 1 1.733.074l1.275.776c.098.06.186.036.228 0 .348-.301.675-.628.976-.976.036-.042.06-.131 0-.228l-.776-1.275a1.834 1.834 0 0 1-.075-1.733c.093-.196.176-.396.25-.6a1.831 1.831 0 0 1 1.278-1.173l1.45-.351c.11-.027.156-.107.16-.162a9.63 9.63 0 0 0 0-1.38c-.004-.055-.05-.135-.161-.161l-1.45-.353c-.626-.152-1.08-.625-1.278-1.172a6.576 6.576 0 0 0-.248-.6 1.833 1.833 0 0 1 .074-1.734l.776-1.274c.06-.098.036-.186 0-.228a9.774 9.774 0 0 0-.976-.976c-.042-.036-.131-.06-.228 0l-1.275.776a1.831 1.831 0 0 1-1.733.074 6.88 6.88 0 0 0-.6-.249 1.835 1.835 0 0 1-1.173-1.278l-.351-1.45c-.027-.11-.107-.156-.162-.16a9.63 9.63 0 0 0-1.38 0Z"/></g></g></svg> <em>Settings</em> section. Then enter the <em>2FAS Backup</em> feature.</p>
 <div class="mobile-screen"><p><figure class="content-center">
-    <img src="../../../static/import/2fas_settings.png" alt="2FAS Settings" />
+    <img src="../../../static/import/2fas_settings.png" alt="2FAS Settings">
     <figcaption class="caption">2FAS Settings</figcaption>
 </figure>
 </p>
 </div>
 <p>Enter the <em>Export</em> tool.</p>
 <div class="mobile-screen"><p><figure class="content-center">
-    <img src="../../../static/import/2fas_backup.png" alt="2FAS Backup" />
+    <img src="../../../static/import/2fas_backup.png" alt="2FAS Backup">
     <figcaption class="caption">2FAS Backup</figcaption>
 </figure>
 </p>
 </div>
-<p><strong>Uncheck the password option</strong> and click the <button class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-red-500 hover:bg-red-700 text-white px-4 h-10 text-sm rounded-md">
+<p><strong>Uncheck the password option</strong> and click the <button class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-red-500 hover:bg-red-700 text-white px-4 h-10 text-sm rounded-md">
     <span>Export to file</span>
 </button> button.</p>
 <div class="mobile-screen"><p><figure class="content-center">
-    <img src="../../../static/import/2fas_export.png" alt="2FAS Export" />
+    <img src="../../../static/import/2fas_export.png" alt="2FAS Export">
     <figcaption class="caption">2FAS Export</figcaption>
 </figure>
 </p>
@@ -401,35 +398,35 @@ Note that not all 2FA apps enable data export so 2FAuth will never covers all po
         <span>Aegis Authenticator</span>
     </h3>
 </doc-anchor-target>
-<div class="has-vertical-button"><p>Open Aegis Authenticator and use the <button class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-3 h-8 text-sm rounded">
+<div class="has-vertical-button"><p>Open Aegis Authenticator and use the <button class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-3 h-8 text-sm rounded">
     <span>•••</span>
 </button> icon to enter the <em>Settings</em> section.</p>
 </div>
 <div class="mobile-screen"><p><figure class="content-center">
-    <img src="../../../static/import/aegis_home.png" alt="Aegis" />
+    <img src="../../../static/import/aegis_home.png" alt="Aegis">
     <figcaption class="caption">Aegis</figcaption>
 </figure>
 </p>
 </div>
 <p>Enter the <em>Import &amp; Export</em> feature.</p>
 <div class="mobile-screen"><p><figure class="content-center">
-    <img src="../../../static/import/aegis_settings.png" alt="Aegis Settings" />
+    <img src="../../../static/import/aegis_settings.png" alt="Aegis Settings">
     <figcaption class="caption">Aegis Settings</figcaption>
 </figure>
 </p>
 </div>
 <p>Open the <em>Export</em> tool.</p>
 <div class="mobile-screen"><p><figure class="content-center">
-    <img src="../../../static/import/aegis_import_export.png" alt="Aegis Import &amp; Export" />
+    <img src="../../../static/import/aegis_import_export.png" alt="Aegis Import &amp; Export">
     <figcaption class="caption">Aegis Import &amp; Export</figcaption>
 </figure>
 </p>
 </div>
-<p>Whatever the export format (both are supported by 2FAuth), <strong>uncheck the encryption option</strong> and click the <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-8 px-3 text-sm">
+<p>Whatever the export format (both are supported by 2FAuth), <strong>uncheck the encryption option</strong> and click the <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-8 px-3 text-sm">
     <span>OK</span>
 </span> button.</p>
 <div class="mobile-screen"><p><figure class="content-center">
-    <img src="../../../static/import/aegis_export.png" alt="Aegis Export" />
+    <img src="../../../static/import/aegis_export.png" alt="Aegis Export">
     <figcaption class="caption">Aegis Export</figcaption>
 </figure>
 </p>
@@ -450,7 +447,7 @@ Note that not all 2FA apps enable data export so 2FAuth will never covers all po
         </div>
     </div>
 </div>
-<hr />
+<hr>
 <doc-anchor-target id="importing-into-2fauth">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#importing-into-2fauth">#</doc-anchor-trigger>
@@ -466,16 +463,16 @@ Note that not all 2FA apps enable data export so 2FAuth will never covers all po
 </doc-anchor-target>
 <p>From the 2FAuth main view:</p>
 <ol>
-<li>Click the <button class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-2.5 h-6 text-xs rounded-full">
+<li>Click the <button class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-2.5 h-6 text-xs rounded-full">
     <span>New</span>
 </button> button, just as if you had to add a new account</li>
-<li>Click the <button class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-2.5 h-6 text-xs rounded-full">
+<li>Click the <button class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-2.5 h-6 text-xs rounded-full">
     <span>Import</span>
 </button> button in the alternative methods</li>
-<li>Submit your migration resource: <button class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-2.5 h-6 text-xs rounded-full">
+<li>Submit your migration resource: <button class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-2.5 h-6 text-xs rounded-full">
     <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="14" height="14" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><symbol id="device-camera-icon-symbol" viewBox="0 0 16 16"><path d="M15 3c.55 0 1 .45 1 1v9c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1 0-.55.45-1 1-1h4c.55 0 1 .45 1 1Zm-4.5 9c1.94 0 3.5-1.56 3.5-3.5S12.44 5 10.5 5 7 6.56 7 8.5 8.56 12 10.5 12ZM13 8.5c0 1.38-1.13 2.5-2.5 2.5S8 9.87 8 8.5 9.13 6 10.5 6 13 7.13 13 8.5ZM6 5V4H2v1Z"/></symbol><use xlink:href="#device-camera-icon-symbol" /></g></svg></span>
     <span>Livescan</span>
-</button> a QR code or <button class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-2.5 h-6 text-xs rounded-full">
+</button> a QR code or <button class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-2.5 h-6 text-xs rounded-full">
     <span>Upload</span>
 </button> a file/QR code</li>
 </ol>
@@ -496,7 +493,7 @@ Note that not all 2FA apps enable data export so 2FAuth will never covers all po
     </div>
 </div>
 <div class="mobile-screen"><p><figure class="content-center">
-    <img src="../../../static/import/import_preload.png" alt="Preloaded data ready to be recorded" />
+    <img src="../../../static/import/import_preload.png" alt="Preloaded data ready to be recorded">
     <figcaption class="caption">Preloaded data ready to be recorded</figcaption>
 </figure>
 </p>
@@ -516,7 +513,7 @@ Note that not all 2FA apps enable data export so 2FAuth will never covers all po
         <div class="pr-5 ml-3 w-full">
             <h5>Duplicates</h5>
 <div class="mobile-screen"><p><figure class="content-center">
-    <img src="../../../static/import/import_duplicates.png" alt="" />
+    <img src="../../../static/import/import_duplicates.png" alt="">
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
@@ -553,14 +550,14 @@ Duplicates are simply flagged, they can still be imported.</p>
 <ul>
 <li>You are free to record or discard the accounts of your choice.</li>
 <li>Click on account titles to get a fresh OTP if you want to check the integrity of any account.</li>
-<li>Nothing is added to 2FAuth until you click on an <button class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-2.5 h-6 text-xs rounded">
+<li>Nothing is added to 2FAuth until you click on an <button class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-2.5 h-6 text-xs rounded">
     <span>Import</span>
-</button> button or the <button class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-3 h-8 text-sm rounded-full">
+</button> button or the <button class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-3 h-8 text-sm rounded-full">
     <span>Import all</span>
 </button> button.</li>
 </ul>
 <div class="mobile-screen"><p><figure class="content-center">
-    <img src="../../../static/import/import_recorded.png" alt="5 accounts registered, 3 remaining" />
+    <img src="../../../static/import/import_recorded.png" alt="5 accounts registered, 3 remaining">
     <figcaption class="caption">5 accounts registered, 3 remaining</figcaption>
 </figure>
 </p>
@@ -568,7 +565,7 @@ Duplicates are simply flagged, they can still be imported.</p>
 
                                 
                                 <!-- Required only on API pages -->
-                                <doc-toolbar-member-filter-no-results />
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
@@ -608,7 +605,7 @@ Duplicates are simply flagged, they can still be imported.</p>
                                     <ul class="flex flex-wrap items-center text-sm">
                                         <li>
                                             <a class="inline-flex items-center mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://fosstodon.org/@2fauth" target="_blank">
-                                                <img class="mb-px mr-1" width="18" alt="" src="../../../static/icon_mastodon.png" />
+                                                <img class="mb-px mr-1" width="18" alt="" src="../../../static/icon_mastodon.png">
                                                 <span>@2FAuth</span>
                                             </a>
                                         </li>
@@ -624,8 +621,18 @@ Duplicates are simply flagged, they can still be imported.</p>
                                         </li>
                                         <li>
                                             <a class="inline-flex items-center mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://ko-fi.com/bubka" target="_blank">
-                                                <img class="mb-px mr-1" width="18" alt="" src="../../../static/icon_kofi.png" />
+                                                <img class="mb-px mr-1" width="18" alt="" src="../../../static/icon_kofi.png">
                                                 <span>Like 2FAuth? Leave a tip</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="inline-flex items-center mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://github.com/sponsors/Bubka" target="_blank">
+                                                <span>or Sponsor me</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="mb-px ml-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                    <g fill="currentColor">
+                                                        <path d="m12 20.703.343.667a.748.748 0 0 1-.686 0l-.003-.002-.007-.003-.025-.013a31.138 31.138 0 0 1-5.233-3.576C3.8 15.573 1 12.332 1 8.514v-.001C1 5.053 3.829 2.5 6.736 2.5 9.03 2.5 10.881 3.726 12 5.605 13.12 3.726 14.97 2.5 17.264 2.5 20.17 2.5 23 5.052 23 8.514c0 3.818-2.801 7.06-5.389 9.262a31.148 31.148 0 0 1-5.233 3.576l-.025.013-.007.003-.002.001ZM6.736 4C4.657 4 2.5 5.88 2.5 8.514c0 3.107 2.324 5.96 4.861 8.12a29.655 29.655 0 0 0 4.566 3.175l.073.041.073-.04c.271-.153.661-.38 1.13-.674.94-.588 2.19-1.441 3.436-2.502 2.537-2.16 4.861-5.013 4.861-8.12C21.5 5.88 19.343 4 17.264 4c-2.106 0-3.801 1.389-4.553 3.643a.751.751 0 0 1-1.422 0C10.537 5.389 8.841 4 6.736 4Z"/>
+                                                    </g>
+                                                </svg>
                                             </a>
                                         </li>
                                     </ul>
@@ -659,6 +666,6 @@ Duplicates are simply flagged, they can still be imported.</p>
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Import", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Import", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

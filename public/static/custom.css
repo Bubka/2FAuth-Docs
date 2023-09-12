@@ -31,3 +31,7 @@
 .has-vertical-button button span {
     padding-top: .5rem;
 }
+
+footer ul li a[href="https://github.com/sponsors/Bubka"] svg {
+    color: #db61a2;
+}
