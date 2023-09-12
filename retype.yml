@@ -68,6 +68,11 @@ footer:
       icon: static/icon_kofi.png
       link: https://ko-fi.com/bubka
       target: blank
+    - text: or Sponsor me
+      icon: heart
+      link: https://github.com/sponsors/Bubka
+      target: blank
+      iconAlign: right
 
 # -----------------------------------------------------------------------------
 

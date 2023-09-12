@@ -7,7 +7,23 @@ order: -1000
 
 2FAuth is actively developed by [Bubka](https://github.com/Bubka).
 
+<style>
+    .sponsor a.rounded {
+        border-radius: 6px;
+        border: 1px solid #d4dce348;
+    }
+    .sponsor a > span:first-child {
+        color: #db61a2;
+    }
+    .sponsor a > span:last-child {
+        color: #c9d1d9;
+    }
+</style>
+
+:::sponsor
 [--![](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/bubka)
+[!button size="s" variant="dark" target="blank" text="Sponsor me on Github" icon="heart"](https://github.com/sponsors/Bubka)
+:::
 
 <div style="clear: both;"></div>
 
