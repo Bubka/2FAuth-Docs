@@ -41,7 +41,7 @@ You need a database to run 2FAuth. Supported databases are the ones supported by
 - SQL Server [!badge 2017+]
 
 !!! Recommendation
-2FAuth is a very light application with minimal needs and no concurrent connections, so __SQLite__ is probably the best choice.
+2FAuth is a very light application with minimal needs and few concurrent connections. __SQLite__ is definitely the best choice if you plan to use 2FAuth in a single-user context or in a multi-user context with a limited number of users. Otherwise prefer a server-based __SQL__ database.
 !!!
 
 ### Composer
