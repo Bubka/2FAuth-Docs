@@ -52,11 +52,81 @@ You need __Composer__ to install all PHP dependencies of 2FAuth. As the installa
 
 You can test your installation by running `php composer.phar -v` in a terminal (or just `composer -v` if composer has been installed in a directory that is part of your system PATH)
 
-## Server configuration
+## Get your 2FAuth copy
 
-!!! Installation path
-We will use `/var/www/2fauth` which is a common path in the *nix world. Of course, you are free to use another path, just remember to adapt the following configurations and commands with yours.
-!!!
+Here are 3 methods to help you download the 2FAuth source code. For the purpose of this guide we will consider `/var/www/2fauth` (which is a common path in the *nix world) to be the location where 2FAuth will sit. Of course, you are free to use another path, just remember to adapt the commands in the following steps with yours.
+
++++ Download from GitHub
+
+1. Download the source code of the <a href="https://github.com/Bubka/2FAuth/releases/latest" target="_blank">latest 2FAuth release</a>, say v4.1.0
+2. Extract the archive and open the `2fauth-4.1.0` folder it contains
+3. Move its content to `/var/www/2fauth`
+
++++ Using CLI
+
+=== Get the latest release
+
+```bash
+curl https://api.github.com/repos/Bubka/2FAuth/tags | grep "tarball_url" | \
+    grep -Eo 'https://[^\"]*' | sed -n '1p' | xargs wget -O - | tar -xz --strip-components=1 -C /var/www/2fauth
+```
+
+=== Get a specific release
+
+```bash
+# list existing 2FAuth versions
+curl https://api.github.com/repos/Bubka/2FAuth/releases | grep "\"name\"" | grep -Eo 'v[^\"]*'
+# Replace x.y.z with the version of your choice
+wget -qO- "https://github.com/Bubka/2FAuth/archive/refs/tags/x.y.z.tar.gz" | \
+    tar -xz --strip-components=1 -C /var/www/2fauth
+```
+
+===
+
++++ Using Git
+
+=== Get the latest release
+
+```bash
+cd /var/www/2fauth
+git clone https://github.com/bubka/2fauth.git .
+curl https://api.github.com/repos/Bubka/2FAuth/releases/latest | grep "\"name\"" | grep -Eo 'v[^\"]*' | xargs git checkout
+```
+
+=== Get a specific release
+
+```bash
+cd /var/www/2fauth
+git clone https://github.com/bubka/2fauth.git .
+# list existing 2FAuth versions
+git tag
+# Replace 3.0.0 with the version of your choice
+git checkout v3.0.0
+```
+
+===
+
++++
+
+## Installing dependencies
+
+### Composer
+
+From the `/var/www/2fauth/` directory:
+
+```sh
+composer install --prefer-dist --no-scripts --no-dev
+```
+
+Or if you didn't add composer to your system PATH:
+
+```sh
+php composer.phar install --prefer-dist --no-scripts --no-dev
+```
+
+## Web server configuration
+
+As a reminder, the intended installation path is `/var/www/2fauth`. The given commands/scripts should be modified if you are using another path.
 
 +++ NGINX
 
@@ -125,8 +195,8 @@ Add the following to the newly created file:
     DocumentRoot /var/www/2fauth/public
 
     <Directory /var/www/2fauth/public>
-        Options Indexes MultiViews
-        AllowOverride None
+        Options Indexes MultiViews FollowSymLinks
+        AllowOverride All
         Require all granted
     </Directory>
 
@@ -179,83 +249,7 @@ location /2fauth/ {
 
 +++
 
-## Set up 2FAuth
-
-### Get the source code
-
-As a reminder, the installation path for this guide is `/var/www/2fauth`. The given commands should be modified if you are using another path.
-
-+++ Using cli
-
-=== Get the latest release
-
-```bash
-mkdir -p /var/www/2fauth
-curl https://api.github.com/repos/Bubka/2FAuth/tags | grep "tarball_url" | \
-    grep -Eo 'https://[^\"]*' | sed -n '1p' | xargs wget -O - | tar -xz --strip-components=1 -C /var/www/2fauth
-```
-
-=== Get a specific release
-
-```bash
-mkdir -p /var/www/2fauth
-# list existing 2FAuth versions
-curl https://api.github.com/repos/Bubka/2FAuth/releases | grep "\"name\"" | grep -Eo 'v[^\"]*'
-# Replace 3.0.0 with the version of your choice
-VERSION=v3.0.0
-wget -qO- "https://github.com/Bubka/2FAuth/archive/refs/tags/${VERSION}.tar.gz" | \
-    tar -xz --strip-components=1 -C /var/www/2fauth
-```
-
-===
-
-+++ Using Git
-
-=== Get the latest release
-
-```bash
-git clone https://github.com/bubka/2fauth.git /var/www/2fauth
-cd /var/www/2fauth
-curl https://api.github.com/repos/Bubka/2FAuth/releases/latest | grep "\"name\"" | grep -Eo 'v[^\"]*' | xargs git checkout
-```
-
-=== Get a specific release
-
-```bash
-git clone https://github.com/bubka/2fauth.git /var/www/2fauth
-cd /var/www/2fauth
-# list existing 2FAuth versions
-git tag
-# Replace 3.0.0 with the version of your choice
-git checkout v3.0.0
-```
-
-===
-
-+++ Download from GitHub
-
-1. Download the source code of the <a href="https://github.com/Bubka/2FAuth/releases/latest" target="_blank">latest 2FAuth release</a>
-2. Extract the archive to a `temp` folder
-3. Open the top folder named `temp/2fauth-x.y.z`
-4. Move its content to `/var/www/2fauth`
-
-+++
-
-### Install composer dependencies
-
-From the `/var/www/2fauth/` directory:
-
-```sh
-composer install --prefer-dist --no-scripts --no-dev
-```
-
-Or if you didn't add composer to your system PATH:
-
-```sh
-php composer.phar install --prefer-dist --no-scripts --no-dev
-```
-
-### Create the database
+## Create the database
 
 Use the CLI of the chosen database to create a new database with one of the following commands:
 
@@ -289,13 +283,48 @@ CREATE DATABASE 2fauth
 
 Reference
 
-[!ref icon="book" target="_blank" text="Creating database with MariaDB"](https://www.postgresql.org/docs/current/sql-createdatabase.html)
+[!ref icon="book" target="_blank" text="Creating database with PostgreSQL"](https://www.postgresql.org/docs/current/sql-createdatabase.html)
 
 +++
 
 If you are not comfortable with the command line, you may use a db management tool like _Adminer_ to ease this step.
 
 [!ref icon="package-dependents" target="blank" text="Get Adminer"](https://www.adminer.org/)
+
+## 2FAuth set up (wizard)
+
+2FAuth provides an __artisan__ command to set up everything easily. If you want to set up all by hand, please follow the next section: [2FAuth set up (manual)](#2fauth-set-up-manual).
+
+### Prerequisites
+
+Except if you want to use sqlite (in this case the wizard create the db file for you) you need a database server up and running for which you will provide the url.
+
+### Execution
+
+Open a command prompt on `/var/www/2fauth/`, run the following command and answer the wizard questions.
+
+```sh
+php artisan 2fauth:install
+```
+
+At the end of the wizard, 2FAuth should be ready to start. Please see the [troubleshooting section](#troubleshooting) if something is wrong.
+
+!!!warning
+You should review the [email](#email) configuration section of the .env file to allow 2FAuth to send emails during the reset password process.
+!!!
+
+What the wizard do for you is :
+
+- Create the .env file
+- Configure general environment variables
+- Configure and migrate the database
+- Configure the authentication passport
+- Create the symbolic link for the storage location
+- Cache the configuration
+
+All these steps are detailed below if you want to dive into them.
+
+## 2FAuth set up (manual)
 
 ### Set the .env file
 
@@ -364,7 +393,7 @@ MAIL_FROM_ADDRESS=john.doe@example.com
 
 #### Subdirectory
 
-In case you [previously](/getting-started/installation/self-hosted-server/#custom-base-url) configured your server to serve 2FAuth from a custom-base url like `mydomain.org/2fauth/` you must edit the `APP_SUBDIRECTORY` .env var to match the server configuration.
+In case you [previously](/getting-started/installation/self-hosted-server/#custom-base-url) configured your web server to serve 2FAuth from a custom-base url like `mydomain.org/2fauth/` you must edit the `APP_SUBDIRECTORY` .env var to match the server configuration.
 
 ```env /var/www/2fauth/.env
 # no leading or trailing slash
@@ -393,11 +422,78 @@ php artisan storage:link
 php artisan config:cache
 ```
 
-## Set ownership and permissions
+## Troubleshooting
 
-From the `/var/www/` directory :
+### Check logs
 
-```sh
-sudo chown -R www-data:www-data 2fauth
-sudo chmod -R 775 2fauth
+Logs can give usefull informations to troubleshoot your installation. 2FAuth logs are stored in the subfolder `storage/logs` of your installation folder.
+
+You may enable debug logs by setting `APP_DEBUG=true` and `LOG_LEVEL=debug` in your .env file.
+
+The web server and the database server also provide some logs. Their locations may vary depending on the server choice and your operating system. If you followed the [Web server configuration](#web-server-configuration) of this guide, the web server logs should be in one of these locations under a *nix system :
+
++++ NGINX
+
+```bash
+/dev/stdout
+/dev/stderr
 ```
+
++++ Apache2
+
+```bash
+# Debian / Ubuntu 
+/var/log/apache2/
+
+# RHEL / Red Hat / CentOS / Fedora 
+/var/log/httpd/
+
+# FreeBSD
+var/log/
+```
+
++++
+
+### Possible issues
+
+__The uploaded icons are not visible even though I set the storage symlink__
+:   Try to recreate the symlink using relative path.
+
+    Open a terminal on the 2FAuth installation folder and run:
+
+    ```bash
+    ln -sfn ../storage/app/public public/storage
+    ```
+
+__2FAuth returns a `500` error with ionos hosting__
+:   The `.htaccess` configuration should be modified.
+
+    Edit the `/public/.htaccess` file and add following lines:
+
+    ```apache
+    RewriteBase /
+    Options +FollowSymLinks
+    ```
+
+    right before:
+
+    ```apache
+    RewriteEngine On
+    ```
+
+__2FAuth returns a `404` error on API requests__
+:   If using Apache2, ensure permissions are set correctly.
+
+    Open a terminal and run:
+
+    ```bash
+    sudo chown -R www-data:www-data /var/www/2fauth
+    sudo chmod -R 775 /var/www/2fauth
+    ```
+    
+    Also, ensure `mod_rewrite` is enabled:
+
+    ```bash
+    sudo a2enmod rewrite
+    systemctl restart apache2
+    ```
