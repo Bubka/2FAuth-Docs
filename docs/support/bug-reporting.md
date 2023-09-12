@@ -23,3 +23,4 @@ You can also report your issue:
 
 - By email - contact:icon-mention:2fauth.app
 - On Twitter - [@TwoFAuth](https://twitter.com/TwoFAuth)
+- On Mastodon - [@2FAuth@fosstodon](https://fosstodon.org/@2fauth)
