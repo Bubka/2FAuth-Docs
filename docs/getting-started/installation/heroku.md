@@ -10,7 +10,7 @@ You can deploy 2FAuth to Heroku by clicking the button below:
 
 Heroku uses an <a href="https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem" target="_blank">ephemeral filesystem</a>, which means 2FAuth cannot use this file system to store and retrieve the 2FA icons across multiple sessions. For now, the only workaround is to disable icon display in 2FAuth:
 
-:icon-arrow-right: Uncheck the [!badge size="l" icon="tasklist" text="Show icons"] option in the 2FAuth's _Settings > Options_ section
+:icon-arrow-right: Uncheck the [!badge size="l" icon="checkbox" text="Show icons"] option in the 2FAuth's _Settings > Options_ section
 
 ## Configuration
 

@@ -11,7 +11,7 @@ order: 90
 
 Sensitive data stored in the database (2FA secret & otpauth URI) can be encrypted to protect them against a database compromise.
 
-:icon-arrow-right: Check the [!badge size="l" icon="tasklist" text="Protect sensible data"] option in the 2FAuth's _Settings > Options_ section to enable encryption.
+:icon-arrow-right: Check the [!badge size="l" icon="checkbox" text="Protect sensible data"] option in the 2FAuth's _Settings > Options_ section to enable encryption.
 
 !!!
 Encryption applies to all users data
@@ -54,4 +54,4 @@ Of course, this is only suitable if you are able to use the copy/paste feature t
 Simply click/tap the (obfuscated) password in 2FAuth to copy it!
 !!!
 
-:icon-arrow-right: Check the [!badge size="l" icon="tasklist" text="Show generated one-time passwords as dot"] option in the 2FAuth's _Settings > Options_ section to enable obfuscation.
+:icon-arrow-right: Check the [!badge size="l" icon="checkbox" text="Show generated one-time passwords as dot"] option in the 2FAuth's _Settings > Options_ section to enable obfuscation.
