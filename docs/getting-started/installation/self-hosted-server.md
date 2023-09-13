@@ -501,3 +501,13 @@ __2FAuth returns a `404` error on API requests__
     sudo a2enmod rewrite
     systemctl restart apache2
     ```
+
+__Firefox warns of insecure connection when behind a proxy__
+:   Your proxy should be registered via an enviroment variable.
+
+    Edit your .env file and set:
+
+    ```env
+    TRUSTED_PROXIES=your_proxy_ip_address
+    ```
+    In case of multiple proxies, separate the addresses with a comma.
