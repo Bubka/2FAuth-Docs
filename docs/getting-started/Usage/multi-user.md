@@ -21,6 +21,10 @@ The administrator account is identified as such by a banner in the _Settings > A
 ![The administrator banner](/static/admin_account_banner.png)
 :::
 
+### Disable user registration
+
+Starting from v4.2.0, you can disable user registration. Go to _Settings > Options_ and check the [!badge size="l" icon="checkbox" text="Disable registration"] setting.
+
 ## Users
 
 You can create as many accounts as you want, the only limitation is that every user must register with a unique __Name__ and __Email address__.
