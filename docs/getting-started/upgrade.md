@@ -5,7 +5,7 @@ order: -1000
 
 ## Self-hosted server
 
-Update the source code in `/var/www/2fauth` (see [Get the source code](/getting-started/installation/self-hosted-server/#get-the-source-code))
+Update the source code in `/var/www/2fauth` (see [Get your 2FAuth copy](/getting-started/installation/self-hosted-server/#get-your-2fauth-copy))
 
 !!!warning
 Do not change the `/var/www/2fauth/storage` directory nor your `/var/www/2fauth/database/database.sqlite` file (when using SQLite)
@@ -18,10 +18,24 @@ chown -R www-data:www-data /var/www/2fauth
 chmod -R 775 /var/www/2fauth
 ```
 
-Then run the following commands:
+Update the dependencies by running:
 
 ```sh
+composer install
+
+# or if you didn't add composer to your system PATH
 php composer.phar install
+```
+
+Then start the installation wizard by running:
+
+```sh
+php artisan 2fauth:install
+```
+
+The wizard automatically runs the following commands:
+
+```sh
 php artisan cache:clear
 php artisan config:clear
 php artisan migrate
