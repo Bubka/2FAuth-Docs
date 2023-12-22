@@ -9,34 +9,34 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Upgrade - 2FAuth Docs</title>
-    <meta name="title" content="Upgrade - 2FAuth Docs">
-    <meta name="description" content="Update the source code in /var/www/2fauth(see Get your 2FAuth copy)">
+    <title>Auth proxy - 2FAuth Docs</title>
+    <meta name="title" content="Auth proxy - 2FAuth Docs">
+    <meta name="description" content="You can configure 2FAuth to let an HTTP proxy handle authentication.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.2fauth.app/getting-started/upgrade/">
+    <link rel="canonical" href="https://docs.2fauth.app/security/authentication/auth-proxy/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.2fauth.app/getting-started/upgrade/">
-    <meta property="og:title" content="Upgrade - 2FAuth Docs">
-    <meta property="og:description" content="Update the source code in /var/www/2fauth(see Get your 2FAuth copy)">
+    <meta property="og:url" content="https://docs.2fauth.app/security/authentication/auth-proxy/">
+    <meta property="og:title" content="Auth proxy - 2FAuth Docs">
+    <meta property="og:description" content="You can configure 2FAuth to let an HTTP proxy handle authentication.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.2fauth.app/getting-started/upgrade/">
-    <meta property="twitter:title" content="Upgrade - 2FAuth Docs">
-    <meta property="twitter:description" content="Update the source code in /var/www/2fauth(see Get your 2FAuth copy)">
+    <meta property="twitter:url" content="https://docs.2fauth.app/security/authentication/auth-proxy/">
+    <meta property="twitter:title" content="Auth proxy - 2FAuth Docs">
+    <meta property="twitter:description" content="You can configure 2FAuth to let an HTTP proxy handle authentication.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../static/2fauth_favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.5.0.756553594930" rel="stylesheet">
+    <link href="../../../static/2fauth_favicon.png" rel="icon">
+    <link href="../../../resources/css/retype.css?v=3.5.0.756553594930" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.756553594930" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.756553594930" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.756553594930" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.756553594930" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.756553594930" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.756553594930" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -53,10 +53,10 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-2xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/2fauth_dark.png">
-                                <img class="max-h-10 hidden dark:inline-block" src="../../static/2fauth_light.png">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/2fauth_dark.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../../static/2fauth_light.png">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">2FAuth</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v5.0</span>
@@ -90,7 +90,7 @@
                                 </a>
                             </li>
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../resources/rapidoc.html" target="_blank">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../../resources/rapidoc.html" target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
                                         <g fill="currentColor">
                                             <path d="M10.3 8.24a.75.75 0 0 1-.04 1.06L7.352 12l2.908 2.7a.75.75 0 1 1-1.02 1.1l-3.5-3.25a.75.75 0 0 1 0-1.1l3.5-3.25a.75.75 0 0 1 1.06.04Zm3.44 1.06a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.908-2.7-2.908-2.7Z"/><path d="M2 3.75C2 2.784 2.784 2 3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25Z"/>
@@ -214,7 +214,7 @@
                                         </a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../resources/rapidoc.html" target="_blank">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../../resources/rapidoc.html" target="_blank">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
                                                 <g fill="currentColor">
                                                     <path d="M10.3 8.24a.75.75 0 0 1-.04 1.06L7.352 12l2.908 2.7a.75.75 0 1 1-1.02 1.1l-3.5-3.25a.75.75 0 0 1 0-1.1l3.5-3.25a.75.75 0 0 1 1.06.04Zm3.44 1.06a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.908-2.7-2.908-2.7Z"/><path d="M2 3.75C2 2.784 2.784 2 3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25Z"/>
@@ -265,19 +265,14 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="upgrade" class="break-words">
+<doc-anchor-target id="auth-proxy" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#upgrade">#</doc-anchor-trigger>
-        <span>Upgrade</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#auth-proxy">#</doc-anchor-trigger>
+        <span>Auth proxy</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="self-hosted-server">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#self-hosted-server">#</doc-anchor-trigger>
-        <span>Self-hosted server</span>
-    </h2>
-</doc-anchor-target>
-<p>Update the source code in <code v-pre>/var/www/2fauth</code> (see <a href="../installation/self-hosted-server/#get-your-2fauth-copy">Get your 2FAuth copy</a>)</p>
+<p>You can configure 2FAuth to let an HTTP proxy handle authentication. In this case, 2FAuth will consider you logged in as long as you are authenticated at proxy level. This is particularly useful if you want to deploy 2FAuth behind a service like <a href="https://sandstorm.io/" target="_blank">Sandstorm</a> or behind an Auth server like <a href="https://www.authelia.com/docs/" target="_blank">Authelia</a>.</p>
+<p>2FAuth will check for an HTTP header, named <code v-pre>REMOTE_USER</code> by default, in every request from the proxy. (see <a href="https://datatracker.ietf.org/doc/html/rfc3875#section-4.1.10" target="_blank">RFC3875</a>)</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -290,41 +285,78 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Do not change the <code v-pre>/var/www/2fauth/storage</code> directory nor your <code v-pre>/var/www/2fauth/database/database.sqlite</code> file (when using SQLite)</p>
+<p>2FAuth only check for the header presence, nor its validity nor its content, so be sure your instance cannot be reached otherwise than through your auth proxy.</p>
         </div>
     </div>
 </div>
-<p>Depending on how you update your files, you could have to set the permissions again:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">chown -R www-data:www-data /var/www/2fauth
-chmod -R 775 /var/www/2fauth</code></pre>
-</doc-codeblock></div>
-<p>Update the dependencies by running:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">composer install
-
-# or if you didn't add composer to your system PATH
-php composer.phar install</code></pre>
-</doc-codeblock></div>
-<p>Then start the installation wizard by running:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php artisan 2fauth:install</code></pre>
-</doc-codeblock></div>
-<p>The wizard automatically runs the following commands:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php artisan cache:clear
-php artisan config:clear
-php artisan migrate
-php artisan passport:install
-php artisan config:cache
-php artisan route:cache</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="docker">
+<doc-anchor-target id="enable-the-proxy-guard">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#docker">#</doc-anchor-trigger>
-        <span>Docker</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#enable-the-proxy-guard">#</doc-anchor-trigger>
+        <span>Enable the proxy guard</span>
     </h2>
 </doc-anchor-target>
+<p>Set the <code v-pre>AUTHENTICATION_GUARD</code> environment variable to <code v-pre>reverse-proxy-guard</code> to enable the auth proxy authentication.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">In your .env file:</div>
+<pre class="language-bash"><code v-pre class="language-bash">AUTHENTICATION_GUARD=reverse-proxy-guard</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>WebAuthn and Personal Access Token are not supported when using the <code v-pre>reverse-proxy-guard</code></p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="define-the-header-value">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#define-the-header-value">#</doc-anchor-trigger>
+        <span>Define the header value</span>
+    </h2>
+</doc-anchor-target>
+<p>The <code v-pre>REMOTE_USER</code> header can take any value. For 2FAuth, its value is the username of the user account to consider authenticated.</p>
+<p>If you already have a user account in 2FAuth, set the <code v-pre>REMOTE_USER</code> header value (at proxy level) like the <em>name</em> field of your account.</p>
+<p>If you do not have a user account yet, or if you want to be authenticated as a brand new user, set the header to a fresh value, 2FAuth will take care of creating the account for you.</p>
+<doc-anchor-target id="customize-the-header-name">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#customize-the-header-name">#</doc-anchor-trigger>
+        <span>Customize the header name</span>
+    </h2>
+</doc-anchor-target>
+<p>You can customize the header name by setting the <code v-pre>AUTH_PROXY_HEADER_FOR_USER</code> environment variable to match a specific proxy configuration. For example, if the proxy header is <code v-pre>2FAUTH-User</code>, then set <code v-pre>AUTH_PROXY_HEADER_FOR_USER</code> as such:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">In your .env file:</div>
+<pre class="language-bash"><code v-pre class="language-bash"># if the proxy header is '2FAUTH-User'
+AUTH_PROXY_HEADER_FOR_USER=2FAUTH-User</code></pre>
+</doc-codeblock></div>
+<p>Some proxies may add a prefix to headers, like <code v-pre>HTTP_</code>. You have to add it to your headers name as well.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">In your .env file:</div>
+<pre class="language-bash"><code v-pre class="language-bash"># if the proxy prefix is 'HTTP_'
+AUTH_PROXY_HEADER_FOR_USER=HTTP_2FAUTH-User</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="additional-header">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#additional-header">#</doc-anchor-trigger>
+        <span>Additional header</span>
+    </h2>
+</doc-anchor-target>
+<p>You can configure 2FAuth to check for an additional header that contain the authenticated user email address. This header may or may not exist depending on the auth proxy configuration. Its name should be declare using the environment variable <code v-pre>AUTH_PROXY_HEADER_FOR_EMAIL</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">In your .env file:</div>
+<pre class="language-bash"><code v-pre class="language-bash"># if the proxy pushes a header named REMOTE_USER_EMAIL
+AUTH_PROXY_HEADER_FOR_EMAIL=REMOTE_USER_EMAIL</code></pre>
+</doc-codeblock></div>
+<p>As long as the header is sent by the proxy, its value will be used by 2FAuth as the user email address.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -337,34 +369,11 @@ php artisan route:cache</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>When using SQLite</h5>
-<p>At the very least, backup your <code v-pre>database.sqlite</code> file to avoid bad surprises!</p>
+<p>The email passed through the header must be a valid and unused email. If a 2FAuth user already uses this email, 2FAuth will ignore it.</p>
         </div>
     </div>
 </div>
-<p>The Docker image <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>2fauth/2fauth</span>
-</span> is built on every commit pushed to the <code v-pre>master</code> branch.<br />
-You can therefore pull the image with <code v-pre>docker pull 2fauth/2fauth</code> and restart the container to update it.</p>
-<p>You can also use tagged images, see <a href="https://hub.docker.com/r/2fauth/2fauth/tags?page=1&amp;ordering=last_updated">Docker Hub tags</a>, which are produced on Github releases.</p>
-<doc-anchor-target id="yunohost">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#yunohost">#</doc-anchor-trigger>
-        <span>YunoHost</span>
-    </h2>
-</doc-anchor-target>
-<ol>
-<li>Open the <strong><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3.38 8A9.502 9.502 0 0 1 12 2.5a9.502 9.502 0 0 1 9.215 7.182.75.75 0 1 0 1.456-.364C21.473 4.539 17.15 1 12 1a10.995 10.995 0 0 0-9.5 5.452V4.75a.75.75 0 0 0-1.5 0V8.5a1 1 0 0 0 1 1h3.75a.75.75 0 0 0 0-1.5H3.38Zm-.595 6.318a.75.75 0 0 0-1.455.364C2.527 19.461 6.85 23 12 23c4.052 0 7.592-2.191 9.5-5.451v1.701a.75.75 0 0 0 1.5 0V15.5a1 1 0 0 0-1-1h-3.75a.75.75 0 0 0 0 1.5h2.37A9.502 9.502 0 0 1 12 21.5c-4.446 0-8.181-3.055-9.215-7.182Z"/></g></g></svg> System update</strong> manager from the Yunohost Admin</li>
-<li>In the <strong><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M12.876.64V.639l8.25 4.763c.541.313.875.89.875 1.515v9.525a1.75 1.75 0 0 1-.875 1.516l-8.25 4.762a1.748 1.748 0 0 1-1.75 0l-8.25-4.763a1.75 1.75 0 0 1-.875-1.515V6.917c0-.625.334-1.202.875-1.515L11.126.64a1.748 1.748 0 0 1 1.75 0Zm-1 1.298L4.251 6.34l7.75 4.474 7.75-4.474-7.625-4.402a.248.248 0 0 0-.25 0Zm.875 19.123 7.625-4.402a.25.25 0 0 0 .125-.216V7.639l-7.75 4.474ZM3.501 7.64v8.803c0 .09.048.172.125.216l7.625 4.402v-8.947Z"/></g></g></svg> Applications</strong> section, click the 2FAuth <button class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-green-500 hover:bg-green-700 text-white px-3 h-8 text-sm rounded">
-    <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="16" height="16" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M11.75 4.5a.75.75 0 0 1 .75.75V11h5.75a.75.75 0 0 1 0 1.5H12.5v5.75a.75.75 0 0 1-1.5 0V12.5H5.25a.75.75 0 0 1 0-1.5H11V5.25a.75.75 0 0 1 .75-.75Z"/></g></svg></span>
-    <span>Upgrade</span>
-</button> button</li>
-<li>Wait for the installer to complete its job</li>
-</ol>
-<p>You can also upgrade using the YunoHost command-line:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">yunohost app upgrade 2fauth</code></pre>
-</doc-codeblock></div>
+<p>If the header is no longer sent (or is ignored), the user&#x27;s email will be fallbacked to a fake <code v-pre>@remote</code> email adress by 2FAuth.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -372,7 +381,7 @@ You can therefore pull the image with <code v-pre>docker pull 2fauth/2fauth</cod
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/Bubka/2FAuth-Docs/blob/main/docs/getting-started/upgrade.md" target="_blank" rel="noopener">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/Bubka/2FAuth-Docs/blob/main/docs/security/Authentication/auth-proxy.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
@@ -380,20 +389,20 @@ You can therefore pull the image with <code v-pre>docker pull 2fauth/2fauth</cod
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../getting-started/usage/steam-guard/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../security/authentication/webauthn/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Steam Guard</span>
+                                                <span class="block mt-1">Web​Authn (aka Passkey)</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../security/data-protection/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../security/authentication/pat/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Data protection</span>
+                                                <span class="block mt-1">Personal Access Token</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -408,7 +417,7 @@ You can therefore pull the image with <code v-pre>docker pull 2fauth/2fauth</cod
                                     <ul class="flex flex-wrap items-center text-sm">
                                         <li>
                                             <a class="inline-flex items-center mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://fosstodon.org/@2fauth" target="_blank">
-                                                <img class="mb-px mr-1" width="18" alt="" src="../../static/icon_mastodon.png">
+                                                <img class="mb-px mr-1" width="18" alt="" src="../../../static/icon_mastodon.png">
                                                 <span>@2FAuth</span>
                                             </a>
                                         </li>
@@ -424,7 +433,7 @@ You can therefore pull the image with <code v-pre>docker pull 2fauth/2fauth</cod
                                         </li>
                                         <li>
                                             <a class="inline-flex items-center mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://ko-fi.com/bubka" target="_blank">
-                                                <img class="mb-px mr-1" width="18" alt="" src="../../static/icon_kofi.png">
+                                                <img class="mb-px mr-1" width="18" alt="" src="../../../static/icon_kofi.png">
                                                 <span>Like 2FAuth? Leave a tip</span>
                                             </a>
                                         </li>
@@ -469,6 +478,6 @@ You can therefore pull the image with <code v-pre>docker pull 2fauth/2fauth</cod
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Upgrade", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Auth proxy", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
