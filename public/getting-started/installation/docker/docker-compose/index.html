@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.756553594930">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.758813374473">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../../static/2fauth_favicon.png" rel="icon">
-    <link href="../../../../resources/css/retype.css?v=3.5.0.756553594930" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.5.0.758813374473" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.5.0.756553594930" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.5.0.758813374473" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.5.0.756553594930" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.5.0.756553594930" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.5.0.758813374473" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.5.0.758813374473" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -303,13 +303,17 @@ services:
       # This variable must match your installation's external address.
       # Webauthn won't work otherwise.
       - APP_URL=http://localhost
+      # If you want to serve js assets from a CDN (like https://cdn.example.com),
+      # you need to set this custom URL here.
+      # Otherwise, this should be the exact same value as APP_URL.
+      - ASSET_URL=http://localhost
       # Turn this to true if you want your app to react like a demo.
       # The Demo mode reset the app content every hours and set a generic demo user.
       - IS_DEMO_APP=false
       # The log channel defines where your log entries go to.
-      # 'daily' is the default logging mode giving you 5 daily rotated log files in /storage/logs/.
-      # Several other options exist. You can use 'single' for one big fat error log (not recommended).
-      # Also available are 'syslog', 'errorlog' and 'stdout' which will log to the system itself.
+      # 'daily' is the default logging mode giving you 7 daily rotated log files in /storage/logs/.
+      # Also available are 'errorlog', 'syslog', 'stderr', 'papertrail', 'slack' and a 'stack' channel
+      # to combine multiple channels into a single one.
       - LOG_CHANNEL=daily
       # Log level. You can set this from least severe to most severe:
       # debug, info, notice, warning, error, critical, alert, emergency
