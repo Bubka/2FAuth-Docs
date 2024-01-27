@@ -56,8 +56,9 @@ We assume your current directory is `/yourpath`.
 
     ```sh
     docker run -it --rm -p 8000:8000/tcp \
-    -v /yourpath/2fauth:/2fauth 2fauth/2fauth
-    -e AUTHENTICATION_GUARD=web-guard
+    -v /yourpath/2fauth:/2fauth \
+    -e AUTHENTICATION_GUARD=web-guard \
+    2fauth/2fauth
     ```
 
 1. Access it in your browser
