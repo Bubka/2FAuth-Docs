@@ -156,7 +156,7 @@ search:          # Custom configuration of the website search component.
 
 # -----------------------------------------------------------------------------
 
-server:
+serve:
   host: 127.0.0.1       # Serve the website from this host location.
   port: 5005            # A custom port configurated separately from host.
   watch:
