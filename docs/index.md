@@ -52,11 +52,11 @@ Manage your 2FA accounts, organize and classify them using Groups, edit & delete
 
 2FAuth protects your data with Privacy, Self-hosting, WebAuthn authentication, OTP obfuscation, and Auto lock.
 
-#### :icon-people: Multi-user [!badge corners="pill" text="New" variant="info"]
+#### :icon-people: Multi-user
 
 Share your instance with your family, your friends. Everyone can have an account.
 
-#### :icon-arrow-switch: Import / Export [!badge corners="pill" text="New" variant="info"]
+#### :icon-arrow-switch: Import / Export
 
 Migrate from another 2FA app to 2FAuth or export your 2FA data in a breeze.
 
