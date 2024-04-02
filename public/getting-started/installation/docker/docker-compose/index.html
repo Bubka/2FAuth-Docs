@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.763901755104">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765358653327">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../../static/2fauth_favicon.png" rel="icon">
-    <link href="../../../../resources/css/retype.css?v=3.5.0.763901755104" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.5.0.765358653327" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.5.0.763901755104" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.5.0.765358653327" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.5.0.763901755104" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.5.0.763901755104" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.5.0.765358653327" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.5.0.765358653327" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -370,14 +370,12 @@ services:
       # Custom logout URL to open when using an auth proxy.
       - PROXY_LOGOUT_URL=null
       # WebAuthn settings
-      # Relying Party name, aka the name of the application. If null, defaults to APP_NAME
+      # Relying Party name, aka the name of the application. If blank, defaults to APP_NAME. Do not set to null.
       - WEBAUTHN_NAME=2FAuth
-      # Relying Party ID. If null, the device will fill it internally.
+      # Relying Party ID, should equal the site domain (i.e 2fauth.example.com).
+      # If null, the device will fill it internally (recommended)
       # See https://webauthn-doc.spomky-labs.com/prerequisites/the-relying-party#how-to-determine-the-relying-party-id
       - WEBAUTHN_ID=null
-      # Optional image data in BASE64 (128 bytes maximum) or an image url
-      # See https://webauthn-doc.spomky-labs.com/prerequisites/the-relying-party#relying-party-icon
-      - WEBAUTHN_ICON=null
       # Use this setting to control how user verification behave during the
       # WebAuthn authentication flow.
       #
