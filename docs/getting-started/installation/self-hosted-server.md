@@ -385,7 +385,7 @@ Email configuration depends on your email provider. You should refer to its docu
 As an example, here is the configuration for an OVH hosting:
 
 ```env
-MAIL_DRIVER=smtp
+MAIL_MAILER=smtp
 MAIL_HOST=SSL0.OVH.NET
 MAIL_PORT=465
 MAIL_USERNAME=john.doe@example.com
