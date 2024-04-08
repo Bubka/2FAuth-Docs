@@ -5,14 +5,15 @@ order: 90
 
 ## Purpose
 
-Here are the main environment variables that may be set to make 2FAuth work according to its running environment and to meet your needs. Most of them are optional because default values are predefined.
+Here are the main environment variables that may be set to make 2FAuth work according to its running environment and to meet your needs. It is recommended to review them at least once to ensure minimal requirements are met and to have a picture of what 2FAuth offers in terms of configuration.
 
-When a var is set, the provided value will override the default value. If a variable is not set, the default value will be used by 2FAuth to make it work seamlessly.
+Asterisks next to the var names aim to identify important vars:
 
-It is recommended to review them at least once to ensure minimal requirements are met and to have a picture of what 2FAuth offers in terms of configuration.
+- A blue <span class="expected">asterisk</span> indicates that the var should be set with a suitable value, otherwise 2FAuth may not work as expected.
+- A red <span class="mandatory">asterisk</span> indicates that the var must be set, otherwise 2FAuth will not work at all.
 
-!!!Info Remember
-If a default value is defined for an environment variable, there is no need to set this var.
+!!!primary
+Set only the vars that need to be ajusted. If a var is not set, its default value will be applied.
 !!!
 
 ## How To
@@ -21,23 +22,32 @@ You can set environment variables in various ways, depending on the running envi
 
 - When 2FAuth is deployed directly on a server (e.g. a VM or a bare metal server), the most straightforward method is to edit the `.env` file you should have set up during the [installation process](/getting-started/installation/self-hosted-server.md#set-the-env-file).
 
-  !!!
+  !!!secondary
   The `.env` file sets most of these variables for the sole purpose of guiding the user during the configuration of 2FAuth.
   !!!
-- When running 2FAuth from a Docker container, you can use the `-e "[variable_name]=[new_value]"` or the `--env-file [path_to_env_file]` command-line arguments, or set the variables in a _docker-compose_ file.
+- When running 2FAuth from a Docker container, you can use the `-e "[variable_name]=[new_value]"` or the `--env-file [path_to_env_file]` command-line arguments with the `docker run` command, or set the variables in a _docker-compose_ file.
 
-    [!ref icon="book" target="_blank" text="Docker - Ways to set environment variables with Compose"](https://docs.docker.com/compose/environment-variables/set-environment-variables/)
+    [!ref icon="book" target="_blank" text="Ways to set environment variables with Compose"](https://docs.docker.com/compose/environment-variables/set-environment-variables/)
 
-    [!ref icon="book" target="_blank" text="Docker - Set environment variables with docker run"](https://docs.docker.com/engine/reference/commandline/run/#env)
+    [!ref icon="book" target="_blank" text="Set environment variables with docker run"](https://docs.docker.com/engine/reference/commandline/run/#env)
 
-## General settings
+!!! Important
+The configuration may have been be cached. If so, clear the cache before editing the environment variable:
+
+- Run `php artisan config:clear` OR
+- Delete the file `[2FAuth_directory]/bootstrap/cache/config.php`
+
+Once variables have been modified, (re)build the cache by running `php artisan config:cache`
+!!!
+
+## General setting
 
 ### APP_NAME
 
 === [!badge variant="info" text="string"]
 
 Description
-:   The name of your application. It is used when the app name needs to place in a notification or any other location as required by the application or its packages.
+:   The name of the application. It is used when the app name needs to place in a notification or any other location as required by the application or its packages.
 
 Default value
 :   `2FAuth`
@@ -49,7 +59,11 @@ Default value
 === [!badge variant="info" text="string"]
 
 Description
-:   Determines the "environment" the application is currently running in. If you change it to production, most Artisan console commands will ask for extra confirmation.
+:   Determines the "environment" 2FAuth is currently running in.
+
+    If you change it to production, most Artisan console commands will ask for extra confirmation.
+
+    Do not set it to `testing` unless you run dev tests as some features will be disabled.
 
 Possible values
 :   `local`, `testing`, `production`
@@ -64,23 +78,21 @@ Default value
 === [!badge variant="info" text="boolean"]
 
 Description
-:   When your application is in debug mode, detailed error messages with stack traces will be shown on every error that occurs within your application. If disabled, a simple generic error page is shown.
+:   When 2FAuth is in debug mode, detailed error messages with stack traces will be shown on every error that occurs within 2FAuth.
+
+    If disabled, a simple generic error page is shown.
 
 Default value
 :   `false`
 
 ===
 
-### APP_KEY
+### <span class="mandatory">APP_KEY</span>
 
 === [!badge variant="info" text="string"] [!badge variant="info" text="32 random characters"]
 
 Description
 :   The encryption key for all security related features (sessions, [DB encryption](/security/data-protection/#db-encryption), [webauthn](/security/authentication/webauthn/), [personal access token](/security/authentication/pat/))
-
-    !!!primary
-    Setting this var is mandatory
-    !!!
 
     !!! warning
     Keep this very secure. If you loose it or generate a new one, all existing encrypted data in db must be considered LOST.
@@ -93,7 +105,7 @@ Default value
 
 ===
 
-### APP_URL
+### <span class="expected">APP_URL</span>
 
 === [!badge variant="info" text="string"] [!badge variant="info" text="url"]
 
@@ -127,7 +139,7 @@ Default value
 
 ===
 
-### APP_SUBDIRECTORY
+### <span class="expected">APP_SUBDIRECTORY</span>
 
 === [!badge variant="info" text="string"] [!badge variant="info" text="path"]
 
@@ -138,7 +150,9 @@ Description
     This must reflect the path targeted by [APP_URL](#app_url).
     !!!
 
-    If you previously set `APP_URL=https://mydomain.org/2fa` to access 2FAuth from the `/2fa/` subdirectory, you have to set `APP_SUBDIRECTORY=2fa`.
+    Example:
+
+    If you previously set `APP_URL` to `https://mydomain.org/2fa` to access 2FAuth from the `/2fa/` subdirectory, you have to set `APP_SUBDIRECTORY=2fa`.
 
     Leave blank if you serve 2FAuth from the domain root.
 
@@ -167,7 +181,7 @@ Default value
 
 ===
 
-## API settings
+## API setting
 
 ### THROTTLE_API
 
@@ -184,502 +198,7 @@ Default value
 
 ===
 
-## Cache settings
-
-### CACHE_DRIVER
-
-=== [!badge variant="info" text="string"]
-
-Description
-:   The default cache store used by the application when executing caching functions
-
-Accepted values
-
-:::codeblock-wrapper
-:::ml-3
-`apc`
-:   In-memory key-value store for PHP
-
-`database`
-:   Data are cached to the database set with [database settings](#database-settings).
-
-    See <a href="https://laravel.com/docs/cache#prerequisites-database" target="_blank">how to configure the Database driver</a> on the Laravel documentation.
-
-`file`
-:   Data are cached to the filesystem
-
-`memcached`
-:   A distributed memory object caching system (<a href="https://memcached.org/" target="_blank">memcached.org</a>)
-
-    !!!warning
-    This driver requires the installation of an additional PECL package.
-    !!!
-    
-    See <a href="https://laravel.com/docs/cache#memcached" target="_blank">how to configure the Memcached driver</a> on the Laravel documentation.
-
-`redis`
-:   An in-memory data structure store, used as a database, cache, and message broker (<a href="https://redis.io/" target="_blank">redis.io</a>)
-
-    !!!warning
-    This driver requires the installation of an additional package.
-    !!!
-    
-    See <a href="https://laravel.com/docs/cache#redis" target="_blank">how to configure the Redis driver</a> on the Laravel documentation.
-
-`dynamodb`
-:   Serverless, NoSQL, fully managed database with single-digit millisecond performance at any scale (<a href="https://aws.amazon.com/dynamodb/" target="_blank">dynamodb</a>)
-
-    !!!warning
-    This driver requires the creation of an additional database table and the installation of the AWS SDK php package.
-    !!!
-    
-    See <a href="https://laravel.com/docs/cache#dynamodb" target="_blank">how to configure the DynamoDB driver</a> on the Laravel documentation.
-
-`array`
-:   Convenient cache backend for automated tests
-
-`null`
-:   Convenient cache backend for automated tests
-
-:::
-:::
-
-Default value
-:   `file`
-
-===
-
-## Database settings
-
-See [Database configuration](/getting-started/installation/self-hosted-server/#database-1) for information on how to use these variables together.
-
-### DB_CONNECTION
-
-=== [!badge variant="info" text="string"]
-
-Description
-:   The database driver to be used.
-
-Accepted values
-:   `mysql`, `pgsql`, `sqlsrv`, `sqlite`
-
-Default value
-:   `mysql`
-
-===
-
-### DB_DATABASE
-
-=== [!badge variant="info" text="string"]
-
-Description
-:   Name of the database (when using `mysql`, `pgsql` and `sqlsrv` drivers) or path to the `sqlite` db file
-
-    !!!primary
-    Using `sqlite` under Windows, path separators have to be escaped:  
-    `C:\\path\\to\\database.sqlite`
-    !!!
-
-Default value
-:   `2fauth`
-
-===
-
-### DB_HOST
-
-=== [!badge variant="info" text="string"] [!badge variant="info" text="ip address"] [!badge variant="info" text="domain"]
-
-Description
-:   Address of the resource hosting your database
-
-Default value
-:   `127.0.0.1`
-
-===
-
-### DB_PORT
-
-=== [!badge variant="info" text="number"]
-
-Description
-:   Port used to communicate with the database host
-
-Default values
-:   For MySQL: `3306`
-
-    For PostgreSQL: `5432`
-
-    For SQL Server: `1433`
-
-===
-
-### DB_USERNAME
-
-=== [!badge variant="info" text="string"]
-
-Description
-:   The username used to connect to the database
-
-Default value
-:   `2fauth`
-
-===
-
-### DB_PASSWORD
-
-=== [!badge variant="info" text="string"]
-
-Description
-:   The password used to connect to the database
-
-    When using `.env` file, if the password contains special characters like `#`, put quotes around it.
-
-Default value
-:   An empty string
-
-===
-
-### DATABASE_URL
-
-=== [!badge variant="info" text="string"] [!badge variant="info" text="url"]
-
-Description
-:   A single database "URL" that contains all of the connection information for the database in a single string, i.e:
-
-    `mysql://root:password@127.0.0.1/forge?charset=UTF-8`
-
-    If set, 2FAuth will use it to extract the database connection and credential information. Other `DB_*` vars are then useless.
-
-Default value
-:   _none_
-
-===
-
-### MYSQL_ATTR_SSL_CA
-
-=== [!badge variant="info" text="string"] [!badge variant="info" text="path"]
-
-Description
-:   Absolute path to the root CA bundle if you're connecting to the MySQL database via SSL
-
-Default value
-:   `null`
-
-===
-
-## Security settings
-
-### BCRYPT_ROUNDS
-
-=== [!badge variant="info" text="number"]
-
-Description
-:   Number of rounds when passwords are hashed using the Bcrypt algorithm.
-
-    Increasing this up to 12 or even 13 will benefit to password security. Be careful, a higher value may significantly affect performance.
-
-Default value
-:   `10`
-
-===
-
-## Logs management
-
-The following variables allow you to configure your logging strategy with out-of-the-box options. The <a href="https://laravel.com/docs/10.x/logging" target="_blank">Laravel documentation</a> provides more information on how to configure advanced logging options to meet specific needs.
-
-### LOG_CHANNEL
-
-=== [!badge variant="info" text="string"]
-
-Description
-:   The log channel defines where your log entries go to.
-
-Accepted values
-
-:::codeblock-wrapper
-:::ml-3
-`daily`
-:   Gives you 7 daily rotated log files in `[2FAuth_directory]/storage/logs/`
-
-`single`
-:   Gives you one big fat error log file at in `[2FAuth_directory]/storage/logs/laravel.log`
-
-`errorlog`
-:   Writes entries to the error log
-
-`syslog`
-:   Writes entries to the system log
-
-`papertrail`
-:   Writes entries to a Papertrail instance.  
-    Following additional variables are required to be set:
-
-    `PAPERTRAIL_URL` URL of the papertrail instance
-
-    `PAPERTRAIL_PORT` Port used to communicate with the papertrail instance
-
-`slack`
-:   Writes entries to a Slack channel.  
-    Following additional variable is required to be set:
-
-    `LOG_SLACK_WEBHOOK_URL` URL for an incoming webhook that you have configured for your Slack team
-
-`stack`
-:   A wrapper to facilitate creating "multi-channel" channels.
-:::
-:::
-
-Default value
-:   `daily`
-
-===
-
-### LOG_LEVEL
-
-=== [!badge variant="info" text="string"]
-
-Description
-:   Determines the minimum "level" a message must be in order to be logged.
-
-    If you set it to `debug` your logs will grow large, and fast. If you set it to `emergency` probably nothing will get logged, ever.
-
-Accepted values
-:   From least severe to most severe:
-
-    `debug`, `info`, `notice`, `warning`, `error`, `critical`, `alert`, `emergency`
-
-    See <a href="https://tools.ietf.org/html/rfc5424" target="_blank">RFC 5424</a> for level definitions.
-
-Default value
-:   `notice`
-
-===
-
-### LOG_DEPRECATIONS_CHANNEL
-
-=== [!badge variant="info" text="string"]
-
-Description
-:   A log channel to use to log the PHP & Laravel deprecation warnings.
-
-    Should match one of the channels described at [LOG_CHANNEL](#log_channel)
-
-Default value
-:   `null`
-
-===
-
-## Email
-
-### MAIL_MAILER
-
-=== [!badge variant="info" text="string"]
-
-Description
-:   The default mailer that is used to send any email messages sent by the application.
-
-Accepted values
-
-:::codeblock-wrapper
-:::ml-3
-`smtp`
-:   Use an smtp server to send emails.
-
-    Following variables are required to be set with this driver:
-
-    - [MAIL_USERNAME](#mail_username)
-    - [MAIL_PASSWORD](#mail_password)
-
-    Following variables may be set to customize the `smtp` driver configuration:
-
-    - [MAIL_HOST](#mail_host)
-    - [MAIL_PORT](#mail_port)
-    - [MAIL_ENCRYPTION](#mail_encryption)
-    - [MAIL_VERIFY_SSL_PEER](#mail_verify_ssl_peer)
-
-`sendmail`
-:   Use a sendmail server to send emails.
-
-    Following variable may be set to customize the `sendmail` driver configuration:
-
-    - [MAIL_SENDMAIL_PATH](#mail_sendmail_path) 
-
-`mailgun`
-:   Use the mailgun API to send emails.
-
-    Additional variables are required to be set with this driver:
-
-    - `MAILGUN_DOMAIN`
-    - `MAILGUN_SECRET`
-    - `MAILGUN_ENDPOINT`
-
-    See <a href="https://laravel.com/docs/mail#mailgun-driver" target="_blank">how to configure the Mailgun Driver</a> on the Laravel documentation.
-
-`ses`, `ses-v2`
-:   Use the Amazon SES API to send emails.
-
-    Additional variables are required to be set with this driver:
-
-    - `AWS_ACCESS_KEY_ID`
-    - `AWS_SECRET_ACCESS_KEY`
-    - `AWS_DEFAULT_REGION`
-
-    See <a href="https://laravel.com/docs/mail#ses-driver" target="_blank">how to configure the SES Driver</a> on the Laravel documentation.
-
-`postmark`
-:   Use the postmark API to send emails.
-
-    Additional variables are required to be set with this driver:
-
-    - `POSTMARK_TOKEN`
-
-    See <a href="https://laravel.com/docs/mail#postmark-driver" target="_blank">how to configure the Postmark Driver</a> on the Laravel documentation.
-
-`log`
-:   Use the mail log channel to send emails.
-
-    Instead of sending your emails, the log mail driver will write all email messages to your log files for inspection. 
-
-    Additional variable is required to be set with this driver:
-
-    - `MAIL_LOG_CHANNEL`
-    
-    (See accepted values of [LOG_CHANNEL](#log_channel))
-
-`failover`
-:   Backup mail delivery configurations that will be used in case your primary delivery driver is down
-
-:::
-:::
-
-Default value
-:   `smtp`
-
-===
-
-### MAIL_USERNAME
-
-=== [!badge variant="info" text="string"]
-
-Description
-:   Username used to connect to the smtp server
-
-Default value
-:   _none_
-
-===
-
-### MAIL_PASSWORD
-
-=== [!badge variant="info" text="string"]
-
-Description
-:   Password used to connect to the smtp server.
-
-    When using `.env` file, if the password contains special characters like `#`, put quotes around it.
-
-Default value
-:   _none_
-
-===
-
-### MAIL_ENCRYPTION
-
-=== [!badge variant="info" text="string"]
-
-Description
-:   Encryption protocol used to secure email delivery.
-
-    This var applies only to the `smtp` driver.
-
-Default value
-:   `tls`
-
-===
-
-### MAIL_HOST
-
-=== [!badge variant="info" text="string"] [!badge variant="info" text="ip address"] [!badge variant="info" text="domain"]
-
-Description
-:   Domain of the mail server.
-
-    This var applies only to the `smtp` driver.
-
-Default value
-:   `smtp.mailtrap.io`
-
-===
-
-### MAIL_PORT
-
-=== [!badge variant="info" text="number"]
-
-Description
-:   Port used to communicate with the mail server.
-
-    This var applies only to the `smtp` driver.
-
-Default value
-:   `587`
-
-===
-
-### MAIL_FROM_NAME
-
-=== [!badge variant="info" text="string"]
-
-Description
-:   Name that is used globally for all e-mails that are sent by the application
-
-Default value
-:   `Example`
-
-===
-
-### MAIL_FROM_ADDRESS
-
-=== [!badge variant="info" text="string"] [!badge variant="info" text="email"]
-
-Description
-:   Address that is used globally for all e-mails that are sent by the application
-
-Default value
-:   `hello@example.com`
-
-===
-
-### MAIL_VERIFY_SSL_PEER
-
-=== [!badge variant="info" text="boolean"]
-
-Description
-:   SSL peer verification.
-
-    !!! warning
-    Disabling peer verification may result in a major security flaw. Change it only if you know what you're doing.
-    !!!
-
-    This var applies only to the `smtp` driver.
-
-Default value
-:   `true`
-
-===
-
-### MAIL_SENDMAIL_PATH
-
-=== [!badge variant="info" text="boolean"] [!badge variant="info" text="path"]
-
-Description
-:   Path to the sendmail binary
-
-Default value
-:   `/usr/sbin/sendmail -bs -i`
-
-===
-
-## Authentication settings
+## Authentication setting
 
 ### LOGIN_THROTTLE
 
@@ -695,7 +214,7 @@ Default value
 
 ===
 
-### AUTHENTICATION_GUARD
+### <span class="expected">AUTHENTICATION_GUARD</span>
 
 === [!badge variant="info" text="string"]
 
@@ -840,95 +359,509 @@ Default value
 
 ===
 
-## SSO settings
+## Cache setting
 
-See [Single Sign-On (SSO)](/security/authentication/sso/) to discover how to enable SSO on your instance.
+### CACHE_DRIVER
 
-### OPENID_AUTHORIZE_URL
+=== [!badge variant="info" text="string"]
+
+Description
+:   The default cache store used by 2FAuth when executing caching functions
+
+Accepted values
+
+:::codeblock-wrapper
+:::ml-3
+`apc`
+:   In-memory key-value store for PHP
+
+`database`
+:   Data are cached to the database set with [database settings](#database-settings).
+
+    See <a href="https://laravel.com/docs/cache#prerequisites-database" target="_blank">how to configure the Database driver</a> on the Laravel documentation.
+
+`file`
+:   Data are cached to the filesystem
+
+`memcached`
+:   A distributed memory object caching system (<a href="https://memcached.org/" target="_blank">memcached.org</a>)
+
+    !!!warning
+    This driver requires the installation of an additional PECL package.
+    !!!
+    
+    See <a href="https://laravel.com/docs/cache#memcached" target="_blank">how to configure the Memcached driver</a> on the Laravel documentation.
+
+`redis`
+:   An in-memory data structure store, used as a database, cache, and message broker (<a href="https://redis.io/" target="_blank">redis.io</a>)
+
+    !!!warning
+    This driver requires the installation of an additional package.
+    !!!
+    
+    See <a href="https://laravel.com/docs/cache#redis" target="_blank">how to configure the Redis driver</a> on the Laravel documentation.
+
+`dynamodb`
+:   Serverless, NoSQL, fully managed database with single-digit millisecond performance at any scale (<a href="https://aws.amazon.com/dynamodb/" target="_blank">dynamodb</a>)
+
+    !!!warning
+    This driver requires the creation of an additional database table and the installation of the AWS SDK php package.
+    !!!
+    
+    See <a href="https://laravel.com/docs/cache#dynamodb" target="_blank">how to configure the DynamoDB driver</a> on the Laravel documentation.
+
+`array`
+:   Convenient cache backend for automated tests
+
+`null`
+:   Convenient cache backend for automated tests
+
+:::
+:::
+
+Default value
+:   `file`
+
+===
+
+## Database setting
+
+See [Database configuration](/getting-started/installation/self-hosted-server/#database-1) for information on how to use these variables together.
+
+### <span class="expected">DB_CONNECTION</span>
+
+=== [!badge variant="info" text="string"]
+
+Description
+:   The database driver to be used.
+
+Accepted values
+
+:::codeblock-wrapper
+:::ml-3
+`mysql`
+:   MySQL database
+
+`pgsql`
+:   PostgreSQL database
+
+`sqlsrv`
+:   SQL Server database
+
+`sqlite`
+:   SQLite database
+
+:::
+:::
+
+Default value
+:   `mysql`
+
+===
+
+### <span class="expected">DB_DATABASE</span>
+
+=== [!badge variant="info" text="string"]
+
+Description
+:   Name of the database (when using `mysql`, `pgsql` and `sqlsrv` drivers) or path to the `sqlite` file
+
+    !!!primary
+    Using `sqlite` under Windows, path separators have to be escaped:  
+    `C:\\path\\to\\database.sqlite`
+    !!!
+
+Default value
+:   `2fauth`
+
+===
+
+### <span class="expected">DB_HOST</span>
+
+=== [!badge variant="info" text="string"] [!badge variant="info" text="ip address"] [!badge variant="info" text="domain"]
+
+Description
+:   Address of the resource hosting your database.
+
+    Does not apply to `sqlite`.
+
+Default value
+:   `127.0.0.1`
+
+===
+
+### DB_PORT
+
+=== [!badge variant="info" text="number"]
+
+Description
+:   Port used to communicate with the database host.
+
+    Does not apply to `sqlite`.
+
+Default values
+:   For MySQL: `3306`
+
+    For PostgreSQL: `5432`
+
+    For SQL Server: `1433`
+
+===
+
+### <span class="expected">DB_USERNAME</span>
+
+=== [!badge variant="info" text="string"]
+
+Description
+:   The username used to connect to the database.
+
+    Does not apply to `sqlite`.
+
+Default value
+:   `2fauth`
+
+===
+
+### <span class="expected">DB_PASSWORD</span>
+
+=== [!badge variant="info" text="string"]
+
+Description
+:   The password used to connect to the database.
+
+    When using `.env` file, if the password contains special characters like `#`, put quotes around it.  
+    Does not apply to `sqlite`.
+
+Default value
+:   An empty string
+
+===
+
+### DATABASE_URL
 
 === [!badge variant="info" text="string"] [!badge variant="info" text="url"]
 
 Description
-:   URL  used during the OpenID SSO flow to request the user's authentication and consent
+:   A single database "URL" that contains all of the connection information for the database in a single string, i.e:
+
+    `mysql://root:password@127.0.0.1/forge?charset=UTF-8`
+
+    If set, 2FAuth will use it to extract the database connection and credential information. Other `DB_*` vars are then useless.
 
 Default value
 :   _none_
 
 ===
 
-### OPENID_TOKEN_URL
+### MYSQL_ATTR_SSL_CA
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="url"]
+=== [!badge variant="info" text="string"] [!badge variant="info" text="path"]
 
 Description
-:   URL  used during the OpenID SSO flow to obtain an ID and / or access token
+:   Absolute path to the root CA bundle if you're connecting to the MySQL database via SSL
 
 Default value
-:   _none_
+:   `null`
 
 ===
 
-### OPENID_USERINFO_URL
+## Email setting
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="url"]
-
-Description
-:   URL used during the OpenID SSO flow to retrieve profile information and other attributes for a logged-in end-user
-
-Default value
-:   _none_
-
-===
-
-### OPENID_CLIENT_ID
+### <span class="expected">MAIL_MAILER</span>
 
 === [!badge variant="info" text="string"]
 
 Description
-:   A unique identifier for the application
+:   The default mailer that is used to send any email messages sent by 2FAuth.
+
+Accepted values
+
+:::codeblock-wrapper
+:::ml-3
+`smtp`
+:   Use an SMTP server to send emails.
+
+    Following variables are required to be set with this driver:
+
+    - [MAIL_USERNAME](#mail_username)
+    - [MAIL_PASSWORD](#mail_password)
+
+    Following variables may be set to customize the `smtp` driver configuration:
+
+    - [MAIL_HOST](#mail_host)
+    - [MAIL_PORT](#mail_port)
+    - [MAIL_ENCRYPTION](#mail_encryption)
+    - [MAIL_VERIFY_SSL_PEER](#mail_verify_ssl_peer)
+
+`sendmail`
+:   Use a sendmail server to send emails.
+
+    Following variable may be set to customize the `sendmail` driver configuration:
+
+    - [MAIL_SENDMAIL_PATH](#mail_sendmail_path) 
+
+`mailgun`
+:   Use the mailgun API to send emails.
+
+    Additional variables are required to be set with this driver:
+
+    - `MAILGUN_DOMAIN`
+    - `MAILGUN_SECRET`
+    - `MAILGUN_ENDPOINT`
+
+    See <a href="https://laravel.com/docs/mail#mailgun-driver" target="_blank">how to configure the Mailgun Driver</a> on the Laravel documentation.
+
+`ses`, `ses-v2`
+:   Use the Amazon SES API to send emails.
+
+    Additional variables are required to be set with this driver:
+
+    - `AWS_ACCESS_KEY_ID`
+    - `AWS_SECRET_ACCESS_KEY`
+    - `AWS_DEFAULT_REGION`
+
+    See <a href="https://laravel.com/docs/mail#ses-driver" target="_blank">how to configure the SES Driver</a> on the Laravel documentation.
+
+`postmark`
+:   Use the postmark API to send emails.
+
+    Additional variables are required to be set with this driver:
+
+    - `POSTMARK_TOKEN`
+
+    See <a href="https://laravel.com/docs/mail#postmark-driver" target="_blank">how to configure the Postmark Driver</a> on the Laravel documentation.
+
+`log`
+:   Use the mail log channel to send emails.
+
+    Instead of sending your emails, the log mail driver will write all email messages to your log files for inspection. 
+
+    Additional variable is required to be set with this driver:
+
+    - `MAIL_LOG_CHANNEL`
+    
+    (See accepted values of [LOG_CHANNEL](#log_channel))
+
+`failover`
+:   Backup mail delivery configurations that will be used in case your primary delivery driver is down
+
+:::
+:::
 
 Default value
-:   _none_
+:   `smtp`
 
 ===
 
-### OPENID_CLIENT_SECRET
+### <span class="expected">MAIL_USERNAME</span>
 
 === [!badge variant="info" text="string"]
 
 Description
-:   Secret known only to the application and the Open ID authorization server
+:   Username used to connect to the SMTP server
 
 Default value
 :   _none_
 
 ===
 
-### GITHUB_CLIENT_ID
+### <span class="expected">MAIL_PASSWORD</span>
 
 === [!badge variant="info" text="string"]
 
 Description
-:   A unique identifier for the application
+:   Password used to connect to the SMTP server.
+
+    When using `.env` file, if the password contains special characters like `#`, put quotes around it.
 
 Default value
 :   _none_
 
 ===
 
-### GITHUB_CLIENT_SECRET
+### MAIL_ENCRYPTION
 
 === [!badge variant="info" text="string"]
 
 Description
-:   Secret known only to the application and Github
+:   Encryption protocol used to secure email delivery.
+
+    This var applies only to the `smtp` driver.
 
 Default value
-:   _none_
+:   `tls`
 
 ===
 
-## Proxy settings
+### <span class="expected">MAIL_HOST</span>
+
+=== [!badge variant="info" text="string"] [!badge variant="info" text="ip address"] [!badge variant="info" text="domain"]
+
+Description
+:   Domain of the mail server.
+
+    This var applies only to the `smtp` driver.
+
+Default value
+:   `smtp.mailtrap.io`
+
+===
+
+### <span class="expected">MAIL_PORT</span>
+
+=== [!badge variant="info" text="number"]
+
+Description
+:   Port used to communicate with the mail server.
+
+    This var applies only to the `smtp` driver.
+
+Default value
+:   `587`
+
+===
+
+### <span class="expected">MAIL_FROM_NAME</span>
+
+=== [!badge variant="info" text="string"]
+
+Description
+:   Name that is used globally for all e-mails that are sent by 2FAuth
+
+Default value
+:   `Example`
+
+===
+
+### <span class="expected">MAIL_FROM_ADDRESS</span>
+
+=== [!badge variant="info" text="string"] [!badge variant="info" text="email"]
+
+Description
+:   Address that is used globally for all e-mails that are sent by 2FAuth
+
+Default value
+:   `hello@example.com`
+
+===
+
+### MAIL_VERIFY_SSL_PEER
+
+=== [!badge variant="info" text="boolean"]
+
+Description
+:   SSL peer verification.
+
+    !!! warning
+    Disabling peer verification may result in a major security flaw. Change it only if you know what you're doing.
+    !!!
+
+    This var applies only to the `smtp` driver.
+
+Default value
+:   `true`
+
+===
+
+### MAIL_SENDMAIL_PATH
+
+=== [!badge variant="info" text="string"] [!badge variant="info" text="path"]
+
+Description
+:   Path to the sendmail binary
+
+Default value
+:   `/usr/sbin/sendmail -bs -i`
+
+===
+
+## Logs management
+
+The following variables allow you to configure your logging strategy with out-of-the-box options. The <a href="https://laravel.com/docs/10.x/logging" target="_blank">Laravel documentation</a> provides more information on how to configure advanced logging options to meet specific needs.
+
+### LOG_CHANNEL
+
+=== [!badge variant="info" text="string"]
+
+Description
+:   The log channel defines where your log entries go to.
+
+Accepted values
+
+:::codeblock-wrapper
+:::ml-3
+`daily`
+:   Gives you 7 daily rotated log files in `[2FAuth_directory]/storage/logs/`
+
+`single`
+:   Gives you one big fat error log file at in `[2FAuth_directory]/storage/logs/laravel.log`
+
+`errorlog`
+:   Writes entries to the error log
+
+`syslog`
+:   Writes entries to the system log
+
+`papertrail`
+:   Writes entries to a Papertrail instance.  
+    Following additional variables are required to be set:
+
+    `PAPERTRAIL_URL` URL of the papertrail instance
+
+    `PAPERTRAIL_PORT` Port used to communicate with the papertrail instance
+
+`slack`
+:   Writes entries to a Slack channel.  
+    Following additional variable is required to be set:
+
+    `LOG_SLACK_WEBHOOK_URL` URL for an incoming webhook that you have configured for your Slack team
+
+`stack`
+:   A wrapper to facilitate creating "multi-channel" channels.
+:::
+:::
+
+Default value
+:   `daily`
+
+===
+
+### LOG_LEVEL
+
+=== [!badge variant="info" text="string"]
+
+Description
+:   Determines the minimum "level" a message must be in order to be logged.
+
+    If you set it to `debug` your logs will grow large, and fast. If you set it to `emergency` probably nothing will get logged, ever.
+
+Accepted values
+:   From least severe to most severe:
+
+    `debug`, `info`, `notice`, `warning`, `error`, `critical`, `alert`, `emergency`
+
+    See <a href="https://tools.ietf.org/html/rfc5424" target="_blank">RFC 5424</a> for level definitions.
+
+Default value
+:   `notice`
+
+===
+
+### LOG_DEPRECATIONS_CHANNEL
+
+=== [!badge variant="info" text="string"]
+
+Description
+:   A log channel to use to log the PHP & Laravel deprecation warnings.
+
+    Should match one of the channels described at [LOG_CHANNEL](#log_channel)
+
+Default value
+:   `null`
+
+===
+
+## Proxy setting
 
 ### TRUSTED_PROXIES
 
@@ -936,6 +869,8 @@ Default value
 
 Description
 :   A comma separated IP list of trusted proxies.
+
+    When running 2FAuth behind a proxy that terminates TLS / SSL certificates, you may face some errors. Typically this is because 2FAuth is being forwarded traffic from the proxy on port 80 and does not know it should generate secure links.
 
     Set to `*` to trust any proxy.
 
@@ -953,21 +888,35 @@ Description
 
     You can provide a proxy URL that contains a scheme, username, and password. For example `http://username:password@192.168.16.1:10`.
 
-    Set it to `null` to have direct outgoing requests.
-
 Default value
-:   An empty string
+:   _blank_
 
 ===
 
-## Session settings
+## Security setting
+
+### BCRYPT_ROUNDS
+
+=== [!badge variant="info" text="number"]
+
+Description
+:   Number of rounds when passwords are hashed using the Bcrypt algorithm.
+
+    Increasing this up to 12 or even 13 will benefit to password security. Be careful, a higher value may significantly affect performance.
+
+Default value
+:   `10`
+
+===
+
+## Session setting
 
 ### SESSION_DRIVER
 
 === [!badge variant="info" text="string"]
 
 Description
-:   The default session driver used by the application to store sessions
+:   The default session driver used by 2FAuth to store sessions
 
 Accepted values
 
@@ -1050,7 +999,7 @@ Default value
 Description
 :   While using one of the framework's cache driven session backends you may list a cache store that should be used for these sessions.
 
-    This value must match with one of the application's configured cache stores.
+    This value must match with one of the 2FAuth's configured cache stores.
 
 Accepted values
 :   `apc`, `dynamodb`, `memcached`, `redis`
@@ -1083,7 +1032,7 @@ Default value
 Description
 :   Domain of the cookie used to identify a session in 2FAuth.
 
-    This will determine which domains the cookie is available to in the application.
+    This will determine which domains the cookie is available to in 2FAuth.
 
 Default value
 :   Fallbacks to the 2FAuth instance domain
@@ -1101,5 +1050,93 @@ Description
 
 Default value
 :   `false`
+
+===
+
+## SSO setting
+
+See [Single Sign-On (SSO)](/security/authentication/sso/) to discover how to enable SSO on your instance.
+
+### OPENID_AUTHORIZE_URL
+
+=== [!badge variant="info" text="string"] [!badge variant="info" text="url"]
+
+Description
+:   URL  used during the OpenID SSO flow to request the user's authentication and consent
+
+Default value
+:   _none_
+
+===
+
+### OPENID_TOKEN_URL
+
+=== [!badge variant="info" text="string"] [!badge variant="info" text="url"]
+
+Description
+:   URL  used during the OpenID SSO flow to obtain an ID and / or access token
+
+Default value
+:   _none_
+
+===
+
+### OPENID_USERINFO_URL
+
+=== [!badge variant="info" text="string"] [!badge variant="info" text="url"]
+
+Description
+:   URL used during the OpenID SSO flow to retrieve profile information and other attributes for a logged-in end-user
+
+Default value
+:   _none_
+
+===
+
+### OPENID_CLIENT_ID
+
+=== [!badge variant="info" text="string"]
+
+Description
+:   A unique identifier for the application
+
+Default value
+:   _none_
+
+===
+
+### OPENID_CLIENT_SECRET
+
+=== [!badge variant="info" text="string"]
+
+Description
+:   Secret known only to 2FAuth and the Open ID authorization server
+
+Default value
+:   _none_
+
+===
+
+### GITHUB_CLIENT_ID
+
+=== [!badge variant="info" text="string"]
+
+Description
+:   A unique identifier for the application
+
+Default value
+:   _none_
+
+===
+
+### GITHUB_CLIENT_SECRET
+
+=== [!badge variant="info" text="string"]
+
+Description
+:   Secret known only to 2FAuth and Github
+
+Default value
+:   _none_
 
 ===

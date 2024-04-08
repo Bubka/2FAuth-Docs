@@ -35,3 +35,15 @@
 footer ul li a[href="https://github.com/sponsors/Bubka"] svg {
     color: #db61a2;
 }
+
+.expected::after {
+    content: ' *';
+    --tw-text-opacity: 1;
+    color: rgb(95 160 255/var(--tw-text-opacity));
+}
+*
+.mandatory::after {
+    content: ' *';
+    --tw-text-opacity: 1;
+    color: rgb(211 38 38/var(--tw-text-opacity));
+}
