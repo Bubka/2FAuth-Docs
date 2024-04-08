@@ -334,8 +334,12 @@ Run the following command from the `/var/www/2fauth` directory to create a fresh
 mv .env.example .env
 ```
 
-Open the `.env` file with a text editor, you will find all environment variables that could be customized.  
+Open the `.env` file with a text editor, you will find the main environment variables that could be customized.  
 You won't have to set/change all, most of them have a default value that will probably fit your needs. But some parts must be reviewed.
+
+!!!secondary
+See [Configuration](/getting-started/configuration/) to learn about all the environment variables that can be set.
+!!!
 
 #### Database
 

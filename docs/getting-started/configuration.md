@@ -23,7 +23,7 @@ You can set environment variables in various ways, depending on the running envi
 - When 2FAuth is deployed directly on a server (e.g. a VM or a bare metal server), the most straightforward method is to edit the `.env` file you should have set up during the [installation process](/getting-started/installation/self-hosted-server.md#set-the-env-file).
 
   !!!secondary
-  The `.env` file sets most of these variables for the sole purpose of guiding the user during the configuration of 2FAuth.
+  The `.env.example` file sets most of these variables for the sole purpose of guiding the user during the configuration of 2FAuth.
   !!!
 - When running 2FAuth from a Docker container, you can use the `-e "[variable_name]=[new_value]"` or the `--env-file [path_to_env_file]` command-line arguments with the `docker run` command, or set the variables in a _docker-compose_ file.
 
@@ -32,7 +32,7 @@ You can set environment variables in various ways, depending on the running envi
     [!ref icon="book" target="_blank" text="Set environment variables with docker run"](https://docs.docker.com/engine/reference/commandline/run/#env)
 
 !!! Important
-The configuration may have been be cached. If so, clear the cache before editing the environment variable:
+The configuration may have been cached. If so, clear the cache before editing the environment variable:
 
 - Run `php artisan config:clear` OR
 - Delete the file `[2FAuth_directory]/bootstrap/cache/config.php`

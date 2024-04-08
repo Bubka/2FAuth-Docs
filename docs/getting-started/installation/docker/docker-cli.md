@@ -57,7 +57,6 @@ We assume your current directory is `/yourpath`.
     ```sh
     docker run -it --rm -p 8000:8000/tcp \
     -v /yourpath/2fauth:/2fauth \
-    -e AUTHENTICATION_GUARD=web-guard \
     2fauth/2fauth
     ```
 
@@ -68,7 +67,11 @@ We assume your current directory is `/yourpath`.
 You can stop it with `CTRL+C`.
 
 - You can also run it in the background by replacing `-it --rm` with `-d`.
-- You can set available environment variables (see the <a href="https://github.com/Bubka/2FAuth/blob/master/.env.example" target="_blank">.env.example</a>) with `-e`, for example `-e APP_NAME=2FAuth`.
+- You can set available environment variables with `-e`, for example `-e APP_NAME=2FAuth`.
+
+!!!secondary
+See [Configuration](/getting-started/configuration/) to learn about all the environment variables that can be set.
+!!!
 
 ### Use an existing SQLite file
 
