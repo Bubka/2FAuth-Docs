@@ -376,7 +376,7 @@ Accepted values
 :   In-memory key-value store for PHP
 
 `database`
-:   Data are cached to the database set with [database settings](#database-settings).
+:   Data are cached to the database set with [database setting](#database-setting).
 
     See <a href="https://laravel.com/docs/cache#prerequisites-database" target="_blank">how to configure the Database driver</a> on the Laravel documentation.
 
