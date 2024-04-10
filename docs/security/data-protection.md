@@ -11,7 +11,7 @@ order: 90
 
 Sensitive data stored in the database (2FA secret & otpauth URI) can be encrypted to protect them against a database compromise.
 
-:icon-arrow-right: Check the [!badge size="l" icon="checkbox" text="Protect sensible data"] option in the 2FAuth's _Settings > Options_ section to enable encryption.
+:icon-arrow-right: Check the [!badge size="l" icon="checkbox" text="Protect sensitive data"] option in the 2FAuth's _Admin > App setup_ section to enable encryption.
 
 !!!
 Encryption applies to all users data

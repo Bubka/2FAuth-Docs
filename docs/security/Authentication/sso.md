@@ -95,7 +95,7 @@ When you sign in via SSO for the first time, you are registered to 2FAuth transp
 
 As an administrator, you can fully disable Single sign-On from the 2FAuth UI.
 
-Go to _Settings > Options_, scroll down to the Administration section and uncheck [!badge size="l" icon="checkbox" text="Enable Single Sign-On"].
+Go to _Admin > App setup_, scroll down to the _Registrations_ section and uncheck [!badge size="l" icon="checkbox" text="Enable Single Sign-On"].
 
 Note that:
 
