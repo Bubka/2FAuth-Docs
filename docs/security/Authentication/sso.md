@@ -43,7 +43,7 @@ At the end of the process, you should be provided with a Client ID & Secret. Cop
 
 ### Set up the provider
 
-Setting up a provider is done by defining its dedicated environment variables on your 2FAuth instance. You can find these vars in the `.env` file of 2FAuth.
+Setting up a provider is done by defining its dedicated environment variables on your 2FAuth instance. You can find these vars in the `.env` file of 2FAuth. See also the [SSO setting](/getting-started/configuration/#sso-setting) section.
 
 ```env
 # OpenID (enabled)
