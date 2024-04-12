@@ -42,9 +42,14 @@ Once variables have been modified, (re)build the cache by running `php artisan c
 
 ## General setting
 
+:::has-following-h3-more-spaced
+:::
+
 ### APP_NAME
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   The name of the application. It is used when the app name needs to place in a notification or any other location as required by the application or its packages.
@@ -52,11 +57,13 @@ Description
 Default value
 :   `2FAuth`
 
-===
+:::
 
 ### APP_ENV
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Determines the "environment" 2FAuth is currently running in.
@@ -71,11 +78,13 @@ Possible values
 Default value
 :   `local`
 
-===
+:::
 
 ### APP_DEBUG
 
-=== [!badge variant="info" text="boolean"]
+[!badge variant="info" text="boolean"]
+
+:::env-var-dl-wrapper
 
 Description
 :   When 2FAuth is in debug mode, detailed error messages with stack traces will be shown on every error that occurs within 2FAuth.
@@ -85,11 +94,13 @@ Description
 Default value
 :   `false`
 
-===
+:::
 
 ### <span class="mandatory">APP_KEY</span>
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="32 random characters"]
+[!badge variant="info" text="string"] [!badge variant="info" text="32 random characters"]
+
+:::env-var-dl-wrapper
 
 Description
 :   The encryption key for all security related features (sessions, [DB encryption](/security/data-protection/#db-encryption), [webauthn](/security/authentication/webauthn/), [personal access token](/security/authentication/pat/))
@@ -103,11 +114,13 @@ Description
 Default value
 :   _none_
 
-===
+:::
 
 ### <span class="expected">APP_URL</span>
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="url"]
+[!badge variant="info" text="string"] [!badge variant="info" text="url"]
+
+:::env-var-dl-wrapper
 
 Description
 :   The web address (URL) of your 2FAuth instance, e.g. `https://2fauth.mydomain.com`
@@ -123,11 +136,13 @@ Description
 Default value
 :   `http://localhost`
 
-===
+:::
 
 ### ASSET_URL
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="url"]
+[!badge variant="info" text="string"] [!badge variant="info" text="url"]
+
+:::env-var-dl-wrapper
 
 Description
 :   The URL of your 2FAuth assets (CSS & JS files), e.g. `https://2fauth.cdn.com`
@@ -137,11 +152,13 @@ Description
 Default value
 :   Fallbacks to the [APP_URL](#app_url) value when the var is not set.
 
-===
+:::
 
 ### <span class="expected">APP_SUBDIRECTORY</span>
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="path"]
+[!badge variant="info" text="string"] [!badge variant="info" text="path"]
+
+:::env-var-dl-wrapper
 
 Description
 :   The domain subdirectory from which you want to serve 2FAuth.
@@ -159,11 +176,13 @@ Description
 Default value
 :   _blank_
 
-===
+:::
 
 ### IS_DEMO_APP
 
-=== [!badge variant="info" text="boolean"]
+[!badge variant="info" text="boolean"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Makes the 2FAuth instance behave like a demonstration app.
@@ -179,13 +198,15 @@ Description
 Default value
 :   `false`
 
-===
+:::
 
 ## API setting
 
 ### THROTTLE_API
 
-=== [!badge variant="info" text="number"]
+[!badge variant="info" text="number"]
+
+:::env-var-dl-wrapper
 
 Description
 :   The maximum number of API calls in a minute from the same IP.  
@@ -196,13 +217,15 @@ Description
 Default value
 :   `60`
 
-===
+:::
 
 ## Authentication setting
 
 ### LOGIN_THROTTLE
 
-=== [!badge variant="info" text="number"]
+[!badge variant="info" text="number"]
+
+:::env-var-dl-wrapper
 
 Description
 :   The number of times per minute a user can fail to log in before being locked out.
@@ -212,19 +235,23 @@ Description
 Default value
 :   `5`
 
-===
+:::
 
 ### <span class="expected">AUTHENTICATION_GUARD</span>
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   The authentication guard used to perform users authentication.
 
-Accepted values
+:::
 
-:::codeblock-wrapper
-:::ml-3
+<span class="fw-500">Accepted values</span>
+
+:::sub-dl-wrapper
+
 `web-guard`
 :   The default guard to handle web authentications, such as login/password or webauthn.
 
@@ -244,16 +271,19 @@ Accepted values
     See the dedicated [auth proxy page](security/authentication/auth-proxy/) to discover how to configure the reverse-proxy-guard.
 
 :::
-:::
+
+:::env-var-dl-wrapper
 
 Default value
 :   `web-guard`
 
-===
+:::
 
 ### AUTH_PROXY_HEADER_FOR_USER
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Name of the HTTP header sent by the authentication proxy. This header identifies the user authenticated at proxy level.
@@ -265,11 +295,13 @@ Description
 Default value
 :   `REMOTE_USER`
 
-===
+:::
 
 ### AUTH_PROXY_HEADER_FOR_EMAIL
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Name of the HTTP header sent by the authentication proxy that provides the email address of the user authenticated at proxy level.
@@ -281,11 +313,13 @@ Description
 Default value
 :   `null`
 
-===
+:::
 
 ### PROXY_LOGOUT_URL
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="url"]
+[!badge variant="info" text="string"] [!badge variant="info" text="url"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Custom logout URL to open when a user clicks the _Logout_ link in 2FAuth.  
@@ -296,11 +330,13 @@ Description
 Default value
 :   `null`
 
-===
+:::
 
 ### WEBAUTHN_NAME
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Name of the Relying Party in the WebAuthn process. This should match the name of the application.
@@ -310,11 +346,13 @@ Description
 Default value
 :   Fallbacks to the [APP_NAME](#app_name) value when the var is not set.
 
-===
+:::
 
 ### WEBAUTHN_ID
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   ID of the Relying Party in the WebAuthn process. This should equal the application domain (i.e 2fauth.example.com).
@@ -327,21 +365,25 @@ Description
 Default value
 :   `null`
 
-===
+:::
 
 ### WEBAUTHN_USER_VERIFICATION
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Setting to control how user verification behave during the WebAuthn authentication flow.
 
     See [WebAuthn user verification](/security/authentication/webauthn/#user-verification).
 
-Accepted values
+:::
 
-:::codeblock-wrapper
-:::ml-3
+<span class="fw-500">Accepted values</span>
+
+:::sub-dl-wrapper
+
 `required`
 :   Will ALWAYS ask for user verification
 
@@ -352,26 +394,31 @@ Accepted values
 :   Will NOT ask for user verification (for example, to minimize disruption to the user interaction flow)
 
 :::
-:::
+
+:::env-var-dl-wrapper
 
 Default value
 :   `preferred`
 
-===
+:::
 
 ## Cache setting
 
 ### CACHE_DRIVER
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   The default cache store used by 2FAuth when executing caching functions
 
-Accepted values
+:::
 
-:::codeblock-wrapper
-:::ml-3
+<span class="fw-500">Accepted values</span>
+
+:::sub-dl-wrapper
+
 `apc`
 :   In-memory key-value store for PHP
 
@@ -417,12 +464,13 @@ Accepted values
 :   Convenient cache backend for automated tests
 
 :::
-:::
+
+:::env-var-dl-wrapper
 
 Default value
 :   `file`
 
-===
+:::
 
 ## Database setting
 
@@ -430,15 +478,19 @@ See [Database configuration](/getting-started/installation/self-hosted-server/#d
 
 ### <span class="expected">DB_CONNECTION</span>
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   The database driver to be used.
 
-Accepted values
+:::
 
-:::codeblock-wrapper
-:::ml-3
+<span class="fw-500">Accepted values</span>
+
+:::sub-dl-wrapper
+
 `mysql`
 :   MySQL database
 
@@ -452,16 +504,19 @@ Accepted values
 :   SQLite database
 
 :::
-:::
+
+:::env-var-dl-wrapper
 
 Default value
 :   `mysql`
 
-===
+:::
 
 ### <span class="expected">DB_DATABASE</span>
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Name of the database (when using `mysql`, `pgsql` and `sqlsrv` drivers) or path to the `sqlite` file
@@ -474,11 +529,13 @@ Description
 Default value
 :   `2fauth`
 
-===
+:::
 
 ### <span class="expected">DB_HOST</span>
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="ip address"] [!badge variant="info" text="domain"]
+[!badge variant="info" text="string"] [!badge variant="info" text="ip address"] [!badge variant="info" text="domain"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Address of the resource hosting your database.
@@ -488,11 +545,13 @@ Description
 Default value
 :   `127.0.0.1`
 
-===
+:::
 
 ### DB_PORT
 
-=== [!badge variant="info" text="number"]
+[!badge variant="info" text="number"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Port used to communicate with the database host.
@@ -506,11 +565,13 @@ Default values
 
     For SQL Server: `1433`
 
-===
+:::
 
 ### <span class="expected">DB_USERNAME</span>
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   The username used to connect to the database.
@@ -520,11 +581,13 @@ Description
 Default value
 :   `2fauth`
 
-===
+:::
 
 ### <span class="expected">DB_PASSWORD</span>
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   The password used to connect to the database.
@@ -535,11 +598,13 @@ Description
 Default value
 :   An empty string
 
-===
+:::
 
 ### DATABASE_URL
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="url"]
+[!badge variant="info" text="string"] [!badge variant="info" text="url"]
+
+:::env-var-dl-wrapper
 
 Description
 :   A single database "URL" that contains all of the connection information for the database in a single string, i.e:
@@ -551,11 +616,13 @@ Description
 Default value
 :   _none_
 
-===
+:::
 
 ### MYSQL_ATTR_SSL_CA
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="path"]
+[!badge variant="info" text="string"] [!badge variant="info" text="path"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Absolute path to the root CA bundle if you're connecting to the MySQL database via SSL
@@ -563,21 +630,25 @@ Description
 Default value
 :   `null`
 
-===
+:::
 
 ## Email setting
 
 ### <span class="expected">MAIL_MAILER</span>
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   The default mailer that is used to send any email messages sent by 2FAuth.
 
-Accepted values
+:::
 
-:::codeblock-wrapper
-:::ml-3
+<span class="fw-500">Accepted values</span>
+
+:::sub-dl-wrapper
+
 `smtp`
 :   Use an SMTP server to send emails.
 
@@ -646,16 +717,19 @@ Accepted values
 :   Backup mail delivery configurations that will be used in case your primary delivery driver is down
 
 :::
-:::
+
+:::env-var-dl-wrapper
 
 Default value
 :   `smtp`
 
-===
+:::
 
 ### <span class="expected">MAIL_USERNAME</span>
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Username used to connect to the SMTP server
@@ -663,11 +737,13 @@ Description
 Default value
 :   _none_
 
-===
+:::
 
 ### <span class="expected">MAIL_PASSWORD</span>
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Password used to connect to the SMTP server.
@@ -677,11 +753,13 @@ Description
 Default value
 :   _none_
 
-===
+:::
 
 ### MAIL_ENCRYPTION
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Encryption protocol used to secure email delivery.
@@ -691,11 +769,13 @@ Description
 Default value
 :   `tls`
 
-===
+:::
 
 ### <span class="expected">MAIL_HOST</span>
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="ip address"] [!badge variant="info" text="domain"]
+[!badge variant="info" text="string"] [!badge variant="info" text="ip address"] [!badge variant="info" text="domain"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Domain of the mail server.
@@ -705,11 +785,13 @@ Description
 Default value
 :   `smtp.mailtrap.io`
 
-===
+:::
 
 ### <span class="expected">MAIL_PORT</span>
 
-=== [!badge variant="info" text="number"]
+[!badge variant="info" text="number"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Port used to communicate with the mail server.
@@ -719,11 +801,13 @@ Description
 Default value
 :   `587`
 
-===
+:::
 
 ### <span class="expected">MAIL_FROM_NAME</span>
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Name that is used globally for all e-mails that are sent by 2FAuth
@@ -731,11 +815,13 @@ Description
 Default value
 :   `Example`
 
-===
+:::
 
 ### <span class="expected">MAIL_FROM_ADDRESS</span>
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="email"]
+[!badge variant="info" text="string"] [!badge variant="info" text="email"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Address that is used globally for all e-mails that are sent by 2FAuth
@@ -743,11 +829,13 @@ Description
 Default value
 :   `hello@example.com`
 
-===
+:::
 
 ### MAIL_VERIFY_SSL_PEER
 
-=== [!badge variant="info" text="boolean"]
+[!badge variant="info" text="boolean"]
+
+:::env-var-dl-wrapper
 
 Description
 :   SSL peer verification.
@@ -761,11 +849,13 @@ Description
 Default value
 :   `true`
 
-===
+:::
 
 ### MAIL_SENDMAIL_PATH
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="path"]
+[!badge variant="info" text="string"] [!badge variant="info" text="path"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Path to the sendmail binary
@@ -773,7 +863,7 @@ Description
 Default value
 :   `/usr/sbin/sendmail -bs -i`
 
-===
+:::
 
 ## Logs management
 
@@ -781,15 +871,19 @@ The following variables allow you to configure your logging strategy with out-of
 
 ### LOG_CHANNEL
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   The log channel defines where your log entries go to.
 
-Accepted values
+:::
 
-:::codeblock-wrapper
-:::ml-3
+<span class="fw-500">Accepted values</span>
+
+:::sub-dl-wrapper
+
 `daily`
 :   Gives you 7 daily rotated log files in `[2FAuth_directory]/storage/logs/`
 
@@ -818,17 +912,21 @@ Accepted values
 
 `stack`
 :   A wrapper to facilitate creating "multi-channel" channels.
+
 :::
-:::
+
+:::env-var-dl-wrapper
 
 Default value
 :   `daily`
 
-===
+:::
 
 ### LOG_LEVEL
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Determines the minimum "level" a message must be in order to be logged.
@@ -845,11 +943,13 @@ Accepted values
 Default value
 :   `notice`
 
-===
+:::
 
 ### LOG_DEPRECATIONS_CHANNEL
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   A log channel to use to log the PHP & Laravel deprecation warnings.
@@ -859,13 +959,15 @@ Description
 Default value
 :   `null`
 
-===
+:::
 
 ## Proxy setting
 
 ### TRUSTED_PROXIES
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   A comma separated IP list of trusted proxies.
@@ -877,11 +979,13 @@ Description
 Default value
 :   `null`
 
-===
+:::
 
 ### PROXY_FOR_OUTGOING_REQUESTS
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="url"]
+[!badge variant="info" text="string"] [!badge variant="info" text="url"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Proxy for outgoing requests, like 2FAuth releases detection or logo fetching.
@@ -891,13 +995,15 @@ Description
 Default value
 :   _blank_
 
-===
+:::
 
 ## Security setting
 
 ### BCRYPT_ROUNDS
 
-=== [!badge variant="info" text="number"]
+[!badge variant="info" text="number"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Number of rounds when passwords are hashed using the Bcrypt algorithm.
@@ -907,21 +1013,25 @@ Description
 Default value
 :   `10`
 
-===
+:::
 
 ## Session setting
 
 ### SESSION_DRIVER
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   The default session driver used by 2FAuth to store sessions
 
-Accepted values
+:::
 
-:::codeblock-wrapper
-:::ml-3
+<span class="fw-500">Accepted values</span>
+
+:::sub-dl-wrapper
+
 `apc`
 :   In-memory key-value store for PHP
 
@@ -971,16 +1081,19 @@ Accepted values
 :   sessions are stored in a PHP array and will not be persisted
 
 :::
-:::
+
+:::env-var-dl-wrapper
 
 Default value
 :   `file`
 
-===
+:::
 
 ### SESSION_CONNECTION
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   When using the `database` or `redis` [session drivers](#session_driver), you may specify a connection that should be used to manage these sessions.
@@ -990,11 +1103,13 @@ Description
 Default value
 :   _none_
 
-===
+:::
 
 ### SESSION_STORE
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   While using one of the framework's cache driven session backends you may list a cache store that should be used for these sessions.
@@ -1009,11 +1124,13 @@ Accepted values
 Default value
 :   _none_
 
-===
+:::
 
 ### SESSION_COOKIE
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Name of the cookie used to identify a session instance by ID.
@@ -1023,11 +1140,13 @@ Description
 Default value
 :   `2fauth_session`
 
-===
+:::
 
 ### SESSION_DOMAIN
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="domain"]
+[!badge variant="info" text="string"] [!badge variant="info" text="domain"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Domain of the cookie used to identify a session in 2FAuth.
@@ -1037,11 +1156,13 @@ Description
 Default value
 :   Fallbacks to the 2FAuth instance domain
 
-===
+:::
 
 ### SESSION_SECURE_COOKIE
 
-=== [!badge variant="info" text="boolean"]
+[!badge variant="info" text="boolean"]
+
+:::env-var-dl-wrapper
 
 Description
 :   By setting this option to true, session cookies will only be sent back to the server if the browser has a HTTPS connection.
@@ -1051,7 +1172,7 @@ Description
 Default value
 :   `false`
 
-===
+:::
 
 ## SSO setting
 
@@ -1059,7 +1180,9 @@ See [Single Sign-On (SSO)](/security/authentication/sso/) to discover how to ena
 
 ### OPENID_AUTHORIZE_URL
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="url"]
+[!badge variant="info" text="string"] [!badge variant="info" text="url"]
+
+:::env-var-dl-wrapper
 
 Description
 :   URL  used during the OpenID SSO flow to request the user's authentication and consent
@@ -1067,11 +1190,13 @@ Description
 Default value
 :   _none_
 
-===
+:::
 
 ### OPENID_TOKEN_URL
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="url"]
+[!badge variant="info" text="string"] [!badge variant="info" text="url"]
+
+:::env-var-dl-wrapper
 
 Description
 :   URL  used during the OpenID SSO flow to obtain an ID and / or access token
@@ -1079,11 +1204,13 @@ Description
 Default value
 :   _none_
 
-===
+:::
 
 ### OPENID_USERINFO_URL
 
-=== [!badge variant="info" text="string"] [!badge variant="info" text="url"]
+[!badge variant="info" text="string"] [!badge variant="info" text="url"]
+
+:::env-var-dl-wrapper
 
 Description
 :   URL used during the OpenID SSO flow to retrieve profile information and other attributes for a logged-in end-user
@@ -1091,11 +1218,13 @@ Description
 Default value
 :   _none_
 
-===
+:::
 
 ### OPENID_CLIENT_ID
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   A unique identifier for the application
@@ -1103,11 +1232,13 @@ Description
 Default value
 :   _none_
 
-===
+:::
 
 ### OPENID_CLIENT_SECRET
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Secret known only to 2FAuth and the Open ID authorization server
@@ -1115,11 +1246,13 @@ Description
 Default value
 :   _none_
 
-===
+:::
 
 ### GITHUB_CLIENT_ID
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   A unique identifier for the application
@@ -1127,11 +1260,13 @@ Description
 Default value
 :   _none_
 
-===
+:::
 
 ### GITHUB_CLIENT_SECRET
 
-=== [!badge variant="info" text="string"]
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
 
 Description
 :   Secret known only to 2FAuth and Github
@@ -1139,4 +1274,4 @@ Description
 Default value
 :   _none_
 
-===
+:::
