@@ -5,7 +5,7 @@ order: 90
 
 2FAuth provides several security mechanisms to protect your sensitive 2FA data, at administrator or user level.
 
-## For the administrator
+## For administrators
 
 ### DB encryption
 
