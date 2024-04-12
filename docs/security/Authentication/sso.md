@@ -13,6 +13,10 @@ SSO is probably overkill for a single user usage but becomes relevant in a multi
 For now 2FAuth only supports 2 SSO providers: __OpenID__ and __Github__
 !!!
 
+## Enabling SSO
+
+SSO is enabled by default. You can check it at _Admin > App setup_, in the _Registrations_ section.
+
 ## Enable a provider
 
 ### Create the client
@@ -93,13 +97,13 @@ When you sign in via SSO for the first time, you are registered to 2FAuth transp
 
 ## Disabling SSO
 
-As an administrator, you can fully disable Single sign-On from the 2FAuth UI.
+As an administrator, you can fully disable Single Sign-On from the 2FAuth UI.
 
 Go to _Admin > App setup_, scroll down to the _Registrations_ section and uncheck [!badge size="l" icon="checkbox" text="Enable Single Sign-On"].
 
 Note that:
 
 - Existing "SSO users" won't be able to sign in via SSO anymore, but their accounts remain. Still, the password reset feature can be used so they can get a password and sign in again.
-- There is no need to disable the providers env vars.
+- There is no need to unset the providers env vars.
 
 Enabling back SSO restores the providers and the ability for SSO users to sign in again.
