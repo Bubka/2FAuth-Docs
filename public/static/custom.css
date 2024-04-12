@@ -35,3 +35,75 @@
 footer ul li a[href="https://github.com/sponsors/Bubka"] svg {
     color: #db61a2;
 }
+
+.expected::after {
+    content: ' *';
+    --tw-text-opacity: 1;
+    color: rgb(95 160 255/var(--tw-text-opacity));
+}
+*
+.mandatory::after {
+    content: ' *';
+    --tw-text-opacity: 1;
+    color: rgb(211 38 38/var(--tw-text-opacity));
+}
+
+/* .sub-dl-wrapper {
+    text-align: center;
+    color: #1956AF;
+    border-radius: .375rem;
+    background-color: #E1EDFF;
+    border: 1px solid #1956AF;
+    padding-top: 20px;
+    margin-bottom: 20px;
+} */
+
+/* Override of the default DL borders & spacing for the Configuration page */
+.env-var-dl-wrapper dl {
+    border-bottom: 1px solid #edeff4 !important;
+}
+.dark .env-var-dl-wrapper dl {
+	--tw-border-opacity: 1;
+	border-bottom-color: rgb(44 44 44/var(--tw-border-opacity)) !important;
+}
+
+.env-var-dl-wrapper dd p:last-child,
+.env-var-dl-wrapper dd div:last-child,
+.sub-dl-wrapper dd p:last-child,
+.sub-dl-wrapper dd div:last-child {
+    margin-bottom: 0 !important;
+}
+
+.sub-dl-wrapper dl dt:first-child,
+.sub-dl-wrapper dl dd:first-of-type {
+    border-top: none !important;
+}
+
+.sub-dl-wrapper dl dt {
+    padding-left: 1rem;
+}
+
+.sub-dl-wrapper dl {
+	--tw-border-opacity: 1;
+	--tw-bg-opacity: 1;
+    border: 1px solid #edeff4;
+    border-radius: .375rem;
+}
+.dark .sub-dl-wrapper dl {
+	--tw-border-opacity: 1;
+	border-color: rgb(44 44 44/var(--tw-border-opacity));
+    background-color: rgb(34 34 34/var(--tw-bg-opacity));
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+/* Override of the default H3 spacing for the Configuration page */
+.has-following-h3-more-spaced ~ div > h3 {
+    padding-top: 1rem;
+    margin-bottom: .5rem !important;
+}
+.has-following-h3-more-spaced ~ p {
+    margin-bottom: 1rem !important;
+}

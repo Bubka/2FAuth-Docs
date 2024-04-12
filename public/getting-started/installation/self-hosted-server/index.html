@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766046878429">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766245853963">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../static/2fauth_favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.766046878429" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.766245853963" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.766046878429" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.766245853963" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.766046878429" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.766046878429" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.766245853963" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.766245853963" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -716,7 +716,7 @@ sqlite&gt; .quit</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">php artisan 2fauth:install</code></pre>
 </doc-codeblock></div>
-<p>At the end of the wizard, 2FAuth should be ready to start. Please see the <doc-anchor-trigger to="#troubleshooting">troubleshooting section</doc-anchor-trigger> if something goes wrong.</p>
+<p>At the end of the wizard, 2FAuth should be ready to start. Please see <a href="../../troubleshooting/">Troubleshooting</a> if something goes wrong.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -759,8 +759,25 @@ sqlite&gt; .quit</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">mv .env.example .env</code></pre>
 </doc-codeblock></div>
-<p>Open the <code v-pre>.env</code> file with a text editor, you will find all environment variables that could be customized.<br />
+<p>Open the <code v-pre>.env</code> file with a text editor, you will find the main environment variables that could be customized.<br />
 You won&#x27;t have to set/change all, most of them have a default value that will probably fit your needs. But some parts must be reviewed.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-gray-500 dark:bg-dark-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-gray-500 dark:text-dark-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>See <a href="../../configuration/">Configuration</a> to learn about all the environment variables that can be set.</p>
+        </div>
+    </div>
+</div>
 <doc-anchor-target id="database-1">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#database-1">#</doc-anchor-trigger>
@@ -857,95 +874,6 @@ php artisan passport:install
 php artisan storage:link
 php artisan config:cache</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="troubleshooting">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#troubleshooting">#</doc-anchor-trigger>
-        <span>Troubleshooting</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="check-logs">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#check-logs">#</doc-anchor-trigger>
-        <span>Check logs</span>
-    </h3>
-</doc-anchor-target>
-<p>Logs can give usefull informations to troubleshoot your installation. 2FAuth logs are stored in the subfolder <code v-pre>storage/logs</code> of your installation folder.</p>
-<p>You may enable debug logs by setting <code v-pre>APP_DEBUG=true</code> and <code v-pre>LOG_LEVEL=debug</code> in your .env file.</p>
-<p>The web server and the database server also provide some logs. Their locations may vary depending on the server choice and your operating system. If you followed the <doc-anchor-trigger to="#web-server-configuration">Web server configuration</doc-anchor-trigger> of this guide, the web server logs should be in one of these locations under a *nix system :</p>
-<doc-tabs>
-<doc-tab v-cloak id="nginx">
-<template #title>NGINX</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">/dev/stdout
-/dev/stderr</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="apache2">
-<template #title>Apache2</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash"># Debian / Ubuntu 
-/var/log/apache2/
-
-# RHEL / Red Hat / CentOS / Fedora 
-/var/log/httpd/
-
-# FreeBSD
-var/log/</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-</doc-tabs>
-<doc-anchor-target id="possible-issues">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#possible-issues">#</doc-anchor-trigger>
-        <span>Possible issues</span>
-    </h3>
-</doc-anchor-target>
-<dl>
-<dt><strong>The uploaded icons are not visible even though I set the storage symlink</strong></dt>
-<dd>
-<p>Try to recreate the symlink using relative path.</p>
-<p>Open a terminal on the 2FAuth installation folder and run:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">ln -sfn ../storage/app/public public/storage</code></pre>
-</doc-codeblock></div>
-</dd>
-<dt><strong>2FAuth returns a <code v-pre>500</code> error with ionos hosting</strong></dt>
-<dd>
-<p>The <code v-pre>.htaccess</code> configuration should be modified.</p>
-<p>Edit the <code v-pre>/public/.htaccess</code> file and add following lines:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-apacheconf"><code v-pre class="language-apacheconf">RewriteBase /
-Options +FollowSymLinks</code></pre>
-</doc-codeblock></div>
-<p>right before:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-apacheconf"><code v-pre class="language-apacheconf">RewriteEngine On</code></pre>
-</doc-codeblock></div>
-</dd>
-<dt><strong>2FAuth returns a <code v-pre>404</code> error on API requests</strong></dt>
-<dd>
-<p>If using Apache2, ensure permissions are set correctly.</p>
-<p>Open a terminal and run:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">sudo chown -R www-data:www-data /var/www/2fauth
-sudo chmod -R 775 /var/www/2fauth</code></pre>
-</doc-codeblock></div>
-<p>Also, ensure <code v-pre>mod_rewrite</code> is enabled:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">sudo a2enmod rewrite
-systemctl restart apache2</code></pre>
-</doc-codeblock></div>
-</dd>
-<dt><strong>Firefox warns of insecure connection when behind a proxy</strong></dt>
-<dd>
-<p>Your proxy should be registered via an enviroment variable.</p>
-<p>Edit your .env file and set:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">TRUSTED_PROXIES=your_proxy_ip_address</code></pre>
-</doc-codeblock></div>
-<p>In case of multiple proxies, separate the addresses with a comma.</p>
-</dd>
-</dl>
 
                                 
                                 <!-- Required only on API pages -->

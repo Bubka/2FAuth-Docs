@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766046878429">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766245853963">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../static/2fauth_favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.766046878429" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.766245853963" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.766046878429" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.766245853963" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.766046878429" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.766046878429" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.766245853963" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.766245853963" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -295,6 +295,13 @@
         </div>
     </div>
 </div>
+<doc-anchor-target id="enabling-sso">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#enabling-sso">#</doc-anchor-trigger>
+        <span>Enabling SSO</span>
+    </h2>
+</doc-anchor-target>
+<p>SSO is enabled by default. You can check it at <em>Admin &gt; App setup</em>, in the <em>Registrations</em> section.</p>
 <doc-anchor-target id="enable-a-provider">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#enable-a-provider">#</doc-anchor-trigger>
@@ -363,7 +370,7 @@ _Your provider is <strong>Github</strong></p>
         <span>Set up the provider</span>
     </h3>
 </doc-anchor-target>
-<p>Setting up a provider is done by defining its dedicated environment variables on your 2FAuth instance. You can find these vars in the <code v-pre>.env</code> file of 2FAuth.</p>
+<p>Setting up a provider is done by defining its dedicated environment variables on your 2FAuth instance. You can find these vars in the <code v-pre>.env</code> file of 2FAuth. See also the <a href="../../../getting-started/configuration/#sso-setting">SSO setting</a> section.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash"># OpenID (enabled)
 OPENID_AUTHORIZE_URL=https://samples.auth0.com/authorize
@@ -447,15 +454,15 @@ OPENID_CLIENT_SECRET=1QzLnSc1Rc3MCPm0QV2FLNaKk-Jk0bUjaCageDvxIkd2-Mp50ipiP-MCPm0
         <span>Disabling SSO</span>
     </h2>
 </doc-anchor-target>
-<p>As an administrator, you can fully disable Single sign-On from the 2FAuth UI.</p>
-<p>Go to <em>Settings &gt; Options</em>, scroll down to the Administration section and uncheck <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-3 text-sm rounded-md">
+<p>As an administrator, you can fully disable Single Sign-On from the 2FAuth UI.</p>
+<p>Go to <em>Admin &gt; App setup</em>, scroll down to the <em>Registrations</em> section and uncheck <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-3 text-sm rounded-md">
     <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="22" height="22" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M17.28 9.28a.75.75 0 0 0-1.06-1.06l-5.97 5.97-2.47-2.47a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l6.5-6.5Z"/><path d="M3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25V3.75C2 2.784 2.784 2 3.75 2ZM3.5 3.75v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25H3.75a.25.25 0 0 0-.25.25Z"/></g></svg></span>
     <span>Enable Single Sign-On</span>
 </span>.</p>
 <p>Note that:</p>
 <ul>
 <li>Existing &quot;SSO users&quot; won&#x27;t be able to sign in via SSO anymore, but their accounts remain. Still, the password reset feature can be used so they can get a password and sign in again.</li>
-<li>There is no need to disable the providers env vars.</li>
+<li>There is no need to unset the providers env vars.</li>
 </ul>
 <p>Enabling back SSO restores the providers and the ability for SSO users to sign in again.</p>
 

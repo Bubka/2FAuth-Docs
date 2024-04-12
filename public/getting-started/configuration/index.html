@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766046878429">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766245853963">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/2fauth_favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.5.0.766046878429" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.766245853963" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766046878429" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766245853963" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766046878429" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766245853963" data-turbo-eval="false" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -276,14 +276,17 @@
         <span>Purpose</span>
     </h2>
 </doc-anchor-target>
-<p>Here are the main environment variables that may be set to make 2FAuth work according to its running environment and to meet your needs. Most of them are optional because default values are predefined.</p>
-<p>When a var is set, the provided value will override the default value. If a variable is not set, the default value will be used by 2FAuth to make it work seamlessly.</p>
-<p>It is recommended to review them at least once to ensure minimal requirements are met and to have a picture of what 2FAuth offers in terms of configuration.</p>
+<p>Here are the main environment variables that may be set to make 2FAuth work according to its running environment and to meet your needs. It is recommended to review them at least once to ensure minimal requirements are met and to have a picture of what 2FAuth offers in terms of configuration.</p>
+<p>Asterisks next to the var names aim to identify important vars:</p>
+<ul>
+<li>A blue <span class="expected">asterisk</span> indicates that the var should be set with a suitable value, otherwise 2FAuth may not work as expected.</li>
+<li>A red <span class="mandatory">asterisk</span> indicates that the var must be set, otherwise 2FAuth will not work at all.</li>
+</ul>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -292,8 +295,7 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Remember</h5>
-<p>If a default value is defined for an environment variable, there is no need to set this var.</p>
+<p>Set only the vars that need to be ajusted. If a var is not set, its default value will be applied.</p>
         </div>
     </div>
 </div>
@@ -307,10 +309,10 @@
 <ul>
 <li><p>When 2FAuth is deployed directly on a server (e.g. a VM or a bare metal server), the most straightforward method is to edit the <code v-pre>.env</code> file you should have set up during the <a href="../installation/self-hosted-server/#set-the-env-file">installation process</a>.</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-gray-500 dark:bg-dark-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-gray-500 dark:text-dark-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -319,19 +321,19 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>The <code v-pre>.env</code> file sets most of these variables for the sole purpose of guiding the user during the configuration of 2FAuth.</p>
+<p>The <code v-pre>.env.example</code> file sets most of these variables for the sole purpose of guiding the user during the configuration of 2FAuth.</p>
         </div>
     </div>
 </div>
 </li>
-<li><p>When running 2FAuth from a Docker container, you can use the <code v-pre>-e &quot;[variable_name]=[new_value]&quot;</code> or the <code v-pre>--env-file [path_to_env_file]</code> command-line arguments, or set the variables in a <em>docker-compose</em> file.</p>
+<li><p>When running 2FAuth from a Docker container, you can use the <code v-pre>-e &quot;[variable_name]=[new_value]&quot;</code> or the <code v-pre>--env-file [path_to_env_file]</code> command-line arguments with the <code v-pre>docker run</code> command, or set the variables in a <em>docker-compose</em> file.</p>
 <p>
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
     <div class="flex items-center text-blue-500 dark:text-blue-400">
         <span class="inline-block mb-px">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path d="M0 3.75A.75.75 0 0 1 .75 3h7.497c1.566 0 2.945.8 3.751 2.014A4.495 4.495 0 0 1 15.75 3h7.5a.75.75 0 0 1 .75.75v15.063a.752.752 0 0 1-.755.75l-7.682-.052a3 3 0 0 0-2.142.878l-.89.891a.75.75 0 0 1-1.061 0l-.902-.901a2.996 2.996 0 0 0-2.121-.879H.75a.75.75 0 0 1-.75-.75Zm12.75 15.232a4.503 4.503 0 0 1 2.823-.971l6.927.047V4.5h-6.75a3 3 0 0 0-3 3ZM11.247 7.497a3 3 0 0 0-3-2.997H1.5V18h6.947c1.018 0 2.006.346 2.803.98Z"/></svg>
         </span>
-        <span class="inline-block font-medium ml-2">Docker - Ways to set environment variables with Compose</span>
+        <span class="inline-block font-medium ml-2">Ways to set environment variables with Compose</span>
     </div>
     <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
         <span>https://docs.docker.com/compose/environment-variables/set-environment-variables/</span>
@@ -345,7 +347,7 @@
         <span class="inline-block mb-px">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path d="M0 3.75A.75.75 0 0 1 .75 3h7.497c1.566 0 2.945.8 3.751 2.014A4.495 4.495 0 0 1 15.75 3h7.5a.75.75 0 0 1 .75.75v15.063a.752.752 0 0 1-.755.75l-7.682-.052a3 3 0 0 0-2.142.878l-.89.891a.75.75 0 0 1-1.061 0l-.902-.901a2.996 2.996 0 0 0-2.121-.879H.75a.75.75 0 0 1-.75-.75Zm12.75 15.232a4.503 4.503 0 0 1 2.823-.971l6.927.047V4.5h-6.75a3 3 0 0 0-3 3ZM11.247 7.497a3 3 0 0 0-3-2.997H1.5V18h6.947c1.018 0 2.006.346 2.803.98Z"/></svg>
         </span>
-        <span class="inline-block font-medium ml-2">Docker - Set environment variables with docker run</span>
+        <span class="inline-block font-medium ml-2">Set environment variables with docker run</span>
     </div>
     <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
         <span>https://docs.docker.com/engine/reference/commandline/run/#env</span>
@@ -355,83 +357,6 @@
 </p>
 </li>
 </ul>
-<doc-anchor-target id="general-settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#general-settings">#</doc-anchor-trigger>
-        <span>General settings</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="app_name">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#app_name">#</doc-anchor-trigger>
-        <span>APP_NAME</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd>The name of your application. It is used when the app name needs to place in a notification or any other location as required by the application or its packages.</dd>
-<dt>Default value</dt>
-<dd><p><code v-pre>2FAuth</code></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="app_env">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#app_env">#</doc-anchor-trigger>
-        <span>APP_ENV</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd>Determines the &quot;environment&quot; the application is currently running in. If you change it to production, most Artisan console commands will ask for extra confirmation.</dd>
-<dt>Possible values</dt>
-<dd><code v-pre>local</code>, <code v-pre>testing</code>, <code v-pre>production</code></dd>
-<dt>Default value</dt>
-<dd><p><code v-pre>local</code></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="app_debug">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#app_debug">#</doc-anchor-trigger>
-        <span>APP_DEBUG</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-boolean">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>boolean</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd>When your application is in debug mode, detailed error messages with stack traces will be shown on every error that occurs within your application. If disabled, a simple generic error page is shown.</dd>
-<dt>Default value</dt>
-<dd><p><code v-pre>false</code></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="app_key">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#app_key">#</doc-anchor-trigger>
-        <span>APP_KEY</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string-badge-variant-info-text-32-random-characters">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>32 random characters</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd><p>The encryption key for all security related features (sessions, <a href="../../security/data-protection/#db-encryption">DB encryption</a>, <a href="../../security/authentication/webauthn/">webauthn</a>, <a href="../../security/authentication/pat/">personal access token</a>)</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -445,10 +370,99 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Setting this var is mandatory</p>
+            <h5>Important</h5>
+<p>The configuration may have been cached. If so, clear the cache before editing the environment variable:</p>
+<ul>
+<li>Run <code v-pre>php artisan config:clear</code> OR</li>
+<li>Delete the file <code v-pre>[2FAuth_directory]/bootstrap/cache/config.php</code></li>
+</ul>
+<p>Once variables have been modified, (re)build the cache by running <code v-pre>php artisan config:cache</code></p>
         </div>
     </div>
 </div>
+<doc-anchor-target id="general-setting">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#general-setting">#</doc-anchor-trigger>
+        <span>General setting</span>
+    </h2>
+</doc-anchor-target>
+<div class="has-following-h3-more-spaced"></div>
+<doc-anchor-target id="app_name">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#app_name">#</doc-anchor-trigger>
+        <span>APP_NAME</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd>The name of the application. It is used when the app name needs to place in a notification or any other location as required by the application or its packages.</dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>2FAuth</code></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="app_env">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#app_env">#</doc-anchor-trigger>
+        <span>APP_ENV</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>Determines the &quot;environment&quot; 2FAuth is currently running in.</p>
+<p>If you change it to production, most Artisan console commands will ask for extra confirmation.</p>
+<p>Do not set it to <code v-pre>testing</code> unless you run dev tests as some features will be disabled.</p>
+</dd>
+<dt>Possible values</dt>
+<dd><code v-pre>local</code>, <code v-pre>testing</code>, <code v-pre>production</code></dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>local</code></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="app_debug">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#app_debug">#</doc-anchor-trigger>
+        <span>APP_DEBUG</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>boolean</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>When 2FAuth is in debug mode, detailed error messages with stack traces will be shown on every error that occurs within 2FAuth.</p>
+<p>If disabled, a simple generic error page is shown.</p>
+</dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>false</code></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="app_key">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#app_key">#</doc-anchor-trigger>
+        <span><span class="mandatory">APP_KEY</span></span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>32 random characters</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>The encryption key for all security related features (sessions, <a href="../../security/data-protection/#db-encryption">DB encryption</a>, <a href="../../security/authentication/webauthn/">webauthn</a>, <a href="../../security/authentication/pat/">personal access token</a>)</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -471,19 +485,19 @@
 <dd><p><em>none</em></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="app_url">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#app_url">#</doc-anchor-trigger>
-        <span>APP_URL</span>
+        <span><span class="expected">APP_URL</span></span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string-badge-variant-info-text-url">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>url</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>The web address (URL) of your 2FAuth instance, e.g. <code v-pre>https://2fauth.mydomain.com</code></p>
@@ -525,19 +539,19 @@
 <dd><p><code v-pre>http://localhost</code></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="asset_url">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#asset_url">#</doc-anchor-trigger>
         <span>ASSET_URL</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string-badge-variant-info-text-url">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>url</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>The URL of your 2FAuth assets (CSS &amp; JS files), e.g. <code v-pre>https://2fauth.cdn.com</code></p>
@@ -547,19 +561,19 @@
 <dd><p>Fallbacks to the <doc-anchor-trigger to="#app_url">APP_URL</doc-anchor-trigger> value when the var is not set.</p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="app_subdirectory">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#app_subdirectory">#</doc-anchor-trigger>
-        <span>APP_SUBDIRECTORY</span>
+        <span><span class="expected">APP_SUBDIRECTORY</span></span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string-badge-variant-info-text-path">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>path</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>The domain subdirectory from which you want to serve 2FAuth.</p>
@@ -579,24 +593,25 @@
         </div>
     </div>
 </div>
-<p>If you previously set <code v-pre>APP_URL=https://mydomain.org/2fa</code> to access 2FAuth from the <code v-pre>/2fa/</code> subdirectory, you have to set <code v-pre>APP_SUBDIRECTORY=2fa</code>.</p>
+<p>Example:</p>
+<p>If you previously set <code v-pre>APP_URL</code> to <code v-pre>https://mydomain.org/2fa</code> to access 2FAuth from the <code v-pre>/2fa/</code> subdirectory, you have to set <code v-pre>APP_SUBDIRECTORY=2fa</code>.</p>
 <p>Leave blank if you serve 2FAuth from the domain root.</p>
 </dd>
 <dt>Default value</dt>
 <dd><p><em>blank</em></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="is_demo_app">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#is_demo_app">#</doc-anchor-trigger>
         <span>IS_DEMO_APP</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-boolean">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>boolean</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>Makes the 2FAuth instance behave like a demonstration app.</p>
@@ -624,11 +639,11 @@
 <dd><p><code v-pre>false</code></p>
 </dd>
 </dl>
-</doc-panel>
-<doc-anchor-target id="api-settings">
+</div>
+<doc-anchor-target id="api-setting">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#api-settings">#</doc-anchor-trigger>
-        <span>API settings</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#api-setting">#</doc-anchor-trigger>
+        <span>API setting</span>
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="throttle_api">
@@ -637,10 +652,10 @@
         <span>THROTTLE_API</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-number">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>number</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>The maximum number of API calls in a minute from the same IP.<br />
@@ -651,11 +666,223 @@ Once reached, all requests from this IP will be rejected until the minute has el
 <dd><p><code v-pre>60</code></p>
 </dd>
 </dl>
-</doc-panel>
-<doc-anchor-target id="cache-settings">
+</div>
+<doc-anchor-target id="authentication-setting">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#cache-settings">#</doc-anchor-trigger>
-        <span>Cache settings</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#authentication-setting">#</doc-anchor-trigger>
+        <span>Authentication setting</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="login_throttle">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#login_throttle">#</doc-anchor-trigger>
+        <span>LOGIN_THROTTLE</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>number</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>The number of times per minute a user can fail to log in before being locked out.</p>
+<p>Once reached, all login attempts will be rejected until the minute has elapsed. This setting applies to both email/password and webauthn login attemps.</p>
+</dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>5</code></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="authentication_guard">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#authentication_guard">#</doc-anchor-trigger>
+        <span><span class="expected">AUTHENTICATION_GUARD</span></span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>The authentication guard used to perform users authentication.</p>
+</dd>
+</dl>
+</div>
+<p><span class="fw-500">Accepted values</span></p>
+<div class="sub-dl-wrapper">
+<dl>
+<dt><code v-pre>web-guard</code></dt>
+<dd>The default guard to handle web authentications, such as login/password or webauthn.</dd>
+<dt><code v-pre>reverse-proxy-guard</code></dt>
+<dd><p>A guard to handle authentication previously made by an auth proxy (like nginx or authelia) in front of 2FAuth.</p>
+<p>2FAuth only look for the dedicated headers and skip all other built-in authentication checks. That means your proxy is fully responsible of the authentication process, 2FAuth will trust him as long as headers are presents.</p>
+<p>Following variable is required to be set with this guard:</p>
+<ul>
+<li><doc-anchor-trigger to="#auth_proxy_header_for_user">AUTH_PROXY_HEADER_FOR_USER</doc-anchor-trigger></li>
+</ul>
+<p>Following variable may be set with this guard:</p>
+<ul>
+<li><doc-anchor-trigger to="#auth_proxy_header_for_user">AUTH_PROXY_HEADER_FOR_USER</doc-anchor-trigger></li>
+</ul>
+<p>See the dedicated <a href="security/authentication/auth-proxy/">auth proxy page</a> to discover how to configure the reverse-proxy-guard.</p>
+</dd>
+</dl>
+</div>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Default value</dt>
+<dd><p><code v-pre>web-guard</code></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="auth_proxy_header_for_user">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#auth_proxy_header_for_user">#</doc-anchor-trigger>
+        <span>AUTH_PROXY_HEADER_FOR_USER</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>Name of the HTTP header sent by the authentication proxy. This header identifies the user authenticated at proxy level.</p>
+<p>Check your proxy documentation to find out how this header is named (i.e <code v-pre>REMOTE_USER</code>)</p>
+<p>Only relevant when <doc-anchor-trigger to="#authentication_guard">AUTHENTICATION_GUARD</doc-anchor-trigger> is set to <code v-pre>reverse-proxy-guard</code>.</p>
+</dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>REMOTE_USER</code></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="auth_proxy_header_for_email">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#auth_proxy_header_for_email">#</doc-anchor-trigger>
+        <span>AUTH_PROXY_HEADER_FOR_EMAIL</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>Name of the HTTP header sent by the authentication proxy that provides the email address of the user authenticated at proxy level.</p>
+<p>Check your proxy documentation to find out how this header is named (i.e <code v-pre>REMOTE_EMAIL</code>)</p>
+<p>Only relevant when <doc-anchor-trigger to="#authentication_guard">AUTHENTICATION_GUARD</doc-anchor-trigger> is set to <code v-pre>reverse-proxy-guard</code>.</p>
+</dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>null</code></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="proxy_logout_url">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#proxy_logout_url">#</doc-anchor-trigger>
+        <span>PROXY_LOGOUT_URL</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>url</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>Custom logout URL to open when a user clicks the <em>Logout</em> link in 2FAuth.<br />
+In most case this would send the user to the logout page of your authentication proxy.</p>
+<p>Only relevant when <doc-anchor-trigger to="#authentication_guard">AUTHENTICATION_GUARD</doc-anchor-trigger> is set to <code v-pre>reverse-proxy-guard</code>.</p>
+</dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>null</code></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="webauthn_name">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#webauthn_name">#</doc-anchor-trigger>
+        <span>WEBAUTHN_NAME</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>Name of the Relying Party in the WebAuthn process. This should match the name of the application.</p>
+<p>Do not set to <code v-pre>null</code>.</p>
+</dd>
+<dt>Default value</dt>
+<dd><p>Fallbacks to the <doc-anchor-trigger to="#app_name">APP_NAME</doc-anchor-trigger> value when the var is not set.</p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="webauthn_id">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#webauthn_id">#</doc-anchor-trigger>
+        <span>WEBAUTHN_ID</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>ID of the Relying Party in the WebAuthn process. This should equal the application domain (i.e 2fauth.example.com).</p>
+<p>While only the <doc-anchor-trigger to="#webauthn_name">WEBAUTHN_NAME</doc-anchor-trigger> is enough, you can further set a custom domain as ID.<br />
+If set to <code v-pre>null</code>, the device will fill it internally.</p>
+<p>See <a href="https://webauthn-doc.spomky-labs.com/prerequisites/the-relying-party#how-to-determine-the-relying-party-id" target="_blank">How to determine the relying party id</a> for more information.</p>
+</dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>null</code></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="webauthn_user_verification">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#webauthn_user_verification">#</doc-anchor-trigger>
+        <span>WEBAUTHN_USER_VERIFICATION</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>Setting to control how user verification behave during the WebAuthn authentication flow.</p>
+<p>See <a href="../../security/authentication/webauthn/#user-verification">WebAuthn user verification</a>.</p>
+</dd>
+</dl>
+</div>
+<p><span class="fw-500">Accepted values</span></p>
+<div class="sub-dl-wrapper">
+<dl>
+<dt><code v-pre>required</code></dt>
+<dd>Will ALWAYS ask for user verification</dd>
+<dt><code v-pre>preferred</code></dt>
+<dd>Will ask for user verification IF POSSIBLE</dd>
+<dt><code v-pre>discouraged</code></dt>
+<dd><p>Will NOT ask for user verification (for example, to minimize disruption to the user interaction flow)</p>
+</dd>
+</dl>
+</div>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Default value</dt>
+<dd><p><code v-pre>preferred</code></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="cache-setting">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cache-setting">#</doc-anchor-trigger>
+        <span>Cache setting</span>
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="cache_driver">
@@ -664,22 +891,23 @@ Once reached, all requests from this IP will be rejected until the minute has el
         <span>CACHE_DRIVER</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd>The default cache store used by the application when executing caching functions</dd>
+<dd><p>The default cache store used by 2FAuth when executing caching functions</p>
+</dd>
 </dl>
-<p>Accepted values</p>
-<div class="codeblock-wrapper">
-<div class="ml-3">
+</div>
+<p><span class="fw-500">Accepted values</span></p>
+<div class="sub-dl-wrapper">
 <dl>
 <dt><code v-pre>apc</code></dt>
 <dd>In-memory key-value store for PHP</dd>
 <dt><code v-pre>database</code></dt>
-<dd><p>Data are cached to the database set with <doc-anchor-trigger to="#database-settings">database settings</doc-anchor-trigger>.</p>
+<dd><p>Data are cached to the database set with <doc-anchor-trigger to="#database-setting">database setting</doc-anchor-trigger>.</p>
 <p>See <a href="https://laravel.com/docs/cache#prerequisites-database" target="_blank">how to configure the Database driver</a> on the Laravel documentation.</p>
 </dd>
 <dt><code v-pre>file</code></dt>
@@ -751,55 +979,70 @@ Once reached, all requests from this IP will be rejected until the minute has el
 </dd>
 </dl>
 </div>
-</div>
-<div>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Default value</dt>
 <dd><p><code v-pre>file</code></p>
 </dd>
 </dl>
 </div>
-</doc-panel>
-<doc-anchor-target id="database-settings">
+<doc-anchor-target id="database-setting">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#database-settings">#</doc-anchor-trigger>
-        <span>Database settings</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#database-setting">#</doc-anchor-trigger>
+        <span>Database setting</span>
     </h2>
 </doc-anchor-target>
 <p>See <a href="../installation/self-hosted-server/#database-1">Database configuration</a> for information on how to use these variables together.</p>
 <doc-anchor-target id="db_connection">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#db_connection">#</doc-anchor-trigger>
-        <span>DB_CONNECTION</span>
+        <span><span class="expected">DB_CONNECTION</span></span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd>The database driver to be used.</dd>
-<dt>Accepted values</dt>
-<dd><code v-pre>mysql</code>, <code v-pre>pgsql</code>, <code v-pre>sqlsrv</code>, <code v-pre>sqlite</code></dd>
+<dd><p>The database driver to be used.</p>
+</dd>
+</dl>
+</div>
+<p><span class="fw-500">Accepted values</span></p>
+<div class="sub-dl-wrapper">
+<dl>
+<dt><code v-pre>mysql</code></dt>
+<dd>MySQL database</dd>
+<dt><code v-pre>pgsql</code></dt>
+<dd>PostgreSQL database</dd>
+<dt><code v-pre>sqlsrv</code></dt>
+<dd>SQL Server database</dd>
+<dt><code v-pre>sqlite</code></dt>
+<dd><p>SQLite database</p>
+</dd>
+</dl>
+</div>
+<div class="env-var-dl-wrapper">
+<dl>
 <dt>Default value</dt>
 <dd><p><code v-pre>mysql</code></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="db_database">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#db_database">#</doc-anchor-trigger>
-        <span>DB_DATABASE</span>
+        <span><span class="expected">DB_DATABASE</span></span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd><p>Name of the database (when using <code v-pre>mysql</code>, <code v-pre>pgsql</code> and <code v-pre>sqlsrv</code> drivers) or path to the <code v-pre>sqlite</code> db file</p>
+<dd><p>Name of the database (when using <code v-pre>mysql</code>, <code v-pre>pgsql</code> and <code v-pre>sqlsrv</code> drivers) or path to the <code v-pre>sqlite</code> file</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -823,99 +1066,106 @@ Once reached, all requests from this IP will be rejected until the minute has el
 <dd><p><code v-pre>2fauth</code></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="db_host">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#db_host">#</doc-anchor-trigger>
-        <span>DB_HOST</span>
+        <span><span class="expected">DB_HOST</span></span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string-badge-variant-info-text-ip-address-badge-variant-info-text-domain">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>ip address</span>
 </span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>domain</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd>Address of the resource hosting your database</dd>
+<dd><p>Address of the resource hosting your database.</p>
+<p>Does not apply to <code v-pre>sqlite</code>.</p>
+</dd>
 <dt>Default value</dt>
 <dd><p><code v-pre>127.0.0.1</code></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="db_port">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#db_port">#</doc-anchor-trigger>
         <span>DB_PORT</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-number">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>number</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd>Port used to communicate with the database host</dd>
+<dd><p>Port used to communicate with the database host.</p>
+<p>Does not apply to <code v-pre>sqlite</code>.</p>
+</dd>
 <dt>Default values</dt>
 <dd><p>For MySQL: <code v-pre>3306</code></p>
 <p>For PostgreSQL: <code v-pre>5432</code></p>
 <p>For SQL Server: <code v-pre>1433</code></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="db_username">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#db_username">#</doc-anchor-trigger>
-        <span>DB_USERNAME</span>
+        <span><span class="expected">DB_USERNAME</span></span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd>The username used to connect to the database</dd>
+<dd><p>The username used to connect to the database.</p>
+<p>Does not apply to <code v-pre>sqlite</code>.</p>
+</dd>
 <dt>Default value</dt>
 <dd><p><code v-pre>2fauth</code></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="db_password">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#db_password">#</doc-anchor-trigger>
-        <span>DB_PASSWORD</span>
+        <span><span class="expected">DB_PASSWORD</span></span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd><p>The password used to connect to the database</p>
-<p>When using <code v-pre>.env</code> file, if the password contains special characters like <code v-pre>#</code>, put quotes around it.</p>
+<dd><p>The password used to connect to the database.</p>
+<p>When using <code v-pre>.env</code> file, if the password contains special characters like <code v-pre>#</code>, put quotes around it.<br />
+Does not apply to <code v-pre>sqlite</code>.</p>
 </dd>
 <dt>Default value</dt>
 <dd><p>An empty string</p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="database_url">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#database_url">#</doc-anchor-trigger>
         <span>DATABASE_URL</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string-badge-variant-info-text-url">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>url</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>A single database &quot;URL&quot; that contains all of the connection information for the database in a single string, i.e:</p>
@@ -926,19 +1176,19 @@ Once reached, all requests from this IP will be rejected until the minute has el
 <dd><p><em>none</em></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="mysql_attr_ssl_ca">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mysql_attr_ssl_ca">#</doc-anchor-trigger>
         <span>MYSQL_ATTR_SSL_CA</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string-badge-variant-info-text-path">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>path</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd>Absolute path to the root CA bundle if you&#x27;re connecting to the MySQL database via SSL</dd>
@@ -946,161 +1196,34 @@ Once reached, all requests from this IP will be rejected until the minute has el
 <dd><p><code v-pre>null</code></p>
 </dd>
 </dl>
-</doc-panel>
-<doc-anchor-target id="security-settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#security-settings">#</doc-anchor-trigger>
-        <span>Security settings</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="bcrypt_rounds">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#bcrypt_rounds">#</doc-anchor-trigger>
-        <span>BCRYPT_ROUNDS</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-number">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>number</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd><p>Number of rounds when passwords are hashed using the Bcrypt algorithm.</p>
-<p>Increasing this up to 12 or even 13 will benefit to password security. Be careful, a higher value may significantly affect performance.</p>
-</dd>
-<dt>Default value</dt>
-<dd><p><code v-pre>10</code></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="logs-management">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#logs-management">#</doc-anchor-trigger>
-        <span>Logs management</span>
-    </h2>
-</doc-anchor-target>
-<p>The following variables allow you to configure your logging strategy with out-of-the-box options. The <a href="https://laravel.com/docs/10.x/logging" target="_blank">Laravel documentation</a> provides more information on how to configure advanced logging options to meet specific needs.</p>
-<doc-anchor-target id="log_channel">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#log_channel">#</doc-anchor-trigger>
-        <span>LOG_CHANNEL</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd>The log channel defines where your log entries go to.</dd>
-</dl>
-<p>Accepted values</p>
-<div class="codeblock-wrapper">
-<div class="ml-3">
-<dl>
-<dt><code v-pre>daily</code></dt>
-<dd>Gives you 7 daily rotated log files in <code v-pre>[2FAuth_directory]/storage/logs/</code></dd>
-<dt><code v-pre>single</code></dt>
-<dd>Gives you one big fat error log file at in <code v-pre>[2FAuth_directory]/storage/logs/laravel.log</code></dd>
-<dt><code v-pre>errorlog</code></dt>
-<dd>Writes entries to the error log</dd>
-<dt><code v-pre>syslog</code></dt>
-<dd>Writes entries to the system log</dd>
-<dt><code v-pre>papertrail</code></dt>
-<dd><p>Writes entries to a Papertrail instance.<br />
-Following additional variables are required to be set:</p>
-<p><code v-pre>PAPERTRAIL_URL</code> URL of the papertrail instance</p>
-<p><code v-pre>PAPERTRAIL_PORT</code> Port used to communicate with the papertrail instance</p>
-</dd>
-<dt><code v-pre>slack</code></dt>
-<dd><p>Writes entries to a Slack channel.<br />
-Following additional variable is required to be set:</p>
-<p><code v-pre>LOG_SLACK_WEBHOOK_URL</code> URL for an incoming webhook that you have configured for your Slack team</p>
-</dd>
-<dt><code v-pre>stack</code></dt>
-<dd>A wrapper to facilitate creating &quot;multi-channel&quot; channels.</dd>
-</dl>
 </div>
-</div>
-<div>
-<dl>
-<dt>Default value</dt>
-<dd><p><code v-pre>daily</code></p>
-</dd>
-</dl>
-</div>
-</doc-panel>
-<doc-anchor-target id="log_level">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#log_level">#</doc-anchor-trigger>
-        <span>LOG_LEVEL</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd><p>Determines the minimum &quot;level&quot; a message must be in order to be logged.</p>
-<p>If you set it to <code v-pre>debug</code> your logs will grow large, and fast. If you set it to <code v-pre>emergency</code> probably nothing will get logged, ever.</p>
-</dd>
-<dt>Accepted values</dt>
-<dd><p>From least severe to most severe:</p>
-<p><code v-pre>debug</code>, <code v-pre>info</code>, <code v-pre>notice</code>, <code v-pre>warning</code>, <code v-pre>error</code>, <code v-pre>critical</code>, <code v-pre>alert</code>, <code v-pre>emergency</code></p>
-<p>See <a href="https://tools.ietf.org/html/rfc5424" target="_blank">RFC 5424</a> for level definitions.</p>
-</dd>
-<dt>Default value</dt>
-<dd><p><code v-pre>notice</code></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="log_deprecations_channel">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#log_deprecations_channel">#</doc-anchor-trigger>
-        <span>LOG_DEPRECATIONS_CHANNEL</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd><p>A log channel to use to log the PHP &amp; Laravel deprecation warnings.</p>
-<p>Should match one of the channels described at <doc-anchor-trigger to="#log_channel">LOG_CHANNEL</doc-anchor-trigger></p>
-</dd>
-<dt>Default value</dt>
-<dd><p><code v-pre>null</code></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="email">
+<doc-anchor-target id="email-setting">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#email">#</doc-anchor-trigger>
-        <span>Email</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#email-setting">#</doc-anchor-trigger>
+        <span>Email setting</span>
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="mail_mailer">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mail_mailer">#</doc-anchor-trigger>
-        <span>MAIL_MAILER</span>
+        <span><span class="expected">MAIL_MAILER</span></span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd>The default mailer that is used to send any email messages sent by the application.</dd>
+<dd><p>The default mailer that is used to send any email messages sent by 2FAuth.</p>
+</dd>
 </dl>
-<p>Accepted values</p>
-<div class="codeblock-wrapper">
-<div class="ml-3">
+</div>
+<p><span class="fw-500">Accepted values</span></p>
+<div class="sub-dl-wrapper">
 <dl>
 <dt><code v-pre>smtp</code></dt>
-<dd><p>Use an smtp server to send emails.</p>
+<dd><p>Use an SMTP server to send emails.</p>
 <p>Following variables are required to be set with this driver:</p>
 <ul>
 <li><doc-anchor-trigger to="#mail_username">MAIL_USERNAME</doc-anchor-trigger></li>
@@ -1163,63 +1286,61 @@ Following additional variable is required to be set:</p>
 </dd>
 </dl>
 </div>
-</div>
-<div>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Default value</dt>
 <dd><p><code v-pre>smtp</code></p>
 </dd>
 </dl>
 </div>
-</doc-panel>
 <doc-anchor-target id="mail_username">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mail_username">#</doc-anchor-trigger>
-        <span>MAIL_USERNAME</span>
+        <span><span class="expected">MAIL_USERNAME</span></span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd>Username used to connect to the smtp server</dd>
+<dd>Username used to connect to the SMTP server</dd>
 <dt>Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="mail_password">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mail_password">#</doc-anchor-trigger>
-        <span>MAIL_PASSWORD</span>
+        <span><span class="expected">MAIL_PASSWORD</span></span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd><p>Password used to connect to the smtp server.</p>
+<dd><p>Password used to connect to the SMTP server.</p>
 <p>When using <code v-pre>.env</code> file, if the password contains special characters like <code v-pre>#</code>, put quotes around it.</p>
 </dd>
 <dt>Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="mail_encryption">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mail_encryption">#</doc-anchor-trigger>
         <span>MAIL_ENCRYPTION</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>Encryption protocol used to secure email delivery.</p>
@@ -1229,21 +1350,21 @@ Following additional variable is required to be set:</p>
 <dd><p><code v-pre>tls</code></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="mail_host">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mail_host">#</doc-anchor-trigger>
-        <span>MAIL_HOST</span>
+        <span><span class="expected">MAIL_HOST</span></span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string-badge-variant-info-text-ip-address-badge-variant-info-text-domain">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>ip address</span>
 </span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>domain</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>Domain of the mail server.</p>
@@ -1253,17 +1374,17 @@ Following additional variable is required to be set:</p>
 <dd><p><code v-pre>smtp.mailtrap.io</code></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="mail_port">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mail_port">#</doc-anchor-trigger>
-        <span>MAIL_PORT</span>
+        <span><span class="expected">MAIL_PORT</span></span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-number">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>number</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>Port used to communicate with the mail server.</p>
@@ -1273,55 +1394,55 @@ Following additional variable is required to be set:</p>
 <dd><p><code v-pre>587</code></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="mail_from_name">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mail_from_name">#</doc-anchor-trigger>
-        <span>MAIL_FROM_NAME</span>
+        <span><span class="expected">MAIL_FROM_NAME</span></span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd>Name that is used globally for all e-mails that are sent by the application</dd>
+<dd>Name that is used globally for all e-mails that are sent by 2FAuth</dd>
 <dt>Default value</dt>
 <dd><p><code v-pre>Example</code></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="mail_from_address">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mail_from_address">#</doc-anchor-trigger>
-        <span>MAIL_FROM_ADDRESS</span>
+        <span><span class="expected">MAIL_FROM_ADDRESS</span></span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string-badge-variant-info-text-email">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>email</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd>Address that is used globally for all e-mails that are sent by the application</dd>
+<dd>Address that is used globally for all e-mails that are sent by 2FAuth</dd>
 <dt>Default value</dt>
 <dd><p><code v-pre>hello@example.com</code></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="mail_verify_ssl_peer">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mail_verify_ssl_peer">#</doc-anchor-trigger>
         <span>MAIL_VERIFY_SSL_PEER</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-boolean">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>boolean</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>SSL peer verification.</p>
@@ -1347,19 +1468,19 @@ Following additional variable is required to be set:</p>
 <dd><p><code v-pre>true</code></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="mail_sendmail_path">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mail_sendmail_path">#</doc-anchor-trigger>
         <span>MAIL_SENDMAIL_PATH</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-boolean-badge-variant-info-text-path">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>boolean</span>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
 </span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>path</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd>Path to the sendmail binary</dd>
@@ -1367,365 +1488,113 @@ Following additional variable is required to be set:</p>
 <dd><p><code v-pre>/usr/sbin/sendmail -bs -i</code></p>
 </dd>
 </dl>
-</doc-panel>
-<doc-anchor-target id="authentication-settings">
+</div>
+<doc-anchor-target id="logs-management">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#authentication-settings">#</doc-anchor-trigger>
-        <span>Authentication settings</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logs-management">#</doc-anchor-trigger>
+        <span>Logs management</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="login_throttle">
+<p>The following variables allow you to configure your logging strategy with out-of-the-box options. The <a href="https://laravel.com/docs/10.x/logging" target="_blank">Laravel documentation</a> provides more information on how to configure advanced logging options to meet specific needs.</p>
+<doc-anchor-target id="log_channel">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#login_throttle">#</doc-anchor-trigger>
-        <span>LOGIN_THROTTLE</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#log_channel">#</doc-anchor-trigger>
+        <span>LOG_CHANNEL</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-number">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>number</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd><p>The number of times per minute a user can fail to log in before being locked out.</p>
-<p>Once reached, all login attempts will be rejected until the minute has elapsed. This setting applies to both email/password and webauthn login attemps.</p>
-</dd>
-<dt>Default value</dt>
-<dd><p><code v-pre>5</code></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="authentication_guard">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#authentication_guard">#</doc-anchor-trigger>
-        <span>AUTHENTICATION_GUARD</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd>The authentication guard used to perform users authentication.</dd>
-</dl>
-<p>Accepted values</p>
-<div class="codeblock-wrapper">
-<div class="ml-3">
-<dl>
-<dt><code v-pre>web-guard</code></dt>
-<dd>The default guard to handle web authentications, such as login/password or webauthn.</dd>
-<dt><code v-pre>reverse-proxy-guard</code></dt>
-<dd><p>A guard to handle authentication previously made by an auth proxy (like nginx or authelia) in front of 2FAuth.</p>
-<p>2FAuth only look for the dedicated headers and skip all other built-in authentication checks. That means your proxy is fully responsible of the authentication process, 2FAuth will trust him as long as headers are presents.</p>
-<p>Following variable is required to be set with this guard:</p>
-<ul>
-<li><doc-anchor-trigger to="#auth_proxy_header_for_user">AUTH_PROXY_HEADER_FOR_USER</doc-anchor-trigger></li>
-</ul>
-<p>Following variable may be set with this guard:</p>
-<ul>
-<li><doc-anchor-trigger to="#auth_proxy_header_for_user">AUTH_PROXY_HEADER_FOR_USER</doc-anchor-trigger></li>
-</ul>
-<p>See the dedicated <a href="security/authentication/auth-proxy/">auth proxy page</a> to discover how to configure the reverse-proxy-guard.</p>
+<dd><p>The log channel defines where your log entries go to.</p>
 </dd>
 </dl>
 </div>
-</div>
-<div>
+<p><span class="fw-500">Accepted values</span></p>
+<div class="sub-dl-wrapper">
 <dl>
-<dt>Default value</dt>
-<dd><p><code v-pre>web-guard</code></p>
+<dt><code v-pre>daily</code></dt>
+<dd>Gives you 7 daily rotated log files in <code v-pre>[2FAuth_directory]/storage/logs/</code></dd>
+<dt><code v-pre>single</code></dt>
+<dd>Gives you one big fat error log file at in <code v-pre>[2FAuth_directory]/storage/logs/laravel.log</code></dd>
+<dt><code v-pre>errorlog</code></dt>
+<dd>Writes entries to the error log</dd>
+<dt><code v-pre>syslog</code></dt>
+<dd>Writes entries to the system log</dd>
+<dt><code v-pre>papertrail</code></dt>
+<dd><p>Writes entries to a Papertrail instance.<br />
+Following additional variables are required to be set:</p>
+<p><code v-pre>PAPERTRAIL_URL</code> URL of the papertrail instance</p>
+<p><code v-pre>PAPERTRAIL_PORT</code> Port used to communicate with the papertrail instance</p>
+</dd>
+<dt><code v-pre>slack</code></dt>
+<dd><p>Writes entries to a Slack channel.<br />
+Following additional variable is required to be set:</p>
+<p><code v-pre>LOG_SLACK_WEBHOOK_URL</code> URL for an incoming webhook that you have configured for your Slack team</p>
+</dd>
+<dt><code v-pre>stack</code></dt>
+<dd><p>A wrapper to facilitate creating &quot;multi-channel&quot; channels.</p>
 </dd>
 </dl>
 </div>
-</doc-panel>
-<doc-anchor-target id="auth_proxy_header_for_user">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#auth_proxy_header_for_user">#</doc-anchor-trigger>
-        <span>AUTH_PROXY_HEADER_FOR_USER</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span></template>
+<div class="env-var-dl-wrapper">
 <dl>
-<dt>Description</dt>
-<dd><p>Name of the HTTP header sent by the authentication proxy. This header identifies the user authenticated at proxy level.</p>
-<p>Check your proxy documentation to find out how this header is named (i.e <code v-pre>REMOTE_USER</code>)</p>
-<p>Only relevant when <doc-anchor-trigger to="#authentication_guard">AUTHENTICATION_GUARD</doc-anchor-trigger> is set to <code v-pre>reverse-proxy-guard</code>.</p>
-</dd>
 <dt>Default value</dt>
-<dd><p><code v-pre>REMOTE_USER</code></p>
+<dd><p><code v-pre>daily</code></p>
 </dd>
 </dl>
-</doc-panel>
-<doc-anchor-target id="auth_proxy_header_for_email">
+</div>
+<doc-anchor-target id="log_level">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#auth_proxy_header_for_email">#</doc-anchor-trigger>
-        <span>AUTH_PROXY_HEADER_FOR_EMAIL</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#log_level">#</doc-anchor-trigger>
+        <span>LOG_LEVEL</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd><p>Name of the HTTP header sent by the authentication proxy that provides the email address of the user authenticated at proxy level.</p>
-<p>Check your proxy documentation to find out how this header is named (i.e <code v-pre>REMOTE_EMAIL</code>)</p>
-<p>Only relevant when <doc-anchor-trigger to="#authentication_guard">AUTHENTICATION_GUARD</doc-anchor-trigger> is set to <code v-pre>reverse-proxy-guard</code>.</p>
+<dd><p>Determines the minimum &quot;level&quot; a message must be in order to be logged.</p>
+<p>If you set it to <code v-pre>debug</code> your logs will grow large, and fast. If you set it to <code v-pre>emergency</code> probably nothing will get logged, ever.</p>
+</dd>
+<dt>Accepted values</dt>
+<dd><p>From least severe to most severe:</p>
+<p><code v-pre>debug</code>, <code v-pre>info</code>, <code v-pre>notice</code>, <code v-pre>warning</code>, <code v-pre>error</code>, <code v-pre>critical</code>, <code v-pre>alert</code>, <code v-pre>emergency</code></p>
+<p>See <a href="https://tools.ietf.org/html/rfc5424" target="_blank">RFC 5424</a> for level definitions.</p>
+</dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>notice</code></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="log_deprecations_channel">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#log_deprecations_channel">#</doc-anchor-trigger>
+        <span>LOG_DEPRECATIONS_CHANNEL</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>A log channel to use to log the PHP &amp; Laravel deprecation warnings.</p>
+<p>Should match one of the channels described at <doc-anchor-trigger to="#log_channel">LOG_CHANNEL</doc-anchor-trigger></p>
 </dd>
 <dt>Default value</dt>
 <dd><p><code v-pre>null</code></p>
 </dd>
 </dl>
-</doc-panel>
-<doc-anchor-target id="proxy_logout_url">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#proxy_logout_url">#</doc-anchor-trigger>
-        <span>PROXY_LOGOUT_URL</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string-badge-variant-info-text-url">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>url</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd><p>Custom logout URL to open when a user clicks the <em>Logout</em> link in 2FAuth.<br />
-In most case this would send the user to the logout page of your authentication proxy.</p>
-<p>Only relevant when <doc-anchor-trigger to="#authentication_guard">AUTHENTICATION_GUARD</doc-anchor-trigger> is set to <code v-pre>reverse-proxy-guard</code>.</p>
-</dd>
-<dt>Default value</dt>
-<dd><p><code v-pre>null</code></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="webauthn_name">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#webauthn_name">#</doc-anchor-trigger>
-        <span>WEBAUTHN_NAME</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd><p>Name of the Relying Party in the WebAuthn process. This should match the name of the application.</p>
-<p>Do not set to <code v-pre>null</code>.</p>
-</dd>
-<dt>Default value</dt>
-<dd><p>Fallbacks to the <doc-anchor-trigger to="#app_name">APP_NAME</doc-anchor-trigger> value when the var is not set.</p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="webauthn_id">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#webauthn_id">#</doc-anchor-trigger>
-        <span>WEBAUTHN_ID</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd><p>ID of the Relying Party in the WebAuthn process. This should equal the application domain (i.e 2fauth.example.com).</p>
-<p>While only the <doc-anchor-trigger to="#webauthn_name">WEBAUTHN_NAME</doc-anchor-trigger> is enough, you can further set a custom domain as ID.<br />
-If set to <code v-pre>null</code>, the device will fill it internally.</p>
-<p>See <a href="https://webauthn-doc.spomky-labs.com/prerequisites/the-relying-party#how-to-determine-the-relying-party-id" target="_blank">How to determine the relying party id</a> for more information.</p>
-</dd>
-<dt>Default value</dt>
-<dd><p><code v-pre>null</code></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="webauthn_user_verification">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#webauthn_user_verification">#</doc-anchor-trigger>
-        <span>WEBAUTHN_USER_VERIFICATION</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd><p>Setting to control how user verification behave during the WebAuthn authentication flow.</p>
-<p>See <a href="../../security/authentication/webauthn/#user-verification">WebAuthn user verification</a>.</p>
-</dd>
-</dl>
-<p>Accepted values</p>
-<div class="codeblock-wrapper">
-<div class="ml-3">
-<dl>
-<dt><code v-pre>required</code></dt>
-<dd>Will ALWAYS ask for user verification</dd>
-<dt><code v-pre>preferred</code></dt>
-<dd>Will ask for user verification IF POSSIBLE</dd>
-<dt><code v-pre>discouraged</code></dt>
-<dd><p>Will NOT ask for user verification (for example, to minimize disruption to the user interaction flow)</p>
-</dd>
-</dl>
 </div>
-</div>
-<div>
-<dl>
-<dt>Default value</dt>
-<dd><p><code v-pre>preferred</code></p>
-</dd>
-</dl>
-</div>
-</doc-panel>
-<doc-anchor-target id="sso-settings">
+<doc-anchor-target id="proxy-setting">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sso-settings">#</doc-anchor-trigger>
-        <span>SSO settings</span>
-    </h2>
-</doc-anchor-target>
-<p>See <a href="../../security/authentication/sso/">Single Sign-On (SSO)</a> to discover how to enable SSO on your instance.</p>
-<doc-anchor-target id="openid_authorize_url">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#openid_authorize_url">#</doc-anchor-trigger>
-        <span>OPENID_AUTHORIZE_URL</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string-badge-variant-info-text-url">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>url</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd>URL  used during the OpenID SSO flow to request the user&#x27;s authentication and consent</dd>
-<dt>Default value</dt>
-<dd><p><em>none</em></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="openid_token_url">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#openid_token_url">#</doc-anchor-trigger>
-        <span>OPENID_TOKEN_URL</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string-badge-variant-info-text-url">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>url</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd>URL  used during the OpenID SSO flow to obtain an ID and / or access token</dd>
-<dt>Default value</dt>
-<dd><p><em>none</em></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="openid_userinfo_url">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#openid_userinfo_url">#</doc-anchor-trigger>
-        <span>OPENID_USERINFO_URL</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string-badge-variant-info-text-url">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>url</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd>URL used during the OpenID SSO flow to retrieve profile information and other attributes for a logged-in end-user</dd>
-<dt>Default value</dt>
-<dd><p><em>none</em></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="openid_client_id">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#openid_client_id">#</doc-anchor-trigger>
-        <span>OPENID_CLIENT_ID</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd>A unique identifier for the application</dd>
-<dt>Default value</dt>
-<dd><p><em>none</em></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="openid_client_secret">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#openid_client_secret">#</doc-anchor-trigger>
-        <span>OPENID_CLIENT_SECRET</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd>Secret known only to the application and the Open ID authorization server</dd>
-<dt>Default value</dt>
-<dd><p><em>none</em></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="github_client_id">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#github_client_id">#</doc-anchor-trigger>
-        <span>GITHUB_CLIENT_ID</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd>A unique identifier for the application</dd>
-<dt>Default value</dt>
-<dd><p><em>none</em></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="github_client_secret">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#github_client_secret">#</doc-anchor-trigger>
-        <span>GITHUB_CLIENT_SECRET</span>
-    </h3>
-</doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span></template>
-<dl>
-<dt>Description</dt>
-<dd>Secret known only to the application and Github</dd>
-<dt>Default value</dt>
-<dd><p><em>none</em></p>
-</dd>
-</dl>
-</doc-panel>
-<doc-anchor-target id="proxy-settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#proxy-settings">#</doc-anchor-trigger>
-        <span>Proxy settings</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#proxy-setting">#</doc-anchor-trigger>
+        <span>Proxy setting</span>
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="trusted_proxies">
@@ -1734,47 +1603,73 @@ If set to <code v-pre>null</code>, the device will fill it internally.</p>
         <span>TRUSTED_PROXIES</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>A comma separated IP list of trusted proxies.</p>
+<p>When running 2FAuth behind a proxy that terminates TLS / SSL certificates, you may face some errors. Typically this is because 2FAuth is being forwarded traffic from the proxy on port 80 and does not know it should generate secure links.</p>
 <p>Set to <code v-pre>*</code> to trust any proxy.</p>
 </dd>
 <dt>Default value</dt>
 <dd><p><code v-pre>null</code></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="proxy_for_outgoing_requests">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#proxy_for_outgoing_requests">#</doc-anchor-trigger>
         <span>PROXY_FOR_OUTGOING_REQUESTS</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string-badge-variant-info-text-url">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>url</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>Proxy for outgoing requests, like 2FAuth releases detection or logo fetching.</p>
 <p>You can provide a proxy URL that contains a scheme, username, and password. For example <code v-pre>http://username:password@192.168.16.1:10</code>.</p>
-<p>Set it to <code v-pre>null</code> to have direct outgoing requests.</p>
 </dd>
 <dt>Default value</dt>
-<dd><p>An empty string</p>
+<dd><p><em>blank</em></p>
 </dd>
 </dl>
-</doc-panel>
-<doc-anchor-target id="session-settings">
+</div>
+<doc-anchor-target id="security-setting">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#session-settings">#</doc-anchor-trigger>
-        <span>Session settings</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#security-setting">#</doc-anchor-trigger>
+        <span>Security setting</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="bcrypt_rounds">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#bcrypt_rounds">#</doc-anchor-trigger>
+        <span>BCRYPT_ROUNDS</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>number</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>Number of rounds when passwords are hashed using the Bcrypt algorithm.</p>
+<p>Increasing this up to 12 or even 13 will benefit to password security. Be careful, a higher value may significantly affect performance.</p>
+</dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>10</code></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="session-setting">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#session-setting">#</doc-anchor-trigger>
+        <span>Session setting</span>
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="session_driver">
@@ -1783,17 +1678,18 @@ If set to <code v-pre>null</code>, the device will fill it internally.</p>
         <span>SESSION_DRIVER</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd>The default session driver used by the application to store sessions</dd>
+<dd><p>The default session driver used by 2FAuth to store sessions</p>
+</dd>
 </dl>
-<p>Accepted values</p>
-<div class="codeblock-wrapper">
-<div class="ml-3">
+</div>
+<p><span class="fw-500">Accepted values</span></p>
+<div class="sub-dl-wrapper">
 <dl>
 <dt><code v-pre>apc</code></dt>
 <dd>In-memory key-value store for PHP</dd>
@@ -1886,25 +1782,23 @@ If set to <code v-pre>null</code>, the device will fill it internally.</p>
 </dd>
 </dl>
 </div>
-</div>
-<div>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Default value</dt>
 <dd><p><code v-pre>file</code></p>
 </dd>
 </dl>
 </div>
-</doc-panel>
 <doc-anchor-target id="session_connection">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#session_connection">#</doc-anchor-trigger>
         <span>SESSION_CONNECTION</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>When using the <code v-pre>database</code> or <code v-pre>redis</code> <doc-anchor-trigger to="#session_driver">session drivers</doc-anchor-trigger>, you may specify a connection that should be used to manage these sessions.</p>
@@ -1914,21 +1808,21 @@ If set to <code v-pre>null</code>, the device will fill it internally.</p>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="session_store">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#session_store">#</doc-anchor-trigger>
         <span>SESSION_STORE</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>While using one of the framework&#x27;s cache driven session backends you may list a cache store that should be used for these sessions.</p>
-<p>This value must match with one of the application&#x27;s configured cache stores.</p>
+<p>This value must match with one of the 2FAuth&#x27;s configured cache stores.</p>
 </dd>
 <dt>Accepted values</dt>
 <dd><p><code v-pre>apc</code>, <code v-pre>dynamodb</code>, <code v-pre>memcached</code>, <code v-pre>redis</code></p>
@@ -1938,17 +1832,17 @@ If set to <code v-pre>null</code>, the device will fill it internally.</p>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="session_cookie">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#session_cookie">#</doc-anchor-trigger>
         <span>SESSION_COOKIE</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>Name of the cookie used to identify a session instance by ID.</p>
@@ -1958,39 +1852,39 @@ If set to <code v-pre>null</code>, the device will fill it internally.</p>
 <dd><p><code v-pre>2fauth_session</code></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="session_domain">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#session_domain">#</doc-anchor-trigger>
         <span>SESSION_DOMAIN</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-string-badge-variant-info-text-domain">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>domain</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>Domain of the cookie used to identify a session in 2FAuth.</p>
-<p>This will determine which domains the cookie is available to in the application.</p>
+<p>This will determine which domains the cookie is available to in 2FAuth.</p>
 </dd>
 <dt>Default value</dt>
 <dd><p>Fallbacks to the 2FAuth instance domain</p>
 </dd>
 </dl>
-</doc-panel>
+</div>
 <doc-anchor-target id="session_secure_cookie">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#session_secure_cookie">#</doc-anchor-trigger>
         <span>SESSION_SECURE_COOKIE</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-variant-info-text-boolean">
-    <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>boolean</span>
-</span></template>
+</span></p>
+<div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
 <dd><p>By setting this option to true, session cookies will only be sent back to the server if the browser has a HTTPS connection.</p>
@@ -2000,7 +1894,146 @@ If set to <code v-pre>null</code>, the device will fill it internally.</p>
 <dd><p><code v-pre>false</code></p>
 </dd>
 </dl>
-</doc-panel>
+</div>
+<doc-anchor-target id="sso-setting">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sso-setting">#</doc-anchor-trigger>
+        <span>SSO setting</span>
+    </h2>
+</doc-anchor-target>
+<p>See <a href="../../security/authentication/sso/">Single Sign-On (SSO)</a> to discover how to enable SSO on your instance.</p>
+<doc-anchor-target id="openid_authorize_url">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#openid_authorize_url">#</doc-anchor-trigger>
+        <span>OPENID_AUTHORIZE_URL</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>url</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd>URL  used during the OpenID SSO flow to request the user&#x27;s authentication and consent</dd>
+<dt>Default value</dt>
+<dd><p><em>none</em></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="openid_token_url">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#openid_token_url">#</doc-anchor-trigger>
+        <span>OPENID_TOKEN_URL</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>url</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd>URL  used during the OpenID SSO flow to obtain an ID and / or access token</dd>
+<dt>Default value</dt>
+<dd><p><em>none</em></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="openid_userinfo_url">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#openid_userinfo_url">#</doc-anchor-trigger>
+        <span>OPENID_USERINFO_URL</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>url</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd>URL used during the OpenID SSO flow to retrieve profile information and other attributes for a logged-in end-user</dd>
+<dt>Default value</dt>
+<dd><p><em>none</em></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="openid_client_id">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#openid_client_id">#</doc-anchor-trigger>
+        <span>OPENID_CLIENT_ID</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd>A unique identifier for the application</dd>
+<dt>Default value</dt>
+<dd><p><em>none</em></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="openid_client_secret">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#openid_client_secret">#</doc-anchor-trigger>
+        <span>OPENID_CLIENT_SECRET</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd>Secret known only to 2FAuth and the Open ID authorization server</dd>
+<dt>Default value</dt>
+<dd><p><em>none</em></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="github_client_id">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#github_client_id">#</doc-anchor-trigger>
+        <span>GITHUB_CLIENT_ID</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd>A unique identifier for the application</dd>
+<dt>Default value</dt>
+<dd><p><em>none</em></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="github_client_secret">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#github_client_secret">#</doc-anchor-trigger>
+        <span>GITHUB_CLIENT_SECRET</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd>Secret known only to 2FAuth and Github</dd>
+<dt>Default value</dt>
+<dd><p><em>none</em></p>
+</dd>
+</dl>
+</div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -2026,10 +2059,10 @@ If set to <code v-pre>null</code>, the device will fill it internally.</p>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../getting-started/usage/multi-user/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../getting-started/troubleshooting/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Multi-​user</span>
+                                                <span class="block mt-1">Troubleshooting</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
