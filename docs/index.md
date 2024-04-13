@@ -50,7 +50,7 @@ Manage your 2FA accounts, organize and classify them using Groups, edit & delete
 
 #### :icon-shield-check: Protect your data
 
-2FAuth protects your data with Privacy, Self-hosting, WebAuthn authentication, OTP obfuscation, and Auto lock.
+2FAuth protects your data with Privacy, Self-hosting, Encryption, WebAuthn authentication, OTP obfuscation, and Auto lock.
 
 #### :icon-people: Multi-user
 
