@@ -279,6 +279,22 @@ Default value
 
 :::
 
+### AUTHENTICATION_LOG_RETENTION
+
+[!badge variant="info" text="number"]
+
+:::env-var-dl-wrapper
+
+Description
+:   The authentication log retention time, in days.
+
+    Log entries older than that are automatically deleted.
+
+Default value
+:   `365`
+
+:::
+
 ### AUTH_PROXY_HEADER_FOR_USER
 
 [!badge variant="info" text="string"]
@@ -994,6 +1010,22 @@ Description
 
 Default value
 :   _blank_
+
+:::
+
+### PROXY_HEADER_FOR_IP
+
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Name of the HTTP header sent by a reverse proxy to pass the original visitor IP address.
+
+    Check the proxy documentation to find out how this header is named (i.e `HTTP_CF_CONNECTING_IP` for cloudflare).
+
+Default value
+:   `null`
 
 :::
 
