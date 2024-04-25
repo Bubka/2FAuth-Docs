@@ -13,6 +13,10 @@ services:
       # You can leave this on "local". If you change it to production most console commands will ask for extra confirmation.
       # Never set it to "testing".
       - APP_ENV=local
+      # The timezone for your application, which is used to record dates and times to database. This global setting can be
+      # overridden by users via in-app settings for a personalised dates and times display.
+      # If this setting is changed while the application is already running, existing records in the database won't be updated
+      - APP_TIMEZONE=UTC
       # Set to true if you want to see debug information in error screens.
       - APP_DEBUG=false
       # This should be your email address
@@ -83,6 +87,9 @@ services:
       # authentication checks. That means your proxy is fully responsible of the authentication process, 2FAuth will
       # trust him as long as headers are presents.
       - AUTHENTICATION_GUARD=web-guard
+      # Authentication log retention time, in days.
+      # Log entries older than that are automatically deleted.
+      - AUTHENTICATION_LOG_RETENTION=365
       # Name of the HTTP headers sent by the reverse proxy that identifies the authenticated user at proxy level.
       # Check your proxy documentation to find out how these headers are named (i.e 'REMOTE_USER', 'REMOTE_EMAIL', etc...)
       # (only relevant when AUTHENTICATION_GUARD is set to 'reverse-proxy-guard')
