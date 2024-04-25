@@ -80,6 +80,29 @@ Default value
 
 :::
 
+### APP_TIMEZONE
+
+[!badge variant="info" text="string"]
+
+:::env-var-dl-wrapper
+
+Description
+:   The timezone for your application, which is used to record dates and times to database.
+
+    This global setting can be overridden by users via in-app settings for a personalised dates and times display.
+
+    !!! warning
+    If this setting is changed while the application is already running, existing records in the database won't be updated.
+    !!!
+
+Possible values
+:   See [List of TZ database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+
+Default value
+:   `UTC`
+
+:::
+
 ### APP_DEBUG
 
 [!badge variant="info" text="boolean"]
