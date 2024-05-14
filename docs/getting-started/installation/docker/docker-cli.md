@@ -130,7 +130,8 @@ Use the following build arguments to customize the image with `--build-arg key=v
 | --- | --- | --- |
 | `MAIL_HOST` | `smtp.mailtrap.io` | The SMTP hostname |
 | `MAIL_PORT` | 2525 | The corresponding SMTP port |
-| `MAIL_FROM` | `changeme@example.com` | The sender address |
+| `MAIL_FROM_ADDRESS` | null | The sender email address |
+| `MAIL_FROM_NAME` | null | The sender name |
 | `MAIL_USERNAME` | null | The SMTP username |
 | `MAIL_PASSWORD` | null | The SMTP password |
 
@@ -140,7 +141,8 @@ Example:
 ...
 -e MAIL_HOST=smtp.example.com
 -e MAIL_PORT=587
--e MAIL_FROM=2fauth@example.com
+-e MAIL_FROM_ADDRESS=2fauth@example.com
+-e MAIL_FROM_NAME=2fauth
 -e MAIL_USERNAME=2fauth@example.com
 -e MAIL_PASSWORD=password1234
 ```
