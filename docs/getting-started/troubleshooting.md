@@ -6,7 +6,7 @@ Logs can give usefull informations to troubleshoot your installation. 2FAuth log
 
 You may enable debug logs by setting `APP_DEBUG=true` and `LOG_LEVEL=debug` in your .env file.
 
-The web server and the database server also provide some logs. Their locations may vary depending on the server choice and your operating system. If you followed the [Web server configuration](#web-server-configuration) of this guide, the web server logs should be in one of these locations under a *nix system :
+The web server and the database server also provide some logs. Their locations may vary depending on the server choice and your operating system. If you followed the [Web server configuration](/getting-started/installation/self-hosted-server/#web-server-configuration) of this guide, the web server logs should be in one of these locations under a *nix system :
 
 +++ NGINX
 

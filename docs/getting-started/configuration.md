@@ -291,7 +291,7 @@ Description
 
     - [AUTH_PROXY_HEADER_FOR_USER](#auth_proxy_header_for_user)
 
-    See the dedicated [auth proxy page](security/authentication/auth-proxy/) to discover how to configure the reverse-proxy-guard.
+    See the dedicated [auth proxy page](/security/authentication/auth-proxy/) to discover how to configure the reverse-proxy-guard.
 
 :::
 
