@@ -82,7 +82,7 @@ Default value
 
 ### APP_TIMEZONE
 
-[!badge variant="info" text="string"]
+[!badge variant="info" text="string"] [!badge variant="info" text="since v5.2"]
 
 :::env-var-dl-wrapper
 
@@ -163,7 +163,7 @@ Default value
 
 ### ASSET_URL
 
-[!badge variant="info" text="string"] [!badge variant="info" text="url"]
+[!badge variant="info" text="string"] [!badge variant="info" text="url"] [!badge variant="info" text="since v5.0.3"]
 
 :::env-var-dl-wrapper
 
@@ -179,7 +179,7 @@ Default value
 
 ### <span class="expected">APP_SUBDIRECTORY</span>
 
-[!badge variant="info" text="string"] [!badge variant="info" text="path"]
+[!badge variant="info" text="string"] [!badge variant="info" text="path"] [!badge variant="info" text="since v4.0"]
 
 :::env-var-dl-wrapper
 
@@ -227,7 +227,7 @@ Default value
 
 ### THROTTLE_API
 
-[!badge variant="info" text="number"]
+[!badge variant="info" text="number"] [!badge variant="info" text="since v4.0"]
 
 :::env-var-dl-wrapper
 
@@ -246,7 +246,7 @@ Default value
 
 ### LOGIN_THROTTLE
 
-[!badge variant="info" text="number"]
+[!badge variant="info" text="number"] [!badge variant="info" text="since v4.0"]
 
 :::env-var-dl-wrapper
 
@@ -262,7 +262,7 @@ Default value
 
 ### <span class="expected">AUTHENTICATION_GUARD</span>
 
-[!badge variant="info" text="string"]
+[!badge variant="info" text="string"] [!badge variant="info" text="since v3.0"]
 
 :::env-var-dl-wrapper
 
@@ -304,7 +304,7 @@ Default value
 
 ### AUTHENTICATION_LOG_RETENTION
 
-[!badge variant="info" text="number"]
+[!badge variant="info" text="number"] [!badge variant="info" text="since v5.2"]
 
 :::env-var-dl-wrapper
 
@@ -320,7 +320,7 @@ Default value
 
 ### AUTH_PROXY_HEADER_FOR_USER
 
-[!badge variant="info" text="string"]
+[!badge variant="info" text="string"] [!badge variant="info" text="since v3.0"]
 
 :::env-var-dl-wrapper
 
@@ -338,7 +338,7 @@ Default value
 
 ### AUTH_PROXY_HEADER_FOR_EMAIL
 
-[!badge variant="info" text="string"]
+[!badge variant="info" text="string"] [!badge variant="info" text="since v3.0"]
 
 :::env-var-dl-wrapper
 
@@ -356,7 +356,7 @@ Default value
 
 ### PROXY_LOGOUT_URL
 
-[!badge variant="info" text="string"] [!badge variant="info" text="url"]
+[!badge variant="info" text="string"] [!badge variant="info" text="url"] [!badge variant="info" text="since v3.1"]
 
 :::env-var-dl-wrapper
 
@@ -373,7 +373,7 @@ Default value
 
 ### WEBAUTHN_NAME
 
-[!badge variant="info" text="string"]
+[!badge variant="info" text="string"] [!badge variant="info" text="since v3.0"]
 
 :::env-var-dl-wrapper
 
@@ -389,7 +389,7 @@ Default value
 
 ### WEBAUTHN_ID
 
-[!badge variant="info" text="string"]
+[!badge variant="info" text="string"] [!badge variant="info" text="since v3.0"]
 
 :::env-var-dl-wrapper
 
@@ -872,7 +872,7 @@ Default value
 
 ### MAIL_VERIFY_SSL_PEER
 
-[!badge variant="info" text="boolean"]
+[!badge variant="info" text="boolean"] [!badge variant="info" text="since v4.2"]
 
 :::env-var-dl-wrapper
 
@@ -1022,7 +1022,7 @@ Default value
 
 ### PROXY_FOR_OUTGOING_REQUESTS
 
-[!badge variant="info" text="string"] [!badge variant="info" text="url"]
+[!badge variant="info" text="string"] [!badge variant="info" text="url"] [!badge variant="info" text="since v5.0"]
 
 :::env-var-dl-wrapper
 
@@ -1038,7 +1038,7 @@ Default value
 
 ### PROXY_HEADER_FOR_IP
 
-[!badge variant="info" text="string"]
+[!badge variant="info" text="string"] [!badge variant="info" text="since v5.2"]
 
 :::env-var-dl-wrapper
 
@@ -1235,7 +1235,7 @@ See [Single Sign-On (SSO)](/security/authentication/sso/) to discover how to ena
 
 ### OPENID_AUTHORIZE_URL
 
-[!badge variant="info" text="string"] [!badge variant="info" text="url"]
+[!badge variant="info" text="string"] [!badge variant="info" text="url"] [!badge variant="info" text="since v5.0"]
 
 :::env-var-dl-wrapper
 
@@ -1249,7 +1249,7 @@ Default value
 
 ### OPENID_TOKEN_URL
 
-[!badge variant="info" text="string"] [!badge variant="info" text="url"]
+[!badge variant="info" text="string"] [!badge variant="info" text="url"] [!badge variant="info" text="since v5.0"]
 
 :::env-var-dl-wrapper
 
@@ -1263,7 +1263,7 @@ Default value
 
 ### OPENID_USERINFO_URL
 
-[!badge variant="info" text="string"] [!badge variant="info" text="url"]
+[!badge variant="info" text="string"] [!badge variant="info" text="url"] [!badge variant="info" text="since v5.0"]
 
 :::env-var-dl-wrapper
 
@@ -1277,7 +1277,7 @@ Default value
 
 ### OPENID_CLIENT_ID
 
-[!badge variant="info" text="string"]
+[!badge variant="info" text="string"] [!badge variant="info" text="since v5.0"]
 
 :::env-var-dl-wrapper
 
@@ -1291,7 +1291,7 @@ Default value
 
 ### OPENID_CLIENT_SECRET
 
-[!badge variant="info" text="string"]
+[!badge variant="info" text="string"] [!badge variant="info" text="since v5.0"]
 
 :::env-var-dl-wrapper
 
@@ -1305,7 +1305,7 @@ Default value
 
 ### GITHUB_CLIENT_ID
 
-[!badge variant="info" text="string"]
+[!badge variant="info" text="string"] [!badge variant="info" text="since v5.0"]
 
 :::env-var-dl-wrapper
 
@@ -1319,7 +1319,7 @@ Default value
 
 ### GITHUB_CLIENT_SECRET
 
-[!badge variant="info" text="string"]
+[!badge variant="info" text="string"] [!badge variant="info" text="since v5.0"]
 
 :::env-var-dl-wrapper
 
