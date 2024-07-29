@@ -152,8 +152,12 @@ Description
     Ensure the value you set uses the `https` scheme when 2FAuth is reached through a secure connection
     !!!
 
+    !!! primary
+    If a custom port is used, it must be appended to the URL: `https://2fauth.mydomain.com:8001`
+    !!!
+
     !!! warning
-    This __must__ match your instance's external address otherwise [WebAuthn](/security/authentication/webauthn/) authentication won't work
+    This __must__ match your instance's external address (the location in your browser address bar) otherwise you'll get a blank page or [WebAuthn](/security/authentication/webauthn/) authentication won't work.
     !!!
 
 Default value
