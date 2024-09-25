@@ -204,3 +204,9 @@ This is not a soft delete. Deleted account cannot be recovered.
 !!!warning
 There must always be at least one administrator. The last administrator account cannot be deleted.
 !!!
+
+## Health check
+
+2FAuth provides a special URL to check its health: `/up`
+
+This is a very lightweight resource that responds with a `200` HTTP status code when the application is up and running. It can be used to set up a Docker HEALTHCHECK or a Kubernetes HTTPS liveness probe.
