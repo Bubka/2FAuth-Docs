@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779358190364">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780612208745">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.5.0">
+    <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Single Sign-On (SSO) - 2FAuth Docs</title>
@@ -33,12 +33,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../static/2fauth_favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.779358190364" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.780612208745" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.779358190364" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.779358190364" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.779358190364" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.780612208745" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.780612208745" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.780612208745" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -61,7 +61,7 @@
                                 <img class="max-h-10 hidden dark:inline-block" src="../../../static/2fauth_light.png">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">2FAuth</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v5.2</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v5.3</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -301,7 +301,25 @@
         <span>Enabling SSO</span>
     </h2>
 </doc-anchor-target>
-<p>SSO is enabled by default. You can check it at <em>Admin &gt; App setup</em>, in the <em>Registrations</em> section.</p>
+<p>SSO is enabled by default. You can check it or change it at <em>Admin &gt; Auth</em>.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>SSO makes outgoing requests that you may want to pass through a proxy.</p>
+<p>If so, set the <a href="../../../getting-started/configuration/#proxy_for_outgoing_requests">PROXY_FOR_OUTGOING_REQUESTS</a> environment variable.</p>
+        </div>
+    </div>
+</div>
 <doc-anchor-target id="enable-a-provider">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#enable-a-provider">#</doc-anchor-trigger>
@@ -448,6 +466,21 @@ OPENID_CLIENT_SECRET=1QzLnSc1Rc3MCPm0QV2FLNaKk-Jk0bUjaCageDvxIkd2-Mp50ipiP-MCPm0
 <li>The 2FAuth account cannot be unbound from the provider account.</li>
 <li>You cannot change your information from 2FAuth. But changes made on the provider side are reflected on 2FAuth each time you sign in via SSO.</li>
 </ul>
+<doc-anchor-target id="use-sso-only">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#use-sso-only">#</doc-anchor-trigger>
+        <span>Use SSO only</span>
+    </h2>
+</doc-anchor-target>
+<p>SSO can be set as the only authentication method available on your 2FAuth instance. Go to <em>Admin &gt; Auth</em>, scroll down to the <em>Single Sign-On</em> section and check <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-3 text-sm rounded-md">
+    <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="22" height="22" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M17.28 9.28a.75.75 0 0 0-1.06-1.06l-5.97 5.97-2.47-2.47a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l6.5-6.5Z"/><path d="M3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25V3.75C2 2.784 2.784 2 3.75 2ZM3.5 3.75v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25H3.75a.25.25 0 0 0-.25.25Z"/></g></svg></span>
+    <span>Use SSO only</span>
+</span>.</p>
+<p>Enabling this setting has the following effects:</p>
+<ul>
+<li>Most authentication features are disabled for standard users: Password &amp; WebAuthn Login, Password Reset, Registration, <a href="../pat/">OAuth PAT</a> and <a href="../webauthn/">WebAuthn</a> devices management.</li>
+<li>Administrators can still log in with their password or WebAuthn. This is a security feature to prevent lockout if no SSO provider is available.</li>
+</ul>
 <doc-anchor-target id="disabling-sso">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#disabling-sso">#</doc-anchor-trigger>
@@ -455,7 +488,7 @@ OPENID_CLIENT_SECRET=1QzLnSc1Rc3MCPm0QV2FLNaKk-Jk0bUjaCageDvxIkd2-Mp50ipiP-MCPm0
     </h2>
 </doc-anchor-target>
 <p>As an administrator, you can fully disable Single Sign-On from the 2FAuth UI.</p>
-<p>Go to <em>Admin &gt; App setup</em>, scroll down to the <em>Registrations</em> section and uncheck <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-3 text-sm rounded-md">
+<p>Go to <em>Admin &gt; Auth</em>, scroll down to the <em>Single Sign-On</em> section and uncheck <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-3 text-sm rounded-md">
     <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="22" height="22" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M17.28 9.28a.75.75 0 0 0-1.06-1.06l-5.97 5.97-2.47-2.47a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l6.5-6.5Z"/><path d="M3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25V3.75C2 2.784 2.784 2 3.75 2ZM3.5 3.75v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25H3.75a.25.25 0 0 0-.25.25Z"/></g></svg></span>
     <span>Enable Single Sign-On</span>
 </span>.</p>
