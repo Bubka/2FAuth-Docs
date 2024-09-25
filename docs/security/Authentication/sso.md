@@ -15,7 +15,13 @@ For now 2FAuth only supports 2 SSO providers: __OpenID__ and __Github__
 
 ## Enabling SSO
 
-SSO is enabled by default. You can check it at _Admin > App setup_, in the _Registrations_ section.
+SSO is enabled by default. You can check it or change it at _Admin > Auth_.
+
+!!!
+SSO makes outgoing requests that you may want to pass through a proxy.
+
+If so, set the [PROXY_FOR_OUTGOING_REQUESTS](/getting-started/configuration/#proxy_for_outgoing_requests) environment variable.
+!!!
 
 ## Enable a provider
 
@@ -95,11 +101,20 @@ When you sign in via SSO for the first time, you are registered to 2FAuth transp
 - The 2FAuth account cannot be unbound from the provider account.
 - You cannot change your information from 2FAuth. But changes made on the provider side are reflected on 2FAuth each time you sign in via SSO.
 
+## Use SSO only
+
+SSO can be set as the only authentication method available on your 2FAuth instance. Go to _Admin > Auth_, scroll down to the _Single Sign-On_ section and check [!badge size="l" icon="checkbox" text="Use SSO only"].
+
+Enabling this setting has the following effects:
+
+- Most authentication features are disabled for standard users: Password & WebAuthn Login, Password Reset, Registration, [OAuth PAT](/security/authentication/pat/) and [WebAuthn](/security/authentication/webauthn/) devices management.
+- Administrators can still log in with their password or WebAuthn. This is a security feature to prevent lockout if no SSO provider is available.
+
 ## Disabling SSO
 
 As an administrator, you can fully disable Single Sign-On from the 2FAuth UI.
 
-Go to _Admin > App setup_, scroll down to the _Registrations_ section and uncheck [!badge size="l" icon="checkbox" text="Enable Single Sign-On"].
+Go to _Admin > Auth_, scroll down to the _Single Sign-On_ section and uncheck [!badge size="l" icon="checkbox" text="Enable Single Sign-On"].
 
 Note that:
 

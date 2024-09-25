@@ -1031,7 +1031,7 @@ Default value
 :::env-var-dl-wrapper
 
 Description
-:   Proxy for outgoing requests, like 2FAuth releases detection or logo fetching.
+:   Proxy for outgoing requests, like SSO connection, 2FAuth releases detection or logo fetching.
 
     You can provide a proxy URL that contains a scheme, username, and password. For example `http://username:password@192.168.16.1:10`.
 

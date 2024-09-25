@@ -85,6 +85,12 @@ Check your email inbox first. If the email is not received, [check your logs](/g
 
 See [Data protection](/security/data-protection/#for-administrators).
 
+## Authentication
+
+### Single Sign-On
+
+See [SSO](/security/authentication/sso).
+
 ### Registration control
 
 It is possible to restrict user registration to a limited range of email addresses or to completly disable registrations.
