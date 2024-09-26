@@ -462,9 +462,6 @@ Description
 
 :::sub-dl-wrapper
 
-`apc`
-:   In-memory key-value store for PHP
-
 `database`
 :   Data are cached to the database set with [database setting](#database-setting).
 
