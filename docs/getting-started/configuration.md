@@ -287,11 +287,11 @@ Description
 
     2FAuth only look for the dedicated headers and skip all other built-in authentication checks. That means your proxy is fully responsible of the authentication process, 2FAuth will trust him as long as headers are presents.
 
-    Following variable is required to be set with this guard:
+    Additional variable is required to be set with this guard:
 
     - [AUTH_PROXY_HEADER_FOR_USER](#auth_proxy_header_for_user)
 
-    Following variable may be set with this guard:
+    Additional variable may be set with this guard:
 
     - [AUTH_PROXY_HEADER_FOR_USER](#auth_proxy_header_for_user)
 
@@ -303,6 +303,9 @@ Description
 
 Default value
 :   `web-guard`
+
+Alias
+:   `AUTH_GUARD`
 
 :::
 
@@ -510,6 +513,9 @@ Description
 Default value
 :   `file`
 
+Alias
+:   `CACHE_STORE`
+
 :::
 
 ## Database setting
@@ -632,11 +638,47 @@ Default value
 Description
 :   The password used to connect to the database.
 
-    When using `.env` file, if the password contains special characters like `#`, put quotes around it.  
+    When using `.env` file, if the password contains special characters like `#`, put quotes around it.
     Does not apply to `sqlite`.
 
 Default value
 :   An empty string
+
+:::
+
+### DB_CHARSET
+
+[!badge variant="info" text="string"] [!badge variant="info" text="since v5.3"]
+
+:::env-var-dl-wrapper
+
+Description
+:   The character set of the database.
+
+    Does not apply to `sqlite`.
+
+Default values
+:   For MySQL: `utf8mb4`
+
+    For PostgreSQL: `utf8`
+
+    For SQL Server: `utf8`
+
+:::
+
+### DB_COLLATION
+
+[!badge variant="info" text="string"] [!badge variant="info" text="since v5.3"]
+
+:::env-var-dl-wrapper
+
+Description
+:   The collation of the database.
+
+    Only applies to `mysql`.
+
+Default value
+:   `utf8mb4_unicode_ci`
 
 :::
 
@@ -655,6 +697,9 @@ Description
 
 Default value
 :   _none_
+
+Alias
+:   `DB_URL`
 
 :::
 
@@ -692,12 +737,12 @@ Description
 `smtp`
 :   Use an SMTP server to send emails.
 
-    Following variables are required to be set with this driver:
+    Additional variables are required to be set with this driver:
 
     - [MAIL_USERNAME](#mail_username)
     - [MAIL_PASSWORD](#mail_password)
 
-    Following variables may be set to customize the `smtp` driver configuration:
+    Additional variables may be set to customize the `smtp` driver configuration:
 
     - [MAIL_HOST](#mail_host)
     - [MAIL_PORT](#mail_port)
@@ -707,7 +752,7 @@ Description
 `sendmail`
 :   Use a sendmail server to send emails.
 
-    Following variable may be set to customize the `sendmail` driver configuration:
+    Additional variable may be set to customize the `sendmail` driver configuration:
 
     - [MAIL_SENDMAIL_PATH](#mail_sendmail_path) 
 
@@ -925,7 +970,11 @@ Description
 :::sub-dl-wrapper
 
 `daily`
-:   Gives you 7 daily rotated log files in `[2FAuth_directory]/storage/logs/`
+:   Gives you 7 daily rotated log files in `[2FAuth_directory]/storage/logs/`.
+
+    Additional variable may be set to change the number of files:
+    
+    - [LOG_DAILY_DAYS](#log_daily_days)
 
 `single`
 :   Gives you one big fat error log file at in `[2FAuth_directory]/storage/logs/laravel.log`
@@ -936,26 +985,58 @@ Description
 `syslog`
 :   Writes entries to the system log
 
+    Additional variable may be set to customize the channel:
+
+    - [LOG_SYSLOG_FACILITY](#log_syslog_facility)
+
 `papertrail`
-:   Writes entries to a Papertrail instance.  
-    Following additional variables are required to be set:
+:   Writes entries to a Papertrail instance.
 
-    `PAPERTRAIL_URL` URL of the papertrail instance
-
+    Additional variables are required to be set:  
+    `PAPERTRAIL_URL` URL of the papertrail instance  
     `PAPERTRAIL_PORT` Port used to communicate with the papertrail instance
 
 `slack`
-:   Writes entries to a Slack channel.  
-    Following additional variable is required to be set:
+:   Writes entries to a Slack channel.
 
-    `LOG_SLACK_WEBHOOK_URL` URL for an incoming webhook that you have configured for your Slack team
+    Additional variable is required to be set with this channel:
+
+    - [LOG_SLACK_WEBHOOK_URL](#log_slack_webhook_url)
+
+    Additional variables may be set to customize the channel:
+
+    - [LOG_SLACK_USERNAME](#log_slack_username)
+    - [LOG_SLACK_EMOJI](#log_slack_emoji)
 
 `stack`
 :   A wrapper to facilitate creating "multi-channel" channels.
 
+    Additional variable may be set to define the stack:
+    
+    - [LOG_STACK](#log_stack)
+
 :::
 
 :::env-var-dl-wrapper
+
+Default value
+:   `daily`
+
+:::
+
+### LOG_STACK
+
+[!badge variant="info" text="string"] [!badge variant="info" text="since v5.3"]
+
+:::env-var-dl-wrapper
+
+Description
+:   The stack of log channels used when [LOG_CHANNEL](#log_channel) is set to `stack`.
+
+Accepted values
+:   A comma-separated list of valid [LOG_CHANNEL](#log_channel): `daily`, `single`, `errorlog`, `syslog`, `papertrail`, `slack`
+
+    Ex: `slack, papertrail`
 
 Default value
 :   `daily`
@@ -982,6 +1063,77 @@ Accepted values
 
 Default value
 :   `notice`
+
+:::
+
+### LOG_DAILY_DAYS
+
+[!badge variant="info" text="number"] [!badge variant="info" text="since v5.3"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Number of log files to generate/rotate when using the `daily` log channel.
+
+Default value
+:   `7`
+
+:::
+
+### LOG_SLACK_WEBHOOK_URL
+
+[!badge variant="info" text="string"] [!badge variant="info" text="url"]
+
+:::env-var-dl-wrapper
+
+Description
+:   URL of the Slak webhook to use when using the `slack` log channel.
+
+Default value
+:   none
+
+:::
+
+### LOG_SLACK_USERNAME
+
+[!badge variant="info" text="string"] [!badge variant="info" text="since v5.3"]
+
+:::env-var-dl-wrapper
+
+Description
+:   The name of the user sending the log messages when using the `slack` log channel.
+
+Default value
+:   `Laravel Log`
+
+:::
+
+### LOG_SLACK_EMOJI
+
+[!badge variant="info" text="string"] [!badge variant="info" text="url"] [!badge variant="info" text="since v5.3"]
+
+:::env-var-dl-wrapper
+
+Description
+:   The Emoji code of the emoji used to illustrate log messages when using the `slack` log channel.
+
+Default value
+:   `:boom:`
+
+:::
+
+### LOG_SYSLOG_FACILITY
+
+[!badge variant="info" text="string"] [!badge variant="info" text="since v5.3"]
+
+:::env-var-dl-wrapper
+
+Description
+:   The syslog facility that provides a rough clue of where in a system the message originated.  
+    Only applies when log channel is set to `syslog`.
+
+Default value
+:   `LOG_USER`
 
 :::
 
@@ -1055,6 +1207,34 @@ Default value
 
 ## Security setting
 
+### HASH_DRIVER
+
+[!badge variant="info" text="string"] [!badge variant="info" text="since v5.3"]
+
+:::env-var-dl-wrapper
+
+Description
+:   The hash algorithm used to hash user passwords.
+
+    !!!warning
+    Changing the hash driver while some users have already registered will break authentication. This var must be set before any user registration.
+    !!!
+
+:::
+
+<span class="fw-500">Accepted values</span>
+
+:::sub-dl-wrapper
+
+`bcrypt`, `argon`, `argon2id`
+
+:::
+
+Default value
+:   `bcrypt`
+
+:::
+
 ### BCRYPT_ROUNDS
 
 [!badge variant="info" text="number"]
@@ -1068,6 +1248,48 @@ Description
 
 Default value
 :   `10`
+
+:::
+
+### ARGON_MEMORY
+
+[!badge variant="info" text="number"] [!badge variant="info" text="since v5.3"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Maximum memory (in kibibytes) that may be used to compute an Argon2 hash.
+
+Default value
+:   `65536`
+
+:::
+
+### ARGON_THREADS
+
+[!badge variant="info" text="number"] [!badge variant="info" text="since v5.3"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Number of threads that Argon2 will use to compute a hash.
+
+Default value
+:   `1`
+
+:::
+
+### ARGON_TIME
+
+[!badge variant="info" text="number"] [!badge variant="info" text="since v5.3"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Maximum amount of time it may take to compute an Argon2 hash.
+
+Default value
+:   `4`
 
 :::
 
@@ -1100,6 +1322,10 @@ Description
     !!!warning
     This driver requires the creation of an additional database table
     !!!
+
+    Additional variables may be set when using this driver:
+
+    - `SESSION_TABLE`
 
     See <a href="https://laravel.com/docs/session#database" target="_blank">how to configure the Database driver</a> on the Laravel documentation.
 
@@ -1182,6 +1408,21 @@ Default value
 
 :::
 
+### SESSION_TABLE
+
+[!badge variant="info" text="string"] [!badge variant="info" text="since v5.3"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Name of the table to be used to store sessions when using the `database` session driver.  
+    See [SESSION_DRIVER](#session_driver).
+
+Default value
+:   `sessions`
+
+:::
+
 ### SESSION_COOKIE
 
 [!badge variant="info" text="string"]
@@ -1224,6 +1465,20 @@ Description
 :   By setting this option to true, session cookies will only be sent back to the server if the browser has a HTTPS connection.
 
     This will keep the cookie from being sent to you when it can't be done securely.
+
+Default value
+:   `false`
+
+:::
+
+### SESSION_ENCRYPT
+
+[!badge variant="info" text="boolean"] [!badge variant="info" text="since v5.3"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Whether or not session data are encrypted before it is stored.
 
 Default value
 :   `false`
