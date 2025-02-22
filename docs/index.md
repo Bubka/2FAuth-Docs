@@ -70,9 +70,19 @@ Want to try 2FAuth? A demo is available at <https://demo.2fauth.app>
 
 You can connect using the email address `demo@2fauth.app` and the password `demo`. The demo is reset every hour.
 
-## Web extensions
+## Browser extensions
 
-[-![](/static/available_on_chrome_web_store_bordered.png)](https://chromewebstore.google.com/detail/2fauth-beta/kokhpbhfeokchmbimdlaldcmlinjpipm)
-[-![](/static/available_on_amo.webp)](https://addons.mozilla.org/fr/firefox/addon/2fauth-addon/)
+By design, 2FAuth is always at your fingertips: Through a pinned tab, shortcuts, or PWA installation. Browser extensions complement this feature by offering OTP generation directly from your browser toolbar.
 
-<div style="clear: both;"></div>
+Note: You must have a running instance of 2FAuth to use these extensions; they are not standalone.
+
+<figure class="content-left">
+    <a href="https://chromewebstore.google.com/detail/2fauth-beta/kokhpbhfeokchmbimdlaldcmlinjpipm" target="_blank">
+        <img src="static/available_on_chrome_web_store_bordered.png" alt="Available on Chrome web store"/>
+    </a>
+</figure>
+<figure class="content-left">
+    <a href="https://addons.mozilla.org/fr/firefox/addon/2fauth-addon/" target="_blank">
+        <img src="static/available_on_amo.webp" alt="Get the Firefox addon"/>
+    </a>
+</figure>
