@@ -69,3 +69,10 @@ Migrate from another 2FA app to 2FAuth or export your 2FA data in a breeze.
 Want to try 2FAuth? A demo is available at <https://demo.2fauth.app>
 
 You can connect using the email address `demo@2fauth.app` and the password `demo`. The demo is reset every hour.
+
+## Web extensions
+
+[-![](/static/available_on_chrome_web_store_bordered.png)](https://chromewebstore.google.com/detail/2fauth-beta/kokhpbhfeokchmbimdlaldcmlinjpipm)
+[-![](/static/available_on_amo.webp)](https://addons.mozilla.org/fr/firefox/addon/2fauth-addon/)
+
+<div style="clear: both;"></div>
