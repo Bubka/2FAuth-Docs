@@ -66,7 +66,7 @@ A new available version is reported to the administrators in the 2FAuth footer a
 !!!
 This feature makes outgoing requests that you may want to pass through a proxy.
 
-If so, set the [PROXY_FOR_OUTGOING_REQUESTS](/getting-started/configuration/#proxy_for_outgoing_requests) environment variable.
+If so, set the [PROXY_FOR_OUTGOING_REQUESTS](/getting-started/configuration/env-vars/#proxy_for_outgoing_requests) environment variable.
 !!!
 
 ### Email testing
