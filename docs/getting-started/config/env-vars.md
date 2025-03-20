@@ -96,8 +96,7 @@ Description
     !!!
 
 Possible values
-:   See [List of TZ database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
-
+:   See <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank">List of TZ database time zones</a>
 Default value
 :   `UTC`
 

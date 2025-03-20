@@ -1,3 +1,4 @@
 ---
-redirect: /getting-started/configuration/env-vars.md
+redirect: /getting-started/config/env-vars.md
+visibility: hidden
 ---

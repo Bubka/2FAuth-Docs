@@ -70,7 +70,7 @@ You can stop it with `CTRL+C`.
 - You can set available environment variables with `-e`, for example `-e APP_NAME=2FAuth`.
 
 !!!secondary
-See [Configuration](/getting-started/configuration/env-vars/) to learn about all the environment variables that can be set.
+See [Configuration](/getting-started/config/env-vars/) to learn about all the environment variables that can be set.
 !!!
 
 ### Use an existing SQLite file
