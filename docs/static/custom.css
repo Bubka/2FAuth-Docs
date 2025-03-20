@@ -107,3 +107,21 @@ footer ul li a[href="https://github.com/sponsors/Bubka"] svg {
 .has-following-h3-more-spaced ~ p {
     margin-bottom: 1rem !important;
 }
+
+
+
+.is-half-width {
+    width: 50%;
+    float: left;
+}
+
+@media only screen and (max-width: 1024px) {
+    .is-half-width {
+        width: 100%;
+    }
+}
+
+.is-half-width ul {
+    list-style-type: none !important;
+    padding: 0;
+}
