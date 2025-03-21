@@ -3,37 +3,112 @@
 ---
 # User preferences
 
-## About
+## Purpose
 
 User preferences are settings that any user can change to customize the behavior or appearance of 2FAuth. They can be set by the user from the _Settings > Options_ section of 2FAuth. As the name implies, when a user edits a preference, it only affects their own use, not that of other users.
 
-## Enforcing default values
+2FAuth comes with a set of default values for user preferences. These defaults are defined to provide a good starting experience for every user, but as an administrator, you may want to control them for a consistent, streamlined, or corporate user experience. 2FAuth supports 2 ways to accomplish this:
 
-2FAuth comes with a set of default values for user preferences. These defaults are defined to provide a good starting experience, but as an administrator, you may want to set your own for a consistent, streamlined, or corporate user experience.
+__Custom defaults__
+:   2FAuth defaults are overridden with your default values.
+
+    When a preference's default is customized, the custom value is applied to all users who didn't already personalized the preference themselves from the _Settings > Options_ page of 2FAuth. The preference can still be modified by user.
+
+__Preference locking__
+:   Preferences are locked for change to user.
+
+    Regardless of the value of the preference, no user can edit a locked preference from the _Settings > Options_ section of 2FAuth. The applied value is the last one, according to this priority order:
+
+    1. By the user
+    2. The custom default (if defined)
+    3. The 2FAuth default
+
+The two features can be combined for a complete control over the preferences:
+
+__Custom defaults__ + __Preference locking__
+:   Your custom defaults are enforced for all users.
+
+    Regardless of the value of the preference, no user can edit a locked preference from the _Settings > Options_ section of 2FAuth. The applied value is yours, for everybody.
 
 !!! info
-Overriding defaults is done by defining environment variables. Read the [environment variables](/getting-started/config/env-vars/#how-to) page to learn how to define them.
+Custom defaults and preference locking are done by setting up dedicated environment variables.  
+Read the [Environment variables](/getting-started/config/env-vars/#how-to) page to learn how to define them.
 !!!
 
-### Guideline
+## How to
 
-To enforce the default of a user preference, add a new environment variable using the following format:
-
-```env
-USERPREF_DEFAULT__[NAME_OF_THE_USER_PREFERENCE]=[value]
-```
-
-Where `[NAME_OF_THE_USER_PREFERENCE]` is to be replaced with the name of the user preference you want to enforce and `[value]` with the required value.
-
-For example, if you want 2FAuth to display one-time passwords without any formatting, you have to enfore the default value of the user preference named `FORMAT_PASSWORD`. The appropriate environment variable for this would be:
+Configuration is done per preference. To customize or lock a user preference, add a new environment variable using the following format:
 
 ```env
-USERPREF_DEFAULT__FORMAT_PASSWORD=false
+[PREFIX]__[NAME_OF_THE_USER_PREFERENCE]=[value]
 ```
+
+Where `[PREFIX]` is to be replaced with the expected behavior, `[NAME_OF_THE_USER_PREFERENCE]` with the name of the user preference you want to impact and `[value]` with the required value. (see [Available preferences](#available-preferences) to discover the available preferences and their supported values)
 
 !!! warning
-Note the separator between the prefix `USERPREF_DEFAULT` and the var name, it's a double underscore: `__`
+Note the separator between the prefix and the var name, it's a double underscore: `__`
 !!!
+
+The 2 possible values to replace `[PREFIX]` are `USERPREF_DEFAULT__` for setting a custom default value and `USERPREF_LOCKED__` for locking. You have to set an environment variable for each behavior you want to apply.
+
+A locking environment variable is only relevant if you want to lock a preference. If you don't need to, just don't declare such a variable, or delete the existing one.
+
+### Example
+
+Say you want to hide one-time password's icons in 2FAuth. The corresponding user preference is named [`SHOW_ACCOUNTS_ICONS`](#show_accounts_icons).  
+Here are the environment variables to set, depending on your needs:
+
+||| For a custom default only
+
+```env
+USERPREF_DEFAULT__SHOW_ACCOUNTS_ICONS=false
+```
+
+||| For pref locking only
+
+```env
+USERPREF_LOCKED__SHOW_ACCOUNTS_ICONS=true
+```
+
+||| For a locked & enforced pref
+
+```env
+USERPREF_DEFAULT__SHOW_ACCOUNTS_ICONS=false
+USERPREF_LOCKED__SHOW_ACCOUNTS_ICONS=true
+```
+
+|||
+
+Here is another example to control the theme of 2FAuth, given that the 2FAuth default for this preference is `system` (See [`THEME`](#theme))
+
+||| For a custom default only
+
+```env
+USERPREF_DEFAULT__THEME=dark
+```
+
+||| For pref locking only
+
+```env
+USERPREF_LOCKED__THEME=true
+```
+
+||| For a locked & enforced pref
+
+```env
+USERPREF_DEFAULT__THEME=dark
+USERPREF_LOCKED__THEME=true
+```
+
+|||
+
+### Impact on running app
+
+Because of the way 2FAuth is built, adding new environment variables to enforce user preferences may not have an immediate effect if your 2FAuth instance is running.
+
+You must rebuild the configuration cache of the app for the new variables to be loaded or restart your container if you use one. See the [Environment variables](/getting-started/config/env-vars/#how-to) section for details.
+
+Also, logged-in users won't see any changes until they reconnect or visit the _Settings > Options_ page of 2FAuth.
 
 ## Available preferences
 
