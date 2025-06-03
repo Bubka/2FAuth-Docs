@@ -110,6 +110,15 @@ Enabling this setting has the following effects:
 - Most authentication features are disabled for standard users: Password & WebAuthn Login, Password Reset, Registration, [OAuth PAT](/security/authentication/pat/) and [WebAuthn](/security/authentication/webauthn/) devices management.
 - Administrators can still log in with their password or WebAuthn. This is a security feature to prevent lockout if no SSO provider is available.
 
+### Allowing PAT
+
+Personal Access Tokens may be explicitly allowed when the _Use SSO only_ setting is enabled.  
+Go to _Admin > Auth_, scroll down to the _Single Sign-On_ section and check [!badge size="l" icon="checkbox" text="Allow PAT usage"].
+
+!!!warning
+It is imperative that PATs be allowed for the [2FAuth browser extension](/#browser-extensions) to function properly.
+!!!
+
 ## Disabling SSO
 
 As an administrator, you can fully disable Single Sign-On from the 2FAuth UI.
