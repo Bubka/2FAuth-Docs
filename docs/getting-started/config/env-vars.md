@@ -1558,6 +1558,27 @@ Default value
 
 :::
 
+### OPENID_HTTP_VERIFY_SSL_PEER
+
+[!badge variant="info" text="boolean"] [!badge variant="info" text="string"] [!badge variant="info" text="since v5.6"]
+
+:::env-var-dl-wrapper
+
+Description
+:   SSL peer verification during OpenID authentication process
+
+    !!! warning
+    Disabling peer verification may result in a major security flaw. Change it only if you know what you're doing.
+    !!!
+
+Possible values
+:   `true`, `false` or a string representing the path to a custom certificate on disk, like `/path/to/cert.pem`
+
+Default value
+:   `true`
+
+:::
+
 ### GITHUB_CLIENT_ID
 
 [!badge variant="info" text="string"] [!badge variant="info" text="since v5.0"]
