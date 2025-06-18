@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.0.803404794012">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.803542615586">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.10.0">
+    <meta name="generator" content="Retype 3.10.1">
 
     <!-- Primary Meta Tags -->
     <title>Single Sign-On (SSO) - 2FAuth Docs</title>
@@ -33,18 +33,18 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../../static/2fauth_favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.10.0.803404794012" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.10.1.803542615586" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.10.0.803404794012" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.10.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.10.0.803404794012" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.10.0.803404794012" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.10.1.803542615586" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.10.1.803542615586" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.10.1.803542615586" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
-        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+        <div class="absolute bottom-0 left-0 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
     
         <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
             <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
@@ -61,7 +61,7 @@
                                 <img class="max-h-10 hidden dark:inline-block" src="../../../static/2fauth_light.png">
                             </span>
                             <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">2FAuth</span>
-                        </a><span id="retype-branding-label" class="hidden mt-1 px-2 py-1 ml-4 text-xs font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-md md:inline-block">v5.5</span>
+                        </a><span id="retype-branding-label" class="hidden mt-1 px-2 py-1 ml-4 text-xs font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-md md:inline-block">v5.6</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -387,7 +387,7 @@ _Your provider is <strong>Github</strong></p>
         <span>Set up the provider</span>
     </h3>
 </doc-anchor-target>
-<p>Setting up a provider is done by defining its dedicated environment variables on your 2FAuth instance. You can find these vars in the <code v-pre>.env</code> file of 2FAuth. See also the <a href="../../../getting-started/config/env-vars/#sso-setting">SSO setting</a> section.</p>
+<p>Setting up a provider is done by defining its dedicated environment variables on your 2FAuth instance. You can find these vars in the <code v-pre>.env</code> file of 2FAuth. See also the <a href="../../../getting-started/config/env-vars/#sso-setting">SSO settings</a> section.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash"># OpenID (enabled)
 OPENID_AUTHORIZE_URL=https://samples.auth0.com/authorize
@@ -480,6 +480,33 @@ OPENID_CLIENT_SECRET=1QzLnSc1Rc3MCPm0QV2FLNaKk-Jk0bUjaCageDvxIkd2-Mp50ipiP-MCPm0
 <li>Most authentication features are disabled for standard users: Password &amp; WebAuthn Login, Password Reset, Registration, <a href="../pat/">OAuth PAT</a> and <a href="../webauthn/">WebAuthn</a> devices management.</li>
 <li>Administrators can still log in with their password or WebAuthn. This is a security feature to prevent lockout if no SSO provider is available.</li>
 </ul>
+<doc-anchor-target id="allowing-pat">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#allowing-pat">#</doc-anchor-trigger>
+        <span>Allowing PAT</span>
+    </h3>
+</doc-anchor-target>
+<p>Personal Access Tokens may be explicitly allowed when the <em>Use SSO only</em> setting is enabled.<br />
+Go to <em>Admin &gt; Auth</em>, scroll down to the <em>Single Sign-On</em> section and check <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-3 text-sm rounded-md">
+    <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="22" height="22" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M17.28 9.28a.75.75 0 0 0-1.06-1.06l-5.97 5.97-2.47-2.47a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l6.5-6.5Z"/><path d="M3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25V3.75C2 2.784 2.784 2 3.75 2ZM3.5 3.75v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25H3.75a.25.25 0 0 0-.25.25Z"/></g></svg></span>
+    <span>Allow PAT usage</span>
+</span>.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr-lg rounded-br-lg doc-callout bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>It is imperative that PATs be allowed for the <a href="../../../#browser-extensions">2FAuth browser extension</a> to function properly.</p>
+        </div>
+    </div>
+</div>
 <doc-anchor-target id="disabling-sso">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#disabling-sso">#</doc-anchor-trigger>
