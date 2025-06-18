@@ -30,7 +30,7 @@ __Custom defaults__ + __Preference locking__
 
     Regardless of the value of the preference, no user can edit a locked preference from the _Settings > Options_ section of 2FAuth. The applied value is yours, for everybody.
 
-!!! info
+!!!info
 Custom defaults and preference locking are done by setting up dedicated environment variables.  
 Read the [Environment variables](/getting-started/config/env-vars/#how-to) page to learn how to define them.
 !!!
@@ -45,7 +45,7 @@ Configuration is done per preference. To customize or lock a user preference, ad
 
 Where `[PREFIX]` is to be replaced with the expected behavior, `[NAME_OF_THE_USER_PREFERENCE]` with the name of the user preference you want to impact and `[value]` with the required value. (see [Available preferences](#available-preferences) to discover the available preferences and their supported values)
 
-!!! warning
+!!!warning
 Note the separator between the prefix and the var name, it's a double underscore: `__`
 !!!
 

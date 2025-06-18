@@ -91,7 +91,7 @@ Description
 
     This global setting can be overridden by users via in-app settings for a personalised dates and times display.
 
-    !!! warning
+    !!!
     If this setting is changed while the application is already running, existing records in the database won't be updated.
     !!!
 
@@ -127,7 +127,7 @@ Default value
 Description
 :   The encryption key for all security related features (sessions, [DB encryption](/security/data-protection/#db-encryption), [webauthn](/security/authentication/webauthn/), [personal access token](/security/authentication/pat/))
 
-    !!! warning
+    !!!warning
     Keep this very secure. If you loose it or generate a new one, all existing encrypted data in db must be considered LOST.
     !!!
 
@@ -147,15 +147,15 @@ Default value
 Description
 :   The web address (URL) of your 2FAuth instance, e.g. `https://2fauth.mydomain.com`
 
-    !!! primary
+    !!!primary
     Ensure the value you set uses the `https` scheme when 2FAuth is reached through a secure connection
     !!!
 
-    !!! primary
+    !!!primary
     If a custom port is used, it must be appended to the URL: `https://2fauth.mydomain.com:8001`
     !!!
 
-    !!! warning
+    !!!warning
     This __must__ match your instance's external address (the location in your browser address bar) otherwise you'll get a blank page or [WebAuthn](/security/authentication/webauthn/) authentication won't work.
     !!!
 
@@ -189,7 +189,7 @@ Default value
 Description
 :   The domain subdirectory from which you want to serve 2FAuth.
 
-    !!! warning
+    !!!warning
     This must reflect the path targeted by [APP_URL](#app_url).
     !!!
 
@@ -215,7 +215,7 @@ Description
 
     In Demo mode, the app displays some banners and disables certain features such as the password reset.
     
-    !!! primary
+    !!!primary
     You can feed a demo app with fake data using the artisan command `php artisan 2fauth:reset-demo`.
     
     Setting `IS_DEMO_APP` to `true` is mandatory for this command to run.
@@ -924,7 +924,7 @@ Default value
 Description
 :   SSL peer verification.
 
-    !!! warning
+    !!!warning
     Disabling peer verification may result in a major security flaw. Change it only if you know what you're doing.
     !!!
 
@@ -1567,7 +1567,7 @@ Default value
 Description
 :   SSL peer verification during OpenID authentication process
 
-    !!! warning
+    !!!warning
     Disabling peer verification may result in a major security flaw. Change it only if you know what you're doing.
     !!!
 

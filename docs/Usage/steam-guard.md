@@ -111,6 +111,6 @@ otpauth://totp/Steam:johndoe?secret={YourSecretHere}&issuer=Steam
 
 Then flash (or upload) the QR code to add the account to 2FAuth, just like any other QR code.
 
-!!! warning Avoid online generators
+!!!warning Avoid online generators
 As said earlier, the secret is a sensitive data. You should definitely avoid online generators to convert such data.
 !!!

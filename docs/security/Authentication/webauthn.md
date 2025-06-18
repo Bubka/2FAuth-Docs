@@ -11,7 +11,7 @@ This method is considered more secure, as it proves you are in fact you because 
 
 WebAuthn is available in 2FAuth as a complement or a replacement to the built-in login/password method. Consider using only WebAuthn to provide the highest protection to your 2FAuth instance.
 
-!!! warning
+!!!warning
 The WebAuthn flow does not use login & password, but the creation of a user account with an email and a password remains mandatory.
 !!!
 
