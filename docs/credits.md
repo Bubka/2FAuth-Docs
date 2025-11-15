@@ -41,7 +41,7 @@ The [Docker installation guide](/getting-started/installation/docker/docker-cli/
 
 ### Graphics
 
-[!ref target="blank" text="Font Awesome icon library"](https://fontawesome.com/)
+[!ref target="blank" text="Lucide icon library"](https://lucide.dev/)
 
 ### Main dependencies
 
@@ -53,17 +53,25 @@ The [Docker installation guide](/getting-started/installation/docker/docker-cli/
 
 [!ref icon="package" target="blank" text="khanamiryan/php-qrcode-detector-decoder"](https://github.com/khanamiryan/php-qrcode-detector-decoder)
 
-#### npm
-
-[!ref icon="package" target="blank" text="gruhn/vue-qrcode-reader"](https://github.com/gruhn/vue-qrcode-reader)
-
-[!ref icon="package" target="blank" text="vue-notification"](http://vue-notification.yev.io/)
+#### Vue ecosystem
 
 [!ref icon="package" target="blank" text="vue-i18n"](https://kazupon.github.io/vue-i18n/)
 
+[!ref icon="package" target="blank" text="pinia"](https://pinia.vuejs.org/)
+
+[!ref icon="package" target="blank" text="vueuse"](https://vueuse.org/)
+
+[!ref icon="package" target="blank" text="gruhn/vue-qrcode-reader"](https://github.com/gruhn/vue-qrcode-reader)
+
+[!ref icon="package" target="blank" text="vue3-notification"](https://kyvg.github.io/vue3-notification/)
+
+#### js
+
+[!ref icon="package" target="blank" text="vite"](hhttps://vite.dev/)
+
 [!ref icon="package" target="blank" text="axios"](https://axios-http.com/)
 
-[!ref icon="package" target="blank" text="Vue.Draggable"](https://sortablejs.github.io/Vue.Draggable/)
+[!ref icon="package" target="blank" text="sortablejs"](https://sortablejs.github.io/Sortable/)
 
 #### css
 
