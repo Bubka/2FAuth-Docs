@@ -35,6 +35,8 @@ Custom defaults and preference locking are done by setting up dedicated environm
 Read the [Environment variables](/getting-started/config/env-vars/#how-to) page to learn how to define them.
 !!!
 
+---
+
 ## How to
 
 Configuration is done per preference. To customize or lock a user preference, add a new environment variable using the following format:
@@ -109,6 +111,8 @@ Because of the way 2FAuth is built, adding new environment variables to enforce 
 You must rebuild the configuration cache of the app for the new variables to be loaded or restart your container if you use one. See the [Environment variables](/getting-started/config/env-vars/#how-to) section for details.
 
 Also, logged-in users won't see any changes until they reconnect or visit the _Settings > Options_ page of 2FAuth.
+
+---
 
 ## Available preferences
 

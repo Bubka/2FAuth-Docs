@@ -12,6 +12,8 @@ This guide assumes you are a Steam user with some advanced skills who may alread
 The secret is a sensitive data. Don't share it with anyone, don't save it anywhere without any protection.
 !!!
 
+---
+
 ## Getting the Steam secret
 
 ### Steam Desktop Authenticator (SDA)
@@ -82,6 +84,8 @@ Don't forget to set SDA encryption back On
 
 |||
 [!ref icon="globe" target="blank" text="steamguard-cli"](https://github.com/dyc3/steamguard-cli)
+
+---
 
 ## Adding to 2FAuth
 

@@ -52,6 +52,8 @@ You need __Composer__ to install all PHP dependencies of 2FAuth. As the installa
 
 You can test your installation by running `php composer.phar -v` in a terminal (or just `composer -v` if composer has been installed in a directory that is part of your system PATH)
 
+---
+
 ## Get your 2FAuth copy
 
 Here are 3 methods to help you download the 2FAuth source code. For the purpose of this guide we will consider `/var/www/2fauth` (which is a common path in the *nix world) to be the location where 2FAuth will sit. Of course, you are free to use another path, just remember to adapt the commands in the following steps with yours.
@@ -108,6 +110,8 @@ git checkout v3.0.0
 
 +++
 
+---
+
 ## Installing dependencies
 
 ### Composer
@@ -123,6 +127,8 @@ Or if you didn't add composer to your system PATH:
 ```sh
 php composer.phar install --prefer-dist --no-scripts --no-dev
 ```
+
+---
 
 ## Web server configuration
 
@@ -249,6 +255,8 @@ location /2fauth/ {
 
 +++
 
+---
+
 ## Create the database
 
 Use the CLI of the chosen database to create a new database with one of the following commands:
@@ -291,6 +299,8 @@ If you are not comfortable with the command line, you may use a db management to
 
 [!ref icon="package-dependents" target="blank" text="Get Adminer"](https://www.adminer.org/)
 
+---
+
 ## 2FAuth set up (wizard)
 
 2FAuth provides an __artisan__ command to set up everything easily. If you want to set up all by hand, please follow the next section: [2FAuth set up (manual)](#2fauth-set-up-manual).
@@ -323,6 +333,8 @@ What the wizard do for you is :
 - Cache the configuration
 
 All these steps are detailed below if you want to dive into them.
+
+---
 
 ## 2FAuth set up (manual)
 

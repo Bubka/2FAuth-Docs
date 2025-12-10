@@ -141,6 +141,8 @@ This final step lets you save the preloaded accounts to the 2FAuth database.
 ![5 accounts registered, 3 remaining](/static/import/import_recorded.png)
 :::
 
+---
+
 ## Exporting from 2FAuth
 
 2FAuth lets you export your 2FA data. This is particulary usefull when you want to create a backup on the fly or to migrate to another 2FA app.

@@ -6,9 +6,7 @@ order: 90
 An official Docker image is available to run 2FAuth in a single Docker container.
 These are the __Docker CLI__ Setup instructions, a <a href="https://github.com/Bubka/2FAuth/blob/master/docker/docker-compose.yml" target="_blank">docker-compose.yml</a> file is also available.
 
-[--![](https://dockeri.co/image/2fauth/2fauth)](https://hub.docker.com/r/2fauth/2fauth)
-
-<div style="clear: both;"></div>
+---
 
 ## Features
 
@@ -30,6 +28,8 @@ Several Docker tags are available to let you choose which version you want to ru
 Simply append the tag name to the docker image name in your command or script, separated by a colon, to specify which tag to use. e.g `2fauth/2fauth:3.0.2`, or `2fauth/2fauth:dev`.
 
 If no tag is specified, Docker will default to `latest`.
+
+---
 
 ## Docker CLI Setup
 
@@ -83,6 +83,8 @@ chmod 700 /yourpath/2fauth/database.sqlite
 ```
 
 The container will automatically pick it up.
+
+---
 
 ## Build the image
 
@@ -146,6 +148,8 @@ Example:
 -e MAIL_USERNAME=2fauth@example.com
 -e MAIL_PASSWORD=password1234
 ```
+
+---
 
 ## Implementation details
 

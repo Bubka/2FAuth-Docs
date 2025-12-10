@@ -16,6 +16,8 @@ Asterisks next to the var names aim to identify important vars:
 Set only the vars that need to be ajusted. If a var is not set, its default value will be applied.
 !!!
 
+---
+
 ## How To
 
 You can set environment variables in various ways, depending on the running environment you chose.
@@ -39,6 +41,8 @@ The configuration may have been cached. If so, clear the cache before editing th
 
 Once variables have been modified, (re)build the cache by running `php artisan config:cache`
 !!!
+
+---
 
 ## General setting
 

@@ -17,6 +17,8 @@ icons | Images used to illustrate 2FA accounts in 2FAuth
 preferences | The user preferences
 settings | The 2FAuth administrator settings, which can be extended with custom settings
 
+---
+
 ## Authentication
 
 You authenticate in the 2FAuth API with a _Personal Access Token_ (PAT) built upon the OAUTH `Bearer` authentication scheme (see <a href="https://datatracker.ietf.org/doc/html/rfc6750" target="_blank">RFC 6750</a>).  
@@ -45,6 +47,8 @@ You can revoke a personal access token by simply clicking its [!badge variant="d
 !!!danger
 The revocation of a token is permanent and cannot be undone.
 !!!
+
+---
 
 ## API documentation
 

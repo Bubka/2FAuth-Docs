@@ -29,6 +29,8 @@ order: -1000
 
 The [Docker installation guide](/getting-started/installation/docker/docker-cli/) as well as the Docker stuff are a contribution of [Quentin McGow](https://github.com/qdm12).
 
+---
+
 ## Tools
 
 ### Frameworks

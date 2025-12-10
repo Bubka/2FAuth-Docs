@@ -15,6 +15,8 @@ WebAuthn is available in 2FAuth as a complement or a replacement to the built-in
 The WebAuthn flow does not use login & password, but the creation of a user account with an email and a password remains mandatory.
 !!!
 
+---
+
 ## Registering a security device
 
 2FAuth offers to register a WebAuthn device right after submitting the user registration form or through its _Settings > Webauthn_ section. Whatever you choose, the registration process will be the same and depends on the hardware you use (desktop, laptop or smartphone) and how your browser implements the WebAuthn flow.
@@ -28,6 +30,8 @@ A typical workflow would be:
 
 You can register several security devices, there is no limitation in the number of devices.
 
+---
+
 ## Revoking a security device
 
 You can revoke any registered security device through the _Settings > Webauthn_ section.  
@@ -36,6 +40,8 @@ Simply click the relevant [!badge variant="dark" text="Revoke"] button.
 !!!danger
 The revocation of a device is permanent and cannot be undone.
 !!!
+
+---
 
 ## I lost my device
 
@@ -56,6 +62,8 @@ Don't forget to revoke the lost device in the _Settings > Webauthn_ section.
 !!!
 
 +++
+
+---
 
 ## User verification
 

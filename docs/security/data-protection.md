@@ -5,6 +5,8 @@ order: 90
 
 2FAuth provides several security mechanisms to protect your sensitive 2FA data, at administrator or user level.
 
+---
+
 ## For administrators
 
 ### DB encryption
@@ -23,6 +25,8 @@ It is strongly recommended to backup the `APP_KEY` value defined in your .env fi
 __There is no way to generate One-Time Password if you lose this key.__  
 __There is no workaround in case of key loss.__
 !!!
+
+---
 
 ## For users
 

@@ -45,6 +45,8 @@ An administrator account is identified as such by a banner in the _Settings > Ac
 ![The administrator banner](/static/admin_account_banner.png)
 :::
 
+---
+
 ## Application setup
 
 In addition to environment information, the _Admin > App Setup_ page provides administrators with a number of features for managing the instance.
@@ -84,6 +86,8 @@ Check your email inbox first. If the email is not received, [check your logs](/g
 ### Security
 
 See [Data protection](/security/data-protection/#for-administrators).
+
+---
 
 ## Authentication
 
@@ -130,6 +134,8 @@ The registration policy does not affect SSO.
 Check the [!badge size="l" icon="checkbox" text="Disable registration"] setting to fully disable registration. This affects SSO, so new users won't be able to sign in via SSO.
 
 Check the [!badge size="l" icon="checkbox" text="Keep SSO registration enabled"] setting to override this behavior. New users will be able to sign in for the first time using SSO whereas registration is disabled.
+
+---
 
 ## Users management
 
@@ -204,6 +210,8 @@ This is not a soft delete. Deleted account cannot be recovered.
 !!!warning
 There must always be at least one administrator. The last administrator account cannot be deleted.
 !!!
+
+---
 
 ## Health check
 

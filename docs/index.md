@@ -22,6 +22,8 @@ label: Welcome
 ![Screenshots of 2FAuth on mobile](/static/2fauth_screenshots_light.png)
 :::
 
+---
+
 ## Why 2FAuth
 
 Two-Factor Authentication has become very popular in recent years, resulting in more and more situations where we face a security code request and an increase in the number of accounts protected by this technology. In other words, 2FA is now inevitable and critical.

@@ -13,6 +13,8 @@ SSO is probably overkill for a single user usage but becomes relevant in a multi
 For now 2FAuth only supports 2 SSO providers: __OpenID__ and __Github__
 !!!
 
+---
+
 ## Enabling SSO
 
 SSO is enabled by default. You can check it or change it at _Admin > Auth_.
@@ -22,6 +24,8 @@ SSO makes outgoing requests that you may want to pass through a proxy.
 
 If so, set the [PROXY_FOR_OUTGOING_REQUESTS](/getting-started/config/env-vars/#proxy_for_outgoing_requests) environment variable.
 !!!
+
+---
 
 ## Enable a provider
 
@@ -74,6 +78,8 @@ Uncomment the lines for the providers you want to enable and assign the values w
 Uncommented providers but with empty `CLIENT_ID` or `CLIENT_SECRET` won't be available.
 !!!
 
+---
+
 ## Sign with a provider
 
 Once a provider is enabled, a button to _Continue with_ this provider is available on the 2FAuth's Login page.
@@ -101,6 +107,8 @@ When you sign in via SSO for the first time, you are registered to 2FAuth transp
 - The 2FAuth account cannot be unbound from the provider account.
 - You cannot change your information from 2FAuth. But changes made on the provider side are reflected on 2FAuth each time you sign in via SSO.
 
+---
+
 ## Use SSO only
 
 SSO can be set as the only authentication method available on your 2FAuth instance. Go to _Admin > Auth_, scroll down to the _Single Sign-On_ section and check [!badge size="l" icon="checkbox" text="Use SSO only"].
@@ -118,6 +126,8 @@ Go to _Admin > Auth_, scroll down to the _Single Sign-On_ section and check [!ba
 !!!warning
 It is imperative that PATs be allowed for the [2FAuth browser extension](/#browser-extensions) to function properly.
 !!!
+
+---
 
 ## Disabling SSO
 

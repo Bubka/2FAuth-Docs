@@ -4,10 +4,11 @@
 
 2FAuth is part of the Yunohost Apps catalog, you can install it easily like any other Yunohost application.
 
-
 ## Prerequisites
 
 This guide assumes you already have a Yunohost running instance.
+
+---
 
 ## Installation
 
