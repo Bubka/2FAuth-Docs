@@ -40,7 +40,7 @@ _On security code copy_ | You will be logged out immediately after you click/tap
 _a time lapse_ | You will be logged out after a certain amount of time
 _Never_ | Disable the Auto lock
 
-:icon-arrow-right: Use the [!badge size="l" icon="single-select" text="Auto lock"] combobox in the 2FAuth's _Settings > Options_ section to select a trigger or to disable the feature.
+:icon-arrow-right: Use the [!badge size="l" icon="single-select" iconAlign="right" text="Auto lock"] combobox in the 2FAuth's _Settings > Options_ section to select a trigger or to disable the feature.
 
 ### Sensitive data hiding
 
