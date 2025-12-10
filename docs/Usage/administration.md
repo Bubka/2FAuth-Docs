@@ -83,6 +83,28 @@ Click the [!button variant="primary" icon="paper-airplane" iconAlign="left" corn
 [Check your logs](/getting-started/troubleshooting/#check-logs) in case the email was never delivered. They might provide more information about the issue.
 !!!
 
+### Icon storage
+
+#### File system storage
+
+By default, 2FAuth stores icons in the server filesystem (or the bind-mounted volume of the Docker container) at `[2FAuth_install_dir]/storage/app/public/icons/`. This directory is exposed by the web server via the `[2FAuth_install_dir]/public/storage` symlink so icons can be accessed by browsers using URLs like `https://2fauth.myserver.com/storage/icons/L0Oz2D63gG74LYcZMILN60aHBBPeoydXbja0sVQm.png`.
+
+As the example URL above suggests, each icon file is stored under a unique name consisting of a 40-character random string. This prevents name collisions and makes the file names almost impossible to guess. Icons must exist in `[2FAuth_install_dir]/storage/app/public/icons/`; otherwise 2FAuth gracefully replaces them with a visual placeholder until you set up new ones.
+
+:::desktop-screen
+![missing icons replaced with placeholder](/static/icon-missing.png)
+:::
+
+#### Database storage
+
+When you enable the [!badge size="l" icon="checkbox" text="Store icons to database"] option, all registered icons are immediately serialized and stored in the `icons` table of the database. By "registered" we mean icons that are linked to a 2FA account record; any orphan icon files found during this operation are deleted. Storing icons in the database simplifies backups, since all 2FA data are kept in one place.
+
+!!!
+Although icons are stored in the database, the `storage/app/public/icons/` directory is still required. It acts as a cache to speed up file serving. If an icon file is deleted from that location, 2FAuth recreates it on the fly using the database record.
+!!!
+
+It is possible to switch back to filesystem storage at any time. 2FAuth will verify that all icons have a corresponding file in the dedicated directory and will then clear the `icons` table.
+
 ### Security
 
 See [Data protection](/security/data-protection/#for-administrators).
