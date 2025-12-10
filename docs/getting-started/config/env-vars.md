@@ -129,13 +129,81 @@ Default value
 :::env-var-dl-wrapper
 
 Description
-:   The encryption key for all security related features (sessions, [DB encryption](/security/data-protection/#db-encryption), [webauthn](/security/authentication/webauthn/), [personal access token](/security/authentication/pat/))
+:   The application's encryption key used by all security related features (sessions, [DB encryption](/security/data-protection/#db-encryption), [webauthn](/security/authentication/webauthn/), [personal access token](/security/authentication/pat/))
 
     !!!warning
-    Keep this very secure. If you loose it or generate a new one, all existing encrypted data in db must be considered LOST.
+    Keep this very secure. If you loose it, all encrypted data stored in the database must be considered LOST.
     !!!
 
-    You can generate a key with the `php artisan key:generate` command.
+    You may need to change it, for example for security reasons. In such case, add the previous value to the [APP_PREVIOUS_KEYS](#app_previous_keys) variable to prevent app failures like unreadable data.  
+    Once changed, all new encryption tasks will use the new key. Decryption tasks will first be performed with the new key and then with all previous keys until one of them can decrypt the value.
+
+    !!!tip
+    You can generate a key by running the `php artisan key:generate` command line.
+    !!!
+
+Default value
+:   _none_
+
+:::
+
+### <span>APP_KEY_FILE</span>
+
+[!badge variant="info" text="docker secret"] [!badge variant="info" text="since v6.0"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Suffixed version of the [APP_KEY](#app_key) variable to be used in conjunction with a <a href="https://docs.docker.com/compose/how-tos/use-secrets/" target="_blank">docker secret</a>.
+
+    Use it instead of `APP_KEY` when you want the encryption key to be set via a mounted secret file at `/run/secrets/` in your compose file.
+
+    !!!warning
+    `APP_KEY_FILE` has priority over `APP_KEY`. If you set both, only `APP_KEY_FILE` will be used. This is the only situation where `APP_KEY` can be omitted.
+    !!!
+
+    !!!warning
+    Do not use this outside of a compose file
+    !!!
+
+    Basic example:
+
+    ```yml docker-compose.yml
+    services:
+      2fauth:
+        image: 2fauth/2fauth
+        container_name: 2fauth
+        env_file: settings.env
+        environment:
+          APP_KEY_FILE: /run/secrets/app_key
+        volumes:
+          - ./2fauth:/2fauth
+        secrets:
+          - app_key
+    secrets:
+      app_key:
+        file: /2fauth/app_key.txt
+    ```
+
+Default value
+:   _none_
+
+:::
+
+### <span class="expected">APP_PREVIOUS_KEYS</span>
+
+[!badge variant="info" text="string"] [!badge variant="info" text="comma-delimited list"] [!badge variant="info" text="since v6.0"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Comma-delimited list of application's former encryption keys.
+
+    When you change [APP_KEY](#app_key), 2FAuth uses `APP_PREVIOUS_KEYS` to decrypt existing data (like session cookies) with old keys, preventing user logouts or data loss after a key rotation.
+
+    !!!warning
+    Keep this very secure. If you loose it, some encrypted data stored in the database must be considered LOST.
+    !!!
 
 Default value
 :   _none_
