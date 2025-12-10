@@ -73,14 +73,14 @@ If so, set the [PROXY_FOR_OUTGOING_REQUESTS](/getting-started/config/env-vars/#p
 
 ### Email testing
 
-2FAuth requires a valid email configuration to send emails to users. Features like password reset will not work otherwise.
+2FAuth requires a valid [email configuration](/getting-started/config/env-vars/#email-setting) to send emails to users. Features like password reset will not work otherwise.
 
-Click the [!button variant="primary" icon="paper-airplane" iconAlign="left" corners="pill" text="Send" size="xs"] button to send a test email. The email will be sent to your registered email address.
+Click the [!button variant="primary" icon="paper-airplane" iconAlign="left" corners="pill" text="Send" size="xs"] button to send a test email. The email will be sent to the email address registered with the [MAIL_FROM_ADDRESS](/getting-started/config/env-vars/#mail_from_address) environment variable.
 
 !!!warning
-2FAuth does not report whether a test email was successfully sent or not.
+2FAuth cannot guarantee whether or not the email was successfully sent because it does not control the entire distribution process. It will display any potential errors that it can handle.
 
-Check your email inbox first. If the email is not received, [check your logs](/getting-started/troubleshooting/#check-logs) to get information on the issue.
+[Check your logs](/getting-started/troubleshooting/#check-logs) in case the email was never delivered. They might provide more information about the issue.
 !!!
 
 ### Security
