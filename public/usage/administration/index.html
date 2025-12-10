@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.816566410363">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.818722635328">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -33,12 +33,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/2fauth_favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.816566410363" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.818722635328" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.816566410363" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.818722635328" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.816566410363" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.816566410363" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.818722635328" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.818722635328" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -61,7 +61,7 @@
                                 <img class="max-h-10 hidden dark:inline-block" src="../../static/2fauth_light.png">
                             </span>
                             <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">2FAuth</span>
-                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v5.6</span>
+                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v6.0</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
@@ -354,6 +354,7 @@
 </figure>
 </p>
 </div>
+<hr>
 <doc-anchor-target id="application-setup">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#application-setup">#</doc-anchor-trigger>
@@ -407,11 +408,11 @@
         <span>Email testing</span>
     </h3>
 </doc-anchor-target>
-<p>2FAuth requires a valid email configuration to send emails to users. Features like password reset will not work otherwise.</p>
+<p>2FAuth requires a valid <a href="../../getting-started/config/env-vars/#email-setting">email configuration</a> to send emails to users. Features like password reset will not work otherwise.</p>
 <p>Click the <button class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-button-primary hover:bg-button-primary-hover text-button-primary-text px-2.5 h-6 text-xs rounded-full">
     <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="14" height="14" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M1.513 1.96a1.374 1.374 0 0 1 1.499-.21l19.335 9.215a1.147 1.147 0 0 1 0 2.07L3.012 22.25a1.374 1.374 0 0 1-1.947-1.46L2.49 12 1.065 3.21a1.375 1.375 0 0 1 .448-1.25Zm2.375 10.79-1.304 8.042L21.031 12 2.584 3.208l1.304 8.042h7.362a.75.75 0 0 1 0 1.5Z"/></g></svg></span>
     <span>Send</span>
-</button> button to send a test email. The email will be sent to your registered email address.</p>
+</button> button to send a test email. The email will be sent to the email address registered with the <a href="../../getting-started/config/env-vars/#mail_from_address">MAIL_FROM_ADDRESS</a> environment variable.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -424,11 +425,59 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>2FAuth does not report whether a test email was successfully sent or not.</p>
-<p>Check your email inbox first. If the email is not received, <a href="../../getting-started/troubleshooting/#check-logs">check your logs</a> to get information on the issue.</p>
+<p>2FAuth cannot guarantee whether or not the email was successfully sent because it does not control the entire distribution process. It will display any potential errors that it can handle.</p>
+<p><a href="../../getting-started/troubleshooting/#check-logs">Check your logs</a> in case the email was never delivered. They might provide more information about the issue.</p>
         </div>
     </div>
 </div>
+<doc-anchor-target id="icon-storage">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#icon-storage">#</doc-anchor-trigger>
+        <span>Icon storage</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="file-system-storage">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#file-system-storage">#</doc-anchor-trigger>
+        <span>File system storage</span>
+    </h4>
+</doc-anchor-target>
+<p>By default, 2FAuth stores icons in the server filesystem (or the bind-mounted volume of the Docker container) at <code v-pre>[2FAuth_install_dir]/storage/app/public/icons/</code>. This directory is exposed by the web server via the <code v-pre>[2FAuth_install_dir]/public/storage</code> symlink so icons can be accessed by browsers using URLs like <code v-pre>https://2fauth.myserver.com/storage/icons/L0Oz2D63gG74LYcZMILN60aHBBPeoydXbja0sVQm.png</code>.</p>
+<p>As the example URL above suggests, each icon file is stored under a unique name consisting of a 40-character random string. This prevents name collisions and makes the file names almost impossible to guess. Icons must exist in <code v-pre>[2FAuth_install_dir]/storage/app/public/icons/</code>; otherwise 2FAuth gracefully replaces them with a visual placeholder until you set up new ones.</p>
+<div class="desktop-screen"><p><figure class="content-center">
+    <img src="../../static/icon-missing.png" alt="missing icons replaced with placeholder" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">missing icons replaced with placeholder</figcaption>
+</figure>
+</p>
+</div>
+<doc-anchor-target id="database-storage">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#database-storage">#</doc-anchor-trigger>
+        <span>Database storage</span>
+    </h4>
+</doc-anchor-target>
+<p>When you enable the <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-primary-text bg-badge-primary border border-badge-primary-border h-8 px-3 text-sm rounded-md">
+    <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="22" height="22" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M17.28 9.28a.75.75 0 0 0-1.06-1.06l-5.97 5.97-2.47-2.47a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l6.5-6.5Z"/><path d="M3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25V3.75C2 2.784 2.784 2 3.75 2ZM3.5 3.75v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25H3.75a.25.25 0 0 0-.25.25Z"/></g></svg></span>
+    <span>Store icons to database</span>
+</span> option, all registered icons are immediately serialized and stored in the <code v-pre>icons</code> table of the database. By &quot;registered&quot; we mean icons that are linked to a 2FA account record; any orphan icon files found during this operation are deleted. Storing icons in the database simplifies backups, since all 2FA data are kept in one place.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Although icons are stored in the database, the <code v-pre>storage/app/public/icons/</code> directory is still required. It acts as a cache to speed up file serving. If an icon file is deleted from that location, 2FAuth recreates it on the fly using the database record.</p>
+        </div>
+    </div>
+</div>
+<p>It is possible to switch back to filesystem storage at any time. 2FAuth will verify that all icons have a corresponding file in the dedicated directory and will then clear the <code v-pre>icons</code> table.</p>
 <doc-anchor-target id="security">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#security">#</doc-anchor-trigger>
@@ -436,6 +485,7 @@
     </h3>
 </doc-anchor-target>
 <p>See <a href="../../security/data-protection/#for-administrators">Data protection</a>.</p>
+<hr>
 <doc-anchor-target id="authentication">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#authentication">#</doc-anchor-trigger>
@@ -530,6 +580,7 @@
     <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="22" height="22" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M17.28 9.28a.75.75 0 0 0-1.06-1.06l-5.97 5.97-2.47-2.47a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l6.5-6.5Z"/><path d="M3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25V3.75C2 2.784 2.784 2 3.75 2ZM3.5 3.75v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25H3.75a.25.25 0 0 0-.25.25Z"/></g></svg></span>
     <span>Keep SSO registration enabled</span>
 </span> setting to override this behavior. New users will be able to sign in for the first time using SSO whereas registration is disabled.</p>
+<hr>
 <doc-anchor-target id="users-management">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#users-management">#</doc-anchor-trigger>
@@ -694,6 +745,7 @@ php artisan passport:purge --expired</code></pre>
         </div>
     </div>
 </div>
+<hr>
 <doc-anchor-target id="health-check">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#health-check">#</doc-anchor-trigger>

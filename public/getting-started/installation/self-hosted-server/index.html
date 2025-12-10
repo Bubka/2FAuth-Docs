@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.816566410363">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.818722635328">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../../static/2fauth_favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.11.0.816566410363" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.818722635328" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.816566410363" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.818722635328" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.816566410363" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.11.0.816566410363" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.818722635328" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.11.0.818722635328" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -59,7 +59,7 @@
                                 <img class="max-h-10 hidden dark:inline-block" src="../../../static/2fauth_light.png">
                             </span>
                             <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">2FAuth</span>
-                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v5.6</span>
+                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v6.0</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
@@ -298,11 +298,13 @@ The following guide describes how to proceed and gives basic configurations for 
 </doc-anchor-target>
 <ul>
 <li>PHP &gt;= <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-primary-text bg-badge-primary border border-badge-primary-border h-6 px-2 text-xs rounded-md">
-    <span>8.1</span>
+    <span>8.4</span>
 </span></li>
 <li>BCMath PHP Extension</li>
 <li>Ctype PHP Extension</li>
+<li>DOM PHP Extension</li>
 <li>Fileinfo PHP Extension</li>
+<li>GD PHP Extension</li>
 <li>JSON PHP Extension</li>
 <li>Mbstring PHP Extension</li>
 <li>OpenSSL PHP Extension</li>
@@ -320,16 +322,16 @@ The following guide describes how to proceed and gives basic configurations for 
 <p>You need a database to run 2FAuth. Supported databases are the ones supported by Laravel.</p>
 <ul>
 <li>MariaDB <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-primary-text bg-badge-primary border border-badge-primary-border h-6 px-2 text-xs rounded-md">
-    <span>10.2+</span>
+    <span>10.3+</span>
 </span></li>
 <li>MySQL <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-primary-text bg-badge-primary border border-badge-primary-border h-6 px-2 text-xs rounded-md">
     <span>5.7+</span>
 </span></li>
 <li>PostgreSQL <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-primary-text bg-badge-primary border border-badge-primary-border h-6 px-2 text-xs rounded-md">
-    <span>9.6+</span>
+    <span>10.0+</span>
 </span></li>
 <li>SQLite <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-primary-text bg-badge-primary border border-badge-primary-border h-6 px-2 text-xs rounded-md">
-    <span>3.8.8+</span>
+    <span>3.26.0+</span>
 </span></li>
 <li>SQL Server <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-primary-text bg-badge-primary border border-badge-primary-border h-6 px-2 text-xs rounded-md">
     <span>2017+</span>
@@ -375,6 +377,7 @@ The following guide describes how to proceed and gives basic configurations for 
 </div>
 </p>
 <p>You can test your installation by running <code v-pre>php composer.phar -v</code> in a terminal (or just <code v-pre>composer -v</code> if composer has been installed in a directory that is part of your system PATH)</p>
+<hr>
 <doc-anchor-target id="get-your-2fauth-copy">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#get-your-2fauth-copy">#</doc-anchor-trigger>
@@ -438,6 +441,7 @@ git checkout v3.0.0</code></pre>
 </doc-panels>
 </doc-tab>
 </doc-tabs>
+<hr>
 <doc-anchor-target id="installing-dependencies">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#installing-dependencies">#</doc-anchor-trigger>
@@ -458,6 +462,7 @@ git checkout v3.0.0</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">php composer.phar install --prefer-dist --no-scripts --no-dev</code></pre>
 </doc-codeblock></div>
+<hr>
 <doc-anchor-target id="web-server-configuration">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#web-server-configuration">#</doc-anchor-trigger>
@@ -592,6 +597,7 @@ sudo systemctl restart apache2</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
+<hr>
 <doc-anchor-target id="create-the-database">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#create-the-database">#</doc-anchor-trigger>
@@ -692,6 +698,7 @@ sqlite&gt; .quit</code></pre>
     <a href="https://www.adminer.org/" target="_blank" class="absolute block inset-0"></a>
 </div>
 </p>
+<hr>
 <doc-anchor-target id="2fauth-set-up-wizard">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#2fauth-set-up-wizard">#</doc-anchor-trigger>
@@ -743,6 +750,7 @@ sqlite&gt; .quit</code></pre>
 <li>Cache the configuration</li>
 </ul>
 <p>All these steps are detailed below if you want to dive into them.</p>
+<hr>
 <doc-anchor-target id="2fauth-set-up-manual">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#2fauth-set-up-manual">#</doc-anchor-trigger>

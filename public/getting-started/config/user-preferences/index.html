@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.816566410363">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.818722635328">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../../static/2fauth_favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.11.0.816566410363" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.818722635328" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.816566410363" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.818722635328" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.816566410363" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.11.0.816566410363" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.818722635328" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.11.0.818722635328" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -59,7 +59,7 @@
                                 <img class="max-h-10 hidden dark:inline-block" src="../../../static/2fauth_light.png">
                             </span>
                             <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">2FAuth</span>
-                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v5.6</span>
+                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v6.0</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
@@ -322,6 +322,7 @@ Read the <a href="../env-vars/#how-to">Environment variables</a> page to learn h
         </div>
     </div>
 </div>
+<hr>
 <doc-anchor-target id="how-to">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-to">#</doc-anchor-trigger>
@@ -423,6 +424,7 @@ USERPREF_LOCKED__THEME=true</code></pre>
 <p>Because of the way 2FAuth is built, adding new environment variables to enforce user preferences may not have an immediate effect if your 2FAuth instance is running.</p>
 <p>You must rebuild the configuration cache of the app for the new variables to be loaded or restart your container if you use one. See the <a href="../env-vars/#how-to">Environment variables</a> section for details.</p>
 <p>Also, logged-in users won&#x27;t see any changes until they reconnect or visit the <em>Settings &gt; Options</em> page of 2FAuth.</p>
+<hr>
 <doc-anchor-target id="available-preferences">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#available-preferences">#</doc-anchor-trigger>
@@ -442,13 +444,18 @@ USERPREF_LOCKED__THEME=true</code></pre>
 <li><doc-anchor-trigger to="#format_password_by">FORMAT_PASSWORD_BY</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#get_official_icons">GET_OFFICIAL_ICONS</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#get_otp_on_request">GET_OTP_ON_REQUEST</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#kick_user_after">KICK_USER_AFTER</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#lang">LANG</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#notify_on_failed_login">NOTIFY_ON_FAILED_LOGIN</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#icon_collection">ICON_COLLECTION</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#icon_pack">ICON_PACK</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#icon_source">ICON_SOURCE</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#icon_variant">ICON_VARIANT</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#icon_variant_strict_fetch">ICON_VARIANT_STRICT_FETCH</doc-anchor-trigger></li>
 </ul>
 </div>
 <div class="is-half-width">
 <ul>
+<li><doc-anchor-trigger to="#kick_user_after">KICK_USER_AFTER</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#lang">LANG</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#notify_on_failed_login">NOTIFY_ON_FAILED_LOGIN</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#notify_on_new_auth_device">NOTIFY_ON_NEW_AUTH_DEVICE</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#remember_active_group">REMEMBER_ACTIVE_GROUP</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#reveal_dotted_otp">REVEAL_DOTTED_OTP</doc-anchor-trigger></li>
@@ -718,7 +725,12 @@ USERPREF_LOCKED__THEME=true</code></pre>
 <div class="env-var-dl-wrapper">
 <dl>
 <dt>Description</dt>
-<dd>Allows 2FAuth to fetch the web for official icons when registering a new 2FA account</dd>
+<dd><p>Allows 2FAuth to fetch the official icon of the 2FA provider when a new 2FA account is registered.</p>
+<p>Additional preferences have to be set to refine this preference:</p>
+<ul>
+<li><doc-anchor-trigger to="#icon_source">ICON_SOURCE</doc-anchor-trigger></li>
+</ul>
+</dd>
 <dt>Default value</dt>
 <dd><p><code v-pre>true</code></p>
 </dd>
@@ -749,6 +761,168 @@ USERPREF_LOCKED__THEME=true</code></pre>
 </dd>
 <dt>Default value</dt>
 <dd><p><code v-pre>true</code></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="icon_collection">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#icon_collection">#</doc-anchor-trigger>
+        <span>ICON_COLLECTION</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>since v5.6</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>The online icon library queried when 2FAuth needs to fetch an icon.</p>
+<p>Only relevant when <doc-anchor-trigger to="#icon_source">ICON_SOURCE</doc-anchor-trigger> is set to <code v-pre>logolib</code>.</p>
+</dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>selfh</code></p>
+</dd>
+</dl>
+</div>
+<p><span class="fw-500">Accepted values</span></p>
+<div class="sub-dl-wrapper">
+<dl>
+<dt><code v-pre>selfh</code></dt>
+<dd>The <a href="https://selfh.st/icons/">selfh.st</a> icon library</dd>
+<dt><code v-pre>dashboardicons</code></dt>
+<dd>The <a href="https://dashboardicons.com/">dashboardicons.com</a> icon library</dd>
+<dt><code v-pre>tfa</code></dt>
+<dd><p>The <a href="https://2fa.directory/">2fa.directory</a> icon library</p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="icon_pack">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#icon_pack">#</doc-anchor-trigger>
+        <span>ICON_PACK</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>since v6.0</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>The name of the icon pack queried when 2FAuth needs to fetch an icon.</p>
+<p>An icon pack is merely a collection of image files stored in a directory on the server, in the <code v-pre>[2fauth_install_dir]/storage/app/iconPacks/</code> location. The name of the icon pack match the name of the directory.</p>
+<p>If the icon pack is stored in a subdirectory, e.g. <code v-pre>[2fauth_install_dir]/storage/app/iconPacks/mysubdir/myiconpack/</code>, the preference must be set using the subdirectory and pack directory names combined, so <code v-pre>mysubdir/myiconpack</code>.</p>
+<p>Only relevant when <doc-anchor-trigger to="#icon_source">ICON_SOURCE</doc-anchor-trigger> is set to <code v-pre>iconpack</code>.</p>
+</dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>null</code></p>
+</dd>
+</dl>
+</div>
+<p><span class="fw-500">Accepted values</span></p>
+<div class="sub-dl-wrapper">
+<dl>
+<dt>Any icon pack name uploaded to the server</dt>
+<dd>e.g. <code v-pre>myiconpack</code> or <code v-pre>mysubdir/myiconpack</code></dd>
+</dl>
+<doc-anchor-target id="icon_source">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#icon_source">#</doc-anchor-trigger>
+        <span>ICON_SOURCE</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>since v6.0</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd>The location where 2FAuth offers to fetch icons</dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>logolib</code></p>
+</dd>
+</dl>
+</div>
+</div>
+<p><span class="fw-500">Accepted values</span></p>
+<div class="sub-dl-wrapper">
+<dl>
+<dt><code v-pre>logolib</code></dt>
+<dd><p>Icons are fetched from online icon libraries.</p>
+<p>Additional preferences have to be set to refine this option:</p>
+<ul>
+<li><doc-anchor-trigger to="#icon_collection">ICON_COLLECTION</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#icon_variant">ICON_VARIANT</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#icon_variant_strict_fetch">ICON_VARIANT_STRICT_FETCH</doc-anchor-trigger></li>
+</ul>
+</dd>
+<dt><code v-pre>iconpack</code></dt>
+<dd><p>Icons are fetched from icon packs uploaded to the server by the 2FAuth administrator.</p>
+<p>Additional preferences have to be set to refine this option:</p>
+<ul>
+<li><doc-anchor-trigger to="#icon_pack">ICON_PACK</doc-anchor-trigger></li>
+</ul>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="icon_variant">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#icon_variant">#</doc-anchor-trigger>
+        <span>ICON_VARIANT</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>since v5.6</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>Some icon libraries provide icons in different variations to best suit dark or light user interfaces. Use this preference to indicate 2FAuth the flavor that must be requested first. The regular variant will be fetched automatically by 2FAuth if the specified one is not available.</p>
+<p>Only relevant when <doc-anchor-trigger to="#icon_source">ICON_SOURCE</doc-anchor-trigger> is not set to <code v-pre>logolib</code>.</p>
+</dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>regular</code></p>
+</dd>
+</dl>
+</div>
+<p><span class="fw-500">Accepted values</span></p>
+<div class="sub-dl-wrapper">
+<dl>
+<dt><code v-pre>regular</code></dt>
+<dd>The neutral variant</dd>
+<dt><code v-pre>light</code></dt>
+<dd>The light variant</dd>
+<dt><code v-pre>dark</code></dt>
+<dd><p>The dark variant</p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="icon_variant_strict_fetch">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#icon_variant_strict_fetch">#</doc-anchor-trigger>
+        <span>ICON_VARIANT_STRICT_FETCH</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>boolean</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>since v5.6</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>Narrow the fetch to the specified icon variant. If the variant is missing, 2FAuth will not try to fallback to the regular variant.</p>
+<p>Only relevant when <doc-anchor-trigger to="#icon_source">ICON_SOURCE</doc-anchor-trigger> is set to <code v-pre>logolib</code> and <doc-anchor-trigger to="#icon_variant">ICON_VARIANT</doc-anchor-trigger> is not set to <code v-pre>regular</code>.</p>
+</dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>false</code></p>
 </dd>
 </dl>
 </div>
@@ -951,7 +1125,7 @@ See the <a href="https://crowdin.com/project/2fauth" target="_blank">Crowdin pro
 <dt>Description</dt>
 <dd>Previews the next OTP near the current valid OTP</dd>
 <dt>Default value</dt>
-<dd><p><code v-pre>false</code></p>
+<dd><p><code v-pre>true</code></p>
 </dd>
 </dl>
 </div>
