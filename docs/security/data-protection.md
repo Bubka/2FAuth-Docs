@@ -54,7 +54,7 @@ This protects against attacks like a _shoulder-surfing_ attack, where a third pa
 
 Of course, this is only suitable if you are able to use the copy/paste feature to provide the password to the destination service.
 
-!!!
+!!!tip
 Simply click/tap the (obfuscated) password in 2FAuth to copy it!
 !!!
 
