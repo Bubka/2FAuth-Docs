@@ -125,3 +125,7 @@ footer ul li a[href="https://github.com/sponsors/Bubka"] svg {
     list-style-type: none !important;
     padding: 0;
 }
+
+.rounded-image-rounded {
+  border-radius:0.5rem;
+}
