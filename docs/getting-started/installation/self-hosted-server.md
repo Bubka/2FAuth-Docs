@@ -17,10 +17,12 @@ __Apache__ and __NGINX__ are the most popular web servers. If you rent a server 
 
 ### PHP
 
-- PHP >= [!badge 8.1]
+- PHP >= [!badge 8.4]
 - BCMath PHP Extension
 - Ctype PHP Extension
+- DOM PHP Extension
 - Fileinfo PHP Extension
+- GD PHP Extension
 - JSON PHP Extension
 - Mbstring PHP Extension
 - OpenSSL PHP Extension
@@ -34,10 +36,10 @@ Depending on the chosen database (see below), don't forget to install the corres
 
 You need a database to run 2FAuth. Supported databases are the ones supported by Laravel.
 
-- MariaDB [!badge 10.2+]
+- MariaDB [!badge 10.3+]
 - MySQL [!badge 5.7+]
-- PostgreSQL [!badge 9.6+]
-- SQLite [!badge 3.8.8+]
+- PostgreSQL [!badge 10.0+]
+- SQLite [!badge 3.26.0+]
 - SQL Server [!badge 2017+]
 
 !!! Recommendation
