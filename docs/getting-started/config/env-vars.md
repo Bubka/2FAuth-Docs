@@ -135,7 +135,8 @@ Description
     Keep this very secure. If you loose it, all encrypted data stored in the database must be considered LOST.
     !!!
 
-    You may need to change it, for example for security reasons. In such case, add the previous value to the [APP_PREVIOUS_KEYS](#app_previous_keys) variable to prevent app failures like unreadable data.  
+    You may need to change it, for example for security reasons. In such case, add the previous value to the [APP_PREVIOUS_KEYS](#app_previous_keys) variable to prevent app failures like unreadable data or auth token revocation.
+    
     Once changed, all new encryption tasks will use the new key. Decryption tasks will first be performed with the new key and then with all previous keys until one of them can decrypt the value.
 
     !!!tip

@@ -41,7 +41,7 @@ We assume your current directory is `/yourpath`.
     mkdir 2fauth
     ```
 
-    !!!warning If your host is not Windows
+    !!!info If your host is not Windows
     Since the container runs without root as user `1000:1000`, you need to fix the ownership and permissions of that directory:
 
     ```sh
@@ -56,9 +56,15 @@ We assume your current directory is `/yourpath`.
 
     ```sh
     docker run -it --rm -p 8000:8000/tcp \
-    -v /yourpath/2fauth:/2fauth \
+    -v /yourpath/2fauth:/2fauth -e APP_KEY=SomeRandomStringOf32CharsExactly \
     2fauth/2fauth
     ```
+
+    !!!warning Mandatory env var
+    The [`APP_KEY`](/getting-started/config/env-vars/#app_key) environment variable must be set with a personal unique value. You can generate a brand new one using [Laravel Encryption Key Generator](https://laravel-encryption-key-generator.vercel.app/).  
+
+    If you need to rotate the key, use the [`APP_PREVIOUS_KEYS`](/getting-started/config/env-vars/#app_previous_keys) environment variable to list previous keys and avoid decryption issues or invalid access tokens.
+    !!!
 
 1. Access it in your browser
 

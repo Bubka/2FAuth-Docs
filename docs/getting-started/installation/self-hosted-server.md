@@ -351,6 +351,12 @@ mv .env.example .env
 Open the `.env` file with a text editor, you will find the main environment variables that could be customized.  
 You won't have to set/change all, most of them have a default value that will probably fit your needs. But some parts must be reviewed.
 
+!!!warning Mandatory env var
+The [`APP_KEY`](/getting-started/config/env-vars/#app_key) environment variable must be set with a personal unique value. You can generate a brand new one using [Laravel Encryption Key Generator](https://laravel-encryption-key-generator.vercel.app/).  
+
+If you need to rotate the key, use the [`APP_PREVIOUS_KEYS`](/getting-started/config/env-vars/#app_previous_keys) environment variable to list previous keys and avoid decryption issues or invalid access tokens.
+!!!
+
 !!!secondary
 See [Configuration](/getting-started/config/env-vars/) to learn about all the environment variables that can be set.
 !!!

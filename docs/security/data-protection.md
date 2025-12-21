@@ -20,10 +20,12 @@ Encryption applies to all users data
 !!!
 
 !!!warning Warning
-It is strongly recommended to backup the `APP_KEY` value defined in your .env file (or the whole file) when encryption is enabled.
+The value of the [`APP_KEY`](/getting-started/config/env-vars/#app_key) environment variable is used as the encryption key. It is essential that you make a backup copy of that key.
 
 __There is no way to generate One-Time Password if you lose this key.__  
 __There is no workaround in case of key loss.__
+
+If you need to rotate the key, use the [`APP_PREVIOUS_KEYS`](/getting-started/config/env-vars/#app_previous_keys) environment variable to list previous keys and avoid decryption issues.
 !!!
 
 ---
