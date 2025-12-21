@@ -134,12 +134,12 @@ Also, logged-in users won't see any changes until they reconnect or visit the _S
 - [ICON_SOURCE](#icon_source)
 - [ICON_VARIANT](#icon_variant)
 - [ICON_VARIANT_STRICT_FETCH](#icon_variant_strict_fetch)
+- [KICK_USER_AFTER](#kick_user_after)
 
 :::
 
 :::is-half-width
 
-- [KICK_USER_AFTER](#kick_user_after)
 - [LANG](#lang)
 - [NOTIFY_ON_FAILED_LOGIN](#notify_on_failed_login)
 - [NOTIFY_ON_NEW_AUTH_DEVICE](#notify_on_new_auth_device)
@@ -150,6 +150,7 @@ Also, logged-in users won't see any changes until they reconnect or visit the _S
 - [SHOW_NEXT_OTP](#show_next_otp)
 - [SHOW_OTP_AS_DOT](#show_otp_as_dot)
 - [SORT_CASE_SENSITIVE](#sort_case_sensitive)
+- [SORT_ORDER](#sort_order)
 - [THEME](#theme)
 - [TIMEZONE](#timezone)
 - [USE_BASIC_QRCODE_READER](#use_basic_qrcode_reader)
@@ -725,6 +726,32 @@ Default value
 
 :::
 
+### SORT_ORDER
+
+[!badge variant="info" text="boolean"] [!badge variant="info" text="since v6.0"]
+
+:::env-var-dl-wrapper
+
+Description
+:   The order 2FA accounts are sorted
+
+Default value
+:   `asc`
+
+:::
+
+<span class="fw-500">Accepted values</span>
+
+:::sub-dl-wrapper
+
+`asc`
+:   Sort items in ascending order
+
+`desc`
+:   Sort items in descending order
+
+:::
+
 ### THEME
 
 [!badge variant="info" text="string"] [!badge variant="info" text="since v4.0"]
@@ -817,3 +844,14 @@ Default value
 :   `false`
 
 :::
+
+---
+
+## Unlockable preferences
+
+2FAuth has additional preferences that cannot be locked because they depend on specific user data or security considerations. The following preferences will remain editable by users, even if you set the appropriate `USERPREF_LOCKED__*` environment variable:
+
+- `ACTIVE_GROUP`
+- `DEFAULT_GROUP`
+- `USE_WEBAUTHN_ONLY`
+- `SORT_ORDER`
