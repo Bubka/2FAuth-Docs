@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.818722635328">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.821716087248">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../../static/2fauth_favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.11.0.818722635328" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.821716087248" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.818722635328" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.821716087248" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.818722635328" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.11.0.818722635328" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.821716087248" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.11.0.821716087248" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -449,11 +449,11 @@ USERPREF_LOCKED__THEME=true</code></pre>
 <li><doc-anchor-trigger to="#icon_source">ICON_SOURCE</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#icon_variant">ICON_VARIANT</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#icon_variant_strict_fetch">ICON_VARIANT_STRICT_FETCH</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#kick_user_after">KICK_USER_AFTER</doc-anchor-trigger></li>
 </ul>
 </div>
 <div class="is-half-width">
 <ul>
-<li><doc-anchor-trigger to="#kick_user_after">KICK_USER_AFTER</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#lang">LANG</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#notify_on_failed_login">NOTIFY_ON_FAILED_LOGIN</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#notify_on_new_auth_device">NOTIFY_ON_NEW_AUTH_DEVICE</doc-anchor-trigger></li>
@@ -464,6 +464,7 @@ USERPREF_LOCKED__THEME=true</code></pre>
 <li><doc-anchor-trigger to="#show_next_otp">SHOW_NEXT_OTP</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#show_otp_as_dot">SHOW_OTP_AS_DOT</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#sort_case_sensitive">SORT_CASE_SENSITIVE</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#sort_order">SORT_ORDER</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#theme">THEME</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#timezone">TIMEZONE</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#use_basic_qrcode_reader">USE_BASIC_QRCODE_READER</doc-anchor-trigger></li>
@@ -1174,6 +1175,36 @@ See the <a href="https://crowdin.com/project/2fauth" target="_blank">Crowdin pro
 </dd>
 </dl>
 </div>
+<doc-anchor-target id="sort_order">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sort_order">#</doc-anchor-trigger>
+        <span>SORT_ORDER</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>boolean</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>since v6.0</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd>The order 2FA accounts are sorted</dd>
+<dt>Default value</dt>
+<dd><p><code v-pre>asc</code></p>
+</dd>
+</dl>
+</div>
+<p><span class="fw-500">Accepted values</span></p>
+<div class="sub-dl-wrapper">
+<dl>
+<dt><code v-pre>asc</code></dt>
+<dd>Sort items in ascending order</dd>
+<dt><code v-pre>desc</code></dt>
+<dd><p>Sort items in descending order</p>
+</dd>
+</dl>
+</div>
 <doc-anchor-target id="theme">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#theme">#</doc-anchor-trigger>
@@ -1294,6 +1325,20 @@ See <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" targe
 </dd>
 </dl>
 </div>
+<hr>
+<doc-anchor-target id="unlockable-preferences">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#unlockable-preferences">#</doc-anchor-trigger>
+        <span>Unlockable preferences</span>
+    </h2>
+</doc-anchor-target>
+<p>2FAuth has additional preferences that cannot be locked because they depend on specific user data or security considerations. The following preferences will remain editable by users, even if you set the appropriate <code v-pre>USERPREF_LOCKED__*</code> environment variable:</p>
+<ul>
+<li><code v-pre>ACTIVE_GROUP</code></li>
+<li><code v-pre>DEFAULT_GROUP</code></li>
+<li><code v-pre>USE_WEBAUTHN_ONLY</code></li>
+<li><code v-pre>SORT_ORDER</code></li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
