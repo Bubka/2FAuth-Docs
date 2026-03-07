@@ -1365,6 +1365,40 @@ Default value
 
 :::
 
+### BLOCK_OPTAUTH_IMAGELINK_FETCHING
+
+[!badge variant="info" text="boolean"] [!badge variant="info" text="since v6.1"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Prevents 2FAuth to fetch image resources linked in OTPauth URIs (encoded in QR Code).
+
+    This is mainly used as a defense against Blind Server-Side Request Forgery (SSRF) attacks, in which the application can be induced to issue a back-end HTTP request to a supplied URL without this being visible from the frontend.
+
+    If fetching is allowed, 2FAuth mitigates the risk of Blind SSRF attacks by filtering image link urls. Only public (aka external), HTTP(S) and valid URLs pointing to supported image files are requested.
+
+Default value
+:   `true`
+
+:::
+
+### CONTENT_SECURITY_POLICY
+
+[!badge variant="info" text="boolean"] [!badge variant="info" text="since v5.4.1"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Set this to true to enable Content-Security-Policy (CSP).
+
+    CSP helps to prevent or minimize the risk of certain types of security threats. This is mainly used as a defense against cross-site scripting (XSS) attacks, in which an attacker is able to inject malicious code into the web app
+
+Default value
+:   `true`
+
+:::
+
 ## Session setting
 
 ### SESSION_DRIVER
