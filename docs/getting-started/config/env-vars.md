@@ -318,6 +318,23 @@ Default value
 
 :::
 
+### THROTTLE_API_DURING_IMPORT
+
+[!badge variant="info" text="number"] [!badge variant="info" text="since v6.1"]
+
+:::env-var-dl-wrapper
+
+Description
+:   The maximum number of API calls made specifically by the Import feature in a minute from the same IP.
+
+    Set to `null` to disable the API throttling of the Import feature.
+    Has no effect if THROTTLE_API is set to `null`.
+
+Default value
+:   `1000`
+
+:::
+
 ## Authentication setting
 
 ### LOGIN_THROTTLE
