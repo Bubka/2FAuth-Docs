@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.1.0.826202965554">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.1.0.826361730267">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.1.0">
@@ -28,12 +28,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../static/2fauth_favicon.png" />
-    <link href="../../../resources/css/retype.css?v=4.1.0.826202965554" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.1.0.826361730267" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.1.0.826202965554" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.1.0.826361730267" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.1.0.826202965554" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.1.0.826202965554" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.1.0.826361730267" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.1.0.826361730267" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -56,7 +56,7 @@
                             <img class="max-h-10 hidden dark:inline-block" src="../../../static/2fauth_light.png">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">2FAuth</span>
-                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v6.0</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v6.1</span>
                 </div>
     
                 <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
@@ -831,6 +831,29 @@ Once reached, all requests from this IP will be rejected until the minute has el
 </dd>
 <dt>Default value</dt>
 <dd><p><code translate="no" v-pre>60</code></p>
+</dd>
+</dl>
+</div>
+<doc-anchor-target id="throttle_api_during_import">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#throttle_api_during_import">#</doc-anchor-trigger>
+        <span>THROTTLE_API_DURING_IMPORT</span>
+    </h3>
+</doc-anchor-target>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>number</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>since v6.1</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt>Description</dt>
+<dd><p>The maximum number of API calls made specifically by the Import feature in a minute from the same IP.</p>
+<p>Set to <code translate="no" v-pre>null</code> to disable the API throttling of the Import feature.
+Has no effect if THROTTLE_API is set to <code translate="no" v-pre>null</code>.</p>
+</dd>
+<dt>Default value</dt>
+<dd><p><code translate="no" v-pre>1000</code></p>
 </dd>
 </dl>
 </div>
