@@ -83,6 +83,23 @@ Click the [!button variant="primary" icon="paper-airplane" iconAlign="left" corn
 [Check your logs](/getting-started/troubleshooting/#check-logs) in case the email was never delivered. They might provide more information about the issue.
 !!!
 
+### 2FA Sharing
+
+The [2FA Account Sharing feature](/usage/2fa-sharing/) enables users to securely grant access to their 2FA accounts without exposing the underlying 2FA secrets. Authorized users can then generate valid authentication codes.
+
+When the sharing feature is disabled:
+
+- Existing share configurations are preserved.
+- Shared access becomes temporarily inactive.
+
+No sharing data is deleted during this process. If the feature is later re-enabled, all previously configured shares automatically become effective again under their original conditions and permissions.
+
+#### ALL_USERS scope activation
+
+Because of its broad impact, the [`ALL_USERS` sharing scope](/usage/2fa-sharing/#all_users-scope) may be considered dangerous or inappropriate.
+
+Disabling the option prevents any new sharing using the `ALL USERS` scope and inactivates existing ones. If the option is later re-enabled, all previously inactivated shares automatically become effective again.
+
 ### Icon storage
 
 #### File system storage
