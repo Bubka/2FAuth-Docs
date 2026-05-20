@@ -6,6 +6,8 @@ label: 2FA Sharing
 
 Starting from v7, 2FAuth allows users to share their 2FA accounts with other users. This lets multiple people access an online service or website with a single user account that's protected by 2FA. It can make life easier in many situations, such as accessing a provider system for a whole team, managing a digital service for a family member who isn't very tech-savvy, or sharing access with a friend.
 
+The 2FA account sharing feature can be globally enabled or disabled by an administrator. See [Administration](/usage/administration/#2fa-sharing).
+
 ---
 
 ## What is shared
