@@ -1,0 +1,51 @@
+﻿#  - 2FAuth Docs
+
+> 2FAuth lets you securely store, generate and organize your two-factor authentication codes in a modern web application.
+
+- [Take back control of your 2FA data](https://docs.2fauth.app/index.md): Take back control of your 2FA data
+- [API](https://docs.2fauth.app/api.md): 2FAuth is built on top of its own REST API (following OpenAPI 3.1 specification), which can be used to make any other app communicate with 2FAuth.
+- [Credits](https://docs.2fauth.app/credits.md): 2FAuth is actively developed by Bubka.
+
+## Getting started
+
+### Installation
+
+- [Self-hosted server](https://docs.2fauth.app/getting-started/installation/self-hosted-server.md): You can deploy 2FAuth on your own web server, whether on your local computer or a web host. The following guide describes how to proceed and gives basic configurations for both NGINX and Apache2 web servers.
+
+#### Docker
+
+- [Docker CLI](https://docs.2fauth.app/getting-started/installation/docker/docker-cli.md): An official Docker image is available to run 2FAuth in a single Docker container. These are the Docker CLI Setup instructions, a docker-compose.yml file is also available.
+- [Docker-Compose](https://docs.2fauth.app/getting-started/installation/docker/docker-compose.md): You can run 2FAuth with Docker-Compose using the following command and this basic docker-compose.yml file:
+- [Heroku](https://docs.2fauth.app/getting-started/installation/heroku.md): You can deploy 2FAuth to Heroku by clicking the button below:
+- [YunoHost](https://docs.2fauth.app/getting-started/installation/yunohost.md): YunoHost is a libre operating system aiming to simplify server administration and democratize self-hosting.
+
+### Configuration
+
+- [Environment variables](https://docs.2fauth.app/getting-started/config/env-vars.md): Here are the main environment variables that may be set to make 2FAuth work according to its running environment and to meet your needs. It is recommended to review them at least once to ensure minimal requirements are met and to have a picture of what 2FAuth offers in terms of configuration.
+- [User preferences](https://docs.2fauth.app/getting-started/config/user-preferences.md): User preferences are settings that any user can change to customize the behavior or appearance of 2FAuth. They can be set by the user from the Settings > Options section of 2FAuth.
+- [Troubleshooting](https://docs.2fauth.app/getting-started/troubleshooting.md): Logs can give usefull informations to troubleshoot your installation. 2FAuth logs are stored in the subfolder storage/logs of your installation folder.
+- [Upgrade](https://docs.2fauth.app/getting-started/upgrade.md): Update the source code in /var/www/2fauth (see Get your 2FAuth copy)
+
+## Security
+
+- [Data protection](https://docs.2fauth.app/security/data-protection.md): 2FAuth provides several security mechanisms to protect your sensitive 2FA data, at administrator or user level.
+
+### Authentication
+
+- [Single Sign-On (SSO)](https://docs.2fauth.app/security/authentication/sso.md): Single sign-on is an authentication scheme that allows a user to log in with a single ID to any of several related, yet independent, software systems.
+- [WebAuthn (aka Passkey)](https://docs.2fauth.app/security/authentication/webauthn.md): 2FAuth supports the W3C Web Authentication API aka WebAuthn (learn more). This means you can register a security device like a Yubikey, a Titan Security Key, or a facial recognition system like Apple FaceId and use it to log into 2FAuth.
+- [Auth proxy](https://docs.2fauth.app/security/authentication/auth-proxy.md): You can configure 2FAuth to let an HTTP proxy handle authentication. In this case, 2FAuth will consider you logged in as long as you are authenticated at proxy level.
+- [Personal Access Token](https://docs.2fauth.app/security/authentication/pat.md): Use Personal Access Tokens (PAT) to authenticate requests sent to the 2FAuth REST API.
+
+## Usage
+
+- [Administration](https://docs.2fauth.app/usage/administration.md): The very first account created is automatically set up as an administrator account. Administrators have access to a dedicated area where they can manage global application settings as well as the user base.
+- [2FA Migration](https://docs.2fauth.app/usage/migration.md): 2FAuth can import data in various formats to ease you migrate from another 2FA app or to restore a backup. Note that not all 2FA apps enable data export so 2FAuth will never covers all possible migrations.
+- [2FA sharing](https://docs.2fauth.app/usage/2fa-sharing.md): Starting from v7, 2FAuth allows users to share their 2FA accounts with other users. This lets multiple people access an online service or website with a single user account that's protected by 2FA.
+- [Icons](https://docs.2fauth.app/usage/icons.md): Icons improve graphical interfaces by making it easier to locate and recognize elements and by giving a visual identity. However, finding and setting up icons can be time-consuming and tedious despite the many resources available online.
+- [Steam Guard](https://docs.2fauth.app/usage/steam-guard.md): Steam Guard is the Two-Factor authentication system you can enable to protect your Steam account. It works exactly as any 2FA protection, except that the One-Time Passwords are generated by the Steam Guard Mobile Authenticator only (or received by e-mail).
+
+## Support
+
+- [Contributing](https://docs.2fauth.app/support/contributing.md): 2FAuth is an Open Source project, that means everybody can participate, in many differents ways. If Open Source is new to you, the following guide should
+- [Bug reporting](https://docs.2fauth.app/support/bug-reporting.md): Found a bug? A report from you would be greatly appreciated!
