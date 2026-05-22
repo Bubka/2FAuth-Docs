@@ -1403,6 +1403,25 @@ Default value
 
 :::
 
+### OTP_LOG_RETENTION
+
+[!badge variant="info" text="number"] [!badge variant="info" text="since v7.0"]
+
+:::env-var-dl-wrapper
+
+Description
+:   The OTP generation log retention time, in days.  
+    Log entries older than that are automatically deleted.
+
+    !!!
+    End users can access OTP generation logs directly via the web app's user interface. These logs allow 2FA account owners to audit OTP generation events.
+    !!!
+
+Default value
+:   `365`
+
+:::
+
 ### CONTENT_SECURITY_POLICY
 
 [!badge variant="info" text="boolean"] [!badge variant="info" text="since v5.4.1"]
