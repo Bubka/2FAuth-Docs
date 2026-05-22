@@ -225,7 +225,7 @@ Description
     !!!
 
     !!!primary
-    If a custom port is used, it must be appended to the URL: `https://2fauth.mydomain.com:8001`
+    If a custom port is used, append it to the URL: `https://2fauth.mydomain.com:8001`
     !!!
 
     !!!warning
@@ -405,9 +405,12 @@ Alias
 :::env-var-dl-wrapper
 
 Description
-:   The authentication log retention time, in days.
-
+:   The authentication log retention time, in days.  
     Log entries older than that are automatically deleted.
+
+    !!!
+    Administrators can access authentication logs directly via the web app's user interface. These logs allow to audit user authentiction events.
+    !!!
 
 Default value
 :   `365`
