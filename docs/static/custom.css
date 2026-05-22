@@ -129,3 +129,15 @@ footer ul li a[href="https://github.com/sponsors/Bubka"] svg {
 .rounded-image-rounded {
   border-radius:0.5rem;
 }
+
+.feature-grid .docs-columns,
+.feature-grid .items-center,
+.feature-grid .docs-columns-content  {
+    border: none !important;
+}
+.feature-grid ul {
+    font-size: 0.875rem;
+}
+.feature-grid .items-center  {
+    font-size: 1.125rem;
+}
