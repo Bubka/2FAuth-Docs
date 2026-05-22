@@ -202,7 +202,7 @@ Add the following to the newly created file:
 </VirtualHost>
 ```
 
-!!!warning
+!!! warning
 Remember to replace example.com with your domain
 !!!
 
@@ -335,7 +335,7 @@ Open the `.env` file with a text editor, you will find the main environment vari
 You won't have to set/change all, most of them have a default value that will probably fit your needs. But some parts must be reviewed.
 
 !!!secondary
-See [Configuration](/getting-started/config/env-vars/) to learn about all the environment variables that can be set.
+See [Configuration](/getting-started/configuration/env-vars/) to learn about all the environment variables that can be set.
 !!!
 
 #### Database
