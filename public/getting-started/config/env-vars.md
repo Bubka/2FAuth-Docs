@@ -222,7 +222,7 @@ Description
     !!!
 
     !!!primary
-    If a custom port is used, append it to the URL: `https://2fauth.mydomain.com:8001`
+    If a custom port is used, it must be appended to the URL: `https://2fauth.mydomain.com:8001`
     !!!
 
     !!!warning
@@ -402,12 +402,9 @@ Alias
 :::env-var-dl-wrapper
 
 Description
-:   The authentication log retention time, in days.  
-    Log entries older than that are automatically deleted.
+:   The authentication log retention time, in days.
 
-    !!!
-    Administrators can access authentication logs directly via the web app's user interface. These logs allow to audit user authentiction events.
-    !!!
+    Log entries older than that are automatically deleted.
 
 Default value
 :   `365`
@@ -1397,25 +1394,6 @@ Description
 
 Default value
 :   `true`
-
-:::
-
-### OTP_LOG_RETENTION
-
-[!badge variant="info" text="number"] [!badge variant="info" text="since v7.0"]
-
-:::env-var-dl-wrapper
-
-Description
-:   The OTP generation log retention time, in days.  
-    Log entries older than that are automatically deleted.
-
-    !!!
-    End users can access OTP generation logs directly via the web app's user interface. These logs allow 2FA account owners to audit OTP generation events.
-    !!!
-
-Default value
-:   `365`
 
 :::
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832780583817">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832780588209">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.5.3">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../static/2fauth_favicon.png" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832780583817" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.832780588209" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832780583817" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832780588209" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832780583817" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.832780583817" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832780588209" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.832780588209" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -66,7 +66,7 @@
                             <img class="max-h-10 hidden dark:inline-block" src="../../../static/2fauth_light.png" alt="" width="29" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">2FAuth</span>
-                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v7.0</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v6.1</span>
                 </div>
     
                 <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
@@ -609,7 +609,7 @@ secrets:
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>If a custom port is used, append it to the URL: <code translate="no" v-pre>https://2fauth.mydomain.com:8001</code></p>
+<p>If a custom port is used, it must be appended to the URL: <code translate="no" v-pre>https://2fauth.mydomain.com:8001</code></p>
         </div>
     </div>
 </div>
@@ -830,25 +830,8 @@ Has no effect if THROTTLE_API is set to <code translate="no" v-pre>null</code>.<
 <div class="env-var-dl-wrapper">
 <dl>
 <dt id="description-15">Description</dt>
-<dd><p>The authentication log retention time, in days.<br />
-Log entries older than that are automatically deleted.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>Administrators can access authentication logs directly via the web app&#x27;s user interface. These logs allow to audit user authentiction events.</p>
-        </div>
-    </div>
-</div>
+<dd><p>The authentication log retention time, in days.</p>
+<p>Log entries older than that are automatically deleted.</p>
 </dd>
 <dt id="default-value-14">Default value</dt>
 <dd><p><code translate="no" v-pre>365</code></p>
@@ -1891,40 +1874,6 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 </dd>
 </dl>
 </div>
-<h3 id="otp_log_retention">OTP_LOG_RETENTION</h3>
-<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
-    <span>number</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
-    <span>since v7.0</span>
-</span></p>
-<div class="env-var-dl-wrapper">
-<dl>
-<dt id="description-61">Description</dt>
-<dd><p>The OTP generation log retention time, in days.<br />
-Log entries older than that are automatically deleted.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>End users can access OTP generation logs directly via the web app&#x27;s user interface. These logs allow 2FA account owners to audit OTP generation events.</p>
-        </div>
-    </div>
-</div>
-</dd>
-<dt id="default-value-58">Default value</dt>
-<dd><p><code translate="no" v-pre>365</code></p>
-</dd>
-</dl>
-</div>
 <h3 id="content_security_policy">CONTENT_SECURITY_POLICY</h3>
 <p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
     <span>boolean</span>
@@ -1933,11 +1882,11 @@ Log entries older than that are automatically deleted.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-62">Description</dt>
+<dt id="description-61">Description</dt>
 <dd><p>Set this to true to enable Content-Security-Policy (CSP).</p>
 <p>CSP helps to prevent or minimize the risk of certain types of security threats. This is mainly used as a defense against cross-site scripting (XSS) attacks, in which an attacker is able to inject malicious code into the web app</p>
 </dd>
-<dt id="default-value-59">Default value</dt>
+<dt id="default-value-58">Default value</dt>
 <dd><p><code translate="no" v-pre>true</code></p>
 </dd>
 </dl>
@@ -1949,7 +1898,7 @@ Log entries older than that are automatically deleted.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-63">Description</dt>
+<dt id="description-62">Description</dt>
 <dd><p>The default session driver used by 2FAuth to store sessions</p>
 </dd>
 </dl>
@@ -2054,7 +2003,7 @@ Log entries older than that are automatically deleted.</p>
 </div>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="default-value-60">Default value</dt>
+<dt id="default-value-59">Default value</dt>
 <dd><p><code translate="no" v-pre>file</code></p>
 </dd>
 </dl>
@@ -2065,11 +2014,11 @@ Log entries older than that are automatically deleted.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-64">Description</dt>
+<dt id="description-63">Description</dt>
 <dd><p>When using the <code translate="no" v-pre>database</code> or <code translate="no" v-pre>redis</code> <doc-anchor-trigger to="#session_driver">session drivers</doc-anchor-trigger>, you may specify a connection that should be used to manage these sessions.</p>
 <p>This should correspond to a connection in your <doc-anchor-trigger to="#db_connection">database configuration</doc-anchor-trigger> options.</p>
 </dd>
-<dt id="default-value-61">Default value</dt>
+<dt id="default-value-60">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -2080,7 +2029,7 @@ Log entries older than that are automatically deleted.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-65">Description</dt>
+<dt id="description-64">Description</dt>
 <dd><p>While using one of the framework&#x27;s cache driven session backends you may list a cache store that should be used for these sessions.</p>
 <p>This value must match with one of the 2FAuth&#x27;s configured cache stores.</p>
 </dd>
@@ -2088,7 +2037,7 @@ Log entries older than that are automatically deleted.</p>
 <dd><p><code translate="no" v-pre>apc</code>, <code translate="no" v-pre>dynamodb</code>, <code translate="no" v-pre>memcached</code>, <code translate="no" v-pre>redis</code></p>
 <p>(see <doc-anchor-trigger to="#cache_driver">CACHE_DRIVER</doc-anchor-trigger>)</p>
 </dd>
-<dt id="default-value-62">Default value</dt>
+<dt id="default-value-61">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -2101,10 +2050,10 @@ Log entries older than that are automatically deleted.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-66">Description</dt>
+<dt id="description-65">Description</dt>
 <dd>Name of the table to be used to store sessions when using the <code translate="no" v-pre>database</code> session driver.<br />
 See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>.</dd>
-<dt id="default-value-63">Default value</dt>
+<dt id="default-value-62">Default value</dt>
 <dd><p><code translate="no" v-pre>sessions</code></p>
 </dd>
 </dl>
@@ -2115,11 +2064,11 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-67">Description</dt>
+<dt id="description-66">Description</dt>
 <dd><p>Name of the cookie used to identify a session instance by ID.</p>
 <p>The name specified here will get used every time a new session cookie is created by 2FAuth for every driver.</p>
 </dd>
-<dt id="default-value-64">Default value</dt>
+<dt id="default-value-63">Default value</dt>
 <dd><p><code translate="no" v-pre>2fauth_session</code></p>
 </dd>
 </dl>
@@ -2132,11 +2081,11 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-68">Description</dt>
+<dt id="description-67">Description</dt>
 <dd><p>Domain of the cookie used to identify a session in 2FAuth.</p>
 <p>This will determine which domains the cookie is available to in 2FAuth.</p>
 </dd>
-<dt id="default-value-65">Default value</dt>
+<dt id="default-value-64">Default value</dt>
 <dd><p>Fallbacks to the 2FAuth instance domain</p>
 </dd>
 </dl>
@@ -2147,11 +2096,11 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-69">Description</dt>
+<dt id="description-68">Description</dt>
 <dd><p>By setting this option to true, session cookies will only be sent back to the server if the browser has a HTTPS connection.</p>
 <p>This will keep the cookie from being sent to you when it can&#x27;t be done securely.</p>
 </dd>
-<dt id="default-value-66">Default value</dt>
+<dt id="default-value-65">Default value</dt>
 <dd><p><code translate="no" v-pre>false</code></p>
 </dd>
 </dl>
@@ -2164,9 +2113,9 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-70">Description</dt>
+<dt id="description-69">Description</dt>
 <dd>Whether or not session data are encrypted before it is stored.</dd>
-<dt id="default-value-67">Default value</dt>
+<dt id="default-value-66">Default value</dt>
 <dd><p><code translate="no" v-pre>false</code></p>
 </dd>
 </dl>
@@ -2183,9 +2132,9 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-71">Description</dt>
+<dt id="description-70">Description</dt>
 <dd>URL  used during the OpenID SSO flow to request the user&#x27;s authentication and consent</dd>
-<dt id="default-value-68">Default value</dt>
+<dt id="default-value-67">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -2200,9 +2149,9 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-72">Description</dt>
+<dt id="description-71">Description</dt>
 <dd>URL  used during the OpenID SSO flow to obtain an ID and / or access token</dd>
-<dt id="default-value-69">Default value</dt>
+<dt id="default-value-68">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -2217,9 +2166,9 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-73">Description</dt>
+<dt id="description-72">Description</dt>
 <dd>URL used during the OpenID SSO flow to retrieve profile information and other attributes for a logged-in end-user</dd>
-<dt id="default-value-70">Default value</dt>
+<dt id="default-value-69">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -2232,9 +2181,9 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-74">Description</dt>
+<dt id="description-73">Description</dt>
 <dd>A unique identifier for the application</dd>
-<dt id="default-value-71">Default value</dt>
+<dt id="default-value-70">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -2247,9 +2196,9 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-75">Description</dt>
+<dt id="description-74">Description</dt>
 <dd>Secret known only to 2FAuth and the Open ID authorization server</dd>
-<dt id="default-value-72">Default value</dt>
+<dt id="default-value-71">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -2264,7 +2213,7 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-76">Description</dt>
+<dt id="description-75">Description</dt>
 <dd><p>SSL peer verification during OpenID authentication process</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
@@ -2285,7 +2234,7 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </dd>
 <dt id="possible-values-2">Possible values</dt>
 <dd><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code> or a string representing the path to a custom certificate on disk, like <code translate="no" v-pre>/path/to/cert.pem</code></dd>
-<dt id="default-value-73">Default value</dt>
+<dt id="default-value-72">Default value</dt>
 <dd><p><code translate="no" v-pre>true</code></p>
 </dd>
 </dl>
@@ -2298,9 +2247,9 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-77">Description</dt>
+<dt id="description-76">Description</dt>
 <dd>A unique identifier for the application</dd>
-<dt id="default-value-74">Default value</dt>
+<dt id="default-value-73">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -2313,9 +2262,9 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-78">Description</dt>
+<dt id="description-77">Description</dt>
 <dd>Secret known only to 2FAuth and Github</dd>
-<dt id="default-value-75">Default value</dt>
+<dt id="default-value-74">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
