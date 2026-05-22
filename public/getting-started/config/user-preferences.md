@@ -32,8 +32,6 @@ Custom defaults and preference locking are done by setting up dedicated environm
 Read the [Environment variables](/getting-started/config/env-vars/#how-to) page to learn how to define them.
 !!!
 
----
-
 ## How to
 
 Configuration is done per preference. To customize or lock a user preference, add a new environment variable using the following format:
@@ -109,8 +107,6 @@ You must rebuild the configuration cache of the app for the new variables to be 
 
 Also, logged-in users won't see any changes until they reconnect or visit the _Settings > Options_ page of 2FAuth.
 
----
-
 ## Available preferences
 
 :::is-half-width
@@ -126,19 +122,14 @@ Also, logged-in users won't see any changes until they reconnect or visit the _S
 - [FORMAT_PASSWORD_BY](#format_password_by)
 - [GET_OFFICIAL_ICONS](#get_official_icons)
 - [GET_OTP_ON_REQUEST](#get_otp_on_request)
-- [ICON_COLLECTION](#icon_collection)
-- [ICON_PACK](#icon_pack)
-- [ICON_SOURCE](#icon_source)
-- [ICON_VARIANT](#icon_variant)
-- [ICON_VARIANT_STRICT_FETCH](#icon_variant_strict_fetch)
 - [KICK_USER_AFTER](#kick_user_after)
+- [LANG](#lang)
+- [NOTIFY_ON_FAILED_LOGIN](#notify_on_failed_login)
 
 :::
 
 :::is-half-width
 
-- [LANG](#lang)
-- [NOTIFY_ON_FAILED_LOGIN](#notify_on_failed_login)
 - [NOTIFY_ON_NEW_AUTH_DEVICE](#notify_on_new_auth_device)
 - [REMEMBER_ACTIVE_GROUP](#remember_active_group)
 - [REVEAL_DOTTED_OTP](#reveal_dotted_otp)
@@ -147,7 +138,6 @@ Also, logged-in users won't see any changes until they reconnect or visit the _S
 - [SHOW_NEXT_OTP](#show_next_otp)
 - [SHOW_OTP_AS_DOT](#show_otp_as_dot)
 - [SORT_CASE_SENSITIVE](#sort_case_sensitive)
-- [SORT_ORDER](#sort_order)
 - [THEME](#theme)
 - [TIMEZONE](#timezone)
 - [USE_BASIC_QRCODE_READER](#use_basic_qrcode_reader)
@@ -361,11 +351,7 @@ Default value
 :::env-var-dl-wrapper
 
 Description
-:   Allows 2FAuth to fetch the official icon of the 2FA provider when a new 2FA account is registered.
-
-    Additional preferences have to be set to refine this preference:
-
-    - [ICON_SOURCE](#icon_source)
+:   Allows 2FAuth to fetch the web for official icons when registering a new 2FA account
 
 Default value
 :   `true`
@@ -391,147 +377,6 @@ Description
 
 Default value
 :   `true`
-
-:::
-
-### ICON_COLLECTION
-
-[!badge variant="info" text="string"] [!badge variant="info" text="since v5.6"]
-
-:::env-var-dl-wrapper
-
-Description
-:   The online icon library queried when 2FAuth needs to fetch an icon.
-
-    Only relevant when [ICON_SOURCE](#icon_source) is set to `logolib`.
-
-Default value
-:   `selfh`
-
-:::
-
-<span class="fw-500">Accepted values</span>
-
-:::sub-dl-wrapper
-
-`selfh`
-:   The [selfh.st](https://selfh.st/icons/) icon library
-
-`dashboardicons`
-:   The [dashboardicons.com](https://dashboardicons.com/) icon library
-
-`tfa`
-:   The [2fa.directory](https://2fa.directory/) icon library
-
-:::
-
-### ICON_PACK
-
-[!badge variant="info" text="string"] [!badge variant="info" text="since v6.0"]
-
-:::env-var-dl-wrapper
-
-Description
-:   The name of the icon pack queried when 2FAuth needs to fetch an icon.
-
-    An icon pack is merely a collection of image files stored in a directory on the server, in the `[2fauth_install_dir]/storage/app/iconPacks/` location. The name of the icon pack match the name of the directory.
-
-    If the icon pack is stored in a subdirectory, e.g. `[2fauth_install_dir]/storage/app/iconPacks/mysubdir/myiconpack/`, the preference must be set using the subdirectory and pack directory names combined, so `mysubdir/myiconpack`.
-
-    Only relevant when [ICON_SOURCE](#icon_source) is set to `iconpack`.
-
-Default value
-:   `null`
-
-:::
-
-<span class="fw-500">Accepted values</span>
-
-:::sub-dl-wrapper
-
-Any icon pack name uploaded to the server
-:   e.g. `myiconpack` or `mysubdir/myiconpack`
-
-### ICON_SOURCE
-
-[!badge variant="info" text="string"] [!badge variant="info" text="since v6.0"]
-
-:::env-var-dl-wrapper
-
-Description
-:   The location where 2FAuth offers to fetch icons
-
-Default value
-:   `logolib`
-
-:::
-
-<span class="fw-500">Accepted values</span>
-
-:::sub-dl-wrapper
-
-`logolib`
-:   Icons are fetched from online icon libraries.
-
-    Additional preferences have to be set to refine this option:
-
-    - [ICON_COLLECTION](#icon_collection)
-    - [ICON_VARIANT](#icon_variant)
-    - [ICON_VARIANT_STRICT_FETCH](#icon_variant_strict_fetch)
-
-`iconpack`
-:   Icons are fetched from icon packs uploaded to the server by the 2FAuth administrator.
-
-    Additional preferences have to be set to refine this option:
-
-    - [ICON_PACK](#icon_pack)
-
-:::
-
-### ICON_VARIANT
-
-[!badge variant="info" text="string"] [!badge variant="info" text="since v5.6"]
-
-:::env-var-dl-wrapper
-
-Description
-:   Some icon libraries provide icons in different variations to best suit dark or light user interfaces. Use this preference to indicate 2FAuth the flavor that must be requested first. The regular variant will be fetched automatically by 2FAuth if the specified one is not available.
-
-    Only relevant when [ICON_SOURCE](#icon_source) is not set to `logolib`.
-
-Default value
-:   `regular`
-
-:::
-
-<span class="fw-500">Accepted values</span>
-
-:::sub-dl-wrapper
-
-`regular`
-:   The neutral variant
-
-`light`
-:   The light variant
-
-`dark`
-:   The dark variant
-
-:::
-
-### ICON_VARIANT_STRICT_FETCH
-
-[!badge variant="info" text="boolean"] [!badge variant="info" text="since v5.6"]
-
-:::env-var-dl-wrapper
-
-Description
-:   Narrow the fetch to the specified icon variant. If the variant is missing, 2FAuth will not try to fallback to the regular variant.
-
-    Only relevant when [ICON_SOURCE](#icon_source) is set to `logolib` and [ICON_VARIANT](#icon_variant) is not set to `regular`.
-
-Default value
-:   `false`
 
 :::
 
@@ -687,7 +532,7 @@ Description
 :   Previews the next OTP near the current valid OTP
 
 Default value
-:   `true`
+:   `false`
 
 :::
 
@@ -720,32 +565,6 @@ Description
 
 Default value
 :   `false`
-
-:::
-
-### SORT_ORDER
-
-[!badge variant="info" text="boolean"] [!badge variant="info" text="since v6.0"]
-
-:::env-var-dl-wrapper
-
-Description
-:   The order 2FA accounts are sorted
-
-Default value
-:   `asc`
-
-:::
-
-<span class="fw-500">Accepted values</span>
-
-:::sub-dl-wrapper
-
-`asc`
-:   Sort items in ascending order
-
-`desc`
-:   Sort items in descending order
 
 :::
 
@@ -841,14 +660,3 @@ Default value
 :   `false`
 
 :::
-
----
-
-## Unlockable preferences
-
-2FAuth has additional preferences that cannot be locked because they depend on specific user data or security considerations. The following preferences will remain editable by users, even if you set the appropriate `USERPREF_LOCKED__*` environment variable:
-
-- `ACTIVE_GROUP`
-- `DEFAULT_GROUP`
-- `USE_WEBAUTHN_ONLY`
-- `SORT_ORDER`

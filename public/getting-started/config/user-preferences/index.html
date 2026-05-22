@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832780592430">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832780599766">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.5.3">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../static/2fauth_favicon.png" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832780592430" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.832780599766" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832780592430" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832780599766" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832780592430" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.832780592430" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832780599766" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.832780599766" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -66,7 +66,7 @@
                             <img class="max-h-10 hidden dark:inline-block" src="../../../static/2fauth_light.png" alt="" width="29" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">2FAuth</span>
-                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v6.0</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v5.6</span>
                 </div>
     
                 <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
@@ -276,7 +276,6 @@ Read the <a href="../env-vars/#how-to">Environment variables</a> page to learn h
         </div>
     </div>
 </div>
-<hr>
 <h2 id="how-to">How to</h2>
 <p>Configuration is done per preference. To customize or lock a user preference, add a new environment variable using the following format:</p>
 <div id="how-to-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -363,7 +362,6 @@ USERPREF_LOCKED__THEME=true</code></pre>
 <p>Because of the way 2FAuth is built, adding new environment variables to enforce user preferences may not have an immediate effect if your 2FAuth instance is running.</p>
 <p>You must rebuild the configuration cache of the app for the new variables to be loaded or restart your container if you use one. See the <a href="../env-vars/#how-to">Environment variables</a> section for details.</p>
 <p>Also, logged-in users won&#x27;t see any changes until they reconnect or visit the <em>Settings &gt; Options</em> page of 2FAuth.</p>
-<hr>
 <h2 id="available-preferences">Available preferences</h2>
 <div class="is-half-width">
 <ul>
@@ -378,18 +376,13 @@ USERPREF_LOCKED__THEME=true</code></pre>
 <li><doc-anchor-trigger to="#format_password_by">FORMAT_PASSWORD_BY</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#get_official_icons">GET_OFFICIAL_ICONS</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#get_otp_on_request">GET_OTP_ON_REQUEST</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#icon_collection">ICON_COLLECTION</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#icon_pack">ICON_PACK</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#icon_source">ICON_SOURCE</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#icon_variant">ICON_VARIANT</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#icon_variant_strict_fetch">ICON_VARIANT_STRICT_FETCH</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#kick_user_after">KICK_USER_AFTER</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#lang">LANG</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#notify_on_failed_login">NOTIFY_ON_FAILED_LOGIN</doc-anchor-trigger></li>
 </ul>
 </div>
 <div class="is-half-width">
 <ul>
-<li><doc-anchor-trigger to="#lang">LANG</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#notify_on_failed_login">NOTIFY_ON_FAILED_LOGIN</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#notify_on_new_auth_device">NOTIFY_ON_NEW_AUTH_DEVICE</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#remember_active_group">REMEMBER_ACTIVE_GROUP</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#reveal_dotted_otp">REVEAL_DOTTED_OTP</doc-anchor-trigger></li>
@@ -398,7 +391,6 @@ USERPREF_LOCKED__THEME=true</code></pre>
 <li><doc-anchor-trigger to="#show_next_otp">SHOW_NEXT_OTP</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#show_otp_as_dot">SHOW_OTP_AS_DOT</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#sort_case_sensitive">SORT_CASE_SENSITIVE</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#sort_order">SORT_ORDER</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#theme">THEME</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#timezone">TIMEZONE</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#use_basic_qrcode_reader">USE_BASIC_QRCODE_READER</doc-anchor-trigger></li>
@@ -610,12 +602,7 @@ USERPREF_LOCKED__THEME=true</code></pre>
 <div class="env-var-dl-wrapper">
 <dl>
 <dt id="description-9">Description</dt>
-<dd><p>Allows 2FAuth to fetch the official icon of the 2FA provider when a new 2FA account is registered.</p>
-<p>Additional preferences have to be set to refine this preference:</p>
-<ul>
-<li><doc-anchor-trigger to="#icon_source">ICON_SOURCE</doc-anchor-trigger></li>
-</ul>
-</dd>
+<dd>Allows 2FAuth to fetch the web for official icons when registering a new 2FA account</dd>
 <dt id="default-value-9">Default value</dt>
 <dd><p><code translate="no" v-pre>true</code></p>
 </dd>
@@ -644,143 +631,6 @@ USERPREF_LOCKED__THEME=true</code></pre>
 </dd>
 </dl>
 </div>
-<h3 id="icon_collection">ICON_COLLECTION</h3>
-<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
-    <span>since v5.6</span>
-</span></p>
-<div class="env-var-dl-wrapper">
-<dl>
-<dt id="description-11">Description</dt>
-<dd><p>The online icon library queried when 2FAuth needs to fetch an icon.</p>
-<p>Only relevant when <doc-anchor-trigger to="#icon_source">ICON_SOURCE</doc-anchor-trigger> is set to <code translate="no" v-pre>logolib</code>.</p>
-</dd>
-<dt id="default-value-11">Default value</dt>
-<dd><p><code translate="no" v-pre>selfh</code></p>
-</dd>
-</dl>
-</div>
-<p><span class="fw-500">Accepted values</span></p>
-<div class="sub-dl-wrapper">
-<dl>
-<dt id="term-9"><code translate="no" v-pre>selfh</code></dt>
-<dd>The <a href="https://selfh.st/icons/">selfh.st</a> icon library</dd>
-<dt id="term-10"><code translate="no" v-pre>dashboardicons</code></dt>
-<dd>The <a href="https://dashboardicons.com/">dashboardicons.com</a> icon library</dd>
-<dt id="term-11"><code translate="no" v-pre>tfa</code></dt>
-<dd><p>The <a href="https://2fa.directory/">2fa.directory</a> icon library</p>
-</dd>
-</dl>
-</div>
-<h3 id="icon_pack">ICON_PACK</h3>
-<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
-    <span>since v6.0</span>
-</span></p>
-<div class="env-var-dl-wrapper">
-<dl>
-<dt id="description-12">Description</dt>
-<dd><p>The name of the icon pack queried when 2FAuth needs to fetch an icon.</p>
-<p>An icon pack is merely a collection of image files stored in a directory on the server, in the <code translate="no" v-pre>[2fauth_install_dir]/storage/app/iconPacks/</code> location. The name of the icon pack match the name of the directory.</p>
-<p>If the icon pack is stored in a subdirectory, e.g. <code translate="no" v-pre>[2fauth_install_dir]/storage/app/iconPacks/mysubdir/myiconpack/</code>, the preference must be set using the subdirectory and pack directory names combined, so <code translate="no" v-pre>mysubdir/myiconpack</code>.</p>
-<p>Only relevant when <doc-anchor-trigger to="#icon_source">ICON_SOURCE</doc-anchor-trigger> is set to <code translate="no" v-pre>iconpack</code>.</p>
-</dd>
-<dt id="default-value-12">Default value</dt>
-<dd><p><code translate="no" v-pre>null</code></p>
-</dd>
-</dl>
-</div>
-<p><span class="fw-500">Accepted values</span></p>
-<div class="sub-dl-wrapper">
-<dl>
-<dt id="any-icon-pack-name-uploaded-to-the-server">Any icon pack name uploaded to the server</dt>
-<dd>e.g. <code translate="no" v-pre>myiconpack</code> or <code translate="no" v-pre>mysubdir/myiconpack</code></dd>
-</dl>
-<h3 id="icon_source">ICON_SOURCE</h3>
-<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
-    <span>since v6.0</span>
-</span></p>
-<div class="env-var-dl-wrapper">
-<dl>
-<dt id="description-13">Description</dt>
-<dd>The location where 2FAuth offers to fetch icons</dd>
-<dt id="default-value-13">Default value</dt>
-<dd><p><code translate="no" v-pre>logolib</code></p>
-</dd>
-</dl>
-</div>
-</div>
-<p><span class="fw-500">Accepted values</span></p>
-<div class="sub-dl-wrapper">
-<dl>
-<dt id="term-12"><code translate="no" v-pre>logolib</code></dt>
-<dd><p>Icons are fetched from online icon libraries.</p>
-<p>Additional preferences have to be set to refine this option:</p>
-<ul>
-<li><doc-anchor-trigger to="#icon_collection">ICON_COLLECTION</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#icon_variant">ICON_VARIANT</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#icon_variant_strict_fetch">ICON_VARIANT_STRICT_FETCH</doc-anchor-trigger></li>
-</ul>
-</dd>
-<dt id="term-13"><code translate="no" v-pre>iconpack</code></dt>
-<dd><p>Icons are fetched from icon packs uploaded to the server by the 2FAuth administrator.</p>
-<p>Additional preferences have to be set to refine this option:</p>
-<ul>
-<li><doc-anchor-trigger to="#icon_pack">ICON_PACK</doc-anchor-trigger></li>
-</ul>
-</dd>
-</dl>
-</div>
-<h3 id="icon_variant">ICON_VARIANT</h3>
-<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
-    <span>since v5.6</span>
-</span></p>
-<div class="env-var-dl-wrapper">
-<dl>
-<dt id="description-14">Description</dt>
-<dd><p>Some icon libraries provide icons in different variations to best suit dark or light user interfaces. Use this preference to indicate 2FAuth the flavor that must be requested first. The regular variant will be fetched automatically by 2FAuth if the specified one is not available.</p>
-<p>Only relevant when <doc-anchor-trigger to="#icon_source">ICON_SOURCE</doc-anchor-trigger> is not set to <code translate="no" v-pre>logolib</code>.</p>
-</dd>
-<dt id="default-value-14">Default value</dt>
-<dd><p><code translate="no" v-pre>regular</code></p>
-</dd>
-</dl>
-</div>
-<p><span class="fw-500">Accepted values</span></p>
-<div class="sub-dl-wrapper">
-<dl>
-<dt id="term-14"><code translate="no" v-pre>regular</code></dt>
-<dd>The neutral variant</dd>
-<dt id="term-15"><code translate="no" v-pre>light</code></dt>
-<dd>The light variant</dd>
-<dt id="term-16"><code translate="no" v-pre>dark</code></dt>
-<dd><p>The dark variant</p>
-</dd>
-</dl>
-</div>
-<h3 id="icon_variant_strict_fetch">ICON_VARIANT_STRICT_FETCH</h3>
-<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
-    <span>boolean</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
-    <span>since v5.6</span>
-</span></p>
-<div class="env-var-dl-wrapper">
-<dl>
-<dt id="description-15">Description</dt>
-<dd><p>Narrow the fetch to the specified icon variant. If the variant is missing, 2FAuth will not try to fallback to the regular variant.</p>
-<p>Only relevant when <doc-anchor-trigger to="#icon_source">ICON_SOURCE</doc-anchor-trigger> is set to <code translate="no" v-pre>logolib</code> and <doc-anchor-trigger to="#icon_variant">ICON_VARIANT</doc-anchor-trigger> is not set to <code translate="no" v-pre>regular</code>.</p>
-</dd>
-<dt id="default-value-15">Default value</dt>
-<dd><p><code translate="no" v-pre>false</code></p>
-</dd>
-</dl>
-</div>
 <h3 id="kick_user_after">KICK_USER_AFTER</h3>
 <p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
     <span>number</span>
@@ -789,9 +639,9 @@ USERPREF_LOCKED__THEME=true</code></pre>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-16">Description</dt>
+<dt id="description-11">Description</dt>
 <dd>Action or inactivity time span that triggers the automatic disconnection of the user, aka Auto-lock</dd>
-<dt id="default-value-16">Default value</dt>
+<dt id="default-value-11">Default value</dt>
 <dd><p><code translate="no" v-pre>15</code></p>
 </dd>
 </dl>
@@ -799,9 +649,9 @@ USERPREF_LOCKED__THEME=true</code></pre>
 <p><span class="fw-500">Accepted values</span></p>
 <div class="sub-dl-wrapper">
 <dl>
-<dt id="term-17"><code translate="no" v-pre>0</code></dt>
+<dt id="term-9"><code translate="no" v-pre>0</code></dt>
 <dd>Disables the auto-lock feature, the user will never be logged out</dd>
-<dt id="term-18"><code translate="no" v-pre>-1</code></dt>
+<dt id="term-10"><code translate="no" v-pre>-1</code></dt>
 <dd>Triggers user logout when a click/tap is done on a one-time password to copy it</dd>
 <dt id="----------"><code translate="no" v-pre>1</code> , <code translate="no" v-pre>5</code> , <code translate="no" v-pre>10</code> , <code translate="no" v-pre>15</code> , <code translate="no" v-pre>30</code> , <code translate="no" v-pre>60</code> , <code translate="no" v-pre>1440</code></dt>
 <dd><p>Time (in minutes) before the user is automatically disconnected</p>
@@ -816,9 +666,9 @@ USERPREF_LOCKED__THEME=true</code></pre>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-17">Description</dt>
+<dt id="description-12">Description</dt>
 <dd>The language used to translate the 2FAuth user interface</dd>
-<dt id="default-value-17">Default value</dt>
+<dt id="default-value-12">Default value</dt>
 <dd><p><code translate="no" v-pre>browser</code></p>
 </dd>
 </dl>
@@ -826,7 +676,7 @@ USERPREF_LOCKED__THEME=true</code></pre>
 <p><span class="fw-500">Accepted values</span></p>
 <div class="sub-dl-wrapper">
 <dl>
-<dt id="term-19"><code translate="no" v-pre>browser</code></dt>
+<dt id="term-11"><code translate="no" v-pre>browser</code></dt>
 <dd>Uses the preferred language setting of the browser used to visit 2FAuth.</dd>
 <dt id="any-supported-language-code">Any supported language code</dt>
 <dd><p>The language code of any supported translation, for example <code translate="no" v-pre>fr</code>, <code translate="no" v-pre>en</code> or <code translate="no" v-pre>ja</code>.<br />
@@ -842,9 +692,9 @@ See the <a href="https://crowdin.com/project/2fauth" target="_blank">Crowdin pro
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-18">Description</dt>
+<dt id="description-13">Description</dt>
 <dd>Enables email notification of failed login attempts</dd>
-<dt id="default-value-18">Default value</dt>
+<dt id="default-value-13">Default value</dt>
 <dd><p><code translate="no" v-pre>false</code></p>
 </dd>
 </dl>
@@ -857,9 +707,9 @@ See the <a href="https://crowdin.com/project/2fauth" target="_blank">Crowdin pro
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-19">Description</dt>
+<dt id="description-14">Description</dt>
 <dd>Enables email notification of successful logon from a new device</dd>
-<dt id="default-value-19">Default value</dt>
+<dt id="default-value-14">Default value</dt>
 <dd><p><code translate="no" v-pre>false</code></p>
 </dd>
 </dl>
@@ -870,9 +720,9 @@ See the <a href="https://crowdin.com/project/2fauth" target="_blank">Crowdin pro
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-20">Description</dt>
+<dt id="description-15">Description</dt>
 <dd>Saves the last group filter applied and restores it on your next visit</dd>
-<dt id="default-value-20">Default value</dt>
+<dt id="default-value-15">Default value</dt>
 <dd><p><code translate="no" v-pre>true</code></p>
 </dd>
 </dl>
@@ -885,11 +735,11 @@ See the <a href="https://crowdin.com/project/2fauth" target="_blank">Crowdin pro
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-21">Description</dt>
+<dt id="description-16">Description</dt>
 <dd><p>Displays a button to make the OTP readable while it is obfuscated.</p>
 <p>Only relevant when <doc-anchor-trigger to="#show_otp_as_dot">SHOW_OTP_AS_DOT</doc-anchor-trigger> is set to <code translate="no" v-pre>true</code>.</p>
 </dd>
-<dt id="default-value-21">Default value</dt>
+<dt id="default-value-16">Default value</dt>
 <dd><p><code translate="no" v-pre>false</code></p>
 </dd>
 </dl>
@@ -902,9 +752,9 @@ See the <a href="https://crowdin.com/project/2fauth" target="_blank">Crowdin pro
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-22">Description</dt>
+<dt id="description-17">Description</dt>
 <dd>Show/Hide the icons that depict 2FA accounts</dd>
-<dt id="default-value-22">Default value</dt>
+<dt id="default-value-17">Default value</dt>
 <dd><p><code translate="no" v-pre>true</code></p>
 </dd>
 </dl>
@@ -917,9 +767,9 @@ See the <a href="https://crowdin.com/project/2fauth" target="_blank">Crowdin pro
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-23">Description</dt>
+<dt id="description-18">Description</dt>
 <dd>Switch between the old footer layout and the new one that displays the email address of the currently logged in user</dd>
-<dt id="default-value-23">Default value</dt>
+<dt id="default-value-18">Default value</dt>
 <dd><p><code translate="no" v-pre>true</code></p>
 </dd>
 </dl>
@@ -932,10 +782,10 @@ See the <a href="https://crowdin.com/project/2fauth" target="_blank">Crowdin pro
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-24">Description</dt>
+<dt id="description-19">Description</dt>
 <dd>Previews the next OTP near the current valid OTP</dd>
-<dt id="default-value-24">Default value</dt>
-<dd><p><code translate="no" v-pre>true</code></p>
+<dt id="default-value-19">Default value</dt>
+<dd><p><code translate="no" v-pre>false</code></p>
 </dd>
 </dl>
 </div>
@@ -947,14 +797,14 @@ See the <a href="https://crowdin.com/project/2fauth" target="_blank">Crowdin pro
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-25">Description</dt>
+<dt id="description-20">Description</dt>
 <dd><p>Obfuscates OTPs by replacing digits with dots.</p>
 <p>Additional preferences may be set to refine this behavior:</p>
 <ul>
 <li><doc-anchor-trigger to="#reveal_dotted_otp">REVEAL_DOTTED_OTP</doc-anchor-trigger></li>
 </ul>
 </dd>
-<dt id="default-value-25">Default value</dt>
+<dt id="default-value-20">Default value</dt>
 <dd><p><code translate="no" v-pre>false</code></p>
 </dd>
 </dl>
@@ -967,35 +817,10 @@ See the <a href="https://crowdin.com/project/2fauth" target="_blank">Crowdin pro
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-26">Description</dt>
+<dt id="description-21">Description</dt>
 <dd>Applies case-sensitive sorting when reordering 2FA accounts</dd>
-<dt id="default-value-26">Default value</dt>
+<dt id="default-value-21">Default value</dt>
 <dd><p><code translate="no" v-pre>false</code></p>
-</dd>
-</dl>
-</div>
-<h3 id="sort_order">SORT_ORDER</h3>
-<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
-    <span>boolean</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
-    <span>since v6.0</span>
-</span></p>
-<div class="env-var-dl-wrapper">
-<dl>
-<dt id="description-27">Description</dt>
-<dd>The order 2FA accounts are sorted</dd>
-<dt id="default-value-27">Default value</dt>
-<dd><p><code translate="no" v-pre>asc</code></p>
-</dd>
-</dl>
-</div>
-<p><span class="fw-500">Accepted values</span></p>
-<div class="sub-dl-wrapper">
-<dl>
-<dt id="term-20"><code translate="no" v-pre>asc</code></dt>
-<dd>Sort items in ascending order</dd>
-<dt id="term-21"><code translate="no" v-pre>desc</code></dt>
-<dd><p>Sort items in descending order</p>
 </dd>
 </dl>
 </div>
@@ -1007,9 +832,9 @@ See the <a href="https://crowdin.com/project/2fauth" target="_blank">Crowdin pro
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-28">Description</dt>
+<dt id="description-22">Description</dt>
 <dd>The theme applied to the app pages</dd>
-<dt id="default-value-28">Default value</dt>
+<dt id="default-value-22">Default value</dt>
 <dd><p><code translate="no" v-pre>system</code></p>
 </dd>
 </dl>
@@ -1017,11 +842,11 @@ See the <a href="https://crowdin.com/project/2fauth" target="_blank">Crowdin pro
 <p><span class="fw-500">Accepted values</span></p>
 <div class="sub-dl-wrapper">
 <dl>
-<dt id="term-22"><code translate="no" v-pre>system</code></dt>
+<dt id="term-12"><code translate="no" v-pre>system</code></dt>
 <dd>Uses the website appareance setting of the browser used to visit 2FAuth</dd>
-<dt id="term-23"><code translate="no" v-pre>light</code></dt>
+<dt id="term-13"><code translate="no" v-pre>light</code></dt>
 <dd>Uses a light theme for backgrounds and page content</dd>
-<dt id="term-24"><code translate="no" v-pre>dark</code></dt>
+<dt id="term-14"><code translate="no" v-pre>dark</code></dt>
 <dd><p>Uses a dark theme for backgrounds and page content</p>
 </dd>
 </dl>
@@ -1034,9 +859,9 @@ See the <a href="https://crowdin.com/project/2fauth" target="_blank">Crowdin pro
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-29">Description</dt>
+<dt id="description-23">Description</dt>
 <dd>The time zone applied to all dates and times displayed in the 2FAuth user interface</dd>
-<dt id="default-value-29">Default value</dt>
+<dt id="default-value-23">Default value</dt>
 <dd><code translate="no" v-pre>UTC</code></dd>
 <dt id="accepted-values">Accepted values</dt>
 <dd><p>Any timezone identifier, for example <code translate="no" v-pre>Africa/Asmara</code>.<br />
@@ -1052,9 +877,9 @@ See <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" targe
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-30">Description</dt>
+<dt id="description-24">Description</dt>
 <dd>Switches to an alternative QR code reader</dd>
-<dt id="default-value-30">Default value</dt>
+<dt id="default-value-24">Default value</dt>
 <dd><p><code translate="no" v-pre>false</code></p>
 </dd>
 </dl>
@@ -1067,14 +892,14 @@ See <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" targe
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-31">Description</dt>
+<dt id="description-25">Description</dt>
 <dd><p>Skips the input mode selection screen.</p>
 <p>Additional preferences have to be set to refine this behavior:</p>
 <ul>
 <li><doc-anchor-trigger to="#default_capture_mode">DEFAULT_CAPTURE_MODE</doc-anchor-trigger></li>
 </ul>
 </dd>
-<dt id="default-value-31">Default value</dt>
+<dt id="default-value-25">Default value</dt>
 <dd><p><code translate="no" v-pre>false</code></p>
 </dd>
 </dl>
@@ -1087,22 +912,13 @@ See <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" targe
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-32">Description</dt>
+<dt id="description-26">Description</dt>
 <dd>Always return to the default group filter when a click/tap is done on a one-time password to copy it</dd>
-<dt id="default-value-32">Default value</dt>
+<dt id="default-value-26">Default value</dt>
 <dd><p><code translate="no" v-pre>false</code></p>
 </dd>
 </dl>
 </div>
-<hr>
-<h2 id="unlockable-preferences">Unlockable preferences</h2>
-<p>2FAuth has additional preferences that cannot be locked because they depend on specific user data or security considerations. The following preferences will remain editable by users, even if you set the appropriate <code translate="no" v-pre>USERPREF_LOCKED__*</code> environment variable:</p>
-<ul>
-<li><code translate="no" v-pre>ACTIVE_GROUP</code></li>
-<li><code translate="no" v-pre>DEFAULT_GROUP</code></li>
-<li><code translate="no" v-pre>USE_WEBAUTHN_ONLY</code></li>
-<li><code translate="no" v-pre>SORT_ORDER</code></li>
-</ul>
 
                 
                 <!-- Required only on API pages -->

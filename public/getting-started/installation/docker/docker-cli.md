@@ -3,7 +3,9 @@
 An official Docker image is available to run 2FAuth in a single Docker container.
 These are the __Docker CLI__ Setup instructions, a <a href="https://github.com/Bubka/2FAuth/blob/master/docker/docker-compose.yml" target="_blank">docker-compose.yml</a> file is also available.
 
----
+[--![](https://dockeri.co/image/2fauth/2fauth)](https://hub.docker.com/r/2fauth/2fauth)
+
+<div style="clear: both;"></div>
 
 ## Features
 
@@ -26,8 +28,6 @@ Simply append the tag name to the docker image name in your command or script, s
 
 If no tag is specified, Docker will default to `latest`.
 
----
-
 ## Docker CLI Setup
 
 We assume your current directory is `/yourpath`.
@@ -38,7 +38,7 @@ We assume your current directory is `/yourpath`.
     mkdir 2fauth
     ```
 
-    !!!info If your host is not Windows
+    !!!warning If your host is not Windows
     Since the container runs without root as user `1000:1000`, you need to fix the ownership and permissions of that directory:
 
     ```sh
@@ -53,15 +53,9 @@ We assume your current directory is `/yourpath`.
 
     ```sh
     docker run -it --rm -p 8000:8000/tcp \
-    -v /yourpath/2fauth:/2fauth -e APP_KEY=SomeRandomStringOf32CharsExactly \
+    -v /yourpath/2fauth:/2fauth \
     2fauth/2fauth
     ```
-
-    !!!warning Mandatory env var
-    The [`APP_KEY`](/getting-started/config/env-vars/#app_key) environment variable must be set with a personal unique value. You can generate a brand new one using [Laravel Encryption Key Generator](https://laravel-encryption-key-generator.vercel.app/).  
-
-    If you need to rotate the key, use the [`APP_PREVIOUS_KEYS`](/getting-started/config/env-vars/#app_previous_keys) environment variable to list previous keys and avoid decryption issues or invalid access tokens.
-    !!!
 
 1. Access it in your browser
 
@@ -86,8 +80,6 @@ chmod 700 /yourpath/2fauth/database.sqlite
 ```
 
 The container will automatically pick it up.
-
----
 
 ## Build the image
 
@@ -122,7 +114,7 @@ Use the following build arguments to customize the image with `--build-arg key=v
 | `UID` | 1000 | The UID of the user to run the container as |
 | `GID` | 1000 | The GID of the user to run the container as |
 | `DEBIAN_VERSION` | `buster-slim` | The Debian version to use |
-| `PHP_VERSION` | `8.4-buster` | The PHP version to use to get composer dependencies |
+| `PHP_VERSION` | `8.1-buster` | The PHP version to use to get composer dependencies |
 | `COMPOSER_VERSION` | `2.1` | The version of composer to use |
 | `SUPERVISORD_VERSION` | `v0.7.3` | The version of supervisord to use |
 | `VERSION` | `unknown` | The version of the image |
@@ -151,8 +143,6 @@ Example:
 -e MAIL_USERNAME=2fauth@example.com
 -e MAIL_PASSWORD=password1234
 ```
-
----
 
 ## Implementation details
 

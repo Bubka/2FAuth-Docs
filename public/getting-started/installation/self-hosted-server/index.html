@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832780592430">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832780599766">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.5.3">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../static/2fauth_favicon.png" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832780592430" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.832780599766" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832780592430" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832780599766" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832780592430" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.832780592430" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832780599766" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.832780599766" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -66,7 +66,7 @@
                             <img class="max-h-10 hidden dark:inline-block" src="../../../static/2fauth_light.png" alt="" width="29" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">2FAuth</span>
-                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v6.0</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v5.6</span>
                 </div>
     
                 <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
@@ -242,13 +242,11 @@ The following guide describes how to proceed and gives basic configurations for 
 <h3 id="php">PHP</h3>
 <ul>
 <li>PHP &gt;= <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-primary-text bg-badge-primary border border-badge-primary-border h-6 px-2 text-xs rounded-md">
-    <span>8.4</span>
+    <span>8.1</span>
 </span></li>
 <li>BCMath PHP Extension</li>
 <li>Ctype PHP Extension</li>
-<li>DOM PHP Extension</li>
 <li>Fileinfo PHP Extension</li>
-<li>GD PHP Extension</li>
 <li>JSON PHP Extension</li>
 <li>Mbstring PHP Extension</li>
 <li>OpenSSL PHP Extension</li>
@@ -261,16 +259,16 @@ The following guide describes how to proceed and gives basic configurations for 
 <p>You need a database to run 2FAuth. Supported databases are the ones supported by Laravel.</p>
 <ul>
 <li>MariaDB <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-primary-text bg-badge-primary border border-badge-primary-border h-6 px-2 text-xs rounded-md">
-    <span>10.3+</span>
+    <span>10.2+</span>
 </span></li>
 <li>MySQL <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-primary-text bg-badge-primary border border-badge-primary-border h-6 px-2 text-xs rounded-md">
     <span>5.7+</span>
 </span></li>
 <li>PostgreSQL <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-primary-text bg-badge-primary border border-badge-primary-border h-6 px-2 text-xs rounded-md">
-    <span>10.0+</span>
+    <span>9.6+</span>
 </span></li>
 <li>SQLite <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-primary-text bg-badge-primary border border-badge-primary-border h-6 px-2 text-xs rounded-md">
-    <span>3.26.0+</span>
+    <span>3.8.8+</span>
 </span></li>
 <li>SQL Server <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-primary-text bg-badge-primary border border-badge-primary-border h-6 px-2 text-xs rounded-md">
     <span>2017+</span>
@@ -311,7 +309,6 @@ The following guide describes how to proceed and gives basic configurations for 
 </div>
 </p>
 <p>You can test your installation by running <code translate="no" v-pre>php composer.phar -v</code> in a terminal (or just <code translate="no" v-pre>composer -v</code> if composer has been installed in a directory that is part of your system PATH)</p>
-<hr>
 <h2 id="get-your-2fauth-copy">Get your 2FAuth copy</h2>
 <p>Here are 3 methods to help you download the 2FAuth source code. For the purpose of this guide we will consider <code translate="no" v-pre>/var/www/2fauth</code> (which is a common path in the *nix world) to be the location where 2FAuth will sit. Of course, you are free to use another path, just remember to adapt the commands in the following steps with yours.</p>
 <doc-tabs>
@@ -370,7 +367,6 @@ git checkout v3.0.0</code></pre>
 </doc-panels>
 </doc-tab>
 </doc-tabs>
-<hr>
 <h2 id="installing-dependencies">Installing dependencies</h2>
 <h3 id="composer-1">Composer</h3>
 <p>From the <code translate="no" v-pre>/var/www/2fauth/</code> directory:</p>
@@ -381,7 +377,6 @@ git checkout v3.0.0</code></pre>
 <div id="composer-1-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">php composer.phar install --prefer-dist --no-scripts --no-dev</code></pre>
 </doc-codeblock></div>
-<hr>
 <h2 id="web-server-configuration">Web server configuration</h2>
 <p>As a reminder, the intended installation path is <code translate="no" v-pre>/var/www/2fauth</code>. The given commands/scripts should be modified if you are using another path.</p>
 <doc-tabs>
@@ -506,7 +501,6 @@ sudo systemctl restart apache2</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
-<hr>
 <h2 id="create-the-database">Create the database</h2>
 <p>Use the CLI of the chosen database to create a new database with one of the following commands:</p>
 <doc-tabs>
@@ -602,7 +596,6 @@ sqlite&gt; .quit</code></pre>
     <a href="https://www.adminer.org/" target="_blank" class="absolute block inset-0"></a>
 </div>
 </p>
-<hr>
 <h2 id="2fauth-set-up-wizard">2FAuth set up (wizard)</h2>
 <p>2FAuth provides an <strong>artisan</strong> command to set up everything easily. If you want to set up all by hand, please follow the next section: <doc-anchor-trigger to="#2fauth-set-up-manual">2FAuth set up (manual)</doc-anchor-trigger>.</p>
 <h3 id="prerequisites">Prerequisites</h3>
@@ -639,7 +632,6 @@ sqlite&gt; .quit</code></pre>
 <li>Cache the configuration</li>
 </ul>
 <p>All these steps are detailed below if you want to dive into them.</p>
-<hr>
 <h2 id="2fauth-set-up-manual">2FAuth set up (manual)</h2>
 <h3 id="set-the-env-file">Set the .env file</h3>
 <p>Run the following command from the <code translate="no" v-pre>/var/www/2fauth</code> directory to create a fresh <code translate="no" v-pre>.env</code> file from the <code translate="no" v-pre>.env.example</code> template:</p>
@@ -648,24 +640,6 @@ sqlite&gt; .quit</code></pre>
 </doc-codeblock></div>
 <p>Open the <code translate="no" v-pre>.env</code> file with a text editor, you will find the main environment variables that could be customized.<br />
 You won&#x27;t have to set/change all, most of them have a default value that will probably fit your needs. But some parts must be reviewed.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>Mandatory env var</h5>
-<p>The <a href="../../config/env-vars/#app_key"><code translate="no" v-pre>APP_KEY</code></a> environment variable must be set with a personal unique value. You can generate a brand new one using <a href="https://laravel-encryption-key-generator.vercel.app/">Laravel Encryption Key Generator</a>.</p>
-<p>If you need to rotate the key, use the <a href="../../config/env-vars/#app_previous_keys"><code translate="no" v-pre>APP_PREVIOUS_KEYS</code></a> environment variable to list previous keys and avoid decryption issues or invalid access tokens.</p>
-        </div>
-    </div>
-</div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-secondary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">

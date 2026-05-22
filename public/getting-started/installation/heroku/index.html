@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832780592430">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832780599766">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.5.3">
@@ -44,12 +44,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../static/2fauth_favicon.png" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832780592430" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.832780599766" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832780592430" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832780599766" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832780592430" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.832780592430" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832780599766" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.832780599766" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -72,7 +72,7 @@
                             <img class="max-h-10 hidden dark:inline-block" src="../../../static/2fauth_light.png" alt="" width="29" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">2FAuth</span>
-                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v6.0</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v5.6</span>
                 </div>
     
                 <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
@@ -244,14 +244,12 @@
     <figcaption class="caption caption-float"></figcaption>
 </figure>
 <div style="clear: both;"></div>
-<hr>
 <h2 id="restrictions">Restrictions</h2>
 <p>Heroku uses an <a href="https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem" target="_blank">ephemeral filesystem</a>, which means 2FAuth cannot use this file system to store and retrieve the 2FA icons across multiple sessions. For now, the only workaround is to disable icon display in 2FAuth:</p>
 <p><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></g></g></svg> Uncheck the <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-primary-text bg-badge-primary border border-badge-primary-border h-8 px-3 text-sm rounded-md">
     <span class="inline-flex items-center justify-center leading-none mr-2"><svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0" width="22" height="22" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M17.28 9.28a.75.75 0 0 0-1.06-1.06l-5.97 5.97-2.47-2.47a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l6.5-6.5Z"/><path d="M3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25V3.75C2 2.784 2.784 2 3.75 2ZM3.5 3.75v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25H3.75a.25.25 0 0 0-.25.25Z"/></g></svg></span>
     <span>Show icons</span>
 </span> option in the 2FAuth&#x27;s <em>Settings &gt; Options</em> section</p>
-<hr>
 <h2 id="configuration">Configuration</h2>
 <p>Although the Heroku button tends to ease the installation process, you have to configure some environment variables when creating the apps at Heroku.</p>
 <h3 id="security-keys">Security keys</h3>
@@ -409,7 +407,6 @@ MAIL_PORT=465
 MAIL_ENCRYPTION=ssl</code></pre>
 </doc-codeblock></div>
 <p>Read more about email configuration at <a href="https://laravel.com/docs/mail">https://laravel.com/docs/mail</a>.</p>
-<hr>
 <h2 id="free-resources">Free resources</h2>
 <p>2FAuth offers a basic Heroku setup which only uses free resources: A single add-ons, <code translate="no" v-pre>Heroku Postgres</code> with Hobby plan, and a single <code translate="no" v-pre>Web</code> Dyno with <code translate="no" v-pre>NGINX</code>. This way, any Heroku user can deploy the app, even if the user account is not verified.</p>
 <p>Be aware that the Postgres has some limitations, but that should not be a problem as 2FAuth has very few database needs.<br />

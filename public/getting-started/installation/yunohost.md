@@ -8,8 +8,6 @@
 
 This guide assumes you already have a Yunohost running instance.
 
----
-
 ## Installation
 
 1. Open the __:icon-package: Applications__ manager from the Yunohost Admin

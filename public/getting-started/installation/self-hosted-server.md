@@ -14,12 +14,10 @@ __Apache__ and __NGINX__ are the most popular web servers. If you rent a server 
 
 ### PHP
 
-- PHP >= [!badge 8.4]
+- PHP >= [!badge 8.1]
 - BCMath PHP Extension
 - Ctype PHP Extension
-- DOM PHP Extension
 - Fileinfo PHP Extension
-- GD PHP Extension
 - JSON PHP Extension
 - Mbstring PHP Extension
 - OpenSSL PHP Extension
@@ -33,10 +31,10 @@ Depending on the chosen database (see below), don't forget to install the corres
 
 You need a database to run 2FAuth. Supported databases are the ones supported by Laravel.
 
-- MariaDB [!badge 10.3+]
+- MariaDB [!badge 10.2+]
 - MySQL [!badge 5.7+]
-- PostgreSQL [!badge 10.0+]
-- SQLite [!badge 3.26.0+]
+- PostgreSQL [!badge 9.6+]
+- SQLite [!badge 3.8.8+]
 - SQL Server [!badge 2017+]
 
 !!! Recommendation
@@ -50,8 +48,6 @@ You need __Composer__ to install all PHP dependencies of 2FAuth. As the installa
 [!ref icon="package-dependents" target="blank" text="Install Composer"](https://getcomposer.org/doc/00-intro.md)
 
 You can test your installation by running `php composer.phar -v` in a terminal (or just `composer -v` if composer has been installed in a directory that is part of your system PATH)
-
----
 
 ## Get your 2FAuth copy
 
@@ -109,8 +105,6 @@ git checkout v3.0.0
 
 +++
 
----
-
 ## Installing dependencies
 
 ### Composer
@@ -126,8 +120,6 @@ Or if you didn't add composer to your system PATH:
 ```sh
 php composer.phar install --prefer-dist --no-scripts --no-dev
 ```
-
----
 
 ## Web server configuration
 
@@ -254,8 +246,6 @@ location /2fauth/ {
 
 +++
 
----
-
 ## Create the database
 
 Use the CLI of the chosen database to create a new database with one of the following commands:
@@ -298,8 +288,6 @@ If you are not comfortable with the command line, you may use a db management to
 
 [!ref icon="package-dependents" target="blank" text="Get Adminer"](https://www.adminer.org/)
 
----
-
 ## 2FAuth set up (wizard)
 
 2FAuth provides an __artisan__ command to set up everything easily. If you want to set up all by hand, please follow the next section: [2FAuth set up (manual)](#2fauth-set-up-manual).
@@ -333,8 +321,6 @@ What the wizard do for you is :
 
 All these steps are detailed below if you want to dive into them.
 
----
-
 ## 2FAuth set up (manual)
 
 ### Set the .env file
@@ -347,12 +333,6 @@ mv .env.example .env
 
 Open the `.env` file with a text editor, you will find the main environment variables that could be customized.  
 You won't have to set/change all, most of them have a default value that will probably fit your needs. But some parts must be reviewed.
-
-!!!warning Mandatory env var
-The [`APP_KEY`](/getting-started/config/env-vars/#app_key) environment variable must be set with a personal unique value. You can generate a brand new one using [Laravel Encryption Key Generator](https://laravel-encryption-key-generator.vercel.app/).  
-
-If you need to rotate the key, use the [`APP_PREVIOUS_KEYS`](/getting-started/config/env-vars/#app_previous_keys) environment variable to list previous keys and avoid decryption issues or invalid access tokens.
-!!!
 
 !!!secondary
 See [Configuration](/getting-started/config/env-vars/) to learn about all the environment variables that can be set.
