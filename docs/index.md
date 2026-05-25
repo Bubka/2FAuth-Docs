@@ -1,8 +1,9 @@
 ---
 label: Welcome
+title: Home
 ---
 
-# Take back control of your 2FA data
+# twofauth
 
 <style>
     html.dark .light-screen,
@@ -15,24 +16,50 @@ label: Welcome
     }
 </style>
 
-## Self-hosted OTP manager for individuals and teams
+<div class="card-signal-group tfauth-hero p-6 ">
+    <div class="card-signal-container">
+        <img src="/static/2fauth_dark.png" alt="logo" width="50px" />
+        <div class="tfauth-hero-heading font-card-title leading-card-title text-card-title-text md:text-card-title-md">Take back control of your 2FA workflow</div>
+        <p class="text-card-kicker font-card-kicker text-card-kicker-text card-kicker-case">Self-hosted OTP manager for individuals and teams</p>
+        <p class="mt-12 text-xl">
+            2FAuth lets you securely store, generate and organize your two-factor authentication codes in a modern web application.
+        </p>
+        <p class="">
+            Whether you need to protect personal accounts, manage company access, or secure your family’s online activities, 2FAuth provides a secure and independent alternative to proprietary authenticator apps.
+        </p>
+    </div>
+    <div class="card-signal-container">
+        <img src="static/hero_light.png" alt="Image du hero" class="dark:hidden md:inline-block rounded-lg w-full h-auto" width="50%">
+        <img src="static/hero_dark.png" alt="Image du hero" class="hidden dark:inline-block rounded-lg w-full h-auto" width="50%">
+    </div>
+</div>
 
-2FAuth lets you securely store, generate and organize your two-factor authentication codes in a modern web application.
-
-Whether you need to protect personal accounts, manage company access, or secure your family’s online activities, 2FAuth provides a secure and independent alternative to proprietary authenticator apps.
+<!-- <div class="tfauth-hero m-4 p-6 flex items-center justify-between flex-reverse-wrap">
+    <div>
+        <img src="/static/2fauth_dark.png" alt="logo" />
+        <h1 class="">Take back control of your 2FA data</h1>
+        <p class="">Self-hosted OTP manager for individuals and teams</p>
+        <p class="text-xl">
+            2FAuth lets you securely store, generate and organize your two-factor authentication codes in a modern web application.
+        </p>
+    </div>
+    <div class="w-1/3">
+        <img src="static/hero.png" alt="Image du hero" class="rounded-lg w-full h-auto">
+    </div>
+</div> -->
 
 ---
 
 ## Why 2FAuth?
 
-Most authenticator apps lock your 2FA personal data inside closed ecosystems tied to a single device, account or vendor. It's restrictive, inflexible, and time-consuming.
+Most authenticator apps lock your 2FA personal data inside closed ecosystems tied to a single device, account or vendor. It is restrictive, not very agile, and quite time-consuming.
 
 2FAuth takes a different approach to bring you control, privacy and efficiency:
 
 {.list-icon}
 
-- :icon-check: You own your data
 - :icon-check: Accessible from anywhere
+- :icon-check: You own your data
 - :icon-check: Integrates seamlessly with any authentication workflow
 - :icon-check: Built for both personal and collaborative use
 - :icon-check: Allows backup, import and export
@@ -65,6 +92,10 @@ Your codes are always at your fingertips.
 - No dependency on a single phone
 - No lock-in
 
+|||
+:::
+
+:::feature-grid
 ||| :icon-people: Multi-user Ready
 Designed for organizations as much as individuals.
 
@@ -72,10 +103,6 @@ Designed for organizations as much as individuals.
 - Isolated personal vaults
 - Control of registrations
 
-|||
-:::
-
-:::feature-grid
 ||| :icon-share-android: Share 2FA safely
 2FAuth allows secure sharing of 2FA codes between users so teams can:
 
@@ -83,7 +110,11 @@ Designed for organizations as much as individuals.
 - Onboard/Offboard seamlessly
 - Focus on value-adding tasks, not accesses
 
-||| :icon-shield-check: Security & Privacy
+|||
+:::
+
+:::feature-grid
+|||:icon-shield-check: Security & Privacy
 You remain in control of your infrastructure and your data.
 
 - Encrypted secrets storage

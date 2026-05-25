@@ -130,6 +130,22 @@ footer ul li a[href="https://github.com/sponsors/Bubka"] svg {
   border-radius:0.5rem;
 }
 
+.tfauth-hero {
+    border-radius:0.5rem;
+    background-color: #e0ecfc;
+}
+
+.dark .tfauth-hero {
+    background-color: #242424;
+}
+
+.tfauth-hero-heading {
+    font-size: 3rem;
+}
+
+.feature-grid  {
+    margin: 0 7%;
+}
 .feature-grid .docs-columns,
 .feature-grid .items-center,
 .feature-grid .docs-columns-content  {
@@ -140,4 +156,8 @@ footer ul li a[href="https://github.com/sponsors/Bubka"] svg {
 }
 .feature-grid .items-center  {
     font-size: 1.125rem;
+}
+
+h1#twofauth {
+    display: none !important;
 }
