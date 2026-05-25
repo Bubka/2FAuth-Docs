@@ -13,6 +13,8 @@ Asterisks next to the var names aim to identify important vars:
 Set only the vars that need to be ajusted. If a var is not set, its default value will be applied.
 !!!
 
+---
+
 ## How To
 
 You can set environment variables in various ways, depending on the running environment you chose.
@@ -36,6 +38,8 @@ The configuration may have been cached. If so, clear the cache before editing th
 
 Once variables have been modified, (re)build the cache by running `php artisan config:cache`
 !!!
+
+---
 
 ## General setting
 
@@ -88,7 +92,7 @@ Description
 
     This global setting can be overridden by users via in-app settings for a personalised dates and times display.
 
-    !!! warning
+    !!!
     If this setting is changed while the application is already running, existing records in the database won't be updated.
     !!!
 
@@ -122,13 +126,82 @@ Default value
 :::env-var-dl-wrapper
 
 Description
-:   The encryption key for all security related features (sessions, [DB encryption](/security/data-protection/#db-encryption), [webauthn](/security/authentication/webauthn/), [personal access token](/security/authentication/pat/))
+:   The application's encryption key used by all security related features (sessions, [DB encryption](/security/data-protection/#db-encryption), [webauthn](/security/authentication/webauthn/), [personal access token](/security/authentication/pat/))
 
-    !!! warning
-    Keep this very secure. If you loose it or generate a new one, all existing encrypted data in db must be considered LOST.
+    !!!warning
+    Keep this very secure. If you loose it, all encrypted data stored in the database must be considered LOST.
     !!!
 
-    You can generate a key with the `php artisan key:generate` command.
+    You may need to change it, for example for security reasons. In such case, add the previous value to the [APP_PREVIOUS_KEYS](#app_previous_keys) variable to prevent app failures like unreadable data or auth token revocation.
+    
+    Once changed, all new encryption tasks will use the new key. Decryption tasks will first be performed with the new key and then with all previous keys until one of them can decrypt the value.
+
+    !!!tip
+    You can generate a key by running the `php artisan key:generate` command line.
+    !!!
+
+Default value
+:   _none_
+
+:::
+
+### <span>APP_KEY_FILE</span>
+
+[!badge variant="info" text="docker secret"] [!badge variant="info" text="since v6.0"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Suffixed version of the [APP_KEY](#app_key) variable to be used in conjunction with a <a href="https://docs.docker.com/compose/how-tos/use-secrets/" target="_blank">docker secret</a>.
+
+    Use it instead of `APP_KEY` when you want the encryption key to be set via a mounted secret file at `/run/secrets/` in your compose file.
+
+    !!!warning
+    `APP_KEY_FILE` has priority over `APP_KEY`. If you set both, only `APP_KEY_FILE` will be used. This is the only situation where `APP_KEY` can be omitted.
+    !!!
+
+    !!!warning
+    Do not use this outside of a compose file
+    !!!
+
+    Basic example:
+
+    ```yml docker-compose.yml
+    services:
+      2fauth:
+        image: 2fauth/2fauth
+        container_name: 2fauth
+        env_file: settings.env
+        environment:
+          APP_KEY_FILE: /run/secrets/app_key
+        volumes:
+          - ./2fauth:/2fauth
+        secrets:
+          - app_key
+    secrets:
+      app_key:
+        file: /2fauth/app_key.txt
+    ```
+
+Default value
+:   _none_
+
+:::
+
+### <span class="expected">APP_PREVIOUS_KEYS</span>
+
+[!badge variant="info" text="string"] [!badge variant="info" text="comma-delimited list"] [!badge variant="info" text="since v6.0"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Comma-delimited list of application's former encryption keys.
+
+    When you change [APP_KEY](#app_key), 2FAuth uses `APP_PREVIOUS_KEYS` to decrypt existing data (like session cookies) with old keys, preventing user logouts or data loss after a key rotation.
+
+    !!!warning
+    Keep this very secure. If you loose it, some encrypted data stored in the database must be considered LOST.
+    !!!
 
 Default value
 :   _none_
@@ -144,15 +217,15 @@ Default value
 Description
 :   The web address (URL) of your 2FAuth instance, e.g. `https://2fauth.mydomain.com`
 
-    !!! primary
+    !!!primary
     Ensure the value you set uses the `https` scheme when 2FAuth is reached through a secure connection
     !!!
 
-    !!! primary
-    If a custom port is used, it must be appended to the URL: `https://2fauth.mydomain.com:8001`
+    !!!primary
+    If a custom port is used, append it to the URL: `https://2fauth.mydomain.com:8001`
     !!!
 
-    !!! warning
+    !!!warning
     This __must__ match your instance's external address (the location in your browser address bar) otherwise you'll get a blank page or [WebAuthn](/security/authentication/webauthn/) authentication won't work.
     !!!
 
@@ -186,7 +259,7 @@ Default value
 Description
 :   The domain subdirectory from which you want to serve 2FAuth.
 
-    !!! warning
+    !!!warning
     This must reflect the path targeted by [APP_URL](#app_url).
     !!!
 
@@ -212,7 +285,7 @@ Description
 
     In Demo mode, the app displays some banners and disables certain features such as the password reset.
     
-    !!! primary
+    !!!primary
     You can feed a demo app with fake data using the artisan command `php artisan 2fauth:reset-demo`.
     
     Setting `IS_DEMO_APP` to `true` is mandatory for this command to run.
@@ -239,6 +312,23 @@ Description
 
 Default value
 :   `60`
+
+:::
+
+### THROTTLE_API_DURING_IMPORT
+
+[!badge variant="info" text="number"] [!badge variant="info" text="since v6.1"]
+
+:::env-var-dl-wrapper
+
+Description
+:   The maximum number of API calls made specifically by the Import feature in a minute from the same IP.
+
+    Set to `null` to disable the API throttling of the Import feature.
+    Has no effect if THROTTLE_API is set to `null`.
+
+Default value
+:   `1000`
 
 :::
 
@@ -312,9 +402,12 @@ Alias
 :::env-var-dl-wrapper
 
 Description
-:   The authentication log retention time, in days.
-
+:   The authentication log retention time, in days.  
     Log entries older than that are automatically deleted.
+
+    !!!
+    Administrators can access authentication logs directly via the web app's user interface. These logs allow to audit user authentiction events.
+    !!!
 
 Default value
 :   `365`
@@ -921,7 +1014,7 @@ Default value
 Description
 :   SSL peer verification.
 
-    !!! warning
+    !!!warning
     Disabling peer verification may result in a major security flaw. Change it only if you know what you're doing.
     !!!
 
@@ -1289,6 +1382,59 @@ Default value
 
 :::
 
+### BLOCK_OPTAUTH_IMAGELINK_FETCHING
+
+[!badge variant="info" text="boolean"] [!badge variant="info" text="since v6.1"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Prevents 2FAuth to fetch image resources linked in OTPauth URIs (encoded in QR Code).
+
+    This is mainly used as a defense against Blind Server-Side Request Forgery (SSRF) attacks, in which the application can be induced to issue a back-end HTTP request to a supplied URL without this being visible from the frontend.
+
+    If fetching is allowed, 2FAuth mitigates the risk of Blind SSRF attacks by filtering image link urls. Only public (aka external), HTTP(S) and valid URLs pointing to supported image files are requested.
+
+Default value
+:   `true`
+
+:::
+
+### OTP_LOG_RETENTION
+
+[!badge variant="info" text="number"] [!badge variant="info" text="since v7.0"]
+
+:::env-var-dl-wrapper
+
+Description
+:   The OTP generation log retention time, in days.  
+    Log entries older than that are automatically deleted.
+
+    !!!
+    End users can access OTP generation logs directly via the web app's user interface. These logs allow 2FA account owners to audit OTP generation events.
+    !!!
+
+Default value
+:   `365`
+
+:::
+
+### CONTENT_SECURITY_POLICY
+
+[!badge variant="info" text="boolean"] [!badge variant="info" text="since v5.4.1"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Set this to true to enable Content-Security-Policy (CSP).
+
+    CSP helps to prevent or minimize the risk of certain types of security threats. This is mainly used as a defense against cross-site scripting (XSS) attacks, in which an attacker is able to inject malicious code into the web app
+
+Default value
+:   `true`
+
+:::
+
 ## Session setting
 
 ### SESSION_DRIVER
@@ -1552,6 +1698,27 @@ Description
 
 Default value
 :   _none_
+
+:::
+
+### OPENID_HTTP_VERIFY_SSL_PEER
+
+[!badge variant="info" text="boolean"] [!badge variant="info" text="string"] [!badge variant="info" text="since v5.6"]
+
+:::env-var-dl-wrapper
+
+Description
+:   SSL peer verification during OpenID authentication process
+
+    !!!warning
+    Disabling peer verification may result in a major security flaw. Change it only if you know what you're doing.
+    !!!
+
+Possible values
+:   `true`, `false` or a string representing the path to a custom certificate on disk, like `/path/to/cert.pem`
+
+Default value
+:   `true`
 
 :::
 

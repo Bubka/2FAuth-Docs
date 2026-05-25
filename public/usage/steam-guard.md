@@ -12,6 +12,8 @@ This guide assumes you are a Steam user with some advanced skills who may alread
 The secret is a sensitive data. Don't share it with anyone, don't save it anywhere without any protection.
 !!!
 
+---
+
 ## Getting the Steam secret
 
 ### Steam Desktop Authenticator (SDA)
@@ -83,6 +85,8 @@ Don't forget to set SDA encryption back On
 |||
 [!ref icon="globe" target="blank" text="steamguard-cli"](https://github.com/dyc3/steamguard-cli)
 
+---
+
 ## Adding to 2FAuth
 
 ### The manual way
@@ -111,6 +115,6 @@ otpauth://totp/Steam:johndoe?secret={YourSecretHere}&issuer=Steam
 
 Then flash (or upload) the QR code to add the account to 2FAuth, just like any other QR code.
 
-!!! warning Avoid online generators
+!!!warning Avoid online generators
 As said earlier, the secret is a sensitive data. You should definitely avoid online generators to convert such data.
 !!!

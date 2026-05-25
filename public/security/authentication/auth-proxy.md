@@ -8,6 +8,8 @@ You can configure 2FAuth to let an HTTP proxy handle authentication. In this cas
 2FAuth only check for the header presence, nor its validity nor its content, so be sure your instance cannot be reached otherwise than through your auth proxy.
 !!!
 
+---
+
 ## Enable the proxy guard
 
 Set the `AUTHENTICATION_GUARD` environment variable to `reverse-proxy-guard` to enable the auth proxy authentication.  
@@ -20,6 +22,8 @@ AUTHENTICATION_GUARD=reverse-proxy-guard
 WebAuthn and Personal Access Token are not supported when using the `reverse-proxy-guard`
 !!!
 
+---
+
 ## Define the header value
 
 The `REMOTE_USER` header can take any value. For 2FAuth, its value is the username of the user account to consider authenticated.
@@ -27,6 +31,8 @@ The `REMOTE_USER` header can take any value. For 2FAuth, its value is the userna
 If you already have a user account in 2FAuth, set the `REMOTE_USER` header value (at proxy level) like the _name_ field of your account.
 
 If you do not have a user account yet, or if you want to be authenticated as a brand new user, set the header to a fresh value, 2FAuth will take care of creating the account for you.
+
+---
 
 ## Customize the header name
 
@@ -43,6 +49,8 @@ Some proxies may add a prefix to headers, like `HTTP_`. You have to add it to yo
 # if the proxy prefix is 'HTTP_'
 AUTH_PROXY_HEADER_FOR_USER=HTTP_2FAUTH-User
 ```
+
+---
 
 ## Additional header
 

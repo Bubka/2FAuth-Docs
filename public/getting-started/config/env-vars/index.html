@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832780603157">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.833004713780">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.5.3">
@@ -38,11 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../static/2fauth_favicon.png" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832780603157" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.833004713780" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832780603157" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.833004713780" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832780603157" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.833004713780" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.833004713780" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -65,7 +66,7 @@
                             <img class="max-h-10 hidden dark:inline-block" src="../../../static/2fauth_light.png" alt="" width="29" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">2FAuth</span>
-                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v5.5</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v7.0</span>
                 </div>
     
                 <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
@@ -253,6 +254,7 @@
         </div>
     </div>
 </div>
+<hr>
 <h2 id="how-to">How To</h2>
 <p>You can set environment variables in various ways, depending on the running environment you chose.</p>
 <ul>
@@ -331,6 +333,7 @@
         </div>
     </div>
 </div>
+<hr>
 <h2 id="general-setting">General setting</h2>
 <div class="has-following-h3-more-spaced"></div>
 <h3 id="app_name">APP_NAME</h3>
@@ -388,7 +391,6 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>warning</h5>
 <p>If this setting is changed while the application is already running, existing records in the database won&#x27;t be updated.</p>
         </div>
     </div>
@@ -425,28 +427,144 @@ Default value</dd>
 <div class="env-var-dl-wrapper">
 <dl>
 <dt id="description-4">Description</dt>
-<dd><p>The encryption key for all security related features (sessions, <a href="../../../security/data-protection/#db-encryption">DB encryption</a>, <a href="../../../security/authentication/webauthn/">webauthn</a>, <a href="../../../security/authentication/pat/">personal access token</a>)</p>
+<dd><p>The application&#x27;s encryption key used by all security related features (sessions, <a href="../../../security/data-protection/#db-encryption">DB encryption</a>, <a href="../../../security/authentication/webauthn/">webauthn</a>, <a href="../../../security/authentication/pat/">personal access token</a>)</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>warning</h5>
-<p>Keep this very secure. If you loose it or generate a new one, all existing encrypted data in db must be considered LOST.</p>
+<p>Keep this very secure. If you loose it, all encrypted data stored in the database must be considered LOST.</p>
         </div>
     </div>
 </div>
-<p>You can generate a key with the <code translate="no" v-pre>php artisan key:generate</code> command.</p>
+<p>You may need to change it, for example for security reasons. In such case, add the previous value to the <doc-anchor-trigger to="#app_previous_keys">APP_PREVIOUS_KEYS</doc-anchor-trigger> variable to prevent app failures like unreadable data or auth token revocation.</p>
+<p>Once changed, all new encryption tasks will use the new key. Decryption tasks will first be performed with the new key and then with all previous keys until one of them can decrypt the value.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>You can generate a key by running the <code translate="no" v-pre>php artisan key:generate</code> command line.</p>
+        </div>
+    </div>
+</div>
 </dd>
 <dt id="default-value-3">Default value</dt>
+<dd><p><em>none</em></p>
+</dd>
+</dl>
+</div>
+<h3 id="app_key_file"><span>APP_KEY_FILE</span></h3>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>docker secret</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>since v6.0</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt id="description-5">Description</dt>
+<dd><p>Suffixed version of the <doc-anchor-trigger to="#app_key">APP_KEY</doc-anchor-trigger> variable to be used in conjunction with a <a href="https://docs.docker.com/compose/how-tos/use-secrets/" target="_blank">docker secret</a>.</p>
+<p>Use it instead of <code translate="no" v-pre>APP_KEY</code> when you want the encryption key to be set via a mounted secret file at <code translate="no" v-pre>/run/secrets/</code> in your compose file.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p><code translate="no" v-pre>APP_KEY_FILE</code> has priority over <code translate="no" v-pre>APP_KEY</code>. If you set both, only <code translate="no" v-pre>APP_KEY_FILE</code> will be used. This is the only situation where <code translate="no" v-pre>APP_KEY</code> can be omitted.</p>
+        </div>
+    </div>
+</div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Do not use this outside of a compose file</p>
+        </div>
+    </div>
+</div>
+<p>Basic example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">docker-compose.yml</div>
+<pre translate="no" class="language-yaml"><code v-pre class="language-yaml">services:
+  2fauth:
+    image: 2fauth/2fauth
+    container_name: 2fauth
+    env_file: settings.env
+    environment:
+      APP_KEY_FILE: /run/secrets/app_key
+    volumes:
+      - ./2fauth:/2fauth
+    secrets:
+      - app_key
+secrets:
+  app_key:
+    file: /2fauth/app_key.txt</code></pre>
+</doc-codeblock></div>
+</dd>
+<dt id="default-value-4">Default value</dt>
+<dd><p><em>none</em></p>
+</dd>
+</dl>
+</div>
+<h3 id="app_previous_keys"><span class="expected">APP_PREVIOUS_KEYS</span></h3>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>comma-delimited list</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>since v6.0</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt id="description-6">Description</dt>
+<dd><p>Comma-delimited list of application&#x27;s former encryption keys.</p>
+<p>When you change <doc-anchor-trigger to="#app_key">APP_KEY</doc-anchor-trigger>, 2FAuth uses <code translate="no" v-pre>APP_PREVIOUS_KEYS</code> to decrypt existing data (like session cookies) with old keys, preventing user logouts or data loss after a key rotation.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Keep this very secure. If you loose it, some encrypted data stored in the database must be considered LOST.</p>
+        </div>
+    </div>
+</div>
+</dd>
+<dt id="default-value-5">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -459,7 +577,7 @@ Default value</dd>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-5">Description</dt>
+<dt id="description-7">Description</dt>
 <dd><p>The web address (URL) of your 2FAuth instance, e.g. <code translate="no" v-pre>https://2fauth.mydomain.com</code></p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
@@ -474,7 +592,6 @@ Default value</dd>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>primary</h5>
 <p>Ensure the value you set uses the <code translate="no" v-pre>https</code> scheme when 2FAuth is reached through a secure connection</p>
         </div>
     </div>
@@ -492,31 +609,28 @@ Default value</dd>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>primary</h5>
-<p>If a custom port is used, it must be appended to the URL: <code translate="no" v-pre>https://2fauth.mydomain.com:8001</code></p>
+<p>If a custom port is used, append it to the URL: <code translate="no" v-pre>https://2fauth.mydomain.com:8001</code></p>
         </div>
     </div>
 </div>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>warning</h5>
 <p>This <strong>must</strong> match your instance&#x27;s external address (the location in your browser address bar) otherwise you&#x27;ll get a blank page or <a href="../../../security/authentication/webauthn/">WebAuthn</a> authentication won&#x27;t work.</p>
         </div>
     </div>
 </div>
 </dd>
-<dt id="default-value-4">Default value</dt>
+<dt id="default-value-6">Default value</dt>
 <dd><p><code translate="no" v-pre>http://localhost</code></p>
 </dd>
 </dl>
@@ -531,11 +645,11 @@ Default value</dd>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-6">Description</dt>
+<dt id="description-8">Description</dt>
 <dd><p>The URL of your 2FAuth assets (CSS &amp; JS files), e.g. <code translate="no" v-pre>https://2fauth.cdn.com</code></p>
 <p>Only set this variable if you want to serve assets from a location other than your primary server, such as a CDN. Otherwise, do not set this variable.</p>
 </dd>
-<dt id="default-value-5">Default value</dt>
+<dt id="default-value-7">Default value</dt>
 <dd><p>Fallbacks to the <doc-anchor-trigger to="#app_url">APP_URL</doc-anchor-trigger> value when the var is not set.</p>
 </dd>
 </dl>
@@ -550,22 +664,20 @@ Default value</dd>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-7">Description</dt>
+<dt id="description-9">Description</dt>
 <dd><p>The domain subdirectory from which you want to serve 2FAuth.</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>warning</h5>
 <p>This must reflect the path targeted by <doc-anchor-trigger to="#app_url">APP_URL</doc-anchor-trigger>.</p>
         </div>
     </div>
@@ -574,7 +686,7 @@ Default value</dd>
 <p>If you previously set <code translate="no" v-pre>APP_URL</code> to <code translate="no" v-pre>https://mydomain.org/2fa</code> to access 2FAuth from the <code translate="no" v-pre>/2fa/</code> subdirectory, you have to set <code translate="no" v-pre>APP_SUBDIRECTORY=2fa</code>.</p>
 <p>Leave blank if you serve 2FAuth from the domain root.</p>
 </dd>
-<dt id="default-value-6">Default value</dt>
+<dt id="default-value-8">Default value</dt>
 <dd><p><em>blank</em></p>
 </dd>
 </dl>
@@ -585,7 +697,7 @@ Default value</dd>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-8">Description</dt>
+<dt id="description-10">Description</dt>
 <dd><p>Makes the 2FAuth instance behave like a demonstration app.</p>
 <p>In Demo mode, the app displays some banners and disables certain features such as the password reset.</p>
 <div class="flex mb-6">
@@ -601,14 +713,13 @@ Default value</dd>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>primary</h5>
 <p>You can feed a demo app with fake data using the artisan command <code translate="no" v-pre>php artisan 2fauth:reset-demo</code>.</p>
 <p>Setting <code translate="no" v-pre>IS_DEMO_APP</code> to <code translate="no" v-pre>true</code> is mandatory for this command to run.</p>
         </div>
     </div>
 </div>
 </dd>
-<dt id="default-value-7">Default value</dt>
+<dt id="default-value-9">Default value</dt>
 <dd><p><code translate="no" v-pre>false</code></p>
 </dd>
 </dl>
@@ -622,13 +733,31 @@ Default value</dd>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-9">Description</dt>
+<dt id="description-11">Description</dt>
 <dd><p>The maximum number of API calls in a minute from the same IP.<br />
 Once reached, all requests from this IP will be rejected until the minute has elapsed.</p>
 <p>Set to <code translate="no" v-pre>null</code> to disable the API throttling.</p>
 </dd>
-<dt id="default-value-8">Default value</dt>
+<dt id="default-value-10">Default value</dt>
 <dd><p><code translate="no" v-pre>60</code></p>
+</dd>
+</dl>
+</div>
+<h3 id="throttle_api_during_import">THROTTLE_API_DURING_IMPORT</h3>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>number</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>since v6.1</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt id="description-12">Description</dt>
+<dd><p>The maximum number of API calls made specifically by the Import feature in a minute from the same IP.</p>
+<p>Set to <code translate="no" v-pre>null</code> to disable the API throttling of the Import feature.
+Has no effect if THROTTLE_API is set to <code translate="no" v-pre>null</code>.</p>
+</dd>
+<dt id="default-value-11">Default value</dt>
+<dd><p><code translate="no" v-pre>1000</code></p>
 </dd>
 </dl>
 </div>
@@ -641,11 +770,11 @@ Once reached, all requests from this IP will be rejected until the minute has el
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-10">Description</dt>
+<dt id="description-13">Description</dt>
 <dd><p>The number of times per minute a user can fail to log in before being locked out.</p>
 <p>Once reached, all login attempts will be rejected until the minute has elapsed. This setting applies to both email/password and webauthn login attemps.</p>
 </dd>
-<dt id="default-value-9">Default value</dt>
+<dt id="default-value-12">Default value</dt>
 <dd><p><code translate="no" v-pre>5</code></p>
 </dd>
 </dl>
@@ -658,7 +787,7 @@ Once reached, all requests from this IP will be rejected until the minute has el
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-11">Description</dt>
+<dt id="description-14">Description</dt>
 <dd><p>The authentication guard used to perform users authentication.</p>
 </dd>
 </dl>
@@ -685,7 +814,7 @@ Once reached, all requests from this IP will be rejected until the minute has el
 </div>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="default-value-10">Default value</dt>
+<dt id="default-value-13">Default value</dt>
 <dd><code translate="no" v-pre>web-guard</code></dd>
 <dt id="alias">Alias</dt>
 <dd><p><code translate="no" v-pre>AUTH_GUARD</code></p>
@@ -700,11 +829,28 @@ Once reached, all requests from this IP will be rejected until the minute has el
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-12">Description</dt>
-<dd><p>The authentication log retention time, in days.</p>
-<p>Log entries older than that are automatically deleted.</p>
+<dt id="description-15">Description</dt>
+<dd><p>The authentication log retention time, in days.<br />
+Log entries older than that are automatically deleted.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Administrators can access authentication logs directly via the web app&#x27;s user interface. These logs allow to audit user authentiction events.</p>
+        </div>
+    </div>
+</div>
 </dd>
-<dt id="default-value-11">Default value</dt>
+<dt id="default-value-14">Default value</dt>
 <dd><p><code translate="no" v-pre>365</code></p>
 </dd>
 </dl>
@@ -717,12 +863,12 @@ Once reached, all requests from this IP will be rejected until the minute has el
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-13">Description</dt>
+<dt id="description-16">Description</dt>
 <dd><p>Name of the HTTP header sent by the authentication proxy. This header identifies the user authenticated at proxy level.</p>
 <p>Check your proxy documentation to find out how this header is named (i.e <code translate="no" v-pre>REMOTE_USER</code>)</p>
 <p>Only relevant when <doc-anchor-trigger to="#authentication_guard">AUTHENTICATION_GUARD</doc-anchor-trigger> is set to <code translate="no" v-pre>reverse-proxy-guard</code>.</p>
 </dd>
-<dt id="default-value-12">Default value</dt>
+<dt id="default-value-15">Default value</dt>
 <dd><p><code translate="no" v-pre>REMOTE_USER</code></p>
 </dd>
 </dl>
@@ -735,12 +881,12 @@ Once reached, all requests from this IP will be rejected until the minute has el
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-14">Description</dt>
+<dt id="description-17">Description</dt>
 <dd><p>Name of the HTTP header sent by the authentication proxy that provides the email address of the user authenticated at proxy level.</p>
 <p>Check your proxy documentation to find out how this header is named (i.e <code translate="no" v-pre>REMOTE_EMAIL</code>)</p>
 <p>Only relevant when <doc-anchor-trigger to="#authentication_guard">AUTHENTICATION_GUARD</doc-anchor-trigger> is set to <code translate="no" v-pre>reverse-proxy-guard</code>.</p>
 </dd>
-<dt id="default-value-13">Default value</dt>
+<dt id="default-value-16">Default value</dt>
 <dd><p><code translate="no" v-pre>null</code></p>
 </dd>
 </dl>
@@ -755,12 +901,12 @@ Once reached, all requests from this IP will be rejected until the minute has el
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-15">Description</dt>
+<dt id="description-18">Description</dt>
 <dd><p>Custom logout URL to open when a user clicks the <em>Logout</em> link in 2FAuth.<br />
 In most case this would send the user to the logout page of your authentication proxy.</p>
 <p>Only relevant when <doc-anchor-trigger to="#authentication_guard">AUTHENTICATION_GUARD</doc-anchor-trigger> is set to <code translate="no" v-pre>reverse-proxy-guard</code>.</p>
 </dd>
-<dt id="default-value-14">Default value</dt>
+<dt id="default-value-17">Default value</dt>
 <dd><p><code translate="no" v-pre>null</code></p>
 </dd>
 </dl>
@@ -773,11 +919,11 @@ In most case this would send the user to the logout page of your authentication 
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-16">Description</dt>
+<dt id="description-19">Description</dt>
 <dd><p>Name of the Relying Party in the WebAuthn process. This should match the name of the application.</p>
 <p>Do not set to <code translate="no" v-pre>null</code>.</p>
 </dd>
-<dt id="default-value-15">Default value</dt>
+<dt id="default-value-18">Default value</dt>
 <dd><p>Fallbacks to the <doc-anchor-trigger to="#app_name">APP_NAME</doc-anchor-trigger> value when the var is not set.</p>
 </dd>
 </dl>
@@ -790,13 +936,13 @@ In most case this would send the user to the logout page of your authentication 
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-17">Description</dt>
+<dt id="description-20">Description</dt>
 <dd><p>ID of the Relying Party in the WebAuthn process. This should equal the application domain (i.e 2fauth.example.com).</p>
 <p>While only the <doc-anchor-trigger to="#webauthn_name">WEBAUTHN_NAME</doc-anchor-trigger> is enough, you can further set a custom domain as ID.<br />
 If set to <code translate="no" v-pre>null</code>, the device will fill it internally.</p>
 <p>See <a href="https://webauthn-doc.spomky-labs.com/prerequisites/the-relying-party#how-to-determine-the-relying-party-id" target="_blank">How to determine the relying party id</a> for more information.</p>
 </dd>
-<dt id="default-value-16">Default value</dt>
+<dt id="default-value-19">Default value</dt>
 <dd><p><code translate="no" v-pre>null</code></p>
 </dd>
 </dl>
@@ -807,7 +953,7 @@ If set to <code translate="no" v-pre>null</code>, the device will fill it intern
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-18">Description</dt>
+<dt id="description-21">Description</dt>
 <dd><p>Setting to control how user verification behave during the WebAuthn authentication flow.</p>
 <p>See <a href="../../../security/authentication/webauthn/#user-verification">WebAuthn user verification</a>.</p>
 </dd>
@@ -827,7 +973,7 @@ If set to <code translate="no" v-pre>null</code>, the device will fill it intern
 </div>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="default-value-17">Default value</dt>
+<dt id="default-value-20">Default value</dt>
 <dd><p><code translate="no" v-pre>preferred</code></p>
 </dd>
 </dl>
@@ -839,7 +985,7 @@ If set to <code translate="no" v-pre>null</code>, the device will fill it intern
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-19">Description</dt>
+<dt id="description-22">Description</dt>
 <dd><p>The default cache store used by 2FAuth when executing caching functions</p>
 </dd>
 </dl>
@@ -922,7 +1068,7 @@ If set to <code translate="no" v-pre>null</code>, the device will fill it intern
 </div>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="default-value-18">Default value</dt>
+<dt id="default-value-21">Default value</dt>
 <dd><code translate="no" v-pre>file</code></dd>
 <dt id="alias-1">Alias</dt>
 <dd><p><code translate="no" v-pre>CACHE_STORE</code></p>
@@ -937,7 +1083,7 @@ If set to <code translate="no" v-pre>null</code>, the device will fill it intern
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-20">Description</dt>
+<dt id="description-23">Description</dt>
 <dd><p>The database driver to be used.</p>
 </dd>
 </dl>
@@ -958,7 +1104,7 @@ If set to <code translate="no" v-pre>null</code>, the device will fill it intern
 </div>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="default-value-19">Default value</dt>
+<dt id="default-value-22">Default value</dt>
 <dd><p><code translate="no" v-pre>mysql</code></p>
 </dd>
 </dl>
@@ -969,7 +1115,7 @@ If set to <code translate="no" v-pre>null</code>, the device will fill it intern
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-21">Description</dt>
+<dt id="description-24">Description</dt>
 <dd><p>Name of the database (when using <code translate="no" v-pre>mysql</code>, <code translate="no" v-pre>pgsql</code> and <code translate="no" v-pre>sqlsrv</code> drivers) or path to the <code translate="no" v-pre>sqlite</code> file</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
@@ -990,7 +1136,7 @@ If set to <code translate="no" v-pre>null</code>, the device will fill it intern
     </div>
 </div>
 </dd>
-<dt id="default-value-20">Default value</dt>
+<dt id="default-value-23">Default value</dt>
 <dd><p><code translate="no" v-pre>2fauth</code></p>
 </dd>
 </dl>
@@ -1005,11 +1151,11 @@ If set to <code translate="no" v-pre>null</code>, the device will fill it intern
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-22">Description</dt>
+<dt id="description-25">Description</dt>
 <dd><p>Address of the resource hosting your database.</p>
 <p>Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </dd>
-<dt id="default-value-21">Default value</dt>
+<dt id="default-value-24">Default value</dt>
 <dd><p><code translate="no" v-pre>127.0.0.1</code></p>
 </dd>
 </dl>
@@ -1020,7 +1166,7 @@ If set to <code translate="no" v-pre>null</code>, the device will fill it intern
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-23">Description</dt>
+<dt id="description-26">Description</dt>
 <dd><p>Port used to communicate with the database host.</p>
 <p>Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </dd>
@@ -1037,11 +1183,11 @@ If set to <code translate="no" v-pre>null</code>, the device will fill it intern
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-24">Description</dt>
+<dt id="description-27">Description</dt>
 <dd><p>The username used to connect to the database.</p>
 <p>Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </dd>
-<dt id="default-value-22">Default value</dt>
+<dt id="default-value-25">Default value</dt>
 <dd><p><code translate="no" v-pre>2fauth</code></p>
 </dd>
 </dl>
@@ -1052,12 +1198,12 @@ If set to <code translate="no" v-pre>null</code>, the device will fill it intern
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-25">Description</dt>
+<dt id="description-28">Description</dt>
 <dd><p>The password used to connect to the database.</p>
 <p>When using <code translate="no" v-pre>.env</code> file, if the password contains special characters like <code translate="no" v-pre>#</code>, put quotes around it.
 Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </dd>
-<dt id="default-value-23">Default value</dt>
+<dt id="default-value-26">Default value</dt>
 <dd><p>An empty string</p>
 </dd>
 </dl>
@@ -1070,7 +1216,7 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-26">Description</dt>
+<dt id="description-29">Description</dt>
 <dd><p>The character set of the database.</p>
 <p>Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </dd>
@@ -1089,11 +1235,11 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-27">Description</dt>
+<dt id="description-30">Description</dt>
 <dd><p>The collation of the database.</p>
 <p>Only applies to <code translate="no" v-pre>mysql</code>.</p>
 </dd>
-<dt id="default-value-24">Default value</dt>
+<dt id="default-value-27">Default value</dt>
 <dd><p><code translate="no" v-pre>utf8mb4_unicode_ci</code></p>
 </dd>
 </dl>
@@ -1106,12 +1252,12 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-28">Description</dt>
+<dt id="description-31">Description</dt>
 <dd><p>A single database &quot;URL&quot; that contains all of the connection information for the database in a single string, i.e:</p>
 <p><code translate="no" v-pre>mysql://root:password@127.0.0.1/forge?charset=UTF-8</code></p>
 <p>If set, 2FAuth will use it to extract the database connection and credential information. Other <code translate="no" v-pre>DB_*</code> vars are then useless.</p>
 </dd>
-<dt id="default-value-25">Default value</dt>
+<dt id="default-value-28">Default value</dt>
 <dd><em>none</em></dd>
 <dt id="alias-2">Alias</dt>
 <dd><p><code translate="no" v-pre>DB_URL</code></p>
@@ -1126,9 +1272,9 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-29">Description</dt>
+<dt id="description-32">Description</dt>
 <dd>Absolute path to the root CA bundle if you&#x27;re connecting to the MySQL database via SSL</dd>
-<dt id="default-value-26">Default value</dt>
+<dt id="default-value-29">Default value</dt>
 <dd><p><code translate="no" v-pre>null</code></p>
 </dd>
 </dl>
@@ -1140,7 +1286,7 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-30">Description</dt>
+<dt id="description-33">Description</dt>
 <dd><p>The default mailer that is used to send any email messages sent by 2FAuth.</p>
 </dd>
 </dl>
@@ -1214,7 +1360,7 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </div>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="default-value-27">Default value</dt>
+<dt id="default-value-30">Default value</dt>
 <dd><p><code translate="no" v-pre>smtp</code></p>
 </dd>
 </dl>
@@ -1225,9 +1371,9 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-31">Description</dt>
+<dt id="description-34">Description</dt>
 <dd>Username used to connect to the SMTP server</dd>
-<dt id="default-value-28">Default value</dt>
+<dt id="default-value-31">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -1238,11 +1384,11 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-32">Description</dt>
+<dt id="description-35">Description</dt>
 <dd><p>Password used to connect to the SMTP server.</p>
 <p>When using <code translate="no" v-pre>.env</code> file, if the password contains special characters like <code translate="no" v-pre>#</code>, put quotes around it.</p>
 </dd>
-<dt id="default-value-29">Default value</dt>
+<dt id="default-value-32">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -1253,11 +1399,11 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-33">Description</dt>
+<dt id="description-36">Description</dt>
 <dd><p>Encryption protocol used to secure email delivery.</p>
 <p>This var applies only to the <code translate="no" v-pre>smtp</code> driver.</p>
 </dd>
-<dt id="default-value-30">Default value</dt>
+<dt id="default-value-33">Default value</dt>
 <dd><p><code translate="no" v-pre>tls</code></p>
 </dd>
 </dl>
@@ -1272,11 +1418,11 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-34">Description</dt>
+<dt id="description-37">Description</dt>
 <dd><p>Domain of the mail server.</p>
 <p>This var applies only to the <code translate="no" v-pre>smtp</code> driver.</p>
 </dd>
-<dt id="default-value-31">Default value</dt>
+<dt id="default-value-34">Default value</dt>
 <dd><p><code translate="no" v-pre>smtp.mailtrap.io</code></p>
 </dd>
 </dl>
@@ -1287,11 +1433,11 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-35">Description</dt>
+<dt id="description-38">Description</dt>
 <dd><p>Port used to communicate with the mail server.</p>
 <p>This var applies only to the <code translate="no" v-pre>smtp</code> driver.</p>
 </dd>
-<dt id="default-value-32">Default value</dt>
+<dt id="default-value-35">Default value</dt>
 <dd><p><code translate="no" v-pre>587</code></p>
 </dd>
 </dl>
@@ -1302,9 +1448,9 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-36">Description</dt>
+<dt id="description-39">Description</dt>
 <dd>Name that is used globally for all e-mails that are sent by 2FAuth</dd>
-<dt id="default-value-33">Default value</dt>
+<dt id="default-value-36">Default value</dt>
 <dd><p><code translate="no" v-pre>Example</code></p>
 </dd>
 </dl>
@@ -1317,9 +1463,9 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-37">Description</dt>
+<dt id="description-40">Description</dt>
 <dd>Address that is used globally for all e-mails that are sent by 2FAuth</dd>
-<dt id="default-value-34">Default value</dt>
+<dt id="default-value-37">Default value</dt>
 <dd><p><code translate="no" v-pre>hello@example.com</code></p>
 </dd>
 </dl>
@@ -1332,29 +1478,27 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-38">Description</dt>
+<dt id="description-41">Description</dt>
 <dd><p>SSL peer verification.</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>warning</h5>
 <p>Disabling peer verification may result in a major security flaw. Change it only if you know what you&#x27;re doing.</p>
         </div>
     </div>
 </div>
 <p>This var applies only to the <code translate="no" v-pre>smtp</code> driver.</p>
 </dd>
-<dt id="default-value-35">Default value</dt>
+<dt id="default-value-38">Default value</dt>
 <dd><p><code translate="no" v-pre>true</code></p>
 </dd>
 </dl>
@@ -1367,9 +1511,9 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-39">Description</dt>
+<dt id="description-42">Description</dt>
 <dd>Path to the sendmail binary</dd>
-<dt id="default-value-36">Default value</dt>
+<dt id="default-value-39">Default value</dt>
 <dd><p><code translate="no" v-pre>/usr/sbin/sendmail -bs -i</code></p>
 </dd>
 </dl>
@@ -1382,7 +1526,7 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-40">Description</dt>
+<dt id="description-43">Description</dt>
 <dd><p>The log channel defines where your log entries go to.</p>
 </dd>
 </dl>
@@ -1437,7 +1581,7 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </div>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="default-value-37">Default value</dt>
+<dt id="default-value-40">Default value</dt>
 <dd><p><code translate="no" v-pre>daily</code></p>
 </dd>
 </dl>
@@ -1450,13 +1594,13 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-41">Description</dt>
+<dt id="description-44">Description</dt>
 <dd>The stack of log channels used when <doc-anchor-trigger to="#log_channel">LOG_CHANNEL</doc-anchor-trigger> is set to <code translate="no" v-pre>stack</code>.</dd>
 <dt id="accepted-values">Accepted values</dt>
 <dd><p>A comma-separated list of valid <doc-anchor-trigger to="#log_channel">LOG_CHANNEL</doc-anchor-trigger>: <code translate="no" v-pre>daily</code>, <code translate="no" v-pre>single</code>, <code translate="no" v-pre>errorlog</code>, <code translate="no" v-pre>syslog</code>, <code translate="no" v-pre>papertrail</code>, <code translate="no" v-pre>slack</code></p>
 <p>Ex: <code translate="no" v-pre>slack, papertrail</code></p>
 </dd>
-<dt id="default-value-38">Default value</dt>
+<dt id="default-value-41">Default value</dt>
 <dd><p><code translate="no" v-pre>daily</code></p>
 </dd>
 </dl>
@@ -1467,7 +1611,7 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-42">Description</dt>
+<dt id="description-45">Description</dt>
 <dd><p>Determines the minimum &quot;level&quot; a message must be in order to be logged.</p>
 <p>If you set it to <code translate="no" v-pre>debug</code> your logs will grow large, and fast. If you set it to <code translate="no" v-pre>emergency</code> probably nothing will get logged, ever.</p>
 </dd>
@@ -1476,7 +1620,7 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 <p><code translate="no" v-pre>debug</code>, <code translate="no" v-pre>info</code>, <code translate="no" v-pre>notice</code>, <code translate="no" v-pre>warning</code>, <code translate="no" v-pre>error</code>, <code translate="no" v-pre>critical</code>, <code translate="no" v-pre>alert</code>, <code translate="no" v-pre>emergency</code></p>
 <p>See <a href="https://tools.ietf.org/html/rfc5424" target="_blank">RFC 5424</a> for level definitions.</p>
 </dd>
-<dt id="default-value-39">Default value</dt>
+<dt id="default-value-42">Default value</dt>
 <dd><p><code translate="no" v-pre>notice</code></p>
 </dd>
 </dl>
@@ -1489,9 +1633,9 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-43">Description</dt>
+<dt id="description-46">Description</dt>
 <dd>Number of log files to generate/rotate when using the <code translate="no" v-pre>daily</code> log channel.</dd>
-<dt id="default-value-40">Default value</dt>
+<dt id="default-value-43">Default value</dt>
 <dd><p><code translate="no" v-pre>7</code></p>
 </dd>
 </dl>
@@ -1504,9 +1648,9 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-44">Description</dt>
+<dt id="description-47">Description</dt>
 <dd>URL of the Slak webhook to use when using the <code translate="no" v-pre>slack</code> log channel.</dd>
-<dt id="default-value-41">Default value</dt>
+<dt id="default-value-44">Default value</dt>
 <dd><p>none</p>
 </dd>
 </dl>
@@ -1519,9 +1663,9 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-45">Description</dt>
+<dt id="description-48">Description</dt>
 <dd>The name of the user sending the log messages when using the <code translate="no" v-pre>slack</code> log channel.</dd>
-<dt id="default-value-42">Default value</dt>
+<dt id="default-value-45">Default value</dt>
 <dd><p><code translate="no" v-pre>Laravel Log</code></p>
 </dd>
 </dl>
@@ -1536,9 +1680,9 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-46">Description</dt>
+<dt id="description-49">Description</dt>
 <dd>The Emoji code of the emoji used to illustrate log messages when using the <code translate="no" v-pre>slack</code> log channel.</dd>
-<dt id="default-value-43">Default value</dt>
+<dt id="default-value-46">Default value</dt>
 <dd><p><code translate="no" v-pre>:boom:</code></p>
 </dd>
 </dl>
@@ -1551,10 +1695,10 @@ Does not apply to <code translate="no" v-pre>sqlite</code>.</p>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-47">Description</dt>
+<dt id="description-50">Description</dt>
 <dd>The syslog facility that provides a rough clue of where in a system the message originated.<br />
 Only applies when log channel is set to <code translate="no" v-pre>syslog</code>.</dd>
-<dt id="default-value-44">Default value</dt>
+<dt id="default-value-47">Default value</dt>
 <dd><p><code translate="no" v-pre>LOG_USER</code></p>
 </dd>
 </dl>
@@ -1565,11 +1709,11 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-48">Description</dt>
+<dt id="description-51">Description</dt>
 <dd><p>A log channel to use to log the PHP &amp; Laravel deprecation warnings.</p>
 <p>Should match one of the channels described at <doc-anchor-trigger to="#log_channel">LOG_CHANNEL</doc-anchor-trigger></p>
 </dd>
-<dt id="default-value-45">Default value</dt>
+<dt id="default-value-48">Default value</dt>
 <dd><p><code translate="no" v-pre>null</code></p>
 </dd>
 </dl>
@@ -1581,12 +1725,12 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-49">Description</dt>
+<dt id="description-52">Description</dt>
 <dd><p>A comma separated IP list of trusted proxies.</p>
 <p>When running 2FAuth behind a proxy that terminates TLS / SSL certificates, you may face some errors. Typically this is because 2FAuth is being forwarded traffic from the proxy on port 80 and does not know it should generate secure links.</p>
 <p>Set to <code translate="no" v-pre>*</code> to trust any proxy.</p>
 </dd>
-<dt id="default-value-46">Default value</dt>
+<dt id="default-value-49">Default value</dt>
 <dd><p><code translate="no" v-pre>null</code></p>
 </dd>
 </dl>
@@ -1601,11 +1745,11 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-50">Description</dt>
+<dt id="description-53">Description</dt>
 <dd><p>Proxy for outgoing requests, like SSO connection, 2FAuth releases detection or logo fetching.</p>
 <p>You can provide a proxy URL that contains a scheme, username, and password. For example <code translate="no" v-pre>http://username:password@192.168.16.1:10</code>.</p>
 </dd>
-<dt id="default-value-47">Default value</dt>
+<dt id="default-value-50">Default value</dt>
 <dd><p><em>blank</em></p>
 </dd>
 </dl>
@@ -1618,11 +1762,11 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-51">Description</dt>
+<dt id="description-54">Description</dt>
 <dd><p>Name of the HTTP header sent by a reverse proxy to pass the original visitor IP address.</p>
 <p>Check the proxy documentation to find out how this header is named (i.e <code translate="no" v-pre>HTTP_CF_CONNECTING_IP</code> for cloudflare).</p>
 </dd>
-<dt id="default-value-48">Default value</dt>
+<dt id="default-value-51">Default value</dt>
 <dd><p><code translate="no" v-pre>null</code></p>
 </dd>
 </dl>
@@ -1636,7 +1780,7 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-52">Description</dt>
+<dt id="description-55">Description</dt>
 <dd><p>The hash algorithm used to hash user passwords.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
@@ -1661,7 +1805,7 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 <div class="sub-dl-wrapper"><p><code translate="no" v-pre>bcrypt</code>, <code translate="no" v-pre>argon</code>, <code translate="no" v-pre>argon2id</code></p>
 </div>
 <dl>
-<dt id="default-value-49">Default value</dt>
+<dt id="default-value-52">Default value</dt>
 <dd>
 <dl>
 <dt id="term-30"><code translate="no" v-pre>bcrypt</code></dt>
@@ -1675,11 +1819,11 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-53">Description</dt>
+<dt id="description-56">Description</dt>
 <dd><p>Number of rounds when passwords are hashed using the Bcrypt algorithm.</p>
 <p>Increasing this up to 12 or even 13 will benefit to password security. Be careful, a higher value may significantly affect performance.</p>
 </dd>
-<dt id="default-value-50">Default value</dt>
+<dt id="default-value-53">Default value</dt>
 <dd><p><code translate="no" v-pre>10</code></p>
 </dd>
 </dl>
@@ -1692,9 +1836,9 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-54">Description</dt>
+<dt id="description-57">Description</dt>
 <dd>Maximum memory (in kibibytes) that may be used to compute an Argon2 hash.</dd>
-<dt id="default-value-51">Default value</dt>
+<dt id="default-value-54">Default value</dt>
 <dd><p><code translate="no" v-pre>65536</code></p>
 </dd>
 </dl>
@@ -1707,9 +1851,9 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-55">Description</dt>
+<dt id="description-58">Description</dt>
 <dd>Number of threads that Argon2 will use to compute a hash.</dd>
-<dt id="default-value-52">Default value</dt>
+<dt id="default-value-55">Default value</dt>
 <dd><p><code translate="no" v-pre>1</code></p>
 </dd>
 </dl>
@@ -1722,10 +1866,79 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-56">Description</dt>
+<dt id="description-59">Description</dt>
 <dd>Maximum amount of time it may take to compute an Argon2 hash.</dd>
-<dt id="default-value-53">Default value</dt>
+<dt id="default-value-56">Default value</dt>
 <dd><p><code translate="no" v-pre>4</code></p>
+</dd>
+</dl>
+</div>
+<h3 id="block_optauth_imagelink_fetching">BLOCK_OPTAUTH_IMAGELINK_FETCHING</h3>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>boolean</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>since v6.1</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt id="description-60">Description</dt>
+<dd><p>Prevents 2FAuth to fetch image resources linked in OTPauth URIs (encoded in QR Code).</p>
+<p>This is mainly used as a defense against Blind Server-Side Request Forgery (SSRF) attacks, in which the application can be induced to issue a back-end HTTP request to a supplied URL without this being visible from the frontend.</p>
+<p>If fetching is allowed, 2FAuth mitigates the risk of Blind SSRF attacks by filtering image link urls. Only public (aka external), HTTP(S) and valid URLs pointing to supported image files are requested.</p>
+</dd>
+<dt id="default-value-57">Default value</dt>
+<dd><p><code translate="no" v-pre>true</code></p>
+</dd>
+</dl>
+</div>
+<h3 id="otp_log_retention">OTP_LOG_RETENTION</h3>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>number</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>since v7.0</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt id="description-61">Description</dt>
+<dd><p>The OTP generation log retention time, in days.<br />
+Log entries older than that are automatically deleted.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>End users can access OTP generation logs directly via the web app&#x27;s user interface. These logs allow 2FA account owners to audit OTP generation events.</p>
+        </div>
+    </div>
+</div>
+</dd>
+<dt id="default-value-58">Default value</dt>
+<dd><p><code translate="no" v-pre>365</code></p>
+</dd>
+</dl>
+</div>
+<h3 id="content_security_policy">CONTENT_SECURITY_POLICY</h3>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>boolean</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>since v5.4.1</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt id="description-62">Description</dt>
+<dd><p>Set this to true to enable Content-Security-Policy (CSP).</p>
+<p>CSP helps to prevent or minimize the risk of certain types of security threats. This is mainly used as a defense against cross-site scripting (XSS) attacks, in which an attacker is able to inject malicious code into the web app</p>
+</dd>
+<dt id="default-value-59">Default value</dt>
+<dd><p><code translate="no" v-pre>true</code></p>
 </dd>
 </dl>
 </div>
@@ -1736,7 +1949,7 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-57">Description</dt>
+<dt id="description-63">Description</dt>
 <dd><p>The default session driver used by 2FAuth to store sessions</p>
 </dd>
 </dl>
@@ -1841,7 +2054,7 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 </div>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="default-value-54">Default value</dt>
+<dt id="default-value-60">Default value</dt>
 <dd><p><code translate="no" v-pre>file</code></p>
 </dd>
 </dl>
@@ -1852,11 +2065,11 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-58">Description</dt>
+<dt id="description-64">Description</dt>
 <dd><p>When using the <code translate="no" v-pre>database</code> or <code translate="no" v-pre>redis</code> <doc-anchor-trigger to="#session_driver">session drivers</doc-anchor-trigger>, you may specify a connection that should be used to manage these sessions.</p>
 <p>This should correspond to a connection in your <doc-anchor-trigger to="#db_connection">database configuration</doc-anchor-trigger> options.</p>
 </dd>
-<dt id="default-value-55">Default value</dt>
+<dt id="default-value-61">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -1867,7 +2080,7 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-59">Description</dt>
+<dt id="description-65">Description</dt>
 <dd><p>While using one of the framework&#x27;s cache driven session backends you may list a cache store that should be used for these sessions.</p>
 <p>This value must match with one of the 2FAuth&#x27;s configured cache stores.</p>
 </dd>
@@ -1875,7 +2088,7 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 <dd><p><code translate="no" v-pre>apc</code>, <code translate="no" v-pre>dynamodb</code>, <code translate="no" v-pre>memcached</code>, <code translate="no" v-pre>redis</code></p>
 <p>(see <doc-anchor-trigger to="#cache_driver">CACHE_DRIVER</doc-anchor-trigger>)</p>
 </dd>
-<dt id="default-value-56">Default value</dt>
+<dt id="default-value-62">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -1888,10 +2101,10 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-60">Description</dt>
+<dt id="description-66">Description</dt>
 <dd>Name of the table to be used to store sessions when using the <code translate="no" v-pre>database</code> session driver.<br />
 See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>.</dd>
-<dt id="default-value-57">Default value</dt>
+<dt id="default-value-63">Default value</dt>
 <dd><p><code translate="no" v-pre>sessions</code></p>
 </dd>
 </dl>
@@ -1902,11 +2115,11 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-61">Description</dt>
+<dt id="description-67">Description</dt>
 <dd><p>Name of the cookie used to identify a session instance by ID.</p>
 <p>The name specified here will get used every time a new session cookie is created by 2FAuth for every driver.</p>
 </dd>
-<dt id="default-value-58">Default value</dt>
+<dt id="default-value-64">Default value</dt>
 <dd><p><code translate="no" v-pre>2fauth_session</code></p>
 </dd>
 </dl>
@@ -1919,11 +2132,11 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-62">Description</dt>
+<dt id="description-68">Description</dt>
 <dd><p>Domain of the cookie used to identify a session in 2FAuth.</p>
 <p>This will determine which domains the cookie is available to in 2FAuth.</p>
 </dd>
-<dt id="default-value-59">Default value</dt>
+<dt id="default-value-65">Default value</dt>
 <dd><p>Fallbacks to the 2FAuth instance domain</p>
 </dd>
 </dl>
@@ -1934,11 +2147,11 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-63">Description</dt>
+<dt id="description-69">Description</dt>
 <dd><p>By setting this option to true, session cookies will only be sent back to the server if the browser has a HTTPS connection.</p>
 <p>This will keep the cookie from being sent to you when it can&#x27;t be done securely.</p>
 </dd>
-<dt id="default-value-60">Default value</dt>
+<dt id="default-value-66">Default value</dt>
 <dd><p><code translate="no" v-pre>false</code></p>
 </dd>
 </dl>
@@ -1951,9 +2164,9 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-64">Description</dt>
+<dt id="description-70">Description</dt>
 <dd>Whether or not session data are encrypted before it is stored.</dd>
-<dt id="default-value-61">Default value</dt>
+<dt id="default-value-67">Default value</dt>
 <dd><p><code translate="no" v-pre>false</code></p>
 </dd>
 </dl>
@@ -1970,9 +2183,9 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-65">Description</dt>
+<dt id="description-71">Description</dt>
 <dd>URL  used during the OpenID SSO flow to request the user&#x27;s authentication and consent</dd>
-<dt id="default-value-62">Default value</dt>
+<dt id="default-value-68">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -1987,9 +2200,9 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-66">Description</dt>
+<dt id="description-72">Description</dt>
 <dd>URL  used during the OpenID SSO flow to obtain an ID and / or access token</dd>
-<dt id="default-value-63">Default value</dt>
+<dt id="default-value-69">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -2004,9 +2217,9 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-67">Description</dt>
+<dt id="description-73">Description</dt>
 <dd>URL used during the OpenID SSO flow to retrieve profile information and other attributes for a logged-in end-user</dd>
-<dt id="default-value-64">Default value</dt>
+<dt id="default-value-70">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -2019,9 +2232,9 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-68">Description</dt>
+<dt id="description-74">Description</dt>
 <dd>A unique identifier for the application</dd>
-<dt id="default-value-65">Default value</dt>
+<dt id="default-value-71">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -2034,10 +2247,46 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-69">Description</dt>
+<dt id="description-75">Description</dt>
 <dd>Secret known only to 2FAuth and the Open ID authorization server</dd>
-<dt id="default-value-66">Default value</dt>
+<dt id="default-value-72">Default value</dt>
 <dd><p><em>none</em></p>
+</dd>
+</dl>
+</div>
+<h3 id="openid_http_verify_ssl_peer">OPENID_HTTP_VERIFY_SSL_PEER</h3>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>boolean</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span>since v5.6</span>
+</span></p>
+<div class="env-var-dl-wrapper">
+<dl>
+<dt id="description-76">Description</dt>
+<dd><p>SSL peer verification during OpenID authentication process</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Disabling peer verification may result in a major security flaw. Change it only if you know what you&#x27;re doing.</p>
+        </div>
+    </div>
+</div>
+</dd>
+<dt id="possible-values-2">Possible values</dt>
+<dd><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code> or a string representing the path to a custom certificate on disk, like <code translate="no" v-pre>/path/to/cert.pem</code></dd>
+<dt id="default-value-73">Default value</dt>
+<dd><p><code translate="no" v-pre>true</code></p>
 </dd>
 </dl>
 </div>
@@ -2049,9 +2298,9 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-70">Description</dt>
+<dt id="description-77">Description</dt>
 <dd>A unique identifier for the application</dd>
-<dt id="default-value-67">Default value</dt>
+<dt id="default-value-74">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -2064,9 +2313,9 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 </span></p>
 <div class="env-var-dl-wrapper">
 <dl>
-<dt id="description-71">Description</dt>
+<dt id="description-78">Description</dt>
 <dd>Secret known only to 2FAuth and Github</dd>
-<dt id="default-value-68">Default value</dt>
+<dt id="default-value-75">Default value</dt>
 <dd><p><em>none</em></p>
 </dd>
 </dl>
@@ -2175,6 +2424,6 @@ See <doc-anchor-trigger to="#session_driver">SESSION_DRIVER</doc-anchor-trigger>
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "Environment variables", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/getting-started/config/env-vars.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Environment variables", level: 3, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/getting-started/config/env-vars.md" }</script>
 </body>
 </html>

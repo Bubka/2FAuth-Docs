@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832780603157">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.833004713780">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.5.3">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../static/2fauth_favicon.png" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832780603157" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.833004713780" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832780603157" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.833004713780" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832780603157" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.832780603157" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.833004713780" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.833004713780" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -66,7 +66,7 @@
                             <img class="max-h-10 hidden dark:inline-block" src="../../../static/2fauth_light.png" alt="" width="29" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">2FAuth</span>
-                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v5.5</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v7.0</span>
                 </div>
     
                 <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
@@ -248,6 +248,7 @@
         </div>
     </div>
 </div>
+<hr>
 <h2 id="enable-the-proxy-guard">Enable the proxy guard</h2>
 <p>Set the <code translate="no" v-pre>AUTHENTICATION_GUARD</code> environment variable to <code translate="no" v-pre>reverse-proxy-guard</code> to enable the auth proxy authentication.</p>
 <div id="enable-the-proxy-guard-in-your-env-file" class="codeblock-wrapper"><doc-codeblock>
@@ -271,10 +272,12 @@
         </div>
     </div>
 </div>
+<hr>
 <h2 id="define-the-header-value">Define the header value</h2>
 <p>The <code translate="no" v-pre>REMOTE_USER</code> header can take any value. For 2FAuth, its value is the username of the user account to consider authenticated.</p>
 <p>If you already have a user account in 2FAuth, set the <code translate="no" v-pre>REMOTE_USER</code> header value (at proxy level) like the <em>name</em> field of your account.</p>
 <p>If you do not have a user account yet, or if you want to be authenticated as a brand new user, set the header to a fresh value, 2FAuth will take care of creating the account for you.</p>
+<hr>
 <h2 id="customize-the-header-name">Customize the header name</h2>
 <p>You can customize the header name by setting the <code translate="no" v-pre>AUTH_PROXY_HEADER_FOR_USER</code> environment variable to match a specific proxy configuration. For example, if the proxy header is <code translate="no" v-pre>2FAUTH-User</code>, then set <code translate="no" v-pre>AUTH_PROXY_HEADER_FOR_USER</code> as such:</p>
 <div id="customize-the-header-name-in-your-env-file" class="codeblock-wrapper"><doc-codeblock>
@@ -288,6 +291,7 @@ AUTH_PROXY_HEADER_FOR_USER=2FAUTH-User</code></pre>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash"># if the proxy prefix is 'HTTP_'
 AUTH_PROXY_HEADER_FOR_USER=HTTP_2FAUTH-User</code></pre>
 </doc-codeblock></div>
+<hr>
 <h2 id="additional-header">Additional header</h2>
 <p>You can configure 2FAuth to check for an additional header that contain the authenticated user email address. This header may or may not exist depending on the auth proxy configuration. Its name should be declare using the environment variable <code translate="no" v-pre>AUTH_PROXY_HEADER_FOR_EMAIL</code>.</p>
 <div id="additional-header-in-your-env-file" class="codeblock-wrapper"><doc-codeblock>

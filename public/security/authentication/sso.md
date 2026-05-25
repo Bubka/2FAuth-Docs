@@ -10,6 +10,8 @@ SSO is probably overkill for a single user usage but becomes relevant in a multi
 For now 2FAuth only supports 2 SSO providers: __OpenID__ and __Github__
 !!!
 
+---
+
 ## Enabling SSO
 
 SSO is enabled by default. You can check it or change it at _Admin > Auth_.
@@ -19,6 +21,8 @@ SSO makes outgoing requests that you may want to pass through a proxy.
 
 If so, set the [PROXY_FOR_OUTGOING_REQUESTS](/getting-started/config/env-vars/#proxy_for_outgoing_requests) environment variable.
 !!!
+
+---
 
 ## Enable a provider
 
@@ -50,7 +54,7 @@ At the end of the process, you should be provided with a Client ID & Secret. Cop
 
 ### Set up the provider
 
-Setting up a provider is done by defining its dedicated environment variables on your 2FAuth instance. You can find these vars in the `.env` file of 2FAuth. See also the [SSO setting](/getting-started/config/env-vars/#sso-setting) section.
+Setting up a provider is done by defining its dedicated environment variables on your 2FAuth instance. You can find these vars in the `.env` file of 2FAuth. See also the [SSO settings](/getting-started/config/env-vars/#sso-setting) section.
 
 ```env
 # OpenID (enabled)
@@ -70,6 +74,8 @@ Uncomment the lines for the providers you want to enable and assign the values w
 !!!warning
 Uncommented providers but with empty `CLIENT_ID` or `CLIENT_SECRET` won't be available.
 !!!
+
+---
 
 ## Sign with a provider
 
@@ -98,6 +104,8 @@ When you sign in via SSO for the first time, you are registered to 2FAuth transp
 - The 2FAuth account cannot be unbound from the provider account.
 - You cannot change your information from 2FAuth. But changes made on the provider side are reflected on 2FAuth each time you sign in via SSO.
 
+---
+
 ## Use SSO only
 
 SSO can be set as the only authentication method available on your 2FAuth instance. Go to _Admin > Auth_, scroll down to the _Single Sign-On_ section and check [!badge size="l" icon="checkbox" text="Use SSO only"].
@@ -106,6 +114,17 @@ Enabling this setting has the following effects:
 
 - Most authentication features are disabled for standard users: Password & WebAuthn Login, Password Reset, Registration, [OAuth PAT](/security/authentication/pat/) and [WebAuthn](/security/authentication/webauthn/) devices management.
 - Administrators can still log in with their password or WebAuthn. This is a security feature to prevent lockout if no SSO provider is available.
+
+### Allowing PAT
+
+Personal Access Tokens may be explicitly allowed when the _Use SSO only_ setting is enabled.  
+Go to _Admin > Auth_, scroll down to the _Single Sign-On_ section and check [!badge size="l" icon="checkbox" text="Allow PAT usage"].
+
+!!!warning
+It is imperative that PATs be allowed for the [2FAuth browser extension](/#browser-extensions) to function properly.
+!!!
+
+---
 
 ## Disabling SSO
 

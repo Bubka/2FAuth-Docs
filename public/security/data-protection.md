@@ -2,6 +2,8 @@
 
 2FAuth provides several security mechanisms to protect your sensitive 2FA data, at administrator or user level.
 
+---
+
 ## For administrators
 
 ### DB encryption
@@ -15,11 +17,15 @@ Encryption applies to all users data
 !!!
 
 !!!warning Warning
-It is strongly recommended to backup the `APP_KEY` value defined in your .env file (or the whole file) when encryption is enabled.
+The value of the [`APP_KEY`](/getting-started/config/env-vars/#app_key) environment variable is used as the encryption key. It is essential that you make a backup copy of that key.
 
 __There is no way to generate One-Time Password if you lose this key.__  
 __There is no workaround in case of key loss.__
+
+If you need to rotate the key, use the [`APP_PREVIOUS_KEYS`](/getting-started/config/env-vars/#app_previous_keys) environment variable to list previous keys and avoid decryption issues.
 !!!
+
+---
 
 ## For users
 
@@ -33,7 +39,7 @@ _On security code copy_ | You will be logged out immediately after you click/tap
 _a time lapse_ | You will be logged out after a certain amount of time
 _Never_ | Disable the Auto lock
 
-:icon-arrow-right: Use the [!badge size="l" icon="single-select" text="Auto lock"] combobox in the 2FAuth's _Settings > Options_ section to select a trigger or to disable the feature.
+:icon-arrow-right: Use the [!badge size="l" icon="single-select" iconAlign="right" text="Auto lock"] combobox in the 2FAuth's _Settings > Options_ section to select a trigger or to disable the feature.
 
 ### Sensitive data hiding
 
@@ -47,7 +53,7 @@ This protects against attacks like a _shoulder-surfing_ attack, where a third pa
 
 Of course, this is only suitable if you are able to use the copy/paste feature to provide the password to the destination service.
 
-!!!
+!!!tip
 Simply click/tap the (obfuscated) password in 2FAuth to copy it!
 !!!
 
