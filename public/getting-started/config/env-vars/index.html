@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.833656861966">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.833664981105">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../static/2fauth_favicon.png" />
-    <link href="../../../resources/css/retype.css?v=4.6.0.833656861966" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.833664981105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.833656861966" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.833664981105" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.833656861966" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.6.0.833656861966" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.833664981105" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.6.0.833664981105" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -578,7 +578,7 @@ secrets:
 <div class="env-var-dl-wrapper">
 <dl>
 <dt id="description-7">Description</dt>
-<dd><p>The web address (URL) of your 2FAuth instance, e.g. <code translate="no" v-pre>https://2fauth.mydomain.com</code></p>
+<dd><p>The main public address of your 2FAuth instance, e.g. <code translate="no" v-pre>https://2fauth.mydomain.com</code></p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -592,7 +592,7 @@ secrets:
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Ensure the value you set uses the <code translate="no" v-pre>https</code> scheme when 2FAuth is reached through a secure connection</p>
+<p>Ensure the value you set uses the <code translate="no" v-pre>https</code> scheme when 2FAuth is reached through a secure connection.</p>
         </div>
     </div>
 </div>
@@ -625,7 +625,7 @@ secrets:
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>This <strong>must</strong> match your instance&#x27;s external address (the location in your browser address bar) otherwise you&#x27;ll get a blank page or <a href="../../../security/authentication/webauthn/">WebAuthn</a> authentication won&#x27;t work.</p>
+<p>The 2FAuth web app can be accessed through alternative addresses, such as <code translate="no" v-pre>https://192.168.1.15</code>, but some features such as link generation, <a href="../../../security/authentication/sso/">SSO redirection</a> or <a href="../../../security/authentication/webauthn/">WebAuthn</a> authentication won&#x27;t work. For all features to be operational, <code translate="no" v-pre>APP_URL</code> <strong>must</strong> match the public URL used to access your 2FAuth instance.</p>
         </div>
     </div>
 </div>
