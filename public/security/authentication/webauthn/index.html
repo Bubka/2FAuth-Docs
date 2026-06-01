@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.833015472696">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.833656861966">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>WebAuthn (aka Passkey) - 2FAuth Docs</title>
@@ -44,12 +44,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../static/2fauth_favicon.png" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.833015472696" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.833656861966" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.833015472696" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.833015472696" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.833015472696" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.833656861966" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.833656861966" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.6.0.833656861966" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -333,10 +333,36 @@ Simply click the relevant <span class="no-link inline-flex align-middle items-ce
 <div class="codeblock-title">In your .env file:</div>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">WEBAUTHN_USER_VERIFICATION=preferred</code></pre>
 </doc-codeblock></div>
-<p class="compact">Supported value | Behavior --- | ---
-<em>required</em> | Will ALWAYS ask for user verification
-<em>preferred</em> (default) | Will ask for user verification IF POSSIBLE
-<em>discouraged</em> | Will NOT ask for user verification (for example, to minimize disruption to the user interaction flow)</p>
+<retype-table copy-text="Supported value | Behavior
+--- | ---
+_required_ | Will ALWAYS ask for user verification
+_preferred_ (default) | Will ask for user verification IF POSSIBLE
+_discouraged_ | Will NOT ask for user verification (for example, to minimize disruption to the user interaction flow)">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Supported value</th>
+<th class="compact">Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>required</em></td>
+<td class="compact">Will ALWAYS ask for user verification</td>
+</tr>
+<tr>
+<td><em>preferred</em> (default)</td>
+<td class="compact">Will ask for user verification IF POSSIBLE</td>
+</tr>
+<tr>
+<td><em>discouraged</em></td>
+<td class="compact">Will NOT ask for user verification (for example, to minimize disruption to the user interaction flow)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
 
                 
                 <!-- Required only on API pages -->

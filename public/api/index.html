@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.833015472696">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.833656861966">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>API - 2FAuth Docs</title>
@@ -44,12 +44,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../static/2fauth_favicon.png" />
-    <link href="../resources/css/retype.css?v=4.5.3.833015472696" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=4.6.0.833656861966" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=4.5.3.833015472696" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.5.3.833015472696" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=4.5.3.833015472696" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=4.6.0.833656861966" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.6.0.833656861966" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=4.6.0.833656861966" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -238,14 +238,56 @@
 <h1 id="api">API</h1>
 <p>2FAuth is built on top of its own REST API (following OpenAPI 3.1 specification), which can be used to make any other app communicate with 2FAuth.</p>
 <p>The API provides endpoints to manage most of the 2FAuth resources:</p>
-<p class="compact">Resource   | Description ---    | ---
+<retype-table copy-text="Resource   | Description
+---    | ---
 twofaccounts | The 2FA accounts stored in 2FAuth which you need to generate One-Time Passwords (OTP)
 one-time password | The One-Time Passwords (TOTP or HOTP) generated on demand
 groups | The groups used to organize 2FA accounts in 2FAuth
 qrcode | Two-dimensional barcode used to encode/share 2FA accounts
 icons | Images used to illustrate 2FA accounts in 2FAuth
 preferences | The user preferences
-settings | The 2FAuth administrator settings, which can be extended with custom settings</p>
+settings | The 2FAuth administrator settings, which can be extended with custom settings">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Resource</th>
+<th class="compact">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>twofaccounts</td>
+<td class="compact">The 2FA accounts stored in 2FAuth which you need to generate One-Time Passwords (OTP)</td>
+</tr>
+<tr>
+<td>one-time password</td>
+<td class="compact">The One-Time Passwords (TOTP or HOTP) generated on demand</td>
+</tr>
+<tr>
+<td>groups</td>
+<td class="compact">The groups used to organize 2FA accounts in 2FAuth</td>
+</tr>
+<tr>
+<td>qrcode</td>
+<td class="compact">Two-dimensional barcode used to encode/share 2FA accounts</td>
+</tr>
+<tr>
+<td>icons</td>
+<td class="compact">Images used to illustrate 2FA accounts in 2FAuth</td>
+</tr>
+<tr>
+<td>preferences</td>
+<td class="compact">The user preferences</td>
+</tr>
+<tr>
+<td>settings</td>
+<td class="compact">The 2FAuth administrator settings, which can be extended with custom settings</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
 <hr>
 <h2 id="authentication">Authentication</h2>
 <p>You authenticate in the 2FAuth API with a <em>Personal Access Token</em> (PAT) built upon the OAUTH <code translate="no" v-pre>Bearer</code> authentication scheme (see <a href="https://datatracker.ietf.org/doc/html/rfc6750" target="_blank">RFC 6750</a>).<br />

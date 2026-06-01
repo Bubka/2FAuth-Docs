@@ -94,7 +94,7 @@ No sharing data is deleted during this process. If the feature is later re-enabl
 
 Because of its broad impact, the [`ALL_USERS` sharing scope](/usage/2fa-sharing/#all_users-scope) may be considered dangerous or inappropriate.
 
-Disabling the option prevents any new sharing using the `ALL USERS` scope and inactivates existing ones. If the option is later re-enabled, all previously inactivated shares automatically become effective again.
+Disabling the option prevents any new sharing using the `ALL USERS` scope and inactivates existing ones. If the option is later re-enabled, all previously inactivated shares automatically become effective again, unless sharings with specific users have been set up in the meantime.
 
 ### Icon storage
 

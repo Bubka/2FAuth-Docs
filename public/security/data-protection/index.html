@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.833015472696">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.833656861966">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Data protection - 2FAuth Docs</title>
@@ -38,11 +38,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/2fauth_favicon.png" />
-    <link href="../../resources/css/retype.css?v=4.5.3.833015472696" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.833656861966" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.833015472696" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.833015472696" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.833656861966" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.833656861966" data-turbo-eval="false" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -279,16 +279,45 @@
 <h2 id="for-users">For users</h2>
 <h3 id="auto-lock">Auto lock</h3>
 <p>2FAuth can automatically log you out to keep your data always protected. The goal is to avoid a long life session that someone could reuse, for example from a public computer you forgot to clean or from your own stolen smartphone.</p>
-<p class="compact">Supported trigger | Behavior --- | ---
-<em>On security code copy</em> | You will be logged out immediately after you click/tap on a One-Time Password to copy it
-<em>a time lapse</em> | You will be logged out after a certain amount of time
-<em>Never</em> | Disable the Auto lock</p>
+<retype-table copy-text="Supported trigger | Behavior
+--- | ---
+_On security code copy_ | You will be logged out immediately after you click/tap on a One-Time Password to copy it
+_a time lapse_ | You will be logged out after a certain amount of time
+_Never_ | Disable the Auto lock">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Supported trigger</th>
+<th class="compact">Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>On security code copy</em></td>
+<td class="compact">You will be logged out immediately after you click/tap on a One-Time Password to copy it</td>
+</tr>
+<tr>
+<td><em>a time lapse</em></td>
+<td class="compact">You will be logged out after a certain amount of time</td>
+</tr>
+<tr>
+<td><em>Never</em></td>
+<td class="compact">Disable the Auto lock</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
 <p><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></g></g></svg> Use the <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-primary-text bg-badge-primary border border-badge-primary-border h-8 px-3 text-sm rounded-md">
     <span>Auto lock</span>
     <span class="inline-flex items-center justify-center leading-none ml-2"><svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0" width="22" height="22" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="m7.854 10.854 3.792 3.792a.5.5 0 0 0 .708 0l3.793-3.792a.5.5 0 0 0-.354-.854H8.207a.5.5 0 0 0-.353.854Z"/><path d="M2 3.75C2 2.784 2.784 2 3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25Z"/></g></svg></span>
 </span> combobox in the 2FAuth&#x27;s <em>Settings &gt; Options</em> section to select a trigger or to disable the feature.</p>
 <h3 id="sensitive-data-hiding">Sensitive data hiding</h3>
 <p>You can configure 2FAuth to display obfuscated One-Time Password rather than human readable password.</p>
+<retype-table copy-text="Without obfuscation | With obfuscation
+--- | ---
+377 609 | ●●● ●●●">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -305,6 +334,7 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <p>This protects against attacks like a <em>shoulder-surfing</em> attack, where a third party intercepts your password by watching over your shoulder as you generate a fresh password.</p>
 <p>Of course, this is only suitable if you are able to use the copy/paste feature to provide the password to the destination service.</p>
 <div class="flex mb-6">

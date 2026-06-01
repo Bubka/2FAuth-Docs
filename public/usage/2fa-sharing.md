@@ -37,6 +37,8 @@ At no point does the application disclose the underlying 2FA secret to the users
 | Generate valid 2FA codes                 | Yes     | Yes      |
 | View or export the underlying 2FA secret | No      | Yes      |
 | Retrieve the original seed or QR code    | No      | Yes      |
+| Manage sharing setup of the account      | No      | Yes      |
+| Transfer ownership of the account        | No      | Yes      |
 
 ### Security Model
 
