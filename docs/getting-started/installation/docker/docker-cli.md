@@ -17,13 +17,17 @@ These are the __Docker CLI__ Setup instructions, a <a href="https://github.com/B
 
 ## Tags
 
-Several Docker tags are available to let you choose which version you want to run:
+Several Docker tags are available to let you choose which version you want to run.
 
-| Tags | Description | { class="compact" }
-| --- | --- | --- |
-| `latest` | The current state of the master branch.<br />Considered stable. May include some fixes/changes not yet officially released. |
-| Release tags: `3.0.2` `3.1.0` ... `x.y.z` | The version at a corresponding [GitHub release](https://github.com/Bubka/2FAuth/releases).<br />Considered stable, and frozen. |
-| `dev` | The current state of the dev branch<br />May be unstable or even broken.
+{.compact}
+
+Tags | Description
+--- | ---
+`latest` | The current state of the master branch.<br />Considered stable. May include some fixes/changes not yet officially released.
+Immutable tags:<br />`3.0.2` `3.1.0` ... `x.y.z` | The version at a corresponding [GitHub release](https://github.com/Bubka/2FAuth/releases).<br />Considered stable, and frozen.
+Partial-version tags:<br />`3.1` `3.2` `3.y`<br />`3` `4` `x` | Tags to stick to the major or minor digit.<br />Considered stable, and moving.
+`3.0.2-alpha+001` ... `x.y.z-[pre-release]+[build]` | Pre-releases and/or specific builds (according to semver-2.0)<br />May be unstable.
+`dev` | The current state of the dev branch<br />May be unstable or even broken.
 
 Simply append the tag name to the docker image name in your command or script, separated by a colon, to specify which tag to use. e.g `2fauth/2fauth:3.0.2`, or `2fauth/2fauth:dev`.
 
@@ -63,6 +67,7 @@ We assume your current directory is `/yourpath`.
     !!!warning Mandatory env var
     The [`APP_KEY`](/getting-started/config/env-vars/#app_key) environment variable must be set with a personal unique value. You can generate a brand new one using [Laravel Encryption Key Generator](https://laravel-encryption-key-generator.vercel.app/).
     Alternatively, you can use the `2fauth` container to generate a key locally:
+
     ```sh
     docker run -it --rm --entrypoint /usr/bin/php 2fauth/2fauth artisan key:generate --show
     ```
