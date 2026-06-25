@@ -296,6 +296,27 @@ Default value
 
 :::
 
+### PHP_MEMORY_LIMIT_TEMP_OVERRIDE
+
+[!badge variant="info" text="number"] [!badge variant="info" text="since v8.0"]
+
+:::env-var-dl-wrapper
+
+Description
+:   Temporary PHP memory limit applied during QR code detection.
+
+    Detecting QR code in uploaded images can consume a large amount of memory on server side and sometimes generate a fatal 'Allowed memory size exhausted' error. Set this var with a value higher than the value sets in your PHP `.ini` file if you encounter error during the QR detection process.
+    
+    !!!info
+    This is applied dynamically at runtime, during a very specific treatment.  
+    The value set in the PHP `.ini` file (`256M` in the official docker image) is used for all other processing.
+    !!!
+
+Default value
+:   `512`
+
+:::
+
 ## API setting
 
 ### THROTTLE_API
