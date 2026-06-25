@@ -58,11 +58,7 @@ We assume your current directory is `/yourpath`.
     ```
 
     !!!warning Mandatory env var
-    The [`APP_KEY`](/getting-started/config/env-vars/#app_key) environment variable must be set with a personal unique value. You can generate a brand new one using [Laravel Encryption Key Generator](https://laravel-encryption-key-generator.vercel.app/).
-    Alternatively, you can use the `2fauth` container to generate a key locally:
-    ```sh
-    docker run -it --rm --entrypoint /usr/bin/php 2fauth/2fauth artisan key:generate --show
-    ```
+    The [`APP_KEY`](/getting-started/config/env-vars/#app_key) environment variable must be set with a personal unique value. You can generate a brand new one using [Laravel Encryption Key Generator](https://laravel-encryption-key-generator.vercel.app/).  
 
     If you need to rotate the key, use the [`APP_PREVIOUS_KEYS`](/getting-started/config/env-vars/#app_previous_keys) environment variable to list previous keys and avoid decryption issues or invalid access tokens.
     !!!

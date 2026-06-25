@@ -215,18 +215,18 @@ Default value
 :::env-var-dl-wrapper
 
 Description
-:   The main public address of your 2FAuth instance, e.g. `https://2fauth.mydomain.com`
+:   The web address (URL) of your 2FAuth instance, e.g. `https://2fauth.mydomain.com`
 
     !!!primary
-    Ensure the value you set uses the `https` scheme when 2FAuth is reached through a secure connection.
+    Ensure the value you set uses the `https` scheme when 2FAuth is reached through a secure connection
     !!!
 
     !!!primary
-    If a custom port is used, append it to the URL: `https://2fauth.mydomain.com:8001`
+    If a custom port is used, it must be appended to the URL: `https://2fauth.mydomain.com:8001`
     !!!
 
     !!!warning
-    The 2FAuth web app can be accessed through alternative addresses, such as `https://192.168.1.15`, but some features such as link generation, [SSO redirection](/security/authentication/sso/) or [WebAuthn](/security/authentication/webauthn/) authentication won't work. For all features to be operational, `APP_URL` __must__ match the public URL used to access your 2FAuth instance.
+    This __must__ match your instance's external address (the location in your browser address bar) otherwise you'll get a blank page or [WebAuthn](/security/authentication/webauthn/) authentication won't work.
     !!!
 
 Default value
@@ -293,27 +293,6 @@ Description
 
 Default value
 :   `false`
-
-:::
-
-### PHP_MEMORY_LIMIT_TEMP_OVERRIDE
-
-[!badge variant="info" text="number"] [!badge variant="info" text="since v8.0"]
-
-:::env-var-dl-wrapper
-
-Description
-:   Temporary PHP memory limit applied during QR code detection.
-
-    Detecting QR code in uploaded images can consume a large amount of memory on server side and sometimes generate a fatal 'Allowed memory size exhausted' error. Set this var with a value higher than the value sets in your PHP `.ini` file if you encounter error during the QR detection process.
-    
-    !!!info
-    This is applied dynamically at runtime, during a very specific treatment.  
-    The value set in the PHP `.ini` file (`256M` in the official docker image) is used for all other processing.
-    !!!
-
-Default value
-:   `512`
 
 :::
 
@@ -423,12 +402,9 @@ Alias
 :::env-var-dl-wrapper
 
 Description
-:   The authentication log retention time, in days.  
-    Log entries older than that are automatically deleted.
+:   The authentication log retention time, in days.
 
-    !!!
-    Administrators can access authentication logs directly via the web app's user interface. These logs allow to audit user authentiction events.
-    !!!
+    Log entries older than that are automatically deleted.
 
 Default value
 :   `365`
@@ -1418,25 +1394,6 @@ Description
 
 Default value
 :   `true`
-
-:::
-
-### OTP_LOG_RETENTION
-
-[!badge variant="info" text="number"] [!badge variant="info" text="since v7.0"]
-
-:::env-var-dl-wrapper
-
-Description
-:   The OTP generation log retention time, in days.  
-    Log entries older than that are automatically deleted.
-
-    !!!
-    End users can access OTP generation logs directly via the web app's user interface. These logs allow 2FA account owners to audit OTP generation events.
-    !!!
-
-Default value
-:   `365`
 
 :::
 
