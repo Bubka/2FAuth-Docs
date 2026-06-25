@@ -215,18 +215,18 @@ Default value
 :::env-var-dl-wrapper
 
 Description
-:   The web address (URL) of your 2FAuth instance, e.g. `https://2fauth.mydomain.com`
+:   The main public address of your 2FAuth instance, e.g. `https://2fauth.mydomain.com`
 
     !!!primary
-    Ensure the value you set uses the `https` scheme when 2FAuth is reached through a secure connection
+    Ensure the value you set uses the `https` scheme when 2FAuth is reached through a secure connection.
     !!!
 
     !!!primary
-    If a custom port is used, it must be appended to the URL: `https://2fauth.mydomain.com:8001`
+    If a custom port is used, append it to the URL: `https://2fauth.mydomain.com:8001`
     !!!
 
     !!!warning
-    This __must__ match your instance's external address (the location in your browser address bar) otherwise you'll get a blank page or [WebAuthn](/security/authentication/webauthn/) authentication won't work.
+    The 2FAuth web app can be accessed through alternative addresses, such as `https://192.168.1.15`, but some features such as link generation, [SSO redirection](/security/authentication/sso/) or [WebAuthn](/security/authentication/webauthn/) authentication won't work. For all features to be operational, `APP_URL` __must__ match the public URL used to access your 2FAuth instance.
     !!!
 
 Default value
@@ -402,9 +402,12 @@ Alias
 :::env-var-dl-wrapper
 
 Description
-:   The authentication log retention time, in days.
-
+:   The authentication log retention time, in days.  
     Log entries older than that are automatically deleted.
+
+    !!!
+    Administrators can access authentication logs directly via the web app's user interface. These logs allow to audit user authentiction events.
+    !!!
 
 Default value
 :   `365`
@@ -1394,6 +1397,25 @@ Description
 
 Default value
 :   `true`
+
+:::
+
+### OTP_LOG_RETENTION
+
+[!badge variant="info" text="number"] [!badge variant="info" text="since v7.0"]
+
+:::env-var-dl-wrapper
+
+Description
+:   The OTP generation log retention time, in days.  
+    Log entries older than that are automatically deleted.
+
+    !!!
+    End users can access OTP generation logs directly via the web app's user interface. These logs allow 2FA account owners to audit OTP generation events.
+    !!!
+
+Default value
+:   `365`
 
 :::
 
