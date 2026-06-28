@@ -12,10 +12,17 @@ You can configure 2FAuth to let an HTTP proxy handle authentication. In this cas
 
 ## Enable the proxy guard
 
-Set the `AUTHENTICATION_GUARD` environment variable to `reverse-proxy-guard` to enable the auth proxy authentication.  
+Set the [`AUTHENTICATION_GUARD`](/getting-started/config/env-vars/#authentication_guard) environment variable to `reverse-proxy-guard` to enable the auth proxy authentication.  
 
 ```env In your .env file:
 AUTHENTICATION_GUARD=reverse-proxy-guard
+```
+
+Since 2FAuth v8, your reverse proxy must be identified as a trusted proxy with the [`TRUSTED_PROXIES`](/getting-started/config/env-vars/#trusted_proxies) environment variable.
+
+```env In your .env file:
+TRUSTED_PROXIES=your.proxy.ip.adress
+# For example: TRUSTED_PROXIES=192.168.1.20
 ```
 
 !!!
