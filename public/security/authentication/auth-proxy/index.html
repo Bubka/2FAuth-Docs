@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835733090539">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835999717928">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../static/2fauth_favicon.png" />
-    <link href="../../../resources/css/retype.css?v=4.6.0.835733090539" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.835999717928" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.835733090539" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.835999717928" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.835733090539" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.6.0.835733090539" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.835999717928" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.6.0.835999717928" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -250,10 +250,16 @@
 </div>
 <hr>
 <h2 id="enable-the-proxy-guard">Enable the proxy guard</h2>
-<p>Set the <code translate="no" v-pre>AUTHENTICATION_GUARD</code> environment variable to <code translate="no" v-pre>reverse-proxy-guard</code> to enable the auth proxy authentication.</p>
+<p>Set the <a href="../../../getting-started/config/env-vars/#authentication_guard"><code translate="no" v-pre>AUTHENTICATION_GUARD</code></a> environment variable to <code translate="no" v-pre>reverse-proxy-guard</code> to enable the auth proxy authentication.</p>
 <div id="enable-the-proxy-guard-in-your-env-file" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">In your .env file:</div>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">AUTHENTICATION_GUARD=reverse-proxy-guard</code></pre>
+</doc-codeblock></div>
+<p>Since 2FAuth v8, your reverse proxy must be identified as a trusted proxy with the <a href="../../../getting-started/config/env-vars/#trusted_proxies"><code translate="no" v-pre>TRUSTED_PROXIES</code></a> environment variable.</p>
+<div id="enable-the-proxy-guard-in-your-env-file-1" class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">In your .env file:</div>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">TRUSTED_PROXIES=your.proxy.ip.adress
+# For example: TRUSTED_PROXIES=192.168.1.20</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>

@@ -396,11 +396,12 @@ Description
 
     Additional variable is required to be set with this guard:
 
+    - [TRUSTED_PROXIES](#trusted_proxies) (since 2FAuth v8 only)
     - [AUTH_PROXY_HEADER_FOR_USER](#auth_proxy_header_for_user)
 
     Additional variable may be set with this guard:
 
-    - [AUTH_PROXY_HEADER_FOR_USER](#auth_proxy_header_for_user)
+    - [AUTH_PROXY_HEADER_FOR_EMAIL](#auth_proxy_header_for_email)
 
     See the dedicated [auth proxy page](/security/authentication/auth-proxy/) to discover how to configure the reverse-proxy-guard.
 
@@ -1274,9 +1275,13 @@ Default value
 Description
 :   A comma separated IP list of trusted proxies.
 
-    When running 2FAuth behind a proxy that terminates TLS / SSL certificates, you may face some errors. Typically this is because 2FAuth is being forwarded traffic from the proxy on port 80 and does not know it should generate secure links.
+    !!!warning
+    Since 2FAuth v8, if the [AUTHENTICATION_GUARD](#authentication_guard) is set to `reverse-proxy-guard`, your authentication proxy MUST be identified as a trusted proxy.
+    !!!
 
-    Set to `*` to trust any proxy.
+    When running 2FAuth behind a proxy that terminates TLS / SSL certificates, you may face some errors in generated links url. Typically this is because 2FAuth is being forwarded traffic from the proxy on port 80 and does not know it should generate secure links.
+    
+    To solve this, identify proxies that should be trusted. If you are using Amazon AWS or another "cloud" load balancer provider, you may not know the IP addresses of your actual balancers. In this case, you may use `*` to trust all proxies.
 
 Default value
 :   `null`

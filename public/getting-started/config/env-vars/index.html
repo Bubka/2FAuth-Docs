@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835733090539">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835999717928">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../static/2fauth_favicon.png" />
-    <link href="../../../resources/css/retype.css?v=4.6.0.835733090539" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.835999717928" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.835733090539" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.835999717928" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.835733090539" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.6.0.835733090539" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.835999717928" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.6.0.835999717928" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -837,11 +837,12 @@ Has no effect if THROTTLE_API is set to <code translate="no" v-pre>null</code>.<
 <p>2FAuth only look for the dedicated headers and skip all other built-in authentication checks. That means your proxy is fully responsible of the authentication process, 2FAuth will trust him as long as headers are presents.</p>
 <p>Additional variable is required to be set with this guard:</p>
 <ul>
+<li><doc-anchor-trigger to="#trusted_proxies">TRUSTED_PROXIES</doc-anchor-trigger> (since 2FAuth v8 only)</li>
 <li><doc-anchor-trigger to="#auth_proxy_header_for_user">AUTH_PROXY_HEADER_FOR_USER</doc-anchor-trigger></li>
 </ul>
 <p>Additional variable may be set with this guard:</p>
 <ul>
-<li><doc-anchor-trigger to="#auth_proxy_header_for_user">AUTH_PROXY_HEADER_FOR_USER</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#auth_proxy_header_for_email">AUTH_PROXY_HEADER_FOR_EMAIL</doc-anchor-trigger></li>
 </ul>
 <p>See the dedicated <a href="../../../security/authentication/auth-proxy/">auth proxy page</a> to discover how to configure the reverse-proxy-guard.</p>
 </dd>
@@ -1762,8 +1763,24 @@ Only applies when log channel is set to <code translate="no" v-pre>syslog</code>
 <dl>
 <dt id="description-53">Description</dt>
 <dd><p>A comma separated IP list of trusted proxies.</p>
-<p>When running 2FAuth behind a proxy that terminates TLS / SSL certificates, you may face some errors. Typically this is because 2FAuth is being forwarded traffic from the proxy on port 80 and does not know it should generate secure links.</p>
-<p>Set to <code translate="no" v-pre>*</code> to trust any proxy.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Since 2FAuth v8, if the <doc-anchor-trigger to="#authentication_guard">AUTHENTICATION_GUARD</doc-anchor-trigger> is set to <code translate="no" v-pre>reverse-proxy-guard</code>, your authentication proxy MUST be identified as a trusted proxy.</p>
+        </div>
+    </div>
+</div>
+<p>When running 2FAuth behind a proxy that terminates TLS / SSL certificates, you may face some errors in generated links url. Typically this is because 2FAuth is being forwarded traffic from the proxy on port 80 and does not know it should generate secure links.</p>
+<p>To solve this, identify proxies that should be trusted. If you are using Amazon AWS or another &quot;cloud&quot; load balancer provider, you may not know the IP addresses of your actual balancers. In this case, you may use <code translate="no" v-pre>*</code> to trust all proxies.</p>
 </dd>
 <dt id="default-value-50">Default value</dt>
 <dd><p><code translate="no" v-pre>null</code></p>
