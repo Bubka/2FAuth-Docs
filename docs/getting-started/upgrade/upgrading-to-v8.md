@@ -42,6 +42,8 @@ The way authentication tokens are generated has changed due to an update to one 
 
 You will have to [create new tokens](/security/authentication/pat/#creating-an-access-token).
 
+---
+
 ## Low Impact Changes
 
 ### New environment variables
