@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.836390742684">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.836391618735">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../static/2fauth_favicon.png" />
-    <link href="../../../resources/css/retype.css?v=4.6.0.836390742684" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.836391618735" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.836390742684" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.836391618735" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.836390742684" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.6.0.836390742684" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.836391618735" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.6.0.836391618735" defer></script>
 
     <link href="/static/custom.css" rel="stylesheet" />
 </head>
@@ -253,6 +253,7 @@
 <h3 id="personal-access-tokens-invalidation">Personal Access Tokens invalidation</h3>
 <p>The way authentication tokens are generated has changed due to an update to one of the underlying components, so all your personal access tokens created using 2FAuth v7 or an earlier version will become invalid. They will no longer be visible in <em>Settings &gt; OAuth &gt; Personal Access Token</em>.</p>
 <p>You will have to <a href="../../../security/authentication/pat/#creating-an-access-token">create new tokens</a>.</p>
+<hr>
 <h2 id="low-impact-changes">Low Impact Changes</h2>
 <h3 id="new-environment-variables">New environment variables</h3>
 <p>The new <code translate="no" v-pre>PHP_MEMORY_LIMIT_TEMP_OVERRIDE</code> environment variable lets you control the maximum amount of memory PHP can consume temporarily during QR Code detection operations.</p>
