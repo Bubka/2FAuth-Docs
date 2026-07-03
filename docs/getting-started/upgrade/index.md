@@ -6,7 +6,7 @@ label: Upgrade Guide
 
 This page gives generic information to upgrade your 2FAuth instance depending on the deploiement solution.
 
-Some additional specific steps may be necessary to acheive:
+Some additional specific steps may be necessary to achieve:
 
 - [Upgrading to 2FAuth v8](/getting-started/upgrade/upgrading-to-v8/)
 
