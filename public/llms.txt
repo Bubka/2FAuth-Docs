@@ -23,8 +23,12 @@
 
 - [Environment variables](https://docs.2fauth.app/getting-started/config/env-vars.md): Here are the main environment variables that may be set to make 2FAuth work according to its running environment and to meet your needs. It is recommended to review them at least once to ensure minimal requirements are met and to have a picture of what 2FAuth offers in terms of configuration.
 - [User preferences](https://docs.2fauth.app/getting-started/config/user-preferences.md): User preferences are settings that any user can change to customize the behavior or appearance of 2FAuth. They can be set by the user from the Settings > Options section of 2FAuth.
+
+### Upgrade Guide
+
+- [Upgrade](https://docs.2fauth.app/getting-started/upgrade/index.md): This page gives generic information to upgrade your 2FAuth instance depending on the deploiement solution.
+- [Upgrading to 2FAuth v8](https://docs.2fauth.app/getting-started/upgrade/upgrading-to-v8.md): The component responsible of the authentication process (Passport) now validates the permissions of key files on supported operating systems. The Docker image as well as the installation wizard of 2FAuth v8 already apply the necessary changes automatically but you may face an error page, though.
 - [Troubleshooting](https://docs.2fauth.app/getting-started/troubleshooting.md): Logs can give usefull informations to troubleshoot your installation. 2FAuth logs are stored in the subfolder storage/logs of your installation folder.
-- [Upgrade](https://docs.2fauth.app/getting-started/upgrade.md): Update the source code in /var/www/2fauth (see Get your 2FAuth copy)
 
 ## Security
 
@@ -35,7 +39,7 @@
 - [Single Sign-On (SSO)](https://docs.2fauth.app/security/authentication/sso.md): Single sign-on is an authentication scheme that allows a user to log in with a single ID to any of several related, yet independent, software systems.
 - [WebAuthn (aka Passkey)](https://docs.2fauth.app/security/authentication/webauthn.md): 2FAuth supports the W3C Web Authentication API aka WebAuthn (learn more). This means you can register a security device like a Yubikey, a Titan Security Key, or a facial recognition system like Apple FaceId and use it to log into 2FAuth.
 - [Auth proxy](https://docs.2fauth.app/security/authentication/auth-proxy.md): You can configure 2FAuth to let an HTTP proxy handle authentication. In this case, 2FAuth will consider you logged in as long as you are authenticated at proxy level.
-- [Personal Access Token](https://docs.2fauth.app/security/authentication/pat.md): Use Personal Access Tokens (PAT) to authenticate requests sent to the 2FAuth REST API.
+- [Personal Access Token](https://docs.2fauth.app/security/authentication/pat.md): Use Personal Access Tokens (PAT) to authenticate the 2FAuth Web Extension or to authenticate requests sent to the 2FAuth REST API.
 
 ## Usage
 

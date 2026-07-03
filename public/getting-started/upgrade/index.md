@@ -1,5 +1,13 @@
 # Upgrade
 
+This page gives generic information to upgrade your 2FAuth instance depending on the deploiement solution.
+
+Some additional specific steps may be necessary to acheive:
+
+- [Upgrading to 2FAuth v8](/getting-started/upgrade/upgrading-to-v8/)
+
+---
+
 ## Self-hosted server
 
 Update the source code in `/var/www/2fauth` (see [Get your 2FAuth copy](/getting-started/installation/self-hosted-server/#get-your-2fauth-copy))
