@@ -15,6 +15,10 @@ order: 95
 4. Optionally adjust the database type (SQLite, PostgreSQL, MariaDB or MySQL) and enable Redis
 5. Click __Create__ to deploy the service
 
+:::desktop-screen
+![2FAuth deployed on Easypanel](/static/easypanel_deployed.png)
+:::
+
 Easypanel runs the [official 2FAuth Docker image](https://hub.docker.com/r/2fauth/2fauth) for you and exposes it through a domain, so no manual web server configuration is required.
 
 See the [official 2FAuth template on Easypanel](https://easypanel.io/templates/2fauth) for more details.
